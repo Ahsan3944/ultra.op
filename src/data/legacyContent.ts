@@ -32,12 +32,3 @@ export const LEGACY_BLOG_POSTS = [
     views: 95605,
   },
 ] as const;
-
-export const LEGACY_GAMES = [
-  { id: 'flappy-bird', name: 'Flappy Bird Clone', description: 'A classic arcade game where you guide a bird through pipes.', legacyPath: '/games/flappy-bird/index.html' },
-  { id: 'tic-tac-toe', name: 'Tic Tac Toe', description: 'Play the timeless game of Tic Tac Toe against a friend.', legacyPath: '/games/Tic-Tac-Toe/index.html' },
-  { id: 'free-block-puzzle', name: 'Free Block Puzzle', description: 'Arrange blocks to complete lines in this fun brain puzzle game.', legacyPath: '/games/free-block-puzzle/index.html' },
-  { id: 'chess', name: 'Chess', description: 'Challenge your mind with the classic strategy game of chess online.', legacyPath: '/games/chess/index.html' },
-  { id: 'snake', name: 'Snake', description: 'Eat food, grow longer, and survive in the retro Snake arcade game.', legacyPath: '/games/Snake/index.html' },
-  { id: 'sliding-puzzle', name: 'Sliding Puzzle', description: 'Solve the sliding tiles puzzle by arranging pieces into the right order.', legacyPath: '/games/Sliding-Puzzle/index.html' },
-] as const;
