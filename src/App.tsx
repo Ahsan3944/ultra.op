@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { ArrowDownRight, ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Play, Youtube } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Play, X, Youtube } from 'lucide-react';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS } from './data/core';
 import { LEGACY_BLOG_POSTS } from './data/legacyContent';
 
