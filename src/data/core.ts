@@ -11,6 +11,7 @@ export const SITE = {
   discord: 'https://discord.gg/6sWsg324md',
 } as const;
 
+// Add future official YouTube channels here. The homepage renders this array automatically.
 export const YOUTUBE_CHANNELS = [
   { key: 'main', id: 'UCAxlmL3_721xzOjQVe5Klbg', name: 'Ultra OP Live', handle: '@ultraoplive', url: 'https://www.youtube.com/@ultraoplive', focus: 'Live gaming, Minecraft, Valorant & variety' },
   { key: 'earnings', id: 'UC-KkWDruqOobwZgylSb4kwA', name: 'Op Earnings', handle: '@ultraopearnings', url: 'https://www.youtube.com/@ultraopearnings', focus: 'Creator growth & gaming income' },
@@ -18,6 +19,7 @@ export const YOUTUBE_CHANNELS = [
   { key: 'roblox', id: 'UCKdJiKSiO382Hvczh_Q2kyg', name: 'Roblox UltraOP3', handle: '@ultraop3', url: 'https://www.youtube.com/@ultraop3', focus: 'Roblox adventures & multiplayer' },
 ] as const;
 
+// Keep all verified social, streaming and community destinations in this registry.
 export const SOCIALS = [
   { name: 'Instagram', handle: '@ultraopp', url: 'https://www.instagram.com/ultraopp/' },
   { name: 'Instagram / Earnings', handle: '@op_earnings', url: 'https://www.instagram.com/op_earnings/' },
