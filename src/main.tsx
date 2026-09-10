@@ -13,6 +13,7 @@ import { LegacyHubPage } from './LegacyHubPage';
 import { JournalPage } from './JournalPage';
 import { AboutPage, ChannelsPage, LivePage, CommunityPage, WorkPage, ContactPage, JournalLandingPage, Creator404 } from './CreatorPages';
 import { FanArtPage, AssetsPage } from './GalleryPages';
+import { installGalleryNav } from './gallery-nav';
 
 function recoverStaticHostPath() { const key = 'ultraop:requested-path'; const stored = sessionStorage.getItem(key); if (stored && stored !== '/') { sessionStorage.removeItem(key); window.history.replaceState(null, '', stored); } }
 type FeedItem = { title?: string; link?: string }; type FeedResponse = { status?: string; items?: FeedItem[] };
@@ -36,3 +37,4 @@ function NotFound() { return <div className="min-h-screen bg-[var(--bg)] text-[v
 function Root() { recoverStaticHostPath(); const path = window.location.pathname.replace(/\/+$/, '') || '/'; if (path === '/about') return <AboutPage/>; if (path === '/channels') return <ChannelsPage/>; if (path === '/live') return <LivePage/>; if (path === '/community') return <CommunityPage/>; if (path === '/work') return <WorkPage/>; if (path === '/contact') return <ContactPage/>; if (path === '/journal') return <JournalLandingPage/>; if (path === '/journal-full') return <JournalPage/>; if (path === '/fan-art') return <FanArtPage/>; if (path === '/assets') return <AssetsPage/>; if (path === '/blog') return <LegacyHubPage kind="blog"/>; if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug}/>; } if (path !== '/') return <Creator404/>; return <App/>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><Root/></React.StrictMode>);
 installHomepageEnhancements();
+installGalleryNav();
