@@ -3,7 +3,10 @@ import { useMemo, useState } from 'react';
 
 type Mark = 'X' | 'O' | null;
 type Mode = 'pvp' | 'pvc';
-type Outcome = { winner: 'X' | 'O' | 'draw'; line: number[] };
+type Winner = 'X' | 'O';
+type Outcome = { winner: Winner | 'draw'; line: number[] };
+
+type Scores = Record<Winner, number>;
 
 const WIN_LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -14,7 +17,7 @@ const WIN_LINES = [
 function result(board: Mark[]): Outcome | null {
   for (const [a, b, c] of WIN_LINES) {
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return { winner: board[a], line: [a, b, c] };
+      return { winner: board[a] as Winner, line: [a, b, c] };
     }
   }
   if (board.every(Boolean)) return { winner: 'draw', line: [] };
@@ -24,7 +27,7 @@ function result(board: Mark[]): Outcome | null {
 function computerMove(board: Mark[]) {
   const open = board.map((v, i) => v ? -1 : i).filter(i => i >= 0);
   if (!open.length) return -1;
-  const winning = (mark: 'X' | 'O') => open.find(i => {
+  const winning = (mark: Winner) => open.find(i => {
     const next = [...board]; next[i] = mark;
     return result(next)?.winner === mark;
   });
@@ -41,8 +44,8 @@ function computerMove(board: Mark[]) {
 export function LegacyTicTacToePage() {
   const [mode, setMode] = useState<Mode | null>(null);
   const [board, setBoard] = useState<Mark[]>(Array(9).fill(null));
-  const [turn, setTurn] = useState<'X' | 'O'>('X');
-  const [wins, setWins] = useState({ X: 0, O: 0 });
+  const [turn, setTurn] = useState<Winner>('X');
+  const [wins, setWins] = useState<Scores>({ X: 0, O: 0 });
   const outcome = useMemo(() => result(board), [board]);
 
   const reset = () => { setBoard(Array(9).fill(null)); setTurn('X'); };
@@ -50,9 +53,9 @@ export function LegacyTicTacToePage() {
     if (!mode || board[index] || outcome || (mode === 'pvc' && turn === 'O')) return;
     const next = [...board]; next[index] = turn;
     const r = result(next);
-    if (r && r.winner !== 'draw') setWins(w => ({ ...w, [r.winner]: w[r.winner] + 1 }));
+    if (r?.winner === 'X' || r?.winner === 'O') setWins(w => ({ ...w, [r.winner]: w[r.winner] + 1 }));
     if (r) { setBoard(next); return; }
-    const nextTurn = turn === 'X' ? 'O' : 'X';
+    const nextTurn: Winner = turn === 'X' ? 'O' : 'X';
     if (mode === 'pvc' && nextTurn === 'O') {
       const ai = computerMove(next);
       if (ai >= 0) {
