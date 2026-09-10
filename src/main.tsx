@@ -7,8 +7,10 @@ import { LegacyHubPage } from './LegacyHubPage';
 function Root() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
 
-  if (path === '/blog' || path.startsWith('/blog/')) {
-    return <LegacyHubPage kind="blog" />;
+  if (path === '/blog') return <LegacyHubPage kind="blog" />;
+  if (path.startsWith('/blog/')) {
+    const slug = path.slice('/blog/'.length).split('/')[0];
+    return <LegacyHubPage kind="blog" slug={slug} />;
   }
 
   if (path === '/games' || path.startsWith('/games/')) {
