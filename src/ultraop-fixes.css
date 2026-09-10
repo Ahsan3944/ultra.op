@@ -1,117 +1,184 @@
-/* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
+/* Final homepage polish overrides. */
 
-/* Seamless creator belt: compact, editorial and continuous. */
+/* Creator ticker: one clean black/orange belt, seamless right-to-left motion. */
 .marquee {
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  background:#080808;
-  border-top:1px solid rgba(255,98,70,.42);
-  border-bottom:1px solid rgba(255,98,70,.42);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 -1px 0 rgba(255,255,255,.025);
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #070707;
+  border-top: 1px solid rgba(255, 98, 70, .72);
+  border-bottom: 1px solid rgba(255, 98, 70, .72);
 }
-.marquee::before,.marquee::after {
-  content:'';
-  position:absolute;
-  top:0;
-  bottom:0;
-  width:12vw;
-  z-index:2;
-  pointer-events:none;
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12vw;
+  z-index: 2;
+  pointer-events: none;
 }
-.marquee::before { left:0; background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.92) 35%,transparent 100%); }
-.marquee::after { right:0; background:linear-gradient(270deg,#080808 0%,rgba(8,8,8,.92) 35%,transparent 100%); }
+.marquee::before { left: 0; background: linear-gradient(90deg, #070707 0%, rgba(7,7,7,.92) 42%, transparent 100%); }
+.marquee::after { right: 0; background: linear-gradient(270deg, #070707 0%, rgba(7,7,7,.92) 42%, transparent 100%); }
 .marquee-track {
-  display:flex;
-  width:max-content;
-  min-width:max-content;
-  gap:0;
-  animation:ultraopMarquee 26s linear infinite;
-  will-change:transform;
-  transform:translate3d(0,0,0);
+  display: flex !important;
+  width: max-content !important;
+  min-width: max-content !important;
+  gap: 0 !important;
+  align-items: center;
+  animation: ultraopTicker 30s linear infinite !important;
+  will-change: transform;
+  transform: translate3d(0,0,0);
 }
-.marquee-track > * { display:none !important; }
-.marquee-track::before,.marquee-track::after {
-  content:'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
-  display:block;
-  flex:0 0 auto;
-  width:max-content;
-  white-space:nowrap;
-  padding:16px 56px 16px 24px;
-  font:700 12px/1 'DM Mono',monospace;
-  letter-spacing:.14em;
-  color:#f4f0e8;
-  border:0;
-  position:relative;
-  background:none;
-  text-shadow:0 0 16px rgba(255,98,70,.10);
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
-  mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
+.marquee-track > * { display: none !important; }
+.marquee-track::before,
+.marquee-track::after {
+  content: 'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
+  display: block;
+  flex: 0 0 auto;
+  width: max-content;
+  padding: 0 64px 0 28px;
+  white-space: nowrap;
+  color: #eeeae2;
+  font: 700 13px/58px 'DM Mono', monospace;
+  letter-spacing: .14em;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
-.marquee-track::before::first-letter,.marquee-track::after::first-letter { color:#ff6246; }
-@keyframes ultraopMarquee {
-  from { transform:translate3d(0,0,0); }
-  to { transform:translate3d(-50%,0,0); }
+@keyframes ultraopTicker {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-50%,0,0); }
 }
 
-/* Slim orange chain/belt details without visual clutter. */
-.marquee-track::after { box-shadow:inset 0 0 0 1px rgba(255,98,70,.08); }
-.marquee-track::before { box-shadow:inset 0 0 0 1px rgba(255,98,70,.08); }
+/* The homepage creator block is a concise summary; the complete history remains in Journal. */
+.story-copy > p:not(.eyebrow) { display: none !important; }
+.story-copy::after {
+  content: 'I started with PUBG, moved through competitive esports and the Rooter streaming community, then built a YouTube-first creator career. Today I focus on Minecraft and gaming content while developing new channels, story-led videos and technology projects. UltraOP brings gaming, storytelling, community and building together.';
+  display: block;
+  max-width: 760px;
+  margin-top: 22px;
+  color: #b7b2aa;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.story-copy h2 { font-size: clamp(2.65rem,5.3vw,5.5rem); }
 
-/* Compact creator intro; full history remains on Journal. */
-.story-copy > p:not(.eyebrow) { font-size:13px; line-height:1.78; margin-top:18px; }
-.story-copy h2 { font-size:clamp(2.65rem,5.3vw,5.5rem); }
+/* Brand campaign rail. */
+.brand-track { animation: ultraopBrandFlow 32s linear infinite; will-change: transform; }
+@keyframes ultraopBrandFlow { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+.brand-visual > span { display: none; }
 
-/* Brand rail moves right-to-left. */
-.brand-track { animation:ultraopBrandFlow 32s linear infinite; will-change:transform; }
-@keyframes ultraopBrandFlow { from { transform:translate3d(0,0,0); } to { transform:translate3d(-50%,0,0); } }
-.brand-visual > span { display:none; }
+/* Keep detailed FAQ and journal preview off the homepage; the full Q&A lives on Journal. */
+#faq { display: none !important; }
+section:has(.journal-preview-grid) { display: none !important; }
 
-/* Homepage stays focused; detailed Q&A/journal live on Journal. */
-#faq { display:none !important; }
-section:has(.journal-preview-grid) { display:none !important; }
-
-/* Keep exactly one footer. */
-.site-footer { display:none !important; }
-.global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
-.global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
-.global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
-.global-legal-brand img { width:40px; height:40px; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); }
-.global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
-.global-legal-inner a { transition:color .2s ease; }
-.global-legal-inner a:hover { color:var(--text); }
+/* Use the dedicated global legal footer only. */
+.site-footer { display: none !important; }
+.global-legal-footer {
+  border-top: 1px solid rgba(255,98,70,.45);
+  background: #020202;
+  color: #9b968e;
+}
+.global-legal-inner {
+  width: min(var(--max), calc(100% - 48px));
+  min-height: 94px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  font: 500 10px/1.5 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+.global-legal-brand { display: inline-flex; align-items: center; }
+.global-legal-brand img {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  content: url('/brand/ultraop-mark.svg?v=20260911');
+}
+.global-legal-inner > span { color: #77726b; }
+.global-legal-inner nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 22px; }
+.global-legal-inner a { color: inherit; transition: color .2s ease; }
+.global-legal-inner nav a:hover { color: #f4f1e9; }
 
 /* Official UltraOP mark in the header. */
-.brand-lockup .brand-mark { width:40px; height:40px; display:block; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); filter:drop-shadow(0 5px 16px rgba(0,0,0,.45)); }
-.brand-lockup > span { display:none; }
+.brand-lockup .brand-mark {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+  content: url('/brand/ultraop-mark.svg?v=20260911');
+  filter: drop-shadow(0 5px 16px rgba(0,0,0,.45));
+}
+.brand-lockup > span { display: none; }
 
-/* Navigation: clearer labels + animated active-page/section indicator. */
-.desktop-nav button { color:#c8c4bc; font-size:10px; font-weight:700; letter-spacing:.12em; position:relative; transition:color .2s ease,transform .2s ease; }
-.desktop-nav button::after { content:''; position:absolute; left:0; right:0; bottom:-10px; height:2px; background:#ff6246; transform:scaleX(0); transform-origin:center; transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease; opacity:0; }
-.desktop-nav button:hover { color:#fff; transform:translateY(-1px); }
-.desktop-nav button.is-active { color:#fff; }
-.desktop-nav button.is-active::after { transform:scaleX(1); opacity:1; box-shadow:0 0 12px rgba(255,98,70,.45); }
-.menu-toggle { color:#c8c4bc; }
+/* Navigation readability and active section indicator. */
+.desktop-nav button {
+  color: #c8c4bc;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  position: relative;
+  transition: color .2s ease, transform .2s ease;
+}
+.desktop-nav button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  background: #ff6246;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
+  opacity: 0;
+}
+.desktop-nav button:hover { color: #fff; transform: translateY(-1px); }
+.desktop-nav button.is-active { color: #fff; }
+.desktop-nav button.is-active::after { transform: scaleX(1); opacity: 1; box-shadow: 0 0 12px rgba(255,98,70,.45); }
 
-/* Contrast pass. */
-.hero-lede,.section-intro,.channel-focus,.future-note,.story-copy > p:not(.eyebrow),.community-heading .section-intro,.contact-inner > p:not(.eyebrow),.brand-copy p,.journal-preview-card p,.site-footer p { color:#b7b2aa; }
-.hero-meta { color:#918c84; }
-.hero-meta b { color:#f4f1e9; }
-.channel-handle,.brand-copy > .mono,.future-note .mono,.footer-meta { color:#969189; }
-.channel-platform,.hero-stamp strong,.hero-name span { color:#e4e0d8; }
-.live-inner > p { color:#171717; }
+.hero-lede,.section-intro,.channel-focus,.future-note,.story-copy::after,.community-heading .section-intro,.contact-inner > p:not(.eyebrow),.brand-copy p { color: #b7b2aa; }
+.hero-meta { color: #918c84; }
+.hero-meta b { color: #f4f1e9; }
+.channel-handle,.brand-copy > .mono,.future-note .mono,.footer-meta { color: #969189; }
+.channel-platform,.hero-stamp strong,.hero-name span { color: #e4e0d8; }
 
-@media (max-width:640px) {
-  .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
-  .global-legal-inner nav { width:100%; justify-content:flex-start; }
-  .brand-lockup .brand-mark { width:38px; height:38px; }
-  .marquee-track::before,.marquee-track::after { padding-left:16px; padding-right:32px; font-size:10px; letter-spacing:.11em; }
-  .marquee::before,.marquee::after { width:15vw; }
-  .desktop-nav button { font-size:9px; }
-  .desktop-nav button::after { bottom:-7px; }
+@media (max-width: 640px) {
+  .marquee { height: 48px; }
+  .marquee-track::before,
+  .marquee-track::after {
+    padding: 0 42px 0 18px;
+    font-size: 10px;
+    line-height: 48px;
+    letter-spacing: .10em;
+  }
+  .marquee::before,.marquee::after { width: 15vw; }
+  .story-copy::after { font-size: 13px; line-height: 1.78; margin-top: 18px; }
+  .global-legal-inner {
+    width: calc(100% - 28px);
+    min-height: 0;
+    padding: 22px 0;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+  }
+  .global-legal-inner > span { align-self: center; }
+  .global-legal-inner nav { grid-column: 1 / -1; justify-content: flex-start; gap: 12px 18px; }
+  .brand-lockup .brand-mark { width: 38px; height: 38px; }
+  .desktop-nav button { font-size: 9px; }
+  .desktop-nav button::after { bottom: -7px; }
 }
 
-@media (prefers-reduced-motion:reduce) {
-  .marquee-track,.brand-track,.hero-copy .scroll-reveal.is-visible { animation:none !important; transform:none !important; }
-  .desktop-nav button::after { transition:none; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,.brand-track { animation: none !important; transform: none !important; }
+  .desktop-nav button::after { transition: none; }
 }
