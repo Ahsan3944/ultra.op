@@ -14,15 +14,7 @@
   border-bottom: 1px solid rgba(255, 98, 70, .72);
 }
 .marquee::before,
-.marquee::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 12vw;
-  z-index: 2;
-  pointer-events: none;
-}
+.marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 12vw; z-index: 2; pointer-events: none; }
 .marquee::before { left: 0; background: linear-gradient(90deg, #070707 0%, rgba(7,7,7,.92) 42%, transparent 100%); }
 .marquee::after { right: 0; background: linear-gradient(270deg, #070707 0%, rgba(7,7,7,.92) 42%, transparent 100%); }
 .marquee-track {
@@ -38,7 +30,7 @@
 .marquee-track > * { display: none !important; }
 .marquee-track::before,
 .marquee-track::after {
-  content: 'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
+  content: 'ULTRAOP  •  GAMER  •  SPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
   display: block;
   flex: 0 0 auto;
   width: max-content;
@@ -51,12 +43,9 @@
   border: 0;
   box-shadow: none;
 }
-@keyframes ultraopTicker {
-  from { transform: translate3d(0,0,0); }
-  to { transform: translate3d(-50%,0,0); }
-}
+@keyframes ultraopTicker { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 
-/* The homepage creator block is a concise summary; the complete history remains in Journal. */
+/* Concise creator summary; the complete history remains in Journal. */
 .story-copy > p:not(.eyebrow) { display: none !important; }
 .story-copy::after {
   content: 'I started with PUBG, moved through competitive esports and the Rooter streaming community, then built a YouTube-first creator career. Today I focus on Minecraft and gaming content while developing new channels, story-led videos and technology projects. UltraOP brings gaming, storytelling, community and building together.';
@@ -74,17 +63,12 @@
 @keyframes ultraopBrandFlow { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 .brand-visual > span { display: none; }
 
-/* Keep detailed FAQ and journal preview off the homepage; the full Q&A lives on Journal. */
 #faq { display: none !important; }
 section:has(.journal-preview-grid) { display: none !important; }
-
-/* Use the dedicated global legal footer only. */
 .site-footer { display: none !important; }
-.global-legal-footer {
-  border-top: 1px solid rgba(255,98,70,.45);
-  background: #020202;
-  color: #9b968e;
-}
+
+/* Dedicated lower legal section. */
+.global-legal-footer { border-top: 1px solid rgba(255,98,70,.45); background: #020202; color: #9b968e; }
 .global-legal-inner {
   width: min(var(--max), calc(100% - 48px));
   min-height: 94px;
@@ -98,51 +82,19 @@ section:has(.journal-preview-grid) { display: none !important; }
   letter-spacing: .09em;
 }
 .global-legal-brand { display: inline-flex; align-items: center; }
-.global-legal-brand img {
-  width: 42px;
-  height: 42px;
-  display: block;
-  object-fit: contain;
-  content: url('/brand/ultraop-mark.svg?v=20260911');
-}
+.global-legal-brand img { width: 42px; height: 42px; display: block; object-fit: contain; content: url('/brand/ultraop-mark.svg?v=20260911'); }
 .global-legal-inner > span { color: #77726b; }
 .global-legal-inner nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 22px; }
 .global-legal-inner a { color: inherit; transition: color .2s ease; }
 .global-legal-inner nav a:hover { color: #f4f1e9; }
 
 /* Official UltraOP mark in the header. */
-.brand-lockup .brand-mark {
-  width: 40px;
-  height: 40px;
-  display: block;
-  object-fit: contain;
-  content: url('/brand/ultraop-mark.svg?v=20260911');
-  filter: drop-shadow(0 5px 16px rgba(0,0,0,.45));
-}
+.brand-lockup .brand-mark { width: 40px; height: 40px; display: block; object-fit: contain; content: url('/brand/ultraop-mark.svg?v=20260911'); filter: drop-shadow(0 5px 16px rgba(0,0,0,.45)); }
 .brand-lockup > span { display: none; }
 
 /* Navigation readability and active section indicator. */
-.desktop-nav button {
-  color: #c8c4bc;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  position: relative;
-  transition: color .2s ease, transform .2s ease;
-}
-.desktop-nav button::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  height: 2px;
-  background: #ff6246;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
-  opacity: 0;
-}
+.desktop-nav button { color: #c8c4bc; font-size: 10px; font-weight: 700; letter-spacing: .12em; position: relative; transition: color .2s ease, transform .2s ease; }
+.desktop-nav button::after { content: ''; position: absolute; left: 0; right: 0; bottom: -10px; height: 2px; background: #ff6246; transform: scaleX(0); transform-origin: center; transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .25s ease; opacity: 0; }
 .desktop-nav button:hover { color: #fff; transform: translateY(-1px); }
 .desktop-nav button.is-active { color: #fff; }
 .desktop-nav button.is-active::after { transform: scaleX(1); opacity: 1; box-shadow: 0 0 12px rgba(255,98,70,.45); }
@@ -155,22 +107,10 @@ section:has(.journal-preview-grid) { display: none !important; }
 
 @media (max-width: 640px) {
   .marquee { height: 48px; }
-  .marquee-track::before,
-  .marquee-track::after {
-    padding: 0 42px 0 18px;
-    font-size: 10px;
-    line-height: 48px;
-    letter-spacing: .10em;
-  }
+  .marquee-track::before,.marquee-track::after { padding: 0 42px 0 18px; font-size: 10px; line-height: 48px; letter-spacing: .10em; }
   .marquee::before,.marquee::after { width: 15vw; }
   .story-copy::after { font-size: 13px; line-height: 1.78; margin-top: 18px; }
-  .global-legal-inner {
-    width: calc(100% - 28px);
-    min-height: 0;
-    padding: 22px 0;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-  }
+  .global-legal-inner { width: calc(100% - 28px); min-height: 0; padding: 22px 0; grid-template-columns: auto 1fr; gap: 16px; }
   .global-legal-inner > span { align-self: center; }
   .global-legal-inner nav { grid-column: 1 / -1; justify-content: flex-start; gap: 12px 18px; }
   .brand-lockup .brand-mark { width: 38px; height: 38px; }
