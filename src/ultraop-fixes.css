@@ -15,43 +15,41 @@
 }
 
 /* The creator intro on the homepage should stay compact; the full history belongs to Journal. */
-.story-copy > p:not(.eyebrow) {
-  font-size: 13px;
-  line-height: 1.78;
-  margin-top: 18px;
-}
-.story-copy h2 {
-  font-size: clamp(2.65rem, 5.3vw, 5.5rem);
-}
+.story-copy > p:not(.eyebrow) { font-size:13px; line-height:1.78; margin-top:18px; }
+.story-copy h2 { font-size:clamp(2.65rem,5.3vw,5.5rem); }
 
 /* Brand rail moves right-to-left for a more natural editorial ticker. */
-.brand-track {
-  animation: ultraopBrandFlow 32s linear infinite;
-  will-change: transform;
-}
-@keyframes ultraopBrandFlow {
-  from { transform: translate3d(0,0,0); }
-  to { transform: translate3d(-50%,0,0); }
-}
+.brand-track { animation:ultraopBrandFlow 32s linear infinite; will-change:transform; }
+@keyframes ultraopBrandFlow { from { transform:translate3d(0,0,0); } to { transform:translate3d(-50%,0,0); } }
 
-/* Remove decorative counting from campaign cards; the brand name remains the visual anchor. */
-.brand-visual > span { display: none; }
+/* Remove decorative counting from campaign cards. */
+.brand-visual > span { display:none; }
 
-/* Homepage keeps the story teaser, while the detailed Journal owns the timeline, FAQ and Q&A. */
-#faq { display: none !important; }
-section:has(.journal-preview-grid) { display: none !important; }
+/* Detailed Journey owns the Q&A and journal preview; homepage stays focused. */
+#faq { display:none !important; }
+section:has(.journal-preview-grid) { display:none !important; }
 
-/* Avoid horizontal jumps on very small/mobile viewports. */
-.marquee { overflow: hidden; }
-.marquee-track > * { flex: 0 0 auto; }
+.marquee { overflow:hidden; }
+.marquee-track > * { flex:0 0 auto; }
 
 /* Extra motion polish without sacrificing accessibility. */
-.hero-copy .scroll-reveal.is-visible { animation: ultraopRevealUp .7s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--reveal-delay,0ms); }
-@keyframes ultraopRevealUp {
-  from { opacity: 0; transform: translate3d(0,18px,0); }
-  to { opacity: 1; transform: translate3d(0,0,0); }
+.hero-copy .scroll-reveal.is-visible { animation:ultraopRevealUp .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:var(--reveal-delay,0ms); }
+@keyframes ultraopRevealUp { from { opacity:0; transform:translate3d(0,18px,0); } to { opacity:1; transform:translate3d(0,0,0); } }
+
+/* Global legal strip: official mark + useful legal/contact destinations. */
+.global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
+.global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
+.global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
+.global-legal-brand img { width:34px; height:34px; display:block; }
+.global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
+.global-legal-inner a { transition:color .2s ease; }
+.global-legal-inner a:hover { color:var(--text); }
+
+@media (max-width:640px) {
+  .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
+  .global-legal-inner nav { width:100%; justify-content:flex-start; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track, .brand-track, .hero-copy .scroll-reveal.is-visible { animation: none !important; transform: none !important; }
+@media (prefers-reduced-motion:reduce) {
+  .marquee-track,.brand-track,.hero-copy .scroll-reveal.is-visible { animation:none !important; transform:none !important; }
 }
