@@ -2,14 +2,15 @@
   "name": "UltraOP — Official Creator Website",
   "short_name": "UltraOP",
   "description": "The official UltraOP creator website — channels, live content, brand work, creator journal and community.",
+  "lang": "en-IN",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
-  "theme_color": "#0b0b0b",
+  "theme_color": "#0a0a0a",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/brand/ultraop-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
