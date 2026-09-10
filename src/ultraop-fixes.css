@@ -1,32 +1,66 @@
 /* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
 
-/* True seamless marquee: two identical single sequences, joined edge-to-edge. */
+/* Seamless creator belt: short content, identical tiles, no visible restart. */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #080808;
+  border-top: 1px solid rgba(255, 100, 70, .35);
+  border-bottom: 1px solid rgba(255, 100, 70, .35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), inset 0 -1px 0 rgba(255,255,255,.025);
+}
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 11vw;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #080808 0%, rgba(8,8,8,.86) 42%, transparent 100%);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #080808 0%, rgba(8,8,8,.86) 42%, transparent 100%);
+}
 .marquee-track {
   display: flex;
   width: max-content;
   min-width: max-content;
   gap: 0;
-  animation: ultraopMarquee 30s linear infinite;
+  animation: ultraopMarquee 26s linear infinite;
   will-change: transform;
   transform: translate3d(0,0,0);
 }
 .marquee-track > * { display: none !important; }
 .marquee-track::before,
 .marquee-track::after {
-  content: 'ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY';
+  content: 'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
   display: block;
   flex: 0 0 auto;
+  width: max-content;
   white-space: nowrap;
-  padding: 17px 28px 17px 0;
-  font: 600 11px/1 'DM Mono', monospace;
-  letter-spacing: .2em;
-  color: #f0ede5;
+  padding: 15px 42px 15px 24px;
+  font: 700 11px/1 'DM Mono', monospace;
+  letter-spacing: .16em;
+  color: #f4f0e8;
+  background:
+    linear-gradient(90deg, transparent 0 9%, #ff6246 9% 10%, transparent 10% 89%, #ff6246 89% 90%, transparent 90% 100%);
+  border-left: 1px solid rgba(255,98,70,.65);
+  border-right: 1px solid rgba(255,98,70,.65);
+  position: relative;
 }
+.marquee-track::before { text-shadow: 0 0 18px rgba(255,98,70,.12); }
+.marquee-track::after { text-shadow: 0 0 18px rgba(255,98,70,.12); }
 @keyframes ultraopMarquee {
   from { transform: translate3d(0,0,0); }
   to { transform: translate3d(-50%,0,0); }
 }
-.marquee { overflow: hidden; }
 
 /* The creator intro on the homepage should stay compact; the full history belongs to Journal. */
 .story-copy > p:not(.eyebrow) { font-size:13px; line-height:1.78; margin-top:18px; }
@@ -98,6 +132,10 @@ section:has(.journal-preview-grid) { display:none !important; }
   .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
   .global-legal-inner nav { width:100%; justify-content:flex-start; }
   .brand-lockup .brand-mark { width:38px; height:38px; }
+  .marquee-track::before,
+  .marquee-track::after { padding-left:16px; padding-right:32px; font-size:10px; letter-spacing:.12em; }
+  .marquee::before,
+  .marquee::after { width:15vw; }
 }
 
 @media (prefers-reduced-motion:reduce) {
