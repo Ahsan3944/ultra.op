@@ -11,7 +11,6 @@ export const SITE = {
   discord: 'https://discord.gg/6sWsg324md',
 } as const;
 
-// Add future official YouTube channels here. Uploads playlists keep the homepage current without an API key.
 export const YOUTUBE_CHANNELS = [
   { key: 'main', id: 'UCAxlmL3_721xzOjQVe5Klbg', name: 'Ultra OP Live', handle: '@ultraoplive', url: 'https://www.youtube.com/@ultraoplive', focus: 'Live streams, Minecraft & other games', uploadsPlaylist: 'UUAxlmL3_721xzOjQVe5Klbg' },
   { key: 'roblox', id: 'UCKdJiKSiO382Hvczh_Q2kyg', name: 'Roblox UltraOP3', handle: '@ultraop3', url: 'https://www.youtube.com/@ultraop3', focus: 'Roblox adventures & multiplayer', uploadsPlaylist: 'UUKdJiKSiO382Hvczh_Q2kyg' },
@@ -19,7 +18,6 @@ export const YOUTUBE_CHANNELS = [
   { key: 'earnings', id: 'UC-KkWDruqOobwZgylSb4kwA', name: 'Op Earnings', handle: '@ultraopearnings', url: 'https://www.youtube.com/@ultraopearnings', focus: 'Creator growth, earnings & behind-the-scenes', uploadsPlaylist: 'UU-KkWDruqOobwZgylSb4kwA' },
 ] as const;
 
-// Keep all verified social, streaming and community destinations in this registry.
 export const SOCIALS = [
   { name: 'Instagram', handle: '@ultraopp', url: 'https://www.instagram.com/ultraopp/', type: 'Social' },
   { name: 'Instagram / Earnings', handle: '@op_earnings', url: 'https://www.instagram.com/op_earnings/', type: 'Social' },
@@ -32,10 +30,10 @@ export const SOCIALS = [
 ] as const;
 
 export const BRAND_CAMPAIGNS = [
-  { name: 'Amazon', type: 'Promotional Campaign', category: 'E-Commerce & Tech', year: '2023–2024', logo: 'https://cdn.simpleicons.org/amazon/ffffff' },
-  { name: 'THE FINALS', type: 'Game Launch & Esports Campaign', category: 'Competitive FPS', year: '2024', logo: 'https://cdn.simpleicons.org/thefinals/ffffff' },
+  { name: 'Amazon', type: 'Promotional Campaign', category: 'E-Commerce & Tech', year: '2023–2024', logo: 'https://cdn.simpleicons.org/amazon/FF9900' },
+  { name: 'THE FINALS', type: 'Game Launch & Esports Campaign', category: 'Competitive FPS', year: '2024', logo: 'https://cdn.simpleicons.org/thefinals/111111' },
   { name: 'Wild Stone', type: 'Creator Lifestyle Campaign', category: 'Men’s Grooming & Lifestyle', year: '2023', logo: '' },
-  { name: 'Hero', type: 'Brand Campaign', category: 'Mobility & Automotive', year: '2023–2024', logo: 'https://cdn.simpleicons.org/heromotocorp/ffffff' },
+  { name: 'Hero', type: 'Brand Campaign', category: 'Mobility & Automotive', year: '2023–2024', logo: 'https://cdn.simpleicons.org/heromotocorp/D71920' },
   { name: 'Parallel Mobile', type: 'Mobile App Campaign', category: 'Mobile Gaming & Utilities', year: '2024', logo: '' },
-  { name: 'TVS', type: 'Brand Campaign', category: 'Automotive & Lifestyle', year: '2023', logo: 'https://cdn.simpleicons.org/tvs/ffffff' },
+  { name: 'TVS', type: 'Brand Campaign', category: 'Automotive & Lifestyle', year: '2023', logo: 'https://cdn.simpleicons.org/tvs/003B73' },
 ] as const;
