@@ -26,6 +26,7 @@ export const SOCIALS = [
   { name: 'Instagram / Ahsan Now', handle: '@ahsannow', url: 'https://www.instagram.com/ahsannow/' },
   { name: 'Twitch', handle: '@ultraoplive', url: 'https://www.twitch.tv/ultraoplive' },
   { name: 'Kick', handle: '@ultra-op-live', url: 'https://kick.com/ultra-op-live' },
+  { name: 'Rooter', handle: 'UltraOP', url: 'https://www.rooter.gg/profile/142404154' },
   { name: 'Discord', handle: '6sWsg324md', url: 'https://discord.gg/6sWsg324md' },
   { name: 'WhatsApp Channel', handle: 'UltraOP', url: 'https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t' },
 ] as const;
