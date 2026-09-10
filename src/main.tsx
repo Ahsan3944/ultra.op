@@ -4,6 +4,7 @@ import './styles.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
 import { LegacyGamePage } from './LegacyGamePage';
+import { LegacyTicTacToePage } from './LegacyTicTacToePage';
 
 function Root() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -16,6 +17,7 @@ function Root() {
 
   if (path === '/games') return <LegacyHubPage kind="games" />;
   if (path === '/games/flappy-bird') return <LegacyGamePage game="flappy-bird" />;
+  if (path === '/games/tic-tac-toe') return <LegacyTicTacToePage />;
   if (path.startsWith('/games/')) return <LegacyHubPage kind="games" />;
 
   return <App />;
