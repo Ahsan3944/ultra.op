@@ -1,24 +1,38 @@
-# UltraOP — Official Gaming Creator Portal
+# UltraOP — Official Creator Website
 
-Production rebuild of the UltraOP website.
+Production website for UltraOP and creator Sk Ahsan Ahmad.
 
-## Project Direction
+## Project direction
 
-This repository is the final build target for the UltraOP website. It combines verified content and assets from the previous production website and the newer React-based reference implementation.
+This repository is the production build target for the official UltraOP creator website. It presents the creator's channels, live presence, brand work, community platforms, support options and archived journal content in a professional creator-focused experience.
 
 ### Non-negotiable data
 
-- Official YouTube channel IDs are treated as canonical identifiers and must not be changed unless explicitly instructed.
-- Verified creator, social, business, support, and brand-campaign records are preserved.
-- Existing production URLs and legacy content are considered migration references.
-- Secrets and API credentials must remain server-side/environment-only and must never be committed.
+- Official YouTube channel IDs are canonical identifiers and must not be changed unless explicitly instructed.
+- Verified creator, social, business, support and brand-campaign records are preserved.
+- Existing production URLs and legacy content are treated as migration references.
+- No games/arcade portal is part of the current website direction.
+- Secrets and API credentials must never be committed.
 
-## Planned stack
+## Stack
 
-- React + TypeScript
+- React 19 + TypeScript
 - Vite
-- Tailwind CSS
-- Node/Express API layer where required
+- Tailwind CSS v4
+- Lucide React
 - Responsive, accessibility-minded UI
-- Technical SEO and structured data
-- Production-ready routing and legacy URL mapping
+- Static-friendly routing with legacy blog support
+- Technical SEO, structured data and PWA metadata
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+```
