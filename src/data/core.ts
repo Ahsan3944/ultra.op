@@ -20,15 +20,16 @@ export const YOUTUBE_CHANNELS = [
 ] as const;
 
 // Keep all verified social, streaming and community destinations in this registry.
+// Add future platforms here; the homepage consumes this registry automatically.
 export const SOCIALS = [
-  { name: 'Instagram', handle: '@ultraopp', url: 'https://www.instagram.com/ultraopp/' },
-  { name: 'Instagram / Earnings', handle: '@op_earnings', url: 'https://www.instagram.com/op_earnings/' },
-  { name: 'Instagram / Ahsan Now', handle: '@ahsannow', url: 'https://www.instagram.com/ahsannow/' },
-  { name: 'Twitch', handle: '@ultraoplive', url: 'https://www.twitch.tv/ultraoplive' },
-  { name: 'Kick', handle: '@ultra-op-live', url: 'https://kick.com/ultra-op-live' },
-  { name: 'Rooter', handle: 'UltraOP', url: 'https://www.rooter.gg/profile/142404154' },
-  { name: 'Discord', handle: '6sWsg324md', url: 'https://discord.gg/6sWsg324md' },
-  { name: 'WhatsApp Channel', handle: 'UltraOP', url: 'https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t' },
+  { name: 'Instagram', handle: '@ultraopp', url: 'https://www.instagram.com/ultraopp/', type: 'Social' },
+  { name: 'Instagram / Earnings', handle: '@op_earnings', url: 'https://www.instagram.com/op_earnings/', type: 'Social' },
+  { name: 'Instagram / Ahsan Now', handle: '@ahsannow', url: 'https://www.instagram.com/ahsannow/', type: 'Social' },
+  { name: 'Twitch', handle: '@ultraoplive', url: 'https://www.twitch.tv/ultraoplive', type: 'Streaming' },
+  { name: 'Kick', handle: '@ultra-op-live', url: 'https://kick.com/ultra-op-live', type: 'Streaming' },
+  { name: 'Rooter', handle: 'UltraOP', url: 'https://www.rooter.gg/profile/142404154', type: 'Streaming' },
+  { name: 'Discord', handle: '6sWsg324md', url: 'https://discord.gg/6sWsg324md', type: 'Community' },
+  { name: 'WhatsApp Channel', handle: 'UltraOP', url: 'https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t', type: 'Community' },
 ] as const;
 
 export const BRAND_CAMPAIGNS = [
