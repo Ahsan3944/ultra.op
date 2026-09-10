@@ -1,0 +1,57 @@
+/* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
+
+/* Seamless marquee: the track contains two identical sequences, so one full half-width is exactly one loop. */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: max-content;
+  animation: ultraopMarquee 24s linear infinite;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+@keyframes ultraopMarquee {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-50%,0,0); }
+}
+
+/* The creator intro on the homepage should stay compact; the full history belongs to Journal. */
+.story-copy > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.78;
+  margin-top: 18px;
+}
+.story-copy h2 {
+  font-size: clamp(2.65rem, 5.3vw, 5.5rem);
+}
+
+/* Brand rail moves right-to-left for a more natural editorial ticker. */
+.brand-track {
+  animation: ultraopBrandFlow 32s linear infinite;
+  will-change: transform;
+}
+@keyframes ultraopBrandFlow {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-50%,0,0); }
+}
+
+/* Remove decorative counting from campaign cards; the brand name remains the visual anchor. */
+.brand-visual > span { display: none; }
+
+/* Homepage keeps the story teaser, while the detailed Journal owns the timeline, FAQ and Q&A. */
+#faq { display: none !important; }
+section:has(.journal-preview-grid) { display: none !important; }
+
+/* Avoid horizontal jumps on very small/mobile viewports. */
+.marquee { overflow: hidden; }
+.marquee-track > * { flex: 0 0 auto; }
+
+/* Extra motion polish without sacrificing accessibility. */
+.hero-copy .scroll-reveal.is-visible { animation: ultraopRevealUp .7s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--reveal-delay,0ms); }
+@keyframes ultraopRevealUp {
+  from { opacity: 0; transform: translate3d(0,18px,0); }
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .brand-track, .hero-copy .scroll-reveal.is-visible { animation: none !important; transform: none !important; }
+}
