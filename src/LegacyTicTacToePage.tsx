@@ -50,7 +50,7 @@ export function LegacyTicTacToePage() {
     if (!mode || board[index] || outcome || (mode === 'pvc' && turn === 'O')) return;
     const next = [...board]; next[index] = turn;
     const r = result(next);
-    if (r?.winner === 'X' || r?.winner === 'O') setWins(w => ({ ...w, [r.winner]: w[r.winner] + 1 }));
+    if (r && r.winner !== 'draw') setWins(w => ({ ...w, [r.winner]: w[r.winner] + 1 }));
     if (r) { setBoard(next); return; }
     const nextTurn = turn === 'X' ? 'O' : 'X';
     if (mode === 'pvc' && nextTurn === 'O') {
