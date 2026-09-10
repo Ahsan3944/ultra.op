@@ -13,10 +13,10 @@ export const SITE = {
 
 // Add future official YouTube channels here. Uploads playlists keep the homepage current without an API key.
 export const YOUTUBE_CHANNELS = [
-  { key: 'main', id: 'UCAxlmL3_721xzOjQVe5Klbg', name: 'Ultra OP Live', handle: '@ultraoplive', url: 'https://www.youtube.com/@ultraoplive', focus: 'Live streams, Free Fire, Minecraft & variety', uploadsPlaylist: 'UUAxlmL3_721xzOjQVe5Klbg' },
-  { key: 'earnings', id: 'UC-KkWDruqOobwZgylSb4kwA', name: 'Op Earnings', handle: '@ultraopearnings', url: 'https://www.youtube.com/@ultraopearnings', focus: 'Creator growth, earnings & behind-the-scenes', uploadsPlaylist: 'UU-KkWDruqOobwZgylSb4kwA' },
-  { key: 'minecraft', id: 'UC-ASoLp2wfxVLJFDnVXwrGA', name: 'Ultra OP 2.0', handle: '@ultraop2', url: 'https://www.youtube.com/@ultraop2', focus: 'Minecraft and the next gaming era', uploadsPlaylist: 'UU-ASoLp2wfxVLJFDnVXwrGA' },
+  { key: 'main', id: 'UCAxlmL3_721xzOjQVe5Klbg', name: 'Ultra OP Live', handle: '@ultraoplive', url: 'https://www.youtube.com/@ultraoplive', focus: 'Live streams, Minecraft & other games', uploadsPlaylist: 'UUAxlmL3_721xzOjQVe5Klbg' },
   { key: 'roblox', id: 'UCKdJiKSiO382Hvczh_Q2kyg', name: 'Roblox UltraOP3', handle: '@ultraop3', url: 'https://www.youtube.com/@ultraop3', focus: 'Roblox adventures & multiplayer', uploadsPlaylist: 'UUKdJiKSiO382Hvczh_Q2kyg' },
+  { key: 'minecraft', id: 'UC-ASoLp2wfxVLJFDnVXwrGA', name: 'Ultra OP 2.0', handle: '@ultraop2', url: 'https://www.youtube.com/@ultraop2', focus: 'Minecraft and the next gaming era', uploadsPlaylist: 'UU-ASoLp2wfxVLJFDnVXwrGA' },
+  { key: 'earnings', id: 'UC-KkWDruqOobwZgylSb4kwA', name: 'Op Earnings', handle: '@ultraopearnings', url: 'https://www.youtube.com/@ultraopearnings', focus: 'Creator growth, earnings & behind-the-scenes', uploadsPlaylist: 'UU-KkWDruqOobwZgylSb4kwA' },
 ] as const;
 
 // Keep all verified social, streaming and community destinations in this registry.
