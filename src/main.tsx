@@ -5,6 +5,15 @@ import './styles.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
 
+function recoverStaticHostPath() {
+  const key = 'ultraop:requested-path';
+  const stored = sessionStorage.getItem(key);
+  if (stored && stored !== '/') {
+    sessionStorage.removeItem(key);
+    window.history.replaceState(null, '', stored);
+  }
+}
+
 function NotFound() {
   return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center">
     <main className="shell py-20">
@@ -20,6 +29,7 @@ function NotFound() {
 }
 
 function Root() {
+  recoverStaticHostPath();
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
 
   if (path === '/blog') return <LegacyHubPage kind="blog" />;
