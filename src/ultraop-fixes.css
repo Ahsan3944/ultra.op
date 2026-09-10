@@ -1,143 +1,117 @@
 /* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
 
-/* Seamless creator belt: short content, identical tiles, no visible restart. */
+/* Seamless creator belt: compact, editorial and continuous. */
 .marquee {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  background: #080808;
-  border-top: 1px solid rgba(255, 100, 70, .35);
-  border-bottom: 1px solid rgba(255, 100, 70, .35);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), inset 0 -1px 0 rgba(255,255,255,.025);
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:#080808;
+  border-top:1px solid rgba(255,98,70,.42);
+  border-bottom:1px solid rgba(255,98,70,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 -1px 0 rgba(255,255,255,.025);
 }
-.marquee::before,
-.marquee::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 11vw;
-  z-index: 2;
-  pointer-events: none;
+.marquee::before,.marquee::after {
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:12vw;
+  z-index:2;
+  pointer-events:none;
 }
-.marquee::before {
-  left: 0;
-  background: linear-gradient(90deg, #080808 0%, rgba(8,8,8,.86) 42%, transparent 100%);
-}
-.marquee::after {
-  right: 0;
-  background: linear-gradient(270deg, #080808 0%, rgba(8,8,8,.86) 42%, transparent 100%);
-}
+.marquee::before { left:0; background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.92) 35%,transparent 100%); }
+.marquee::after { right:0; background:linear-gradient(270deg,#080808 0%,rgba(8,8,8,.92) 35%,transparent 100%); }
 .marquee-track {
-  display: flex;
-  width: max-content;
-  min-width: max-content;
-  gap: 0;
-  animation: ultraopMarquee 26s linear infinite;
-  will-change: transform;
-  transform: translate3d(0,0,0);
+  display:flex;
+  width:max-content;
+  min-width:max-content;
+  gap:0;
+  animation:ultraopMarquee 26s linear infinite;
+  will-change:transform;
+  transform:translate3d(0,0,0);
 }
-.marquee-track > * { display: none !important; }
-.marquee-track::before,
-.marquee-track::after {
-  content: 'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
-  display: block;
-  flex: 0 0 auto;
-  width: max-content;
-  white-space: nowrap;
-  padding: 15px 42px 15px 24px;
-  font: 700 11px/1 'DM Mono', monospace;
-  letter-spacing: .16em;
-  color: #f4f0e8;
-  background:
-    linear-gradient(90deg, transparent 0 9%, #ff6246 9% 10%, transparent 10% 89%, #ff6246 89% 90%, transparent 90% 100%);
-  border-left: 1px solid rgba(255,98,70,.65);
-  border-right: 1px solid rgba(255,98,70,.65);
-  position: relative;
+.marquee-track > * { display:none !important; }
+.marquee-track::before,.marquee-track::after {
+  content:'ULTRAOP  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX';
+  display:block;
+  flex:0 0 auto;
+  width:max-content;
+  white-space:nowrap;
+  padding:16px 56px 16px 24px;
+  font:700 12px/1 'DM Mono',monospace;
+  letter-spacing:.14em;
+  color:#f4f0e8;
+  border:0;
+  position:relative;
+  background:none;
+  text-shadow:0 0 16px rgba(255,98,70,.10);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%);
 }
-.marquee-track::before { text-shadow: 0 0 18px rgba(255,98,70,.12); }
-.marquee-track::after { text-shadow: 0 0 18px rgba(255,98,70,.12); }
+.marquee-track::before::first-letter,.marquee-track::after::first-letter { color:#ff6246; }
 @keyframes ultraopMarquee {
-  from { transform: translate3d(0,0,0); }
-  to { transform: translate3d(-50%,0,0); }
+  from { transform:translate3d(0,0,0); }
+  to { transform:translate3d(-50%,0,0); }
 }
 
-/* The creator intro on the homepage should stay compact; the full history belongs to Journal. */
+/* Slim orange chain/belt details without visual clutter. */
+.marquee-track::after { box-shadow:inset 0 0 0 1px rgba(255,98,70,.08); }
+.marquee-track::before { box-shadow:inset 0 0 0 1px rgba(255,98,70,.08); }
+
+/* Compact creator intro; full history remains on Journal. */
 .story-copy > p:not(.eyebrow) { font-size:13px; line-height:1.78; margin-top:18px; }
 .story-copy h2 { font-size:clamp(2.65rem,5.3vw,5.5rem); }
 
-/* Brand rail moves right-to-left for a more natural editorial ticker. */
+/* Brand rail moves right-to-left. */
 .brand-track { animation:ultraopBrandFlow 32s linear infinite; will-change:transform; }
 @keyframes ultraopBrandFlow { from { transform:translate3d(0,0,0); } to { transform:translate3d(-50%,0,0); } }
-
-/* Remove decorative counting from campaign cards. */
 .brand-visual > span { display:none; }
 
-/* Detailed Journey owns the Q&A and journal preview; homepage stays focused. */
+/* Homepage stays focused; detailed Q&A/journal live on Journal. */
 #faq { display:none !important; }
 section:has(.journal-preview-grid) { display:none !important; }
 
-/* Keep exactly one footer: the global legal footer contains the official mark and legal navigation. */
+/* Keep exactly one footer. */
 .site-footer { display:none !important; }
 .global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
 .global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
 .global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
-.global-legal-brand img {
-  width:40px;
-  height:40px;
-  object-fit:contain;
-  content:url('/brand/ultraop-mark.svg?v=20260911');
-}
+.global-legal-brand img { width:40px; height:40px; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); }
 .global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
 .global-legal-inner a { transition:color .2s ease; }
 .global-legal-inner a:hover { color:var(--text); }
 
-/* Make the supplied UltraOP mark the clear source of truth in the header. */
-.brand-lockup .brand-mark {
-  width:40px;
-  height:40px;
-  display:block;
-  object-fit:contain;
-  content:url('/brand/ultraop-mark.svg?v=20260911');
-  filter:drop-shadow(0 5px 16px rgba(0,0,0,.45));
-}
+/* Official UltraOP mark in the header. */
+.brand-lockup .brand-mark { width:40px; height:40px; display:block; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); filter:drop-shadow(0 5px 16px rgba(0,0,0,.45)); }
 .brand-lockup > span { display:none; }
 
-/* Contrast pass: avoid muted-on-muted text. */
-.desktop-nav button,
-.menu-toggle { color:#c2beb6; }
-.desktop-nav button:hover { color:#fff; }
-.hero-lede,
-.section-intro,
-.channel-focus,
-.future-note,
-.story-copy > p:not(.eyebrow),
-.community-heading .section-intro,
-.contact-inner > p:not(.eyebrow),
-.brand-copy p,
-.journal-preview-card p,
-.site-footer p { color:#b2aea6; }
-.hero-meta { color:#908c84; }
+/* Navigation: clearer labels + animated active-page/section indicator. */
+.desktop-nav button { color:#c8c4bc; font-size:10px; font-weight:700; letter-spacing:.12em; position:relative; transition:color .2s ease,transform .2s ease; }
+.desktop-nav button::after { content:''; position:absolute; left:0; right:0; bottom:-10px; height:2px; background:#ff6246; transform:scaleX(0); transform-origin:center; transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease; opacity:0; }
+.desktop-nav button:hover { color:#fff; transform:translateY(-1px); }
+.desktop-nav button.is-active { color:#fff; }
+.desktop-nav button.is-active::after { transform:scaleX(1); opacity:1; box-shadow:0 0 12px rgba(255,98,70,.45); }
+.menu-toggle { color:#c8c4bc; }
+
+/* Contrast pass. */
+.hero-lede,.section-intro,.channel-focus,.future-note,.story-copy > p:not(.eyebrow),.community-heading .section-intro,.contact-inner > p:not(.eyebrow),.brand-copy p,.journal-preview-card p,.site-footer p { color:#b7b2aa; }
+.hero-meta { color:#918c84; }
 .hero-meta b { color:#f4f1e9; }
-.channel-handle,
-.brand-copy > .mono,
-.future-note .mono,
-.footer-meta { color:#8d8981; }
-.channel-platform,
-.hero-stamp strong,
-.hero-name span { color:#e2ded6; }
+.channel-handle,.brand-copy > .mono,.future-note .mono,.footer-meta { color:#969189; }
+.channel-platform,.hero-stamp strong,.hero-name span { color:#e4e0d8; }
 .live-inner > p { color:#171717; }
 
 @media (max-width:640px) {
   .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
   .global-legal-inner nav { width:100%; justify-content:flex-start; }
   .brand-lockup .brand-mark { width:38px; height:38px; }
-  .marquee-track::before,
-  .marquee-track::after { padding-left:16px; padding-right:32px; font-size:10px; letter-spacing:.12em; }
-  .marquee::before,
-  .marquee::after { width:15vw; }
+  .marquee-track::before,.marquee-track::after { padding-left:16px; padding-right:32px; font-size:10px; letter-spacing:.11em; }
+  .marquee::before,.marquee::after { width:15vw; }
+  .desktop-nav button { font-size:9px; }
+  .desktop-nav button::after { bottom:-7px; }
 }
 
 @media (prefers-reduced-motion:reduce) {
   .marquee-track,.brand-track,.hero-copy .scroll-reveal.is-visible { animation:none !important; transform:none !important; }
+  .desktop-nav button::after { transition:none; }
 }
