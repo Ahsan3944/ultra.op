@@ -7,8 +7,10 @@ import './ultraop-responsive.css';
 import './ultraop-fixes.css';
 import './creator-pages.css';
 import './creator-home-overrides.css';
+import './creator-home.css';
 import './gallery-pages.css';
 import App from './App';
+import CreatorHome from './CreatorHome';
 import { LegacyHubPage } from './LegacyHubPage';
 import { JournalPage } from './JournalPage';
 import { AboutPage, ChannelsPage, LivePage, CommunityPage, WorkPage, ContactPage, JournalLandingPage, Creator404 } from './CreatorPages';
@@ -33,8 +35,7 @@ function installHomepageEnhancements() {
   }; if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 }
 
-function NotFound() { return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center"><main className="shell py-20"><div className="eyebrow mb-4">404 / Page not found</div><h1 className="display text-[clamp(4rem,12vw,9rem)] font-extrabold">WRONG<br/><span className="text-[var(--accent)]">TURN.</span></h1><p className="mt-7 max-w-xl text-base leading-8 text-[var(--muted)]">That UltraOP page does not exist.</p><div className="mt-8 flex flex-wrap gap-3"><a href="/" className="px-5 py-3.5 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2"><ArrowLeft size={14}/> Back home</a><a href="/journal/" className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Open journal</a></div></main></div>; }
-function Root() { recoverStaticHostPath(); const path = window.location.pathname.replace(/\/+$/, '') || '/'; if (path === '/about') return <AboutPage/>; if (path === '/channels') return <ChannelsPage/>; if (path === '/live') return <LivePage/>; if (path === '/community') return <CommunityPage/>; if (path === '/work') return <WorkPage/>; if (path === '/contact') return <ContactPage/>; if (path === '/journal') return <JournalLandingPage/>; if (path === '/journal-full') return <JournalPage/>; if (path === '/fan-art') return <FanArtPage/>; if (path === '/assets') return <AssetsPage/>; if (path === '/blog') return <LegacyHubPage kind="blog"/>; if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug}/>; } if (path !== '/') return <Creator404/>; return <App/>; }
+function Root() { recoverStaticHostPath(); const path = window.location.pathname.replace(/\/+$/, '') || '/'; if (path === '/about') return <AboutPage/>; if (path === '/channels') return <ChannelsPage/>; if (path === '/live') return <LivePage/>; if (path === '/community') return <CommunityPage/>; if (path === '/work') return <WorkPage/>; if (path === '/contact') return <ContactPage/>; if (path === '/journal') return <JournalLandingPage/>; if (path === '/journal-full') return <JournalPage/>; if (path === '/fan-art') return <FanArtPage/>; if (path === '/assets') return <AssetsPage/>; if (path === '/blog') return <LegacyHubPage kind="blog"/>; if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug}/>; } if (path !== '/') return <Creator404/>; return <CreatorHome/>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><Root/></React.StrictMode>);
 installHomepageEnhancements();
 installGalleryNav();
