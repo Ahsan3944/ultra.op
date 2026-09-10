@@ -8,6 +8,7 @@ import './ultraop-fixes.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
 import { JournalPage } from './JournalPage';
+import { AboutPage, ChannelsPage, LivePage, CommunityPage, WorkPage, ContactPage, JournalLandingPage, Creator404 } from './CreatorPages';
 
 function recoverStaticHostPath() {
   const key = 'ultraop:requested-path';
@@ -61,13 +62,10 @@ function installHomepageEnhancements() {
   const start = () => {
     const root = document.getElementById('root');
     if (!root) return;
-
     let activeListener: (() => void) | null = null;
     let liveSetupStarted = false;
     let orderApplied = false;
-
     const findCard = (name: string) => Array.from(document.querySelectorAll<HTMLElement>('.channel-video-card')).find(card => card.querySelector('h3')?.textContent?.trim() === name) ?? null;
-
     const applyChannelOrder = () => {
       if (orderApplied) return;
       const grid = document.querySelector<HTMLElement>('.channel-grid');
@@ -77,24 +75,20 @@ function installHomepageEnhancements() {
       if (cards.some(card => !card)) return;
       const wrappers = cards.map(card => card?.closest<HTMLElement>('.scroll-reveal') ?? card!);
       wrappers.forEach(wrapper => grid.appendChild(wrapper));
-      const mainCard = cards[0];
-      const focus = mainCard?.querySelector<HTMLElement>('.channel-focus');
+      const focus = cards[0]?.querySelector<HTMLElement>('.channel-focus');
       if (focus) focus.textContent = 'Live streams, Minecraft & other games';
       orderApplied = true;
     };
-
     const setupLiveChannel = () => {
       if (liveSetupStarted) return;
       const mainCard = findCard('Ultra OP Live');
       const frame = mainCard?.querySelector<HTMLIFrameElement>('iframe');
       if (!frame) return;
       liveSetupStarted = true;
-
       const liveChannelId = 'UCAxlmL3_721xzOjQVe5Klbg';
       frame.src = `https://www.youtube.com/embed/live_stream?channel=${liveChannelId}&rel=0&modestbranding=1`;
       frame.dataset.liveOnly = 'true';
       frame.title = 'Ultra OP Live — current live stream';
-
       window.setTimeout(async () => {
         if (frame.dataset.liveOnly !== 'true') return;
         const videoId = await loadLatestNonShortVideo(liveChannelId);
@@ -104,13 +98,11 @@ function installHomepageEnhancements() {
         frame.title = 'Ultra OP Live — latest video';
       }, 12000);
     };
-
     let applied = false;
     const apply = () => {
       applyChannelOrder();
       setupLiveChannel();
       if (applied) return;
-
       const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.desktop-nav button'));
       const ids = ['home', 'channels', 'live', 'story', 'community', 'journal', 'contact'];
       navButtons.forEach((button, index) => button.dataset.section = ids[index] ?? '');
@@ -126,56 +118,35 @@ function installHomepageEnhancements() {
       activeListener = () => window.removeEventListener('scroll', updateActive);
       applied = true;
     };
-
     apply();
-    const observer = new MutationObserver(() => {
-      if (!orderApplied || !liveSetupStarted) apply();
-    });
+    const observer = new MutationObserver(() => { if (!orderApplied || !liveSetupStarted) apply(); });
     observer.observe(root, { childList: true, subtree: true });
     window.setTimeout(apply, 250);
     window.setTimeout(apply, 1000);
-    window.addEventListener('beforeunload', () => {
-      observer.disconnect();
-      activeListener?.();
-    }, { once: true });
+    window.addEventListener('beforeunload', () => { observer.disconnect(); activeListener?.(); }, { once: true });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
 }
 
-function NotFound() {
-  return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center">
-    <main className="shell py-20">
-      <div className="eyebrow mb-4">404 / Page not found</div>
-      <h1 className="display text-[clamp(4rem,12vw,9rem)] font-extrabold">WRONG<br/><span className="text-[var(--accent)]">TURN.</span></h1>
-      <p className="mt-7 max-w-xl text-base leading-8 text-[var(--muted)]">That UltraOP page does not exist. Head back to the official creator homepage or open the journal.</p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href="/" className="px-5 py-3.5 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2"><ArrowLeft size={14}/> Back home</a>
-        <a href="/journal/" className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Open journal</a>
-      </div>
-    </main>
-  </div>;
-}
+function NotFound() { return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center"><main className="shell py-20"><div className="eyebrow mb-4">404 / Page not found</div><h1 className="display text-[clamp(4rem,12vw,9rem)] font-extrabold">WRONG<br/><span className="text-[var(--accent)]">TURN.</span></h1><p className="mt-7 max-w-xl text-base leading-8 text-[var(--muted)]">That UltraOP page does not exist.</p><div className="mt-8 flex flex-wrap gap-3"><a href="/" className="px-5 py-3.5 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2"><ArrowLeft size={14}/> Back home</a><a href="/journal/" className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Open journal</a></div></main></div>; }
 
 function Root() {
   recoverStaticHostPath();
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
-
-  if (path === '/journal') return <JournalPage />;
+  if (path === '/about') return <AboutPage />;
+  if (path === '/channels') return <ChannelsPage />;
+  if (path === '/live') return <LivePage />;
+  if (path === '/community') return <CommunityPage />;
+  if (path === '/work') return <WorkPage />;
+  if (path === '/contact') return <ContactPage />;
+  if (path === '/journal') return <JournalLandingPage />;
+  if (path === '/journal-full') return <JournalPage />;
   if (path === '/blog') return <LegacyHubPage kind="blog" />;
-  if (path.startsWith('/blog/')) {
-    const slug = path.slice('/blog/'.length).split('/')[0];
-    return <LegacyHubPage kind="blog" slug={slug} />;
-  }
-  if (path !== '/') return <NotFound />;
-
+  if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug} />; }
+  if (path !== '/') return <Creator404 />;
   return <App />;
 }
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>
-);
-
+createRoot(document.getElementById('root')!).render(<React.StrictMode><Root /></React.StrictMode>);
 installHomepageEnhancements();
