@@ -70,7 +70,7 @@ function ChannelCard({ channel, index }: { channel: typeof YOUTUBE_CHANNELS[numb
 }
 
 function SocialCard({ social }: { social: typeof SOCIALS[number] }) {
-  return <a href={social.url} target="_blank" rel="noopener noreferrer" className="social-card"><span className="social-dot"/><div className="social-copy"><strong>{social.name}</strong><span>{social.handle}</span></div><ArrowUpRight size={16} className="social-arrow"/></a>;
+  return <a href={social.url} target="_blank" rel="noopener noreferrer" className="social-card" aria-label={`${social.name} — ${social.handle}`}><span className="social-dot"/><div className="social-copy"><strong>{social.name}</strong><span>{social.handle}</span></div><span className="social-type">{social.type}</span><ArrowUpRight size={16} className="social-arrow"/></a>;
 }
 
 function App() {
