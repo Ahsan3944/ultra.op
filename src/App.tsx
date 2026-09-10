@@ -1,5 +1,5 @@
-import { useEffect, useState, type ReactNode } from 'react';
-import { ArrowDownRight, ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Play, Users, X, Youtube } from 'lucide-react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { ArrowDownRight, ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Play, Youtube } from 'lucide-react';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS } from './data/core';
 import { LEGACY_BLOG_POSTS } from './data/legacyContent';
 
@@ -32,8 +32,9 @@ function CreatorPhoto({ className = '', alt = 'Sk Ahsan Ahmad — UltraOP creato
 
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const el = document.getElementById(`reveal-${Math.random().toString(36).slice(2)}`);
+    const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -44,8 +45,7 @@ function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  const id = `reveal-${Math.random().toString(36).slice(2)}`;
-  return <div id={id} className={`${visible ? 'is-visible' : ''} scroll-reveal ${className}`} style={{ '--reveal-delay': `${delay}ms` } as React.CSSProperties}>{children}</div>;
+  return <div ref={ref} className={`${visible ? 'is-visible' : ''} scroll-reveal ${className}`} style={{ '--reveal-delay': `${delay}ms` } as CSSProperties}>{children}</div>;
 }
 
 function BrandMark() {
@@ -112,7 +112,7 @@ function App() {
             <Reveal delay={80}><h1>THIS IS<br/><span>ULTRAOP.</span></h1></Reveal>
             <Reveal delay={150}><p className="hero-lede">{SITE.creator} creates gaming stories, live moments and creator-led content across a growing network of channels and communities.</p></Reveal>
             <Reveal delay={220}><div className="hero-cta"><button className="button button-primary" onClick={() => scrollTo('channels')}>Explore the channels <ArrowDownRight size={15}/></button><a className="button button-ghost" href={SITE.youtube} target="_blank" rel="noopener noreferrer">Watch on YouTube <Youtube size={15}/></a></div></Reveal>
-            <Reveal delay={290}><div className="hero-meta"><span><b>04</b> official YouTube channels</span><span><b>08</b> verified platforms</span><span><b>01</b> creator universe</span></div></Reveal>
+            <Reveal delay={290}><div className="hero-meta"><span><b>{String(YOUTUBE_CHANNELS.length).padStart(2, '0')}</b> official YouTube channels</span><span><b>{String(SOCIALS.length).padStart(2, '0')}</b> verified platforms</span><span><b>01</b> creator universe</span></div></Reveal>
           </div>
           <Reveal className="hero-visual" delay={120}>
             <div className="hero-photo-wrap"><CreatorPhoto className="hero-photo"/><div className="hero-photo-overlay"/><div className="hero-photo-grain"/>
