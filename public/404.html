@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>UltraOP</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var key = 'ultraop:requested-path';
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        if (path && path !== '/') sessionStorage.setItem(key, path);
+        window.location.replace('/');
+      })();
+    </script>
+  </body>
+</html>
