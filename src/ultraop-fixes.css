@@ -1,18 +1,40 @@
 /* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
 
-/* Seamless marquee: the track contains two identical sequences, so one full half-width is exactly one loop. */
+/*
+ * True seamless marquee.
+ * The original DOM already contains one repeated sequence. Instead of animating
+ * those individual nodes, hide them and render two identical generated tracks.
+ * Because both generated halves are exactly the same width, -50% lands on the
+ * exact next frame with no stop, reverse motion or visible reset.
+ */
 .marquee-track {
   display: flex;
   width: max-content;
   min-width: max-content;
-  animation: ultraopMarquee 24s linear infinite;
+  gap: 0;
+  animation: ultraopMarquee 30s linear infinite;
   will-change: transform;
   transform: translate3d(0,0,0);
 }
+.marquee-track > * { display: none !important; }
+.marquee-track::before,
+.marquee-track::after {
+  content: 'ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY  •  ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY';
+  display: block;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 17px 28px 17px 0;
+  font: 600 11px/1 'DM Mono', monospace;
+  letter-spacing: .2em;
+  color: var(--text);
+}
+.marquee-track::before { color: #f0ede5; }
+.marquee-track::after { color: #f0ede5; }
 @keyframes ultraopMarquee {
   from { transform: translate3d(0,0,0); }
   to { transform: translate3d(-50%,0,0); }
 }
+.marquee { overflow: hidden; }
 
 /* The creator intro on the homepage should stay compact; the full history belongs to Journal. */
 .story-copy > p:not(.eyebrow) { font-size:13px; line-height:1.78; margin-top:18px; }
@@ -29,18 +51,46 @@
 #faq { display:none !important; }
 section:has(.journal-preview-grid) { display:none !important; }
 
-.marquee { overflow:hidden; }
-.marquee-track > * { flex:0 0 auto; }
+/* Make the supplied UltraOP mark the clear source of truth in the chrome. */
+.brand-lockup .brand-mark {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 16px rgba(0,0,0,.45));
+}
+.brand-lockup > span { display: none; }
+.global-legal-brand img { width: 40px; height: 40px; object-fit: contain; }
 
-/* Extra motion polish without sacrificing accessibility. */
-.hero-copy .scroll-reveal.is-visible { animation:ultraopRevealUp .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:var(--reveal-delay,0ms); }
-@keyframes ultraopRevealUp { from { opacity:0; transform:translate3d(0,18px,0); } to { opacity:1; transform:translate3d(0,0,0); } }
+/* Contrast pass: avoid muted-on-muted text, especially on dark editorial surfaces. */
+.desktop-nav button,
+.menu-toggle { color: #c2beb6; }
+.desktop-nav button:hover { color: #fff; }
+.hero-lede,
+.section-intro,
+.channel-focus,
+.future-note,
+.story-copy > p:not(.eyebrow),
+.community-heading .section-intro,
+.contact-inner > p:not(.eyebrow),
+.brand-copy p,
+.journal-preview-card p,
+.site-footer p { color: #b2aea6; }
+.hero-meta { color: #908c84; }
+.hero-meta b { color: #f4f1e9; }
+.channel-handle,
+.brand-copy > .mono,
+.future-note .mono,
+.footer-meta { color: #8d8981; }
+.channel-platform,
+.hero-stamp strong,
+.hero-name span { color: #e2ded6; }
+.live-inner > p { color: #171717; }
 
 /* Global legal strip: official mark + useful legal/contact destinations. */
 .global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
 .global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
 .global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
-.global-legal-brand img { width:34px; height:34px; display:block; }
 .global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
 .global-legal-inner a { transition:color .2s ease; }
 .global-legal-inner a:hover { color:var(--text); }
@@ -48,6 +98,7 @@ section:has(.journal-preview-grid) { display:none !important; }
 @media (max-width:640px) {
   .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
   .global-legal-inner nav { width:100%; justify-content:flex-start; }
+  .brand-lockup .brand-mark { width:38px; height:38px; }
 }
 
 @media (prefers-reduced-motion:reduce) {
