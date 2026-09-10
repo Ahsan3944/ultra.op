@@ -1,71 +1,18 @@
 /* Final homepage polish overrides. */
-
-/* Premium creator-network belt. */
-.marquee { position:relative; display:flex; align-items:center; width:100%; height:78px; overflow:hidden; isolation:isolate; background:#050505; border-top:1px solid rgba(255,98,70,.68); border-bottom:1px solid rgba(255,98,70,.68); }
-.marquee::before { content:'ULTRAOP'; position:absolute; left:0; top:0; bottom:0; width:168px; z-index:4; display:flex; align-items:center; justify-content:center; background:#050505; border-right:1px solid rgba(255,98,70,.5); color:#ff6246; font:900 14px/1 'DM Mono',monospace; letter-spacing:.18em; box-shadow:18px 0 34px rgba(0,0,0,.75); }
-.marquee::after { content:''; position:absolute; right:0; top:0; bottom:0; width:13vw; z-index:3; pointer-events:none; background:linear-gradient(270deg,#050505 0%,rgba(5,5,5,.9) 38%,transparent 100%); }
-.marquee-track { display:flex !important; width:max-content !important; min-width:max-content !important; gap:0 !important; align-items:center; padding-left:168px; animation:ultraopTicker 34s linear infinite !important; will-change:transform; transform:translate3d(0,0,0); }
-.marquee-track > * { display:none !important; }
-.marquee-track::before,.marquee-track::after { content:'GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  COMMUNITY  •  GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  COMMUNITY  •  '; display:block; flex:0 0 auto; width:max-content; white-space:nowrap; padding:0 54px; color:#f0ece4; font:800 14px/78px 'DM Mono',monospace; letter-spacing:.105em; background:transparent; border:0; box-shadow:none; }
-@keyframes ultraopTicker { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
-
-.story-copy > p:not(.eyebrow) { display:none !important; }
-.story-copy::after { content:'I started with PUBG, moved through competitive esports and the Rooter streaming community, then built a YouTube-first creator career. Today I focus on Minecraft and gaming content while developing new channels, story-led videos and technology projects. UltraOP brings gaming, storytelling, community and building together.'; display:block; max-width:760px; margin-top:22px; color:#b7b2aa; font-size:15px; line-height:1.9; }
-.story-copy h2 { font-size:clamp(2.65rem,5.3vw,5.5rem); }
-.brand-track { animation:ultraopBrandFlow 32s linear infinite; will-change:transform; }
-@keyframes ultraopBrandFlow { from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
-.brand-visual > span { display:none; }
-#faq { display:none !important; }
-section:has(.journal-preview-grid) { display:none !important; }
-.site-footer { display:none !important; }
-.global-legal-footer { border-top:1px solid rgba(255,98,70,.45); background:#020202; color:#9b968e; }
-.global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:94px; margin:auto; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:24px; font:500 10px/1.5 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.09em; }
-.global-legal-brand { display:inline-flex; align-items:center; }
-.global-legal-brand img { width:42px; height:42px; display:block; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); }
-.global-legal-inner > span { color:#77726b; }
-.global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px 22px; }
-.global-legal-inner a { color:inherit; transition:color .2s ease; }
-.global-legal-inner nav a:hover { color:#f4f1e9; }
-.brand-lockup .brand-mark { width:40px; height:40px; display:block; object-fit:contain; content:url('/brand/ultraop-mark.svg?v=20260911'); filter:drop-shadow(0 5px 16px rgba(0,0,0,.45)); }
-.brand-lockup > span { display:none; }
-.desktop-nav button { color:#c8c4bc; font-size:10px; font-weight:700; letter-spacing:.12em; position:relative; transition:color .2s ease,transform .2s ease; }
-.desktop-nav button::after { content:''; position:absolute; left:0; right:0; bottom:-10px; height:2px; background:#ff6246; transform:scaleX(0); transform-origin:center; transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease; opacity:0; }
-.desktop-nav button:hover { color:#fff; transform:translateY(-1px); }
-.desktop-nav button.is-active { color:#fff; }
-.desktop-nav button.is-active::after { transform:scaleX(1); opacity:1; box-shadow:0 0 12px rgba(255,98,70,.45); }
-.hero-lede,.section-intro,.channel-focus,.future-note,.story-copy::after,.community-heading .section-intro,.contact-inner > p:not(.eyebrow),.brand-copy p { color:#b7b2aa; }
-.hero-meta { color:#918c84; }
-.hero-meta b { color:#f4f1e9; }
-.channel-handle,.brand-copy > .mono,.future-note .mono,.footer-meta { color:#969189; }
-.channel-platform,.hero-stamp strong,.hero-name span { color:#e4e0d8; }
-
-/* Live destination buttons: recognizable platform colors without losing the editorial layout. */
-.live-links { gap:8px; }
-.live-links a { position:relative; min-height:50px; padding:15px 20px; border:1px solid rgba(0,0,0,.12); border-radius:2px; box-shadow:0 8px 22px rgba(0,0,0,.12); transition:transform .25s ease,filter .25s ease,box-shadow .25s ease; }
-.live-links a:hover { transform:translateY(-4px); filter:brightness(1.08); box-shadow:0 14px 30px rgba(0,0,0,.2); }
-.live-links a:nth-child(1) { background:#ff0000; color:#fff; }
-.live-links a:nth-child(2) { background:#9146ff; color:#fff; }
-.live-links a:nth-child(3) { background:#53fc18; color:#080808; }
-.live-links a:nth-child(4) { background:#ff6b35; color:#fff; }
-.live-links a svg { flex:0 0 auto; }
-.live-pulse { background:#e10600; box-shadow:0 0 0 0 rgba(225,6,0,.5); animation:ultraopLivePulse 1.7s infinite; }
-@keyframes ultraopLivePulse { 0%{box-shadow:0 0 0 0 rgba(225,6,0,.55)} 70%{box-shadow:0 0 0 9px rgba(225,6,0,0)} 100%{box-shadow:0 0 0 0 rgba(225,6,0,0)} }
-
-@media (max-width:640px) {
-  .marquee { height:58px; }
-  .marquee::before { width:108px; font-size:11px; letter-spacing:.14em; }
-  .marquee::after { width:18vw; }
-  .marquee-track { padding-left:108px; animation-duration:28s !important; }
-  .marquee-track::before,.marquee-track::after { padding:0 38px; font-size:10px; line-height:58px; letter-spacing:.08em; }
-  .story-copy::after { font-size:13px; line-height:1.78; margin-top:18px; }
-  .global-legal-inner { width:calc(100% - 28px); min-height:0; padding:22px 0; grid-template-columns:auto 1fr; gap:16px; }
-  .global-legal-inner > span { align-self:center; }
-  .global-legal-inner nav { grid-column:1 / -1; justify-content:flex-start; gap:12px 18px; }
-  .brand-lockup .brand-mark { width:38px; height:38px; }
-  .desktop-nav button { font-size:9px; }
-  .desktop-nav button::after { bottom:-7px; }
-  .live-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
-  .live-links a { justify-content:center; padding:14px 10px; min-height:48px; }
-}
-
-@media (prefers-reduced-motion:reduce) { .marquee-track,.brand-track { animation:none !important; transform:none !important; } .desktop-nav button::after { transition:none; } }
+.marquee{position:relative;display:flex;align-items:center;width:100%;height:64px;overflow:hidden;isolation:isolate;background:#111;border-top:1px solid #ff6747;border-bottom:1px solid #ff6747}
+.marquee::before{content:'ULTRAOP';position:absolute;left:0;top:0;bottom:0;width:118px;z-index:4;display:flex;align-items:center;justify-content:center;background:#111;color:#ff6747;font:900 12px/1 'DM Mono',monospace;letter-spacing:.16em;border-right:1px solid #302b27;box-shadow:14px 0 28px rgba(0,0,0,.6)}
+.marquee::after{content:'';position:absolute;right:0;top:0;bottom:0;width:90px;z-index:3;pointer-events:none;background:linear-gradient(90deg,transparent,#111)}
+.marquee-track{display:flex!important;width:max-content!important;min-width:max-content!important;gap:0!important;align-items:center;padding-left:118px;animation:ultraopTicker 30s linear infinite!important;will-change:transform;transform:translate3d(0,0,0)}
+.marquee-track>*{display:none!important}
+.marquee-track::before,.marquee-track::after{content:'GAMER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  COMMUNITY  •  ';display:block;flex:0 0 auto;width:max-content;white-space:nowrap;padding:0 42px;color:#f4f0e8;font:800 13px/64px 'DM Mono',monospace;letter-spacing:.09em;background:transparent;border:0;box-shadow:none}
+@keyframes ultraopTicker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.story-copy>p:not(.eyebrow){display:none!important}.story-copy::after{content:'I started with PUBG, moved through competitive esports and the Rooter streaming community, then built a YouTube-first creator career. Today I focus on Minecraft and gaming content while developing new channels, story-led videos and technology projects. UltraOP brings gaming, storytelling, community and building together.';display:block;max-width:760px;margin-top:22px;color:#6f6b63;font-size:15px;line-height:1.9}.story-copy h2{font-size:clamp(2.65rem,5.3vw,5.5rem)}
+.brand-track{animation:ultraopBrandFlow 32s linear infinite;will-change:transform}@keyframes ultraopBrandFlow{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}.brand-visual>span{display:none}
+#faq,section:has(.journal-preview-grid),.site-footer{display:none!important}
+.global-legal-footer{border-top:1px solid #ff6747;background:#111;color:#9b968e}.global-legal-inner{width:min(var(--max),calc(100% - 48px));min-height:82px;margin:auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;font:500 9px/1.5 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.09em}.global-legal-brand{display:inline-flex;align-items:center}.global-legal-brand img{width:38px;height:38px;display:block;object-fit:contain;content:url('/brand/ultraop-mark.svg?v=20260911')}.global-legal-inner>span{color:#77726b}.global-legal-inner nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 22px}.global-legal-inner a{color:inherit;transition:color .2s ease}.global-legal-inner nav a:hover{color:#f4f1e9}
+.brand-lockup .brand-mark{width:40px;height:40px;display:block;object-fit:contain;content:url('/brand/ultraop-mark.svg?v=20260911');filter:drop-shadow(0 5px 16px rgba(255,103,71,.2))}.brand-lockup>span{display:none}.desktop-nav button{color:#4e4a43;font-size:10px;font-weight:700;letter-spacing:.12em;position:relative;transition:color .2s ease,transform .2s ease}.desktop-nav button::after{content:'';position:absolute;left:0;right:0;bottom:-10px;height:2px;background:#ff6747;transform:scaleX(0);transform-origin:center;transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease;opacity:0}.desktop-nav button:hover{color:#111;transform:translateY(-1px)}.desktop-nav button.is-active{color:#111}.desktop-nav button.is-active::after{transform:scaleX(1);opacity:1;box-shadow:0 0 12px rgba(255,103,71,.45)}
+.hero-lede,.section-intro,.channel-focus,.future-note,.story-copy::after,.community-heading .section-intro,.contact-inner>p:not(.eyebrow),.brand-copy p{color:#6f6b63}.hero-meta{color:#918c84}.hero-meta b{color:#171512}.channel-handle,.brand-copy>.mono,.future-note .mono,.footer-meta{color:#969189}.channel-platform,.hero-stamp strong,.hero-name span{color:#3f3a34}
+.live-links{gap:8px}.live-links a{position:relative;min-height:50px;padding:15px 20px;border:1px solid rgba(0,0,0,.12);border-radius:2px;box-shadow:0 8px 22px rgba(0,0,0,.12);transition:transform .25s ease,filter .25s ease,box-shadow .25s ease}.live-links a:hover{transform:translateY(-4px);filter:brightness(1.08);box-shadow:0 14px 30px rgba(0,0,0,.2)}.live-links a:nth-child(1){background:#ff0000;color:#fff}.live-links a:nth-child(2){background:#9146ff;color:#fff}.live-links a:nth-child(3){background:#53fc18;color:#080808}.live-links a:nth-child(4){background:#ff6b35;color:#fff}.live-links a svg{flex:0 0 auto}.live-pulse{background:#e10600;box-shadow:0 0 0 0 rgba(225,6,0,.5);animation:ultraopLivePulse 1.7s infinite}@keyframes ultraopLivePulse{0%{box-shadow:0 0 0 0 rgba(225,6,0,.55)}70%{box-shadow:0 0 0 9px rgba(225,6,0,0)}100%{box-shadow:0 0 0 0 rgba(225,6,0,0)}}
+body:has(.creator-page)>.global-legal-footer{display:none!important}
+@media(max-width:640px){.marquee{height:50px}.marquee::before{width:88px;font-size:10px}.marquee::after{width:55px}.marquee-track{padding-left:88px;animation-duration:25s!important}.marquee-track::before,.marquee-track::after{padding:0 28px;font-size:10px;line-height:50px;letter-spacing:.065em}.story-copy::after{font-size:13px;line-height:1.78;margin-top:18px}.global-legal-inner{width:calc(100% - 28px);min-height:0;padding:22px 0;grid-template-columns:auto 1fr;gap:16px}.global-legal-inner>span{align-self:center}.global-legal-inner nav{grid-column:1/-1;justify-content:flex-start;gap:12px 18px}.brand-lockup .brand-mark{width:38px;height:38px}.desktop-nav button{font-size:9px}.desktop-nav button::after{bottom:-7px}.live-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.live-links a{justify-content:center;padding:14px 10px;min-height:48px}}
+@media(prefers-reduced-motion:reduce){.marquee-track,.brand-track{animation:none!important;transform:none!important}.desktop-nav button::after{transition:none}}
