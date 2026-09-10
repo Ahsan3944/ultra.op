@@ -3,9 +3,6 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
-import { LegacyGamePage } from './LegacyGamePage';
-import { LegacyTicTacToePage } from './LegacyTicTacToePage';
-import { LegacyFreeBlockPuzzlePage } from './LegacyFreeBlockPuzzlePage';
 
 function Root() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -15,12 +12,6 @@ function Root() {
     const slug = path.slice('/blog/'.length).split('/')[0];
     return <LegacyHubPage kind="blog" slug={slug} />;
   }
-
-  if (path === '/games') return <LegacyHubPage kind="games" />;
-  if (path === '/games/flappy-bird') return <LegacyGamePage game="flappy-bird" />;
-  if (path === '/games/tic-tac-toe') return <LegacyTicTacToePage />;
-  if (path === '/games/free-block-puzzle') return <LegacyFreeBlockPuzzlePage />;
-  if (path.startsWith('/games/')) return <LegacyHubPage kind="games" />;
 
   return <App />;
 }
