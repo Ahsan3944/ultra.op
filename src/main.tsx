@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import './ultraop-enhancements.css';
+import './ultraop-responsive.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
 import { JournalPage } from './JournalPage';
