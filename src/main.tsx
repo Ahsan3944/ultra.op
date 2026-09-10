@@ -18,24 +18,99 @@ function recoverStaticHostPath() {
   }
 }
 
+type FeedItem = { title?: string; link?: string };
+type FeedResponse = { status?: string; items?: FeedItem[] };
+
+function extractYouTubeVideoId(link = '') {
+  const match = link.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+  return match?.[1] ?? null;
+}
+
+function loadLatestNonShortVideo(channelId: string): Promise<string | null> {
+  return new Promise(resolve => {
+    const callbackName = `__ultraopRss_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const script = document.createElement('script');
+    const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&callback=${callbackName}`;
+    let settled = false;
+    const finish = (value: string | null) => {
+      if (settled) return;
+      settled = true;
+      delete (window as unknown as Record<string, unknown>)[callbackName];
+      script.remove();
+      resolve(value);
+    };
+    (window as unknown as Record<string, unknown>)[callbackName] = (data: FeedResponse) => {
+      if (data?.status !== 'ok' || !Array.isArray(data.items)) return finish(null);
+      const item = data.items.find(entry => {
+        const text = `${entry.title ?? ''} ${entry.link ?? ''}`.toLowerCase();
+        return !/\bshorts?\b|#shorts|\/shorts\//i.test(text) && !!extractYouTubeVideoId(entry.link ?? '');
+      });
+      finish(item ? extractYouTubeVideoId(item.link ?? '') : null);
+    };
+    script.async = true;
+    script.src = apiUrl;
+    script.onerror = () => finish(null);
+    document.head.appendChild(script);
+    window.setTimeout(() => finish(null), 7000);
+  });
+}
+
 function installHomepageEnhancements() {
   if (window.location.pathname.replace(/\/+$/, '') !== '') return;
   const start = () => {
     const root = document.getElementById('root');
     if (!root) return;
+
     let activeListener: (() => void) | null = null;
+    let liveSetupStarted = false;
+    let orderApplied = false;
+
+    const findCard = (name: string) => Array.from(document.querySelectorAll<HTMLElement>('.channel-video-card')).find(card => card.querySelector('h3')?.textContent?.trim() === name) ?? null;
+
+    const applyChannelOrder = () => {
+      if (orderApplied) return;
+      const grid = document.querySelector<HTMLElement>('.channel-grid');
+      if (!grid) return;
+      const desiredNames = ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'];
+      const cards = desiredNames.map(findCard);
+      if (cards.some(card => !card)) return;
+      const wrappers = cards.map(card => card?.closest<HTMLElement>('.scroll-reveal') ?? card!);
+      wrappers.forEach(wrapper => grid.appendChild(wrapper));
+      const mainCard = cards[0];
+      const focus = mainCard?.querySelector<HTMLElement>('.channel-focus');
+      if (focus) focus.textContent = 'Live streams, Minecraft & other games';
+      orderApplied = true;
+    };
+
+    const setupLiveChannel = () => {
+      if (liveSetupStarted) return;
+      const mainCard = findCard('Ultra OP Live');
+      const frame = mainCard?.querySelector<HTMLIFrameElement>('iframe');
+      if (!frame) return;
+      liveSetupStarted = true;
+
+      const liveChannelId = 'UCAxlmL3_721xzOjQVe5Klbg';
+      frame.src = `https://www.youtube.com/embed/live_stream?channel=${liveChannelId}&rel=0&modestbranding=1`;
+      frame.dataset.liveOnly = 'true';
+      frame.title = 'Ultra OP Live — current live stream';
+
+      window.setTimeout(async () => {
+        if (frame.dataset.liveOnly !== 'true') return;
+        const videoId = await loadLatestNonShortVideo(liveChannelId);
+        if (!videoId) return;
+        frame.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+        frame.dataset.liveOnly = 'false';
+        frame.title = 'Ultra OP Live — latest video';
+      }, 12000);
+    };
+
     let applied = false;
     const apply = () => {
-      const cards = Array.from(document.querySelectorAll<HTMLIFrameElement>('.channel-video-card iframe'));
-      const liveChannelId = 'UCAxlmL3_721xzOjQVe5Klbg';
-      const liveFrame = cards[0];
-      if (liveFrame && liveFrame.dataset.liveOnly !== 'true') {
-        liveFrame.src = `https://www.youtube.com/embed/live_stream?channel=${liveChannelId}&rel=0&modestbranding=1`;
-        liveFrame.dataset.liveOnly = 'true';
-        liveFrame.title = 'Ultra OP Live — current live stream';
-      }
-
+      applyChannelOrder();
+      setupLiveChannel();
       if (applied) return;
+
       const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.desktop-nav button'));
       const ids = ['home', 'channels', 'live', 'story', 'community', 'journal', 'contact'];
       navButtons.forEach((button, index) => button.dataset.section = ids[index] ?? '');
@@ -51,10 +126,14 @@ function installHomepageEnhancements() {
       activeListener = () => window.removeEventListener('scroll', updateActive);
       applied = true;
     };
+
     apply();
-    const observer = new MutationObserver(apply);
+    const observer = new MutationObserver(() => {
+      if (!orderApplied || !liveSetupStarted) apply();
+    });
     observer.observe(root, { childList: true, subtree: true });
     window.setTimeout(apply, 250);
+    window.setTimeout(apply, 1000);
     window.addEventListener('beforeunload', () => {
       observer.disconnect();
       activeListener?.();
