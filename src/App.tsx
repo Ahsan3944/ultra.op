@@ -1,60 +1,179 @@
-import { useState, type ReactNode } from 'react';
-import { ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Users, X, Youtube } from 'lucide-react';
-import { SITE, YOUTUBE_CHANNELS, SOCIALS, BRAND_CAMPAIGNS } from './data/core';
+import { useEffect, useState, type ReactNode } from 'react';
+import { ArrowDownRight, ArrowUpRight, ExternalLink, Instagram, Mail, Menu, MessageCircle, Play, Users, X, Youtube } from 'lucide-react';
+import { SITE, YOUTUBE_CHANNELS, SOCIALS } from './data/core';
 import { LEGACY_BLOG_POSTS } from './data/legacyContent';
 
 const nav = [
   ['home', 'Home'],
   ['channels', 'Channels'],
+  ['live', 'Live'],
   ['story', 'Story'],
-  ['collabs', 'Collabs'],
   ['community', 'Community'],
   ['journal', 'Journal'],
   ['contact', 'Contact'],
 ];
 
+const profileImage = 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/ahsan-profile.png';
+const journalImages: Record<string, string> = {
+  'top-freefire-strategies': 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/freefire-strategies.jpg',
+  'grow-as-gaming-creator': 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/creator-growth.jpg',
+  'freefire-redeem-codes-jun-2023': 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/redeem-codes.jpg',
+  'online-gaming-act-2025': 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/gaming-psychology.jpg',
+};
+
 function External({ href, children }: { href: string; children: ReactNode }) {
-  return <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-[var(--accent)] transition-colors">{children}<ArrowUpRight size={13} /></a>;
+  return <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[var(--accent)] transition-colors">{children}<ArrowUpRight size={14} /></a>;
 }
 
-function BrandMark({ small = false }: { small?: boolean }) {
-  return <img src="/brand/ultraop-mark.svg" alt="UltraOP" className={small ? 'w-8 h-8 object-contain' : 'w-10 h-10 object-contain'} />;
+function CreatorPhoto({ className = '', alt = 'Sk Ahsan Ahmad — UltraOP creator' }: { className?: string; alt?: string }) {
+  const [src, setSrc] = useState(profileImage);
+  return <img src={src} onError={() => setSrc('/creator/creator-photo.svg')} alt={alt} className={className} />;
+}
+
+function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = document.getElementById(`reveal-${Math.random().toString(36).slice(2)}`);
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  const id = `reveal-${Math.random().toString(36).slice(2)}`;
+  return <div id={id} className={`${visible ? 'is-visible' : ''} scroll-reveal ${className}`} style={{ '--reveal-delay': `${delay}ms` } as React.CSSProperties}>{children}</div>;
+}
+
+function BrandMark() {
+  return <div className="brand-lockup"><img src="/brand/ultraop-mark.svg" alt="UltraOP" className="brand-mark"/><span>ULTRA<span>OP</span></span></div>;
 }
 
 function ChannelCard({ channel, index }: { channel: typeof YOUTUBE_CHANNELS[number]; index: number }) {
-  return <article className="card p-5 md:p-6 rounded-[2px] group transition-all duration-300"><div className="flex items-start justify-between gap-4 mb-10"><span className="mono text-xs text-[var(--muted)]">{String(index + 1).padStart(2, '0')}</span><span className="eyebrow">YouTube</span></div><div className="mb-8"><h3 className="text-2xl font-extrabold tracking-[-0.04em] mb-2">{channel.name}</h3><p className="mono text-xs text-[var(--muted)]">{channel.handle}</p></div><p className="text-sm text-[var(--muted)] leading-6 min-h-12">{channel.focus}</p><div className="rule my-6"/><div className="flex items-center justify-between text-xs"><span className="mono text-[var(--muted)]">CHANNEL ID</span><span className="mono text-right max-w-[58%] truncate">{channel.id}</span></div><div className="mt-6 flex gap-2"><a href={`${channel.url}?sub_confirmation=1`} target="_blank" rel="noopener noreferrer" className="flex-1 px-4 py-3 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em] text-center hover:bg-[var(--accent)] transition-colors">Subscribe</a><a href={channel.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${channel.name}`} className="px-4 py-3 border border-[var(--line)] hover:border-[#615d56] transition-colors"><ExternalLink size={15}/></a></div></article>;
+  return <article className="channel-card">
+    <div className="channel-art">
+      <CreatorPhoto className="channel-photo" alt="UltraOP creator" />
+      <div className="channel-art-shade" />
+      <div className="channel-index">0{index + 1}</div>
+      <div className="channel-platform"><Youtube size={15}/> YOUTUBE</div>
+      <div className="channel-play"><Play size={18} fill="currentColor"/></div>
+    </div>
+    <div className="channel-body">
+      <div><p className="mono channel-handle">{channel.handle}</p><h3>{channel.name}</h3></div>
+      <p className="channel-focus">{channel.focus}</p>
+      <div className="channel-actions"><a href={`${channel.url}?sub_confirmation=1`} target="_blank" rel="noopener noreferrer" className="channel-subscribe">Subscribe <ArrowUpRight size={14}/></a><a href={channel.url} target="_blank" rel="noopener noreferrer" className="channel-open" aria-label={`Open ${channel.name}`}><ExternalLink size={15}/></a></div>
+    </div>
+  </article>;
 }
 
 function SocialCard({ social }: { social: typeof SOCIALS[number] }) {
-  const type = social.name === 'Twitch' || social.name === 'Kick' || social.name === 'Rooter' ? 'Streaming' : social.name === 'Discord' || social.name === 'WhatsApp Channel' ? 'Community' : 'Social';
-  return <a href={social.url} target="_blank" rel="noopener noreferrer" className="card p-5 flex items-center justify-between gap-4 group hover:border-[#615d56] transition-colors"><div><div className="flex items-center gap-2"><div className="text-sm font-bold">{social.name}</div><span className="mono text-[8px] uppercase tracking-widest text-[var(--muted)] border border-[var(--line)] px-1.5 py-0.5">{type}</span></div><div className="mono text-[10px] text-[var(--muted)] mt-1">{social.handle}</div></div><ArrowUpRight size={16} className="text-[var(--muted)] group-hover:text-[var(--accent)] transition-colors"/></a>;
+  return <a href={social.url} target="_blank" rel="noopener noreferrer" className="social-card"><span className="social-dot"/><div className="social-copy"><strong>{social.name}</strong><span>{social.handle}</span></div><ArrowUpRight size={16} className="social-arrow"/></a>;
 }
 
 function App() {
   const [menu, setMenu] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? window.scrollY / max : 0);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const scrollTo = (id: string) => { setMenu(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
   const twitch = SOCIALS.find(s => s.name === 'Twitch');
   const kick = SOCIALS.find(s => s.name === 'Kick');
   const rooter = SOCIALS.find(s => s.name === 'Rooter');
 
-  return <><div className="noise"/><div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
-    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[#0a0a0a]/90 backdrop-blur-xl"><div className="shell h-16 flex items-center justify-between"><button onClick={() => scrollTo('home')} className="flex items-center gap-3" aria-label="Go to UltraOP home"><BrandMark small/><span className="font-extrabold tracking-[-0.04em]">ULTRA<span className="text-[var(--accent)]">OP</span></span></button><nav className="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-[.14em] text-[#bcb8b0]">{nav.map(([id,label]) => <button key={id} onClick={() => scrollTo(id)} className="hover:text-white transition-colors">{label}</button>)}</nav><button onClick={() => setMenu(!menu)} className="xl:hidden p-2 border border-[var(--line)]" aria-label={menu ? 'Close navigation' : 'Open navigation'} aria-expanded={menu}><span className="sr-only">{menu ? 'Close navigation' : 'Open navigation'}</span>{menu ? <X size={18}/> : <Menu size={18}/>}</button></div>{menu && <div className="xl:hidden border-t border-[var(--line)] bg-[var(--surface)] p-4 grid grid-cols-2 sm:grid-cols-4 gap-2">{nav.map(([id,label]) => <button key={id} onClick={() => scrollTo(id)} className="p-3 border border-[var(--line)] text-left text-xs uppercase tracking-[.12em]">{label}</button>)}</div>}</header>
+  return <>
+    <div className="scroll-progress" style={{ transform: `scaleX(${progress})` }}/>
+    <div className="noise"/>
+    <div className="site-shell">
+      <header className="site-header">
+        <div className="shell header-inner">
+          <button onClick={() => scrollTo('home')} aria-label="Go to UltraOP home"><BrandMark/></button>
+          <nav className="desktop-nav">{nav.map(([id, label]) => <button key={id} onClick={() => scrollTo(id)}>{label}</button>)}</nav>
+          <button className="menu-toggle" onClick={() => setMenu(!menu)} aria-label={menu ? 'Close navigation' : 'Open navigation'} aria-expanded={menu}>{menu ? <X size={20}/> : <Menu size={20}/>}</button>
+        </div>
+        {menu && <div className="mobile-nav">{nav.map(([id, label]) => <button key={id} onClick={() => scrollTo(id)}>{label}</button>)}</div>}
+      </header>
 
-    <main id="main-content">
-      <section id="home" className="shell pt-16 md:pt-24 pb-20 md:pb-28"><div className="grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-end"><div className="reveal"><div className="eyebrow mb-5">Official creator website / India</div><h1 className="display text-[clamp(3.7rem,11vw,9.8rem)] font-extrabold max-w-5xl">CREATE.<br/><span className="text-[var(--accent)]">CONNECT.</span><br/>REPEAT.</h1><p className="mt-8 max-w-2xl text-base md:text-lg leading-8 text-[var(--muted)]">{SITE.creator} — building the UltraOP universe through gaming content, Minecraft storytelling, live broadcasts, community and creator-led work.</p><div className="mt-8 flex flex-wrap gap-3"><button onClick={() => scrollTo('channels')} className="px-5 py-3.5 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em]">Explore channels</button><button onClick={() => scrollTo('collabs')} className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Work with UltraOP</button></div></div><div className="card p-5 md:p-6 reveal" style={{animationDelay:'120ms'}}><div className="eyebrow mb-4">Today / UltraOP</div><div className="aspect-[4/3] bg-[var(--surface-2)] border border-[var(--line)] overflow-hidden relative"><img src="/creator/creator-photo.svg" alt="UltraOP creator illustration" className="absolute inset-0 w-full h-full object-cover object-center opacity-90"/><div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-75"/><div className="absolute inset-0 ring-1 ring-inset ring-white/5"/><div className="absolute left-5 right-5 bottom-5"><div className="mono text-xs text-[var(--muted)] mb-2">CREATOR / STORYTELLER</div><div className="text-3xl md:text-4xl font-extrabold tracking-[-.05em]">Built for the<br/><span className="text-[var(--accent)]">next upload.</span></div></div></div><div className="grid grid-cols-3 gap-3 mt-3"><div className="border border-[var(--line)] p-4"><div className="mono text-lg">{YOUTUBE_CHANNELS.length}</div><div className="text-[10px] text-[var(--muted)] uppercase tracking-wider mt-1">YouTube channels</div></div><div className="border border-[var(--line)] p-4"><div className="mono text-lg">{BRAND_CAMPAIGNS.length}</div><div className="text-[10px] text-[var(--muted)] uppercase tracking-wider mt-1">Brand campaigns</div></div><div className="border border-[var(--line)] p-4"><div className="mono text-lg">01</div><div className="text-[10px] text-[var(--muted)] uppercase tracking-wider mt-1">Creator</div></div></div></div></div></section>
-      <div className="shell"><div className="rule"/></div>
-      <section id="live" className="shell py-14"><div className="border border-[var(--line)] bg-[var(--surface)] p-5 md:p-7"><div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6"><div><div className="eyebrow mb-2">Live presence</div><h2 className="text-2xl md:text-3xl font-extrabold tracking-[-.04em]">Watch UltraOP live.</h2><p className="mt-2 text-sm text-[var(--muted)]">Choose the official streaming destination. Live availability is controlled by each platform.</p></div><div className="flex flex-wrap gap-3"><a href={YOUTUBE_CHANNELS[0].url} target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-[var(--line)] text-[10px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2">YouTube <Youtube size={14}/></a>{twitch && <a href={twitch.url} target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-[var(--line)] text-[10px] font-bold uppercase tracking-[.14em]">Twitch</a>}{kick && <a href={kick.url} target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-[var(--line)] text-[10px] font-bold uppercase tracking-[.14em]">Kick</a>}{rooter && <a href={rooter.url} target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-[var(--line)] text-[10px] font-bold uppercase tracking-[.14em]">Rooter</a>}</div></div></div></section>
-      <section id="channels" className="shell py-16 md:py-24"><div className="flex items-end justify-between gap-5 mb-10"><div><div className="eyebrow mb-3">01 / Broadcast network</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">The channels.</h2></div><span className="mono text-xs text-[var(--muted)]">{YOUTUBE_CHANNELS.length} canonical channels</span></div><div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">{YOUTUBE_CHANNELS.map((c,i)=><ChannelCard channel={c} index={i} key={c.id}/>)}</div><div className="mt-6 border border-dashed border-[var(--line)] p-4 text-xs text-[var(--muted)]">To add another official YouTube channel later, add one record to <code className="mono text-[var(--text)]">YOUTUBE_CHANNELS</code> in <code className="mono text-[var(--text)]">src/data/core.ts</code>. The card grid and channel count update automatically.</div></section>
-      <section id="story" className="shell py-16 md:py-24"><div className="grid lg:grid-cols-[.9fr_1.1fr] gap-12 items-start"><div><div className="eyebrow mb-3">02 / Creator story</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">A creator brand<br/><span className="text-[var(--accent)]">built to last.</span></h2><div className="mt-8 border border-[var(--line)] bg-[var(--surface)] overflow-hidden"><img src="/creator/creator-photo.svg" alt="UltraOP creator illustration" className="w-full aspect-[4/5] object-cover object-center" loading="lazy"/><div className="px-5 py-4 border-t border-[var(--line)] flex items-center justify-between"><span className="mono text-[10px] text-[var(--muted)]">SK AHSAN AHMAD</span><span className="eyebrow text-[9px]">ULTRAOP</span></div></div></div><div className="space-y-7 text-[var(--muted)] leading-8 lg:pt-14"><p>UltraOP is a creator-led media identity focused on entertaining gaming content, Minecraft stories, live interaction and useful creator knowledge.</p><p>The website is the professional front door: a clear place to discover the channels, understand the creator, see commercial work and find the right way to connect.</p><div className="border-l border-[var(--accent)] pl-5 text-[var(--text)]">Content first. Community always. A brand that feels intentional without feeling corporate.</div></div></div></section>
-      <section id="collabs" className="bg-[var(--cream)] text-black py-16 md:py-24"><div className="shell"><div className="flex items-end justify-between mb-10 gap-5"><div><div className="eyebrow text-[#9b4c39] mb-3">03 / Commercial archive</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">Brands & campaigns.</h2></div><span className="mono text-xs text-black/50">verified archive</span></div><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black/15">{BRAND_CAMPAIGNS.map(b=><article className="bg-[var(--cream)] p-6 min-h-48" key={b.name}><div className="mono text-xs text-black/45">{b.year}</div><h3 className="text-2xl font-extrabold tracking-[-.04em] mt-10">{b.name}</h3><p className="text-sm mt-2 text-black/60">{b.type}</p><div className="mono text-[10px] uppercase tracking-widest mt-8 text-black/45">{b.category}</div></article>)}</div><div className="mt-10 flex flex-wrap items-center justify-between gap-5"><p className="max-w-xl text-sm text-black/60">For brand partnerships, campaigns and creator collaborations, use the official business contact.</p><a href={`mailto:${SITE.businessEmail}`} className="px-5 py-3 bg-black text-white text-[10px] font-bold uppercase tracking-[.14em]">Business enquiries</a></div></div></section>
-      <section id="community" className="shell py-16 md:py-24"><div className="grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start"><div><div className="eyebrow mb-3">04 / Community</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">Every platform,<br/><span className="text-[var(--accent)]">one community.</span></h2><p className="mt-6 max-w-md text-sm leading-7 text-[var(--muted)]">Follow the official UltraOP network across social, streaming and community platforms. Use the verified links below rather than unofficial mirrors.</p></div><div className="grid sm:grid-cols-2 gap-3">{SOCIALS.map(social=><SocialCard key={social.url} social={social}/>)}</div></div><div className="mt-10 border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6"><div><div className="eyebrow mb-2">Support the creator</div><h3 className="text-2xl md:text-3xl font-extrabold tracking-[-.04em]">Keep the next upload moving.</h3><p className="mt-2 text-sm text-[var(--muted)]">Direct support is available through the official UPI address.</p></div><div className="flex flex-wrap gap-3 items-center"><code className="px-4 py-3 border border-[var(--line)] mono text-sm">{SITE.upi}</code><a href={`upi://pay?pa=${SITE.upi}&pn=${encodeURIComponent(SITE.name)}`} className="px-5 py-3 bg-[var(--cream)] text-black text-[10px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2"><MessageCircle size={14}/> Support</a></div></div></section>
-      <section id="journal" className="shell py-16 md:py-24"><div className="grid lg:grid-cols-[.7fr_1.3fr] gap-10"><div><div className="eyebrow mb-3">05 / Journal</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">Field notes.</h2><p className="mt-6 max-w-md text-sm leading-7 text-[var(--muted)]">Selected articles from the UltraOP archive. Older entries are preserved as historical material and may contain information that is no longer current.</p></div><div>{LEGACY_BLOG_POSTS.map(post=><a href={`/blog/${post.slug}/`} key={post.slug} className="article-row"><div><div className="mono text-[10px] text-[var(--muted)] uppercase tracking-widest">{post.date} / {post.category}</div><h3 className="mt-2 text-lg md:text-xl font-bold tracking-[-.025em]">{post.title}</h3></div><ArrowUpRight size={17} className="shrink-0 text-[var(--muted)]"/></a>)}</div></div></section>
-      <section id="contact" className="shell pt-16 pb-20 md:pt-24 md:pb-28"><div className="border border-[var(--line)] bg-[var(--surface)] p-7 md:p-10 grid lg:grid-cols-[1fr_auto] gap-10 items-end"><div><div className="eyebrow mb-3">06 / Business contact</div><h2 className="text-4xl md:text-6xl font-extrabold tracking-[-.06em]">Let’s build<br/><span className="text-[var(--accent)]">something useful.</span></h2><p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)]">For brand campaigns, sponsorships, creator collaborations, media enquiries or professional opportunities, contact UltraOP directly.</p></div><div className="text-left lg:text-right"><div className="mono text-[10px] text-[var(--muted)] uppercase tracking-widest mb-2">Official business email</div><a href={`mailto:${SITE.businessEmail}`} className="text-xl md:text-2xl font-bold hover:text-[var(--accent)] transition-colors">{SITE.businessEmail}</a></div></div></section>
-    </main>
+      <main id="main-content">
+        <section id="home" className="hero shell">
+          <div className="hero-copy">
+            <Reveal><p className="eyebrow">OFFICIAL CREATOR / INDIA</p></Reveal>
+            <Reveal delay={80}><h1>THIS IS<br/><span>ULTRAOP.</span></h1></Reveal>
+            <Reveal delay={150}><p className="hero-lede">{SITE.creator} creates gaming stories, live moments and creator-led content across a growing network of channels and communities.</p></Reveal>
+            <Reveal delay={220}><div className="hero-cta"><button className="button button-primary" onClick={() => scrollTo('channels')}>Explore the channels <ArrowDownRight size={15}/></button><a className="button button-ghost" href={SITE.youtube} target="_blank" rel="noopener noreferrer">Watch on YouTube <Youtube size={15}/></a></div></Reveal>
+            <Reveal delay={290}><div className="hero-meta"><span><b>04</b> official YouTube channels</span><span><b>08</b> verified platforms</span><span><b>01</b> creator universe</span></div></Reveal>
+          </div>
+          <Reveal className="hero-visual" delay={120}>
+            <div className="hero-photo-wrap"><CreatorPhoto className="hero-photo"/><div className="hero-photo-overlay"/><div className="hero-photo-grain"/>
+              <div className="hero-stamp"><span>ULTRAOP</span><strong>LIVE / CREATE / CONNECT</strong></div>
+              <div className="hero-name"><span>SK AHSAN AHMAD</span><b>CREATOR</b></div>
+            </div>
+            <div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/>
+          </Reveal>
+        </section>
 
-    <footer className="border-t border-[var(--line)]"><div className="shell py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"><div className="flex items-center gap-3"><BrandMark small/><div><div className="font-extrabold">ULTRA<span className="text-[var(--accent)]">OP</span></div><div className="mono text-[9px] text-[var(--muted)] uppercase tracking-widest mt-1">Official creator website</div></div></div><div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-[var(--muted)]"><External href={SITE.youtube}>YouTube</External><External href={SITE.instagram}><Instagram size={13}/>Instagram</External>{twitch && <External href={twitch.url}>Twitch</External>}{kick && <External href={kick.url}>Kick</External>}{rooter && <External href={rooter.url}>Rooter</External>}<External href={SITE.discord}><Users size={13}/>Discord</External><External href={`mailto:${SITE.businessEmail}`}><Mail size={13}/>Business</External></div></div></footer>
-  </div></>;
+        <section className="marquee" aria-label="UltraOP creator network"><div className="marquee-track"><span>ULTRAOP</span><i>•</i><span>GAMING</span><i>•</i><span>STORYTELLING</span><i>•</i><span>LIVE</span><i>•</i><span>COMMUNITY</span><i>•</i><span>ULTRAOP</span><i>•</i><span>GAMING</span><i>•</i><span>STORYTELLING</span><i>•</i><span>LIVE</span><i>•</i><span>COMMUNITY</span></div></section>
+
+        <section id="channels" className="section shell">
+          <Reveal><div className="section-heading"><div><p className="eyebrow">01 / THE NETWORK</p><h2>Four channels.<br/><span>One identity.</span></h2></div><p className="section-intro">Different formats, different audiences, one UltraOP creative universe. The network is built to expand without redesigning the site.</p></div></Reveal>
+          <div className="channel-grid">{YOUTUBE_CHANNELS.map((channel, index) => <Reveal key={channel.id} delay={index * 70}><ChannelCard channel={channel} index={index}/></Reveal>)}</div>
+          <Reveal><div className="future-note"><span className="mono">NETWORK / READY FOR MORE</span><p>New official YouTube channels can be added to the network without changing the layout or navigation.</p></div></Reveal>
+        </section>
+
+        <section id="live" className="live-section">
+          <div className="shell live-inner">
+            <Reveal><div className="live-label"><span className="live-pulse"/>LIVE PRESENCE</div></Reveal>
+            <Reveal delay={80}><h2>When the stream starts,<br/><span>be there.</span></h2></Reveal>
+            <Reveal delay={140}><p>Follow the official streaming destinations. Availability is controlled by each platform.</p></Reveal>
+            <Reveal delay={200}><div className="live-links"><a href={YOUTUBE_CHANNELS[0].url} target="_blank" rel="noopener noreferrer"><Youtube size={17}/> YouTube <ArrowUpRight size={14}/></a>{twitch && <a href={twitch.url} target="_blank" rel="noopener noreferrer">Twitch <ArrowUpRight size={14}/></a>}{kick && <a href={kick.url} target="_blank" rel="noopener noreferrer">Kick <ArrowUpRight size={14}/></a>}{rooter && <a href={rooter.url} target="_blank" rel="noopener noreferrer">Rooter <ArrowUpRight size={14}/></a>}</div></Reveal>
+          </div>
+        </section>
+
+        <section id="story" className="section shell story-section">
+          <div className="story-grid">
+            <Reveal><div className="story-portrait"><CreatorPhoto className="story-photo"/><div className="portrait-label"><span>SK AHSAN AHMAD</span><b>ULTRAOP / 001</b></div></div></Reveal>
+            <Reveal delay={100}><div className="story-copy"><p className="eyebrow">02 / THE CREATOR</p><h2>Not a channel.<br/><span>A universe.</span></h2><p>UltraOP is the creator identity of {SITE.creator}, built around entertaining gaming content, live interaction, storytelling and the people who keep coming back for the next upload.</p><p>The website is the front door: a place where every official channel, stream, community and piece of creator work has a clear home.</p><blockquote>“Content first. Community always.”</blockquote><div className="story-signature"><span className="mono">CREATOR / STORYTELLER / COMMUNITY</span><span className="signature">UltraOP</span></div></div></Reveal>
+          </div>
+        </section>
+
+        <section id="community" className="community-section">
+          <div className="shell">
+            <Reveal><div className="section-heading community-heading"><div><p className="eyebrow">03 / THE COMMUNITY</p><h2>Find the real<br/><span>UltraOP.</span></h2></div><p className="section-intro">Official destinations only. Social, streaming and community platforms are kept together here so there is one reliable place to find the network.</p></div></Reveal>
+            <div className="social-grid">{SOCIALS.map((social, index) => <Reveal key={social.url} delay={index * 45}><SocialCard social={social}/></Reveal>)}</div>
+            <Reveal><div className="support-strip"><div><span className="eyebrow">DIRECT SUPPORT</span><h3>Keep the next upload moving.</h3><p>Official UPI: <strong>{SITE.upi}</strong></p></div><button onClick={() => navigator.clipboard?.writeText(SITE.upi)} className="copy-upi">Copy UPI <ExternalLink size={14}/></button></div></Reveal>
+          </div>
+        </section>
+
+        <section id="journal" className="section shell journal-section">
+          <Reveal><div className="section-heading"><div><p className="eyebrow">04 / JOURNAL</p><h2>Ideas, stories<br/><span>& notes.</span></h2></div><a className="view-all" href="/blog/">View the journal <ArrowUpRight size={15}/></a></div></Reveal>
+          <div className="journal-grid">{LEGACY_BLOG_POSTS.map((post, index) => <Reveal key={post.slug} delay={index * 70}><a href={`/blog/${post.slug}/`} className="journal-card"><div className="journal-image"><img src={journalImages[post.slug]} alt="" loading="lazy"/><span>{String(index + 1).padStart(2, '0')}</span></div><div className="journal-copy"><div className="mono">{post.date}</div><h3>{post.title}</h3><p>{post.excerpt}</p><span className="read-more">Read story <ArrowUpRight size={14}/></span></div></a></Reveal>)}</div>
+        </section>
+
+        <section id="contact" className="contact-section">
+          <div className="shell contact-inner">
+            <Reveal><p className="eyebrow">05 / CONTACT</p></Reveal>
+            <Reveal delay={80}><h2>Have an idea?<br/><span>Let's build it.</span></h2></Reveal>
+            <Reveal delay={140}><p>For business enquiries, creator collaborations and professional opportunities.</p></Reveal>
+            <Reveal delay={200}><a className="contact-email" href={`mailto:${SITE.businessEmail}`}><Mail size={18}/>{SITE.businessEmail}<ArrowUpRight size={18}/></a></Reveal>
+            <Reveal delay={260}><div className="contact-links"><External href={SITE.youtube}><Youtube size={15}/> YouTube</External><External href={SITE.instagram}><Instagram size={15}/> Instagram</External><External href={SITE.discord}><MessageCircle size={15}/> Discord</External></div></Reveal>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer"><div className="shell footer-grid"><div><BrandMark/><p>Official creator website of {SITE.creator}.</p></div><div className="footer-links"><External href={SITE.youtube}>YouTube</External><External href={SITE.instagram}>Instagram</External><External href={SITE.discord}>Discord</External><a href={`mailto:${SITE.businessEmail}`}>Business</a></div><div className="footer-meta"><span>© {new Date().getFullYear()} UltraOP</span><span>Built for the next upload.</span></div></div></footer>
+    </div>
+  </>;
 }
 
 export default App;
