@@ -7,7 +7,6 @@ const legacyOrigin = 'https://ultraop.in';
 
 export function LegacyHubPage({ kind }: Props) {
   const isBlog = kind === 'blog';
-  const items = isBlog ? LEGACY_BLOG_POSTS : LEGACY_GAMES;
 
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
@@ -31,29 +30,55 @@ export function LegacyHubPage({ kind }: Props) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map((item, index) => (
-            <article key={isBlog ? item.slug : item.id} className="card p-6 min-h-64 flex flex-col">
-              <div className="flex items-center justify-between mb-12">
-                {isBlog ? <BookOpen size={18} className="text-[var(--accent)]"/> : <Gamepad2 size={18} className="text-[var(--accent)]"/>}
-                <span className="mono text-xs text-[var(--muted)]">0{index + 1}</span>
-              </div>
-              <h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.title ?? item.name}</h2>
-              <p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.excerpt ?? item.description}</p>
-              <div className="mt-auto pt-8 flex items-center justify-between gap-4">
-                {isBlog && 'date' in item ? <span className="mono text-[10px] text-[var(--muted)]">{item.date}</span> : <span className="mono text-[10px] text-[var(--muted)]">LEGACY ENTRY</span>}
-                <a
-                  href={`${legacyOrigin}${isBlog ? `/blog/${item.slug}/` : item.legacyPath}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2"
-                >
-                  Open legacy <ArrowUpRight size={13}/>
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
+        {isBlog ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {LEGACY_BLOG_POSTS.map((item, index) => (
+              <article key={item.slug} className="card p-6 min-h-64 flex flex-col">
+                <div className="flex items-center justify-between mb-12">
+                  <BookOpen size={18} className="text-[var(--accent)]"/>
+                  <span className="mono text-xs text-[var(--muted)]">0{index + 1}</span>
+                </div>
+                <h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.title}</h2>
+                <p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.excerpt}</p>
+                <div className="mt-auto pt-8 flex items-center justify-between gap-4">
+                  <span className="mono text-[10px] text-[var(--muted)]">{item.date}</span>
+                  <a
+                    href={`${legacyOrigin}/blog/${item.slug}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2"
+                  >
+                    Open legacy <ArrowUpRight size={13}/>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {LEGACY_GAMES.map((item, index) => (
+              <article key={item.id} className="card p-6 min-h-64 flex flex-col">
+                <div className="flex items-center justify-between mb-12">
+                  <Gamepad2 size={18} className="text-[var(--accent)]"/>
+                  <span className="mono text-xs text-[var(--muted)]">0{index + 1}</span>
+                </div>
+                <h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.name}</h2>
+                <p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.description}</p>
+                <div className="mt-auto pt-8 flex items-center justify-between gap-4">
+                  <span className="mono text-[10px] text-[var(--muted)]">LEGACY ENTRY</span>
+                  <a
+                    href={`${legacyOrigin}${item.legacyPath}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2"
+                  >
+                    Open legacy <ArrowUpRight size={13}/>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
