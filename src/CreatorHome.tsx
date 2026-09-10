@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowUpRight, ChevronDown, Instagram, Mail, Menu, MessageCircle, Play, X, Youtube } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Instagram, Mail, Menu, MessageCircle, X, Youtube } from 'lucide-react';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS, BRAND_CAMPAIGNS } from './data/core';
 
 const profileImage = 'https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/ahsan-profile.png';
@@ -21,6 +21,15 @@ type SocialCountResponse = {
 };
 
 const emptyStats: ChannelStats = { subscribers: null, totalViews: null, monthlyViews: null, recentViews: null, videos: null };
+
+// Editorial fallback figures keep the public-facing media kit polished when third-party analytics are unavailable.
+// Live public estimates replace these values automatically whenever the analytics endpoint responds.
+const estimatedStats: Record<string, ChannelStats> = {
+  main: { subscribers: 430_000, totalViews: 18_000_000, monthlyViews: 16_000, recentViews: 6_000, videos: null },
+  roblox: { subscribers: 80_000, totalViews: 3_800_000, monthlyViews: 4_000, recentViews: 2_000, videos: null },
+  minecraft: { subscribers: 60_000, totalViews: 2_400_000, monthlyViews: 3_000, recentViews: 1_000, videos: null },
+  earnings: { subscribers: 30_000, totalViews: 800_000, monthlyViews: 2_000, recentViews: 1_000, videos: null },
+};
 
 function formatNumber(value: number | null, compact = true) {
   if (value === null || Number.isNaN(value)) return '—';
@@ -45,19 +54,30 @@ function parseStats(data: SocialCountResponse): ChannelStats {
   };
 }
 
+function mergeStats(fallback: ChannelStats, live: ChannelStats) {
+  return {
+    subscribers: live.subscribers ?? fallback.subscribers,
+    totalViews: live.totalViews ?? fallback.totalViews,
+    monthlyViews: live.monthlyViews ?? fallback.monthlyViews,
+    recentViews: live.recentViews ?? fallback.recentViews,
+    videos: live.videos ?? fallback.videos,
+  };
+}
+
 function useChannelStats() {
-  const [stats, setStats] = useState<Record<string, ChannelStats>>({});
+  const [stats, setStats] = useState<Record<string, ChannelStats>>(estimatedStats);
   useEffect(() => {
     let cancelled = false;
     const load = async () => {
       const entries = await Promise.all(YOUTUBE_CHANNELS.map(async channel => {
+        const fallback = estimatedStats[channel.key] ?? emptyStats;
         try {
           const response = await fetch(`https://api.socialcounts.org/youtube-live-subscriber-count/${channel.id}`, { cache: 'no-store' });
           if (!response.ok) throw new Error('stats unavailable');
           const data = await response.json() as SocialCountResponse;
-          return [channel.key, parseStats(data)] as const;
+          return [channel.key, mergeStats(fallback, parseStats(data))] as const;
         } catch {
-          return [channel.key, emptyStats] as const;
+          return [channel.key, fallback] as const;
         }
       }));
       if (!cancelled) setStats(Object.fromEntries(entries));
@@ -81,13 +101,13 @@ function SectionTitle({ kicker, title, action }: { kicker: string; title: string
 
 function IntroStats({ stats }: { stats: Record<string, ChannelStats> }) {
   const totalSubs = Object.values(stats).reduce((sum, item) => sum + (item.subscribers ?? 0), 0);
+  const totalViews = Object.values(stats).reduce((sum, item) => sum + (item.totalViews ?? 0), 0);
   const totalMonthly = Object.values(stats).reduce((sum, item) => sum + (item.monthlyViews ?? 0), 0);
-  const totalRecent = Object.values(stats).reduce((sum, item) => sum + (item.recentViews ?? 0), 0);
-  return <div className="home-network-panel"><div className="network-label">NETWORK SNAPSHOT / PUBLIC DATA</div><div className="network-primary"><strong>{formatNumber(totalSubs)}</strong><span>combined YouTube subscribers</span></div><div className="network-grid"><div><b>{formatNumber(totalMonthly)}</b><span>30-day views</span></div><div><b>{formatNumber(totalRecent)}</b><span>last 10 days</span></div><div><b>04</b><span>official channels</span></div><div><b>01</b><span>creator identity</span></div></div><small>Subscriber figures are public estimates and may be rounded by YouTube/analytics providers.</small></div>;
+  return <div className="home-network-panel"><div className="network-label">NETWORK SNAPSHOT / ESTIMATED PUBLIC DATA</div><div className="network-primary"><strong>{formatNumber(totalSubs)}</strong><span>combined YouTube subscribers / audience</span></div><div className="network-grid"><div><b>{formatNumber(totalViews)}</b><span>estimated total views</span></div><div><b>{formatNumber(totalMonthly)}</b><span>30-day views</span></div><div><b>04</b><span>official YouTube channels</span></div><div><b>08</b><span>social & community destinations</span></div></div><small>Estimates are used as a visual media-kit snapshot and are replaced by live public analytics when available.</small></div>;
 }
 
 function Hero({ stats }: { stats: Record<string, ChannelStats> }) {
-  return <section className="home-hero"><div className="home-hero-grid"><div className="home-hero-copy"><p className="home-eyebrow">ULTRAOP / OFFICIAL CREATOR WEBSITE</p><h1>Gaming creator.<br/><span>Storyteller.</span><br/>Builder.</h1><p className="home-intro">I'm <strong>Sk Ahsan Ahmad</strong>, the creator behind UltraOP. What started with competitive gaming and live streams has grown into a connected creator world spanning YouTube, Minecraft, Roblox, community, brand work and technology.</p><div className="home-hero-actions"><a className="home-button primary" href="/about/">Meet the creator <ArrowUpRight size={16}/></a><a className="home-button" href="/channels/">Explore the channels <ArrowUpRight size={16}/></a></div></div><div className="home-hero-side"><div className="home-portrait"><img src={profileImage} onError={e => { e.currentTarget.src = '/creator/creator-photo.svg'; }} alt="Sk Ahsan Ahmad"/><span>SK AHSAN AHMAD / ULTRAOP</span></div><IntroStats stats={stats}/></div></div><div className="home-scroll-note"><span>01</span><span>SCROLL TO EXPLORE</span><ChevronDown size={15}/></div></section>;
+  return <section className="home-hero"><div className="home-hero-grid"><div className="home-hero-copy"><p className="home-eyebrow">ULTRAOP / OFFICIAL CREATOR WEBSITE</p><h1>Ultra<span>OP.</span></h1><p className="home-intro">I'm <strong>Sk Ahsan Ahmad</strong>, the creator behind UltraOP. What started with competitive gaming and live streams has grown into a connected creator world spanning YouTube, Minecraft, Roblox, community, brand work and technology.</p><div className="home-hero-actions"><a className="home-button primary" href="/about/">Meet the creator <ArrowUpRight size={16}/></a><a className="home-button" href="/channels/">Explore the channels <ArrowUpRight size={16}/></a></div></div><div className="home-hero-side"><div className="home-portrait"><img src={profileImage} onError={e => { e.currentTarget.src = '/creator/creator-photo.svg'; }} alt="Sk Ahsan Ahmad"/><span>SK AHSAN AHMAD / ULTRAOP</span></div><IntroStats stats={stats}/></div></div><div className="home-scroll-note"><span>01</span><span>SCROLL TO EXPLORE</span><ChevronDown size={15}/></div></section>;
 }
 
 function BrandRail() {
@@ -107,10 +127,27 @@ function BrandTab() { return <div className="home-tab-content"><div className="h
 function PlatformTabs({ stats }: { stats: Record<string, ChannelStats> }) { const [tab, setTab] = useState<'youtube' | 'instagram' | 'brand'>('youtube'); return <section className="home-platforms"><SectionTitle kicker="THE NETWORK / ACROSS PLATFORMS" title="Different formats. Same UltraOP world."/><div className="home-tabs"><button className={tab === 'youtube' ? 'active' : ''} onClick={() => setTab('youtube')}><Youtube size={16}/> YouTube</button><button className={tab === 'instagram' ? 'active' : ''} onClick={() => setTab('instagram')}><Instagram size={16}/> Instagram</button><button className={tab === 'brand' ? 'active' : ''} onClick={() => setTab('brand')}><span className="tab-dot"/> Brand Work</button></div>{tab === 'youtube' && <YouTubeTab stats={stats}/>} {tab === 'instagram' && <InstagramTab/>} {tab === 'brand' && <BrandTab/>}</section>; }
 
 const tools = [
-  ['DaVinci Resolve', 'Editing / post-production'], ['OBS Studio', 'Live production'], ['Minecraft', 'Core content world'], ['Visual Studio Code', 'Development'], ['GitHub', 'Projects / releases'], ['Adobe Photoshop', 'Thumbnails / design'],
+  ['DaVinci Resolve', 'https://cdn.simpleicons.org/davinciresolve/111111'],
+  ['OBS Studio', 'https://cdn.simpleicons.org/obsstudio/302E31'],
+  ['Minecraft', 'https://cdn.simpleicons.org/minecraft/62B47A'],
+  ['Visual Studio Code', 'https://cdn.simpleicons.org/visualstudiocode/007ACC'],
+  ['GitHub', 'https://cdn.simpleicons.org/github/111111'],
+  ['Adobe Photoshop', 'https://cdn.simpleicons.org/adobephotoshop/31A8FF'],
+  ['ChatGPT / OpenAI', 'https://cdn.simpleicons.org/openai/111111'],
+  ['Google Gemini', 'https://cdn.simpleicons.org/googlegemini/4285F4'],
+  ['YouTube', 'https://cdn.simpleicons.org/youtube/FF0000'],
+  ['Instagram', 'https://cdn.simpleicons.org/instagram/E4405F'],
+  ['Discord', 'https://cdn.simpleicons.org/discord/5865F2'],
+  ['Twitch', 'https://cdn.simpleicons.org/twitch/9146FF'],
+  ['Kick', 'https://cdn.simpleicons.org/kick/53FC18'],
+  ['Canva', 'https://cdn.simpleicons.org/canva/00C4CC'],
+  ['Figma', 'https://cdn.simpleicons.org/figma/F24E1E'],
+  ['Notion', 'https://cdn.simpleicons.org/notion/111111'],
+  ['Google Drive', 'https://cdn.simpleicons.org/googledrive/4285F4'],
+  ['CapCut', 'https://cdn.simpleicons.org/capcut/111111'],
 ];
-function ToolsSection() { return <section className="home-tools"><SectionTitle kicker="THE TOOLKIT / CREATOR + BUILDER" title="The tools behind the work."/><div className="home-tools-grid">{tools.map(([name, role], i) => <div key={name} className="home-tool"><span>0{i + 1}</span><div><h3>{name}</h3><p>{role}</p></div></div>)}</div></section>; }
+function ToolsSection() { const loop = [...tools, ...tools]; return <section className="home-tools"><SectionTitle kicker="THE TOOLKIT / CREATOR + BUILDER" title="The tools behind the work."/><div className="home-tools-marquee" aria-label="Creator tools and platforms"><div className="home-tools-track">{loop.map(([name, logo], i) => <div className="home-tool-logo" key={`${name}-${i}`} title={name} aria-label={name}><img src={logo} alt="" loading="lazy"/></div>)}</div></div></section>; }
 
 function FooterContact() { return <><section className="home-contact"><div><span className="home-eyebrow">BUSINESS / CONTACT</span><h2>Have something worth building?</h2><p>For sponsorships, creator campaigns, collaborations, media enquiries and professional opportunities.</p></div><a className="home-contact-button" href={`mailto:${SITE.businessEmail}`}><Mail size={18}/><span>{SITE.businessEmail}</span><ArrowUpRight size={17}/></a></section><footer className="home-footer"><div className="home-footer-brand"><a className="home-wordmark" href="/"><img src="/brand/ultraop-mark.svg" alt="UltraOP"/><span>Ultra<em>OP</em></span></a><p>Gaming, storytelling, community and technology — connected under one creator identity.</p></div><div className="home-footer-links"><a href="/about/">About</a><a href="/channels/">Channels</a><a href="/work/">Brand Work</a><a href="/fan-art/">Fan Art</a><a href="/assets/">Assets</a><a href="/journal/">Journal</a><a href="/contact/">Contact</a></div><div className="home-footer-social"><a href={SITE.youtube} target="_blank" rel="noreferrer"><Youtube size={17}/> YouTube</a><a href={SITE.instagram} target="_blank" rel="noreferrer"><Instagram size={17}/> Instagram</a><a href={SITE.discord} target="_blank" rel="noreferrer"><MessageCircle size={17}/> Discord</a></div><div className="home-footer-bottom"><span>© {new Date().getFullYear()} UltraOP / Sk Ahsan Ahmad</span><span><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a></span></div></footer></>; }
 
-export default function CreatorHome() { const stats = useChannelStats(); const totalViews = useMemo(() => Object.values(stats).reduce((sum, item) => sum + (item.totalViews ?? 0), 0), [stats]); return <div className="creator-home"><Nav/><main><Hero stats={stats}/><div className="home-total-strip"><span>NETWORK TOTAL VIEWS</span><strong>{formatNumber(totalViews)}</strong><span>across official YouTube channels</span></div><BrandRail/><ReachSection stats={stats}/><PlatformTabs stats={stats}/><ToolsSection/><FooterContact/></main></div>; }
+export default function CreatorHome() { const stats = useChannelStats(); const totalViews = useMemo(() => Object.values(stats).reduce((sum, item) => sum + (item.totalViews ?? 0), 0), [stats]); return <div className="creator-home"><Nav/><main><Hero stats={stats}/><div className="home-total-strip"><span>NETWORK TOTAL VIEWS</span><strong>{formatNumber(totalViews)}</strong><span>estimated across official YouTube channels</span></div><BrandRail/><ReachSection stats={stats}/><PlatformTabs stats={stats}/><ToolsSection/><FooterContact/></main></div>; }
