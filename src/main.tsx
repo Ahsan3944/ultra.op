@@ -18,6 +18,47 @@ function recoverStaticHostPath() {
   }
 }
 
+function installHomepageEnhancements() {
+  if (window.location.pathname.replace(/\/+$/, '') !== '') return;
+  let cleanup = () => {};
+  const start = () => {
+    const root = document.getElementById('root');
+    if (!root) return;
+    const apply = () => {
+      const cards = Array.from(document.querySelectorAll<HTMLIFrameElement>('.channel-video-card iframe'));
+      const liveChannelId = 'UCAxlmL3_721xzOjQVe5Klbg';
+      const liveFrame = cards[0];
+      if (liveFrame && liveFrame.dataset.liveOnly !== 'true') {
+        liveFrame.src = `https://www.youtube.com/embed/live_stream?channel=${liveChannelId}&rel=0&modestbranding=1`;
+        liveFrame.dataset.liveOnly = 'true';
+        liveFrame.title = 'Ultra OP Live — current live stream';
+      }
+
+      const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.desktop-nav button'));
+      const ids = ['home', 'channels', 'live', 'story', 'community', 'journal', 'contact'];
+      navButtons.forEach((button, index) => button.dataset.section = ids[index] ?? '');
+      const sections = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+      const updateActive = () => {
+        const marker = window.scrollY + Math.min(window.innerHeight * 0.35, 280);
+        let current = sections[0]?.id ?? 'home';
+        for (const section of sections) if (section.offsetTop <= marker) current = section.id;
+        navButtons.forEach(button => button.classList.toggle('is-active', button.dataset.section === current));
+      };
+      updateActive();
+      window.addEventListener('scroll', updateActive, { passive: true });
+      cleanup = () => window.removeEventListener('scroll', updateActive);
+    };
+    apply();
+    const observer = new MutationObserver(() => apply());
+    observer.observe(root, { childList: true, subtree: true });
+    const timer = window.setTimeout(apply, 250);
+    cleanup = () => { observer.disconnect(); window.clearTimeout(timer); };
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+  return () => cleanup();
+}
+
 function NotFound() {
   return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center">
     <main className="shell py-20">
@@ -52,3 +93,5 @@ createRoot(document.getElementById('root')!).render(
     <Root />
   </React.StrictMode>
 );
+
+installHomepageEnhancements();
