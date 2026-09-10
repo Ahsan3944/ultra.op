@@ -26,10 +26,8 @@
   padding: 17px 28px 17px 0;
   font: 600 11px/1 'DM Mono', monospace;
   letter-spacing: .2em;
-  color: var(--text);
+  color: #f0ede5;
 }
-.marquee-track::before { color: #f0ede5; }
-.marquee-track::after { color: #f0ede5; }
 @keyframes ultraopMarquee {
   from { transform: translate3d(0,0,0); }
   to { transform: translate3d(-50%,0,0); }
@@ -57,10 +55,16 @@ section:has(.journal-preview-grid) { display:none !important; }
   height: 40px;
   display: block;
   object-fit: contain;
+  content: url('/brand/ultraop-mark.svg?v=20260911');
   filter: drop-shadow(0 5px 16px rgba(0,0,0,.45));
 }
 .brand-lockup > span { display: none; }
-.global-legal-brand img { width: 40px; height: 40px; object-fit: contain; }
+.global-legal-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  content: url('/brand/ultraop-mark.svg?v=20260911');
+}
 
 /* Contrast pass: avoid muted-on-muted text, especially on dark editorial surfaces. */
 .desktop-nav button,
