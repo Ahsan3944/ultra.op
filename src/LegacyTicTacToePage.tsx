@@ -5,7 +5,6 @@ type Mark = 'X' | 'O' | null;
 type Mode = 'pvp' | 'pvc';
 type Winner = 'X' | 'O';
 type Outcome = { winner: Winner | 'draw'; line: number[] };
-
 type Scores = Record<Winner, number>;
 
 const WIN_LINES = [
@@ -53,7 +52,10 @@ export function LegacyTicTacToePage() {
     if (!mode || board[index] || outcome || (mode === 'pvc' && turn === 'O')) return;
     const next = [...board]; next[index] = turn;
     const r = result(next);
-    if (r?.winner === 'X' || r?.winner === 'O') setWins(w => ({ ...w, [r.winner]: w[r.winner] + 1 }));
+    if (r?.winner === 'X' || r?.winner === 'O') {
+      const winner: Winner = r.winner;
+      setWins(w => ({ ...w, [winner]: w[winner] + 1 }));
+    }
     if (r) { setBoard(next); return; }
     const nextTurn: Winner = turn === 'X' ? 'O' : 'X';
     if (mode === 'pvc' && nextTurn === 'O') {
