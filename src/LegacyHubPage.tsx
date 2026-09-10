@@ -3,71 +3,17 @@ import { LEGACY_BLOG_POSTS, LEGACY_GAMES } from './data/legacyContent';
 import { BLOG_CONTENT } from './data/blogContent';
 
 type Props = { kind: 'blog' | 'games'; slug?: string };
-
 const legacyOrigin = 'https://ultraop.in';
 
 function ArticlePage({ slug }: { slug: string }) {
   const item = LEGACY_BLOG_POSTS.find((post) => post.slug === slug);
   const sections = BLOG_CONTENT[slug];
   if (!item || !sections) return <LegacyHubPage kind="blog" />;
-
-  return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
-      <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[#0a0a0a]/90 backdrop-blur-xl">
-        <div className="shell h-16 flex items-center justify-between">
-          <a href="/" className="font-extrabold tracking-[-.04em]">ULTRA<span className="text-[var(--accent)]">OP</span></a>
-          <a href="/blog/" className="text-xs text-[var(--muted)] inline-flex items-center gap-2"><ArrowLeft size={14}/> Journal</a>
-        </div>
-      </header>
-      <main className="shell py-16 md:py-24">
-        <article className="max-w-4xl">
-          <div className="eyebrow mb-4">{item.category} / {item.date}</div>
-          <h1 className="text-4xl md:text-7xl font-extrabold tracking-[-.06em] leading-[.95]">{item.title}</h1>
-          <p className="mt-6 text-lg text-[var(--muted)] leading-8 max-w-3xl">{item.excerpt}</p>
-          <div className="mt-6 mono text-xs text-[var(--muted)]">{item.views.toLocaleString()} legacy views</div>
-          <div className="mt-12 border-t border-[var(--line)] pt-10 space-y-10">
-            {sections.map((section, index) => (
-              <section key={`${slug}-${index}`}>
-                {section.heading && <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-.04em] mb-5">{section.heading}</h2>}
-                {section.paragraphs?.map((p) => <p key={p} className="text-[var(--muted)] leading-8 mb-4">{p}</p>)}
-                {section.bullets && <ul className="list-disc pl-6 space-y-3 text-[var(--muted)] leading-7">{section.bullets.map((b) => <li key={b}>{b}</li>)}</ul>}
-                {section.ordered && <ol className="list-decimal pl-6 space-y-3 text-[var(--muted)] leading-7">{section.ordered.map((o) => <li key={o}>{o}</li>)}</ol>}
-              </section>
-            ))}
-          </div>
-          <div className="mt-12 pt-8 border-t border-[var(--line)] flex items-center justify-between gap-4">
-            <a href="/blog/" className="text-xs uppercase tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2"><ArrowLeft size={13}/> All articles</a>
-            <a href={`${legacyOrigin}/blog/${item.slug}/`} target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-[.14em] text-[var(--muted)] inline-flex items-center gap-2">Legacy source <ArrowUpRight size={13}/></a>
-          </div>
-        </article>
-      </main>
-    </div>
-  );
+  return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]"><header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[#0a0a0a]/90 backdrop-blur-xl"><div className="shell h-16 flex items-center justify-between"><a href="/" className="font-extrabold tracking-[-.04em]">ULTRA<span className="text-[var(--accent)]">OP</span></a><a href="/blog/" className="text-xs text-[var(--muted)] inline-flex items-center gap-2"><ArrowLeft size={14}/> Journal</a></div></header><main className="shell py-16 md:py-24"><article className="max-w-4xl"><div className="eyebrow mb-4">{item.category} / {item.date}</div><h1 className="text-4xl md:text-7xl font-extrabold tracking-[-.06em] leading-[.95]">{item.title}</h1><p className="mt-6 text-lg text-[var(--muted)] leading-8 max-w-3xl">{item.excerpt}</p><div className="mt-6 mono text-xs text-[var(--muted)]">{item.views.toLocaleString()} legacy views</div><div className="mt-12 border-t border-[var(--line)] pt-10 space-y-10">{sections.map((section,index)=><section key={`${slug}-${index}`}>{section.heading&&<h2 className="text-2xl md:text-4xl font-extrabold tracking-[-.04em] mb-5">{section.heading}</h2>}{section.paragraphs?.map(p=><p key={p} className="text-[var(--muted)] leading-8 mb-4">{p}</p>)}{section.bullets&&<ul className="list-disc pl-6 space-y-3 text-[var(--muted)] leading-7">{section.bullets.map(b=><li key={b}>{b}</li>)}</ul>}{section.ordered&&<ol className="list-decimal pl-6 space-y-3 text-[var(--muted)] leading-7">{section.ordered.map(o=><li key={o}>{o}</li>)}</ol>}</section>)}</div><div className="mt-12 pt-8 border-t border-[var(--line)] flex items-center justify-between gap-4"><a href="/blog/" className="text-xs uppercase tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2"><ArrowLeft size={13}/> All articles</a><a href={`${legacyOrigin}/blog/${item.slug}/`} target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-[.14em] text-[var(--muted)] inline-flex items-center gap-2">Legacy source <ArrowUpRight size={13}/></a></div></article></main></div>;
 }
 
 export function LegacyHubPage({ kind, slug }: Props) {
   if (kind === 'blog' && slug) return <ArticlePage slug={slug} />;
   const isBlog = kind === 'blog';
-  return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
-      <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[#0a0a0a]/90 backdrop-blur-xl">
-        <div className="shell h-16 flex items-center justify-between">
-          <a href="/" className="font-extrabold tracking-[-.04em]">ULTRA<span className="text-[var(--accent)]">OP</span></a>
-          <a href="/" className="text-xs text-[var(--muted)] inline-flex items-center gap-2"><ArrowLeft size={14}/> Home</a>
-        </div>
-      </header>
-      <main className="shell py-16 md:py-24">
-        <div className="max-w-3xl mb-12">
-          <div className="eyebrow mb-4">{isBlog ? 'Journal / migrated archive' : 'Arcade / migrated archive'}</div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-[-.06em]">{isBlog ? <>The <span className="text-[var(--accent)]">journal.</span></> : <>The <span className="text-[var(--accent)]">arcade.</span></>}</h1>
-          <p className="mt-6 text-[var(--muted)] leading-7 max-w-2xl">{isBlog ? 'Verified legacy articles are now available as native UltraOP journal pages.' : 'Legacy game entries are preserved until their source implementations can be migrated without loss.'}</p>
-        </div>
-        {isBlog ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{LEGACY_BLOG_POSTS.map((item, index) => <article key={item.slug} className="card p-6 min-h-64 flex flex-col"><div className="flex items-center justify-between mb-12"><BookOpen size={18} className="text-[var(--accent)]"/><span className="mono text-xs text-[var(--muted)]">0{index + 1}</span></div><h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.title}</h2><p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.excerpt}</p><div className="mt-auto pt-8 flex items-center justify-between gap-4"><span className="mono text-[10px] text-[var(--muted)]">{item.date}</span><a href={`/blog/${item.slug}/`} className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2">Read article <ArrowUpRight size={13}/></a></div></article>)}</div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{LEGACY_GAMES.map((item, index) => <article key={item.id} className="card p-6 min-h-64 flex flex-col"><div className="flex items-center justify-between mb-12"><Gamepad2 size={18} className="text-[var(--accent)]"/><span className="mono text-xs text-[var(--muted)]">0{index + 1}</span></div><h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.name}</h2><p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.description}</p><div className="mt-auto pt-8 flex justify-end"><a href={`${legacyOrigin}${item.legacyPath}`} target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2">Open legacy <ArrowUpRight size={13}/></a></div></article>)}</div>
-        )}
-      </main>
-    </div>
-  );
+  return <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]"><header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[#0a0a0a]/90 backdrop-blur-xl"><div className="shell h-16 flex items-center justify-between"><a href="/" className="font-extrabold tracking-[-.04em]">ULTRA<span className="text-[var(--accent)]">OP</span></a><a href="/" className="text-xs text-[var(--muted)] inline-flex items-center gap-2"><ArrowLeft size={14}/> Home</a></div></header><main className="shell py-16 md:py-24"><div className="max-w-3xl mb-12"><div className="eyebrow mb-4">{isBlog?'Journal / migrated archive':'Arcade / migrated archive'}</div><h1 className="text-5xl md:text-7xl font-extrabold tracking-[-.06em]">{isBlog?< >The <span className="text-[var(--accent)]">journal.</span></>:<>The <span className="text-[var(--accent)]">arcade.</span></>}</h1><p className="mt-6 text-[var(--muted)] leading-7 max-w-2xl">{isBlog?'Verified legacy articles are now available as native UltraOP journal pages.':'Legacy games are being migrated into the native UltraOP arcade one title at a time.'}</p></div>{isBlog?<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{LEGACY_BLOG_POSTS.map((item,index)=><article key={item.slug} className="card p-6 min-h-64 flex flex-col"><div className="flex items-center justify-between mb-12"><BookOpen size={18} className="text-[var(--accent)]"/><span className="mono text-xs text-[var(--muted)]">0{index+1}</span></div><h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.title}</h2><p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.excerpt}</p><div className="mt-auto pt-8 flex items-center justify-between gap-4"><span className="mono text-[10px] text-[var(--muted)]">{item.date}</span><a href={`/blog/${item.slug}/`} className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2">Read article <ArrowUpRight size={13}/></a></div></article>)}</div>:<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{LEGACY_GAMES.map((item,index)=>{const native=item.id==='flappy-bird';return <article key={item.id} className="card p-6 min-h-64 flex flex-col"><div className="flex items-center justify-between mb-12"><Gamepad2 size={18} className="text-[var(--accent)]"/><span className="mono text-xs text-[var(--muted)]">0{index+1}</span></div><h2 className="text-2xl font-extrabold tracking-[-.04em]">{item.name}</h2><p className="mt-3 text-sm text-[var(--muted)] leading-6">{item.description}</p><div className="mt-auto pt-8 flex justify-end">{native?<a href="/games/flappy-bird/" className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--accent)] inline-flex items-center gap-2">Play native <ArrowUpRight size={13}/></a>:<a href={`${legacyOrigin}${item.legacyPath}`} target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase font-bold tracking-[.14em] text-[var(--muted)] inline-flex items-center gap-2">Open legacy <ArrowUpRight size={13}/></a>}</div></article>})}</div>}</main></div>;
 }
