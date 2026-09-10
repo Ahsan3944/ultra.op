@@ -20,10 +20,11 @@ function recoverStaticHostPath() {
 
 function installHomepageEnhancements() {
   if (window.location.pathname.replace(/\/+$/, '') !== '') return;
-  let cleanup = () => {};
   const start = () => {
     const root = document.getElementById('root');
     if (!root) return;
+    let activeListener: (() => void) | null = null;
+    let applied = false;
     const apply = () => {
       const cards = Array.from(document.querySelectorAll<HTMLIFrameElement>('.channel-video-card iframe'));
       const liveChannelId = 'UCAxlmL3_721xzOjQVe5Klbg';
@@ -34,6 +35,7 @@ function installHomepageEnhancements() {
         liveFrame.title = 'Ultra OP Live — current live stream';
       }
 
+      if (applied) return;
       const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.desktop-nav button'));
       const ids = ['home', 'channels', 'live', 'story', 'community', 'journal', 'contact'];
       navButtons.forEach((button, index) => button.dataset.section = ids[index] ?? '');
@@ -46,17 +48,20 @@ function installHomepageEnhancements() {
       };
       updateActive();
       window.addEventListener('scroll', updateActive, { passive: true });
-      cleanup = () => window.removeEventListener('scroll', updateActive);
+      activeListener = () => window.removeEventListener('scroll', updateActive);
+      applied = true;
     };
     apply();
-    const observer = new MutationObserver(() => apply());
+    const observer = new MutationObserver(apply);
     observer.observe(root, { childList: true, subtree: true });
-    const timer = window.setTimeout(apply, 250);
-    cleanup = () => { observer.disconnect(); window.clearTimeout(timer); };
+    window.setTimeout(apply, 250);
+    window.addEventListener('beforeunload', () => {
+      observer.disconnect();
+      activeListener?.();
+    }, { once: true });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
-  return () => cleanup();
 }
 
 function NotFound() {
