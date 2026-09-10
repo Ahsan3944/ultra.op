@@ -5,6 +5,7 @@ import './styles.css';
 import './ultraop-enhancements.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
+import { JournalPage } from './JournalPage';
 
 function recoverStaticHostPath() {
   const key = 'ultraop:requested-path';
@@ -23,7 +24,7 @@ function NotFound() {
       <p className="mt-7 max-w-xl text-base leading-8 text-[var(--muted)]">That UltraOP page does not exist. Head back to the official creator homepage or open the journal.</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <a href="/" className="px-5 py-3.5 bg-[var(--cream)] text-black text-[11px] font-bold uppercase tracking-[.14em] inline-flex items-center gap-2"><ArrowLeft size={14}/> Back home</a>
-        <a href="/blog/" className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Open journal</a>
+        <a href="/journal/" className="px-5 py-3.5 border border-[var(--line)] text-[11px] font-bold uppercase tracking-[.14em]">Open journal</a>
       </div>
     </main>
   </div>;
@@ -33,6 +34,7 @@ function Root() {
   recoverStaticHostPath();
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
 
+  if (path === '/journal') return <JournalPage />;
   if (path === '/blog') return <LegacyHubPage kind="blog" />;
   if (path.startsWith('/blog/')) {
     const slug = path.slice('/blog/'.length).split('/')[0];
