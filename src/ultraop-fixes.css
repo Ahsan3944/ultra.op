@@ -1,12 +1,6 @@
 /* UltraOP interaction + layout polish. Loaded after the existing enhancement layers. */
 
-/*
- * True seamless marquee.
- * The original DOM already contains one repeated sequence. Instead of animating
- * those individual nodes, hide them and render two identical generated tracks.
- * Because both generated halves are exactly the same width, -50% lands on the
- * exact next frame with no stop, reverse motion or visible reset.
- */
+/* True seamless marquee: two identical single sequences, joined edge-to-edge. */
 .marquee-track {
   display: flex;
   width: max-content;
@@ -19,7 +13,7 @@
 .marquee-track > * { display: none !important; }
 .marquee-track::before,
 .marquee-track::after {
-  content: 'ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY  •  ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY';
+  content: 'ULTRAOP  •  GAMER  •  ESPORTS PLAYER  •  ESPORTS  •  PUBG  •  FREE FIRE  •  MINECRAFT  •  VALORANT  •  GTA 5  •  ROBLOX  •  STORYTELLING  •  TECH  •  STREAMER  •  CREATOR  •  COMMUNITY';
   display: block;
   flex: 0 0 auto;
   white-space: nowrap;
@@ -49,27 +43,36 @@
 #faq { display:none !important; }
 section:has(.journal-preview-grid) { display:none !important; }
 
-/* Make the supplied UltraOP mark the clear source of truth in the chrome. */
-.brand-lockup .brand-mark {
-  width: 40px;
-  height: 40px;
-  display: block;
-  object-fit: contain;
-  content: url('/brand/ultraop-mark.svg?v=20260911');
-  filter: drop-shadow(0 5px 16px rgba(0,0,0,.45));
-}
-.brand-lockup > span { display: none; }
+/* Keep exactly one footer: the global legal footer contains the official mark and legal navigation. */
+.site-footer { display:none !important; }
+.global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
+.global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
+.global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
 .global-legal-brand img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  content: url('/brand/ultraop-mark.svg?v=20260911');
+  width:40px;
+  height:40px;
+  object-fit:contain;
+  content:url('/brand/ultraop-mark.svg?v=20260911');
 }
+.global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
+.global-legal-inner a { transition:color .2s ease; }
+.global-legal-inner a:hover { color:var(--text); }
 
-/* Contrast pass: avoid muted-on-muted text, especially on dark editorial surfaces. */
+/* Make the supplied UltraOP mark the clear source of truth in the header. */
+.brand-lockup .brand-mark {
+  width:40px;
+  height:40px;
+  display:block;
+  object-fit:contain;
+  content:url('/brand/ultraop-mark.svg?v=20260911');
+  filter:drop-shadow(0 5px 16px rgba(0,0,0,.45));
+}
+.brand-lockup > span { display:none; }
+
+/* Contrast pass: avoid muted-on-muted text. */
 .desktop-nav button,
-.menu-toggle { color: #c2beb6; }
-.desktop-nav button:hover { color: #fff; }
+.menu-toggle { color:#c2beb6; }
+.desktop-nav button:hover { color:#fff; }
 .hero-lede,
 .section-intro,
 .channel-focus,
@@ -79,25 +82,17 @@ section:has(.journal-preview-grid) { display:none !important; }
 .contact-inner > p:not(.eyebrow),
 .brand-copy p,
 .journal-preview-card p,
-.site-footer p { color: #b2aea6; }
-.hero-meta { color: #908c84; }
-.hero-meta b { color: #f4f1e9; }
+.site-footer p { color:#b2aea6; }
+.hero-meta { color:#908c84; }
+.hero-meta b { color:#f4f1e9; }
 .channel-handle,
 .brand-copy > .mono,
 .future-note .mono,
-.footer-meta { color: #8d8981; }
+.footer-meta { color:#8d8981; }
 .channel-platform,
 .hero-stamp strong,
-.hero-name span { color: #e2ded6; }
-.live-inner > p { color: #171717; }
-
-/* Global legal strip: official mark + useful legal/contact destinations. */
-.global-legal-footer { border-top:1px solid var(--line); background:#060606; color:var(--muted); }
-.global-legal-inner { width:min(var(--max),calc(100% - 48px)); min-height:78px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; font:500 9px/1.4 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
-.global-legal-brand { display:inline-flex; align-items:center; flex:0 0 auto; }
-.global-legal-inner nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:16px 24px; }
-.global-legal-inner a { transition:color .2s ease; }
-.global-legal-inner a:hover { color:var(--text); }
+.hero-name span { color:#e2ded6; }
+.live-inner > p { color:#171717; }
 
 @media (max-width:640px) {
   .global-legal-inner { width:calc(100% - 28px); padding:20px 0; flex-wrap:wrap; }
