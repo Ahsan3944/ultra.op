@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
+import './ultraop-enhancements.css';
 import App from './App';
 import { LegacyHubPage } from './LegacyHubPage';
 
