@@ -36,13 +36,3 @@ export const BRAND_CAMPAIGNS = [
   { name: 'Parallel Mobile', type: 'Mobile App Campaign', category: 'Mobile Gaming & Utilities', year: '2024' },
   { name: 'TVS', type: 'Brand Campaign', category: 'Automotive & Lifestyle', year: '2023' },
 ] as const;
-
-export const GAMES = [
-  { id: 'trivia', name: 'Gamer Trivia', category: 'Quiz', description: 'Fast multi-game trivia with timed rounds.' },
-  { id: 'zen', name: 'Zen Tile', category: 'Relaxing', description: 'A calm 2048-style merge experience.' },
-  { id: 'bubble', name: 'Bubble Zen', category: 'Relaxing', description: 'Pop, chain, and unwind.' },
-  { id: 'aim', name: 'Reflex Aim Pro', category: 'Reflex', description: 'Reaction and flick training.' },
-  { id: 'cyber-strike', name: 'Cyber Strike', category: 'Action', description: 'Top-down neon arcade combat.' },
-  { id: 'snake', name: 'Neon Snake', category: 'Arcade', description: 'Classic snake, rebuilt for modern touch.' },
-  { id: 'dash', name: 'Cyber Dash', category: 'Casual', description: 'Tap through anti-gravity gates.' },
-] as const;
