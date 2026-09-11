@@ -1,11 +1,26 @@
-/* Final homepage refinement: compact editorial hero with stronger use of the first viewport. */
+/* Final homepage refinement: compact editorial hero with subtle character spacing and image sheen. */
 .creator-home .home-hero{padding-top:42px;padding-bottom:34px}
 .creator-home .home-hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.78fr);gap:54px;align-items:start}
 .creator-home .home-hero-grid>.home-hero-content{padding-top:18px}
-.creator-home .home-hero h1{display:block;width:100%;max-width:700px;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:.02em;margin:18px 0 24px;font-weight:900}
-.creator-home .home-hero h1 span{display:block;width:62%;margin-left:auto;text-align:right;font-size:0;line-height:.82;margin-top:16px;color:var(--home-orange);letter-spacing:-.09em}
-.creator-home .home-hero h1 span:before{content:"OP";display:inline-block;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:-.09em}
+.creator-home .home-hero h1{display:block;width:100%;max-width:700px;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:.028em;margin:18px 0 24px;font-weight:900}
+.creator-home .home-hero h1 span{display:block;width:62%;margin-left:auto;text-align:right;font-size:0;line-height:.82;margin-top:16px;color:var(--home-orange);letter-spacing:0}
+.creator-home .home-hero h1 span:before{content:"OP";display:inline-block;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:.018em}
 .creator-home .home-intro{max-width:650px;font-size:16px;line-height:1.7}
+
+/* Subtle animated sheen: premium polish without changing the layout. */
+.creator-home .home-hero h1{position:relative;text-shadow:0 0 0 transparent;animation:ultraop-wordmark-shine 7s ease-in-out infinite}
+.creator-home .home-portrait{position:relative;overflow:hidden}
+.creator-home .home-portrait:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 50%,transparent 62%);transform:translateX(-130%);animation:ultraop-photo-shine 8s ease-in-out infinite;border-radius:inherit}
+@keyframes ultraop-wordmark-shine{0%,72%,100%{filter:none}78%{filter:drop-shadow(0 0 10px rgba(255,103,71,.13))}}
+@keyframes ultraop-photo-shine{0%,62%,100%{transform:translateX(-130%)}78%{transform:translateX(130%)}}
+
+/* User-replaceable brand assets: any one of logo.png/jpg/jpeg/webp or profile.png/jpg/jpeg/webp can be dropped into /public/brand-assets/. */
+.creator-home .home-wordmark img{opacity:0}
+.creator-home .home-wordmark{position:relative}
+.creator-home .home-wordmark:before{content:"";width:30px;height:30px;display:block;flex:0 0 30px;background-repeat:no-repeat;background-position:center;background-size:contain;background-image:url("/brand-assets/logo.png"),url("/brand-assets/logo.jpg"),url("/brand-assets/logo.jpeg"),url("/brand-assets/logo.webp"),url("/brand/ultraop-mark.svg")}
+.creator-home .home-portrait img{opacity:0}
+.creator-home .home-portrait:before{content:"";position:absolute;inset:0;background-repeat:no-repeat;background-position:center;background-size:cover;background-image:url("/brand-assets/profile.png"),url("/brand-assets/profile.jpg"),url("/brand-assets/profile.jpeg"),url("/brand-assets/profile.webp"),url("https://raw.githubusercontent.com/ultraop-in/ultra-in.github.io/main/images/ahsan-profile.png"),url("/creator/creator-photo.svg")}
+.creator-home .home-portrait span{position:relative;z-index:2}
 
 /* Smaller portrait + wider compact stats block = less empty first-viewport space. */
 .creator-home .home-hero-side{gap:12px;align-content:start}
@@ -63,9 +78,9 @@
 @media(max-width:700px){
 .creator-home .home-hero{padding-top:34px;padding-bottom:24px}
 .creator-home .home-hero-grid{gap:30px}
-.creator-home .home-hero h1{font-size:clamp(68px,19vw,104px);margin-bottom:24px;letter-spacing:.012em}
+.creator-home .home-hero h1{font-size:clamp(68px,19vw,104px);margin-bottom:24px;letter-spacing:.018em}
 .creator-home .home-hero h1 span{width:68%;margin-top:13px}
-.creator-home .home-hero h1 span:before{font-size:clamp(68px,19vw,104px)}
+.creator-home .home-hero h1 span:before{font-size:clamp(68px,19vw,104px);letter-spacing:.012em}
 .creator-home .home-hero-side{grid-template-columns:1fr}
 .creator-home .home-portrait{height:320px}
 .creator-home .home-network-panel .network-grid{grid-template-columns:1fr 1fr}
@@ -77,4 +92,4 @@
 .creator-home .home-tools-track{gap:22px;animation-duration:25s}
 .creator-home .home-tools-track:after{width:200px;flex-basis:200px;background-size:24px 24px;background-position:0 center,44px center,88px center,132px center,176px center}
 }
-@media(prefers-reduced-motion:reduce){.creator-home .home-tools-track{animation:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.creator-home .home-tools-track,.creator-home .home-hero h1,.creator-home .home-portrait:after{animation:none}}
