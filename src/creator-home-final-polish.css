@@ -1,0 +1,12 @@
+/* Final editorial wordmark pass: use the reference composition without copying its layout. */
+.creator-home .home-hero h1{max-width:760px;overflow:visible;animation:none}
+.creator-home .home-hero h1 .ultra-word{color:#151310!important;gap:.045em!important;letter-spacing:0!important;text-shadow:0 2px 0 rgba(0,0,0,.035),0 8px 20px rgba(25,20,15,.075)!important}
+.creator-home .home-hero h1 .ultra-word i{color:#151310!important;text-shadow:inherit!important}
+.creator-home .home-hero h1 .op-word{color:#f36b45!important;gap:.035em!important;margin-left:47%!important;margin-top:3px!important;text-shadow:0 3px 0 rgba(184,65,39,.08),0 8px 18px rgba(255,103,71,.18)!important;animation:ultraop-op-pulse 4.8s ease-in-out infinite}
+.creator-home .home-hero h1 .op-word i{color:#f36b45!important;text-shadow:inherit!important}
+.creator-home .home-hero h1 .op-word:before{content:"THE ULTRAOP CREATOR NETWORK";right:auto;left:0;bottom:calc(100% + 8px);font-size:7px;letter-spacing:.18em;color:#968d82}
+.creator-home .home-hero h1:after{content:"01  /  GAMING  •  LIVE  •  COMMUNITY  •  CREATOR";display:block;width:62%;margin-top:12px;padding-top:9px;border-top:1px solid var(--home-line);font:800 7px/1.2 "DM Mono",monospace;letter-spacing:.13em;color:#a0988d;white-space:nowrap}
+@keyframes ultraop-op-pulse{0%,100%{filter:drop-shadow(0 0 0 rgba(255,103,71,0));transform:translateY(0)}45%{filter:drop-shadow(0 0 7px rgba(255,103,71,.13))}55%{filter:drop-shadow(0 0 15px rgba(255,103,71,.25));transform:translateY(-1px)}70%{filter:drop-shadow(0 0 5px rgba(255,103,71,.1));transform:translateY(0)}}
+@media(max-width:1050px){.creator-home .home-hero h1 .op-word{margin-left:40%!important}.creator-home .home-hero h1:after{width:68%}}
+@media(max-width:700px){.creator-home .home-hero h1{max-width:100%}.creator-home .home-hero h1 .ultra-word{gap:.035em!important}.creator-home .home-hero h1 .op-word{margin-left:34%!important;gap:.025em!important}.creator-home .home-hero h1 .op-word:before{font-size:6px;letter-spacing:.12em;bottom:calc(100% + 6px)}.creator-home .home-hero h1:after{width:82%;margin-top:9px;padding-top:7px;font-size:6px;letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.creator-home .home-hero h1 .op-word{animation:none}}
