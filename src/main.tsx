@@ -11,12 +11,15 @@ import './creator-home.css';
 import './creator-home-refinement.css';
 import './creator-home-final-polish.css';
 import './gallery-pages.css';
+import './about-assets-pro.css';
 import App from './App';
 import CreatorHome from './CreatorHome';
 import { LegacyHubPage } from './LegacyHubPage';
 import { JournalPage } from './JournalPage';
 import { AboutPage, ChannelsPage, LivePage, CommunityPage, WorkPage, ContactPage, JournalLandingPage, Creator404 } from './CreatorPages';
-import { FanArtPage, AssetsPage } from './GalleryPages';
+import { FanArtPage } from './GalleryPages';
+import AboutPagePro from './AboutPagePro';
+import AssetsPagePro from './AssetsPagePro';
 import { installGalleryNav } from './gallery-nav';
 
 function recoverStaticHostPath() { const key = 'ultraop:requested-path'; const stored = sessionStorage.getItem(key); if (stored && stored !== '/') { sessionStorage.removeItem(key); window.history.replaceState(null, '', stored); } }
@@ -37,7 +40,7 @@ function installHomepageEnhancements() {
   }; if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 }
 
-function Root() { recoverStaticHostPath(); const path = window.location.pathname.replace(/\/+$/, '') || '/'; if (path === '/about') return <AboutPage/>; if (path === '/channels') return <ChannelsPage/>; if (path === '/live') return <LivePage/>; if (path === '/community') return <CommunityPage/>; if (path === '/work') return <WorkPage/>; if (path === '/contact') return <ContactPage/>; if (path === '/journal') return <JournalLandingPage/>; if (path === '/journal-full') return <JournalPage/>; if (path === '/fan-art') return <FanArtPage/>; if (path === '/assets') return <AssetsPage/>; if (path === '/blog') return <LegacyHubPage kind="blog"/>; if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug}/>; } if (path !== '/') return <Creator404/>; return <CreatorHome/>; }
+function Root() { recoverStaticHostPath(); const path = window.location.pathname.replace(/\/+$/, '') || '/'; if (path === '/about') return <AboutPagePro/>; if (path === '/channels') return <ChannelsPage/>; if (path === '/live') return <LivePage/>; if (path === '/community') return <CommunityPage/>; if (path === '/work') return <WorkPage/>; if (path === '/contact') return <ContactPage/>; if (path === '/journal') return <JournalLandingPage/>; if (path === '/journal-full') return <JournalPage/>; if (path === '/fan-art') return <FanArtPage/>; if (path === '/assets') return <AssetsPagePro/>; if (path === '/blog') return <LegacyHubPage kind="blog"/>; if (path.startsWith('/blog/')) { const slug = path.slice('/blog/'.length).split('/')[0]; return <LegacyHubPage kind="blog" slug={slug}/>; } if (path !== '/') return <Creator404/>; return <CreatorHome/>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><Root/></React.StrictMode>);
 installHomepageEnhancements();
 installGalleryNav();
