@@ -1,11 +1,10 @@
 /* Final homepage refinement: compact logo-only toolkit strip + editorial hero/network treatment. */
 .creator-home .home-hero h1{display:block;font-size:clamp(76px,10vw,154px);line-height:.78;letter-spacing:-.09em}
 .creator-home .home-hero h1 span{display:block;font-size:0;text-align:right;line-height:.78;margin-top:4px;color:var(--home-orange)}
-.creator-home .home-hero h1 span:before{content:"OP";font-size:1em;letter-spacing:-.09em}
+.creator-home .home-hero h1 span:before{content:"OP";display:inline-block;font-size:clamp(76px,10vw,154px);line-height:.78;letter-spacing:-.09em}
 .creator-home .home-network-panel .network-primary span{font-size:0}
 .creator-home .home-network-panel .network-primary span:after{content:"combined subscribers / followers";font-size:11px;color:var(--home-muted)}
 .creator-home .home-network-panel .network-primary strong:after{content:"+";font-size:.62em;margin-left:2px;color:var(--home-orange)}
-.creator-home .home-network-panel .network-grid>div:nth-child(4) b{font-size:25px}
 .creator-home .home-network-panel .network-grid>div:nth-child(4) b{font-size:0}
 .creator-home .home-network-panel .network-grid>div:nth-child(4) b:after{content:"10K";font-size:25px}
 .creator-home .home-network-panel .network-grid>div:nth-child(4) span{font-size:0}
@@ -23,8 +22,8 @@
 .creator-home .home-tool-logo{width:38px;height:38px;flex:0 0 38px;border:0;border-radius:0;background:transparent;display:grid;place-items:center;box-shadow:none;padding:0}
 .creator-home .home-tool-logo:hover{transform:scale(1.08);box-shadow:none}
 .creator-home .home-tool-logo img{width:28px;height:28px;object-fit:contain;display:block}
-/* Add a few extra requested tools without introducing text/cards. */
+/* Extra requested tools are still logo-only; no cards or labels are introduced. */
 .creator-home .home-tools-track:after{content:"";display:block;width:250px;height:34px;flex:0 0 250px;background-repeat:no-repeat;background-position:0 center,55px center,110px center,165px center,220px center;background-size:30px 30px;background-image:url("https://cdn.simpleicons.org/microsoft/737373"),url("https://cdn.simpleicons.org/roblox/111111"),url("https://cdn.simpleicons.org/steam/111111"),url("https://cdn.simpleicons.org/audacity/111111"),url("https://cdn.simpleicons.org/excel/217346")}
 @keyframes ultraop-tool-marquee-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-@media(max-width:700px){.creator-home .home-hero h1{font-size:clamp(66px,20vw,100px)}.creator-home .home-tools{margin-top:70px}.creator-home .home-tools-marquee{height:54px}.creator-home .home-tool-logo{width:30px;height:30px;flex-basis:30px}.creator-home .home-tool-logo img{width:23px;height:23px}.creator-home .home-tools-track{gap:22px;animation-duration:25s}.creator-home .home-tools-track:after{width:200px;flex-basis:200px;background-size:24px 24px;background-position:0 center,44px center,88px center,132px center,176px center}}
+@media(max-width:700px){.creator-home .home-hero h1{font-size:clamp(66px,20vw,100px)}.creator-home .home-hero h1 span:before{font-size:clamp(66px,20vw,100px)}.creator-home .home-tools{margin-top:70px}.creator-home .home-tools-marquee{height:54px}.creator-home .home-tool-logo{width:30px;height:30px;flex-basis:30px}.creator-home .home-tool-logo img{width:23px;height:23px}.creator-home .home-tools-track{gap:22px;animation-duration:25s}.creator-home .home-tools-track:after{width:200px;flex-basis:200px;background-size:24px 24px;background-position:0 center,44px center,88px center,132px center,176px center}}
 @media(prefers-reduced-motion:reduce){.creator-home .home-tools-track{animation:none;transform:none}}
