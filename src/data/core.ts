@@ -36,4 +36,4 @@ export const BRAND_CAMPAIGNS = [
   { name: 'Hero', type: 'Brand Campaign', category: 'Mobility & Automotive', year: '2023–2024', logo: 'https://cdn.simpleicons.org/heromotocorp/D71920' },
   { name: 'Parallel Mobile', type: 'Mobile App Campaign', category: 'Mobile Gaming & Utilities', year: '2024', logo: 'https://www.parallelcorp.com/images/parallel-corporate-logo-2.png' },
   { name: 'TVS', type: 'Brand Campaign', category: 'Automotive & Lifestyle', year: '2023', logo: 'https://cdn.simpleicons.org/tvs/003B73' },
-] as const;
+];
