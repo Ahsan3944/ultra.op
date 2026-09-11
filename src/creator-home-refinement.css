@@ -1,8 +1,10 @@
-/* Final homepage refinement: editorial hero, estimated media-kit figures, compact logo rail. */
-.creator-home .home-hero{min-height:calc(100vh - 84px);display:flex;align-items:center}
-.creator-home .home-hero h1{display:block;width:max-content;max-width:100%;font-size:clamp(84px,11vw,176px);line-height:.8;letter-spacing:-.095em;margin:0 0 30px}
-.creator-home .home-hero h1 span{display:block;width:100%;font-size:0;text-align:right;line-height:.8;margin-top:18px;color:var(--home-orange);padding-right:2px}
-.creator-home .home-hero h1 span:before{content:"OP";display:inline-block;font-size:clamp(84px,11vw,176px);line-height:.8;letter-spacing:-.095em}
+/* Final homepage refinement: balanced editorial hero, estimated media-kit figures, compact logo rail. */
+.creator-home .home-hero{padding-top:64px;padding-bottom:56px}
+.creator-home .home-hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(500px,.98fr);gap:76px;align-items:center}
+.creator-home .home-hero h1{display:block;width:100%;max-width:760px;font-size:clamp(78px,8.6vw,138px);line-height:.82;letter-spacing:-.09em;margin:0 0 32px;font-weight:900}
+.creator-home .home-hero h1 span{display:block;width:72%;margin-left:auto;text-align:right;font-size:0;line-height:.82;margin-top:22px;color:var(--home-orange)}
+.creator-home .home-hero h1 span:before{content:"OP";display:inline-block;font-size:clamp(78px,8.6vw,138px);line-height:.82;letter-spacing:-.09em}
+.creator-home .home-intro{max-width:650px}
 
 /* Media-kit snapshot: intentionally presented as estimated public-facing figures. */
 .creator-home .home-network-panel .network-primary strong{font-size:0;font-variant-numeric:tabular-nums}
@@ -34,11 +36,18 @@
 .creator-home .home-tools-track:after{content:"";display:block;width:250px;height:34px;flex:0 0 250px;background-repeat:no-repeat;background-position:0 center,55px center,110px center,165px center,220px center;background-size:30px 30px;background-image:url("https://cdn.simpleicons.org/microsoft/737373"),url("https://cdn.simpleicons.org/roblox/111111"),url("https://cdn.simpleicons.org/steam/111111"),url("https://cdn.simpleicons.org/audacity/111111"),url("https://cdn.simpleicons.org/excel/217346")}
 @keyframes ultraop-tool-marquee-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
+@media(max-width:1050px){
+.creator-home .home-hero-grid{grid-template-columns:1fr;gap:42px}
+.creator-home .home-hero h1{max-width:820px}
+.creator-home .home-hero-side{grid-template-columns:1fr 1fr}
+}
 @media(max-width:700px){
-.creator-home .home-hero{min-height:auto;align-items:flex-start}
-.creator-home .home-hero h1{font-size:clamp(72px,21vw,112px);margin-bottom:28px}
-.creator-home .home-hero h1 span{margin-top:14px}
-.creator-home .home-hero h1 span:before{font-size:clamp(72px,21vw,112px)}
+.creator-home .home-hero{padding-top:48px;padding-bottom:28px}
+.creator-home .home-hero-grid{gap:34px}
+.creator-home .home-hero h1{font-size:clamp(70px,20vw,108px);margin-bottom:26px}
+.creator-home .home-hero h1 span{width:70%;margin-top:14px}
+.creator-home .home-hero h1 span:before{font-size:clamp(70px,20vw,108px)}
+.creator-home .home-hero-side{grid-template-columns:1fr}
 .creator-home .home-network-panel .network-primary strong:after{font-size:38px}
 .creator-home .home-tools{margin-top:70px}
 .creator-home .home-tools-marquee{height:54px}
