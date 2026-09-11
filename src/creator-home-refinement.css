@@ -1,15 +1,16 @@
-/* Final homepage refinement: compact editorial hero with clearly separated Ultra OP characters and image sheen. */
+/* Final homepage refinement: balanced editorial hero, visibly separated characters, subtle 3D shine, and compact media-kit rail. */
 .creator-home .home-hero{padding-top:42px;padding-bottom:34px}
 .creator-home .home-hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.78fr);gap:54px;align-items:start}
 .creator-home .home-hero-grid>.home-hero-content{padding-top:18px}
-.creator-home .home-hero h1{display:block;width:100%;max-width:700px;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:0;margin:18px 0 24px;font-weight:900}
-.creator-home .home-hero h1 .ultra-word{display:flex;width:max-content;max-width:100%;margin:0;gap:.055em;text-align:left;font-size:inherit;line-height:.82;letter-spacing:0;color:var(--home-ink)}
-.creator-home .home-hero h1 .ultra-word i,.creator-home .home-hero h1 .op-word i{font-style:normal;display:block;flex:0 0 auto}
-.creator-home .home-hero h1 .op-word{display:flex;width:max-content;margin-left:auto;margin-top:18px;gap:.035em;text-align:right;font-size:inherit;line-height:.82;color:var(--home-orange);letter-spacing:0}
+.creator-home .home-hero h1{display:block;width:100%;max-width:700px;font-size:clamp(76px,7.7vw,126px);line-height:.82;letter-spacing:0;margin:18px 0 24px;font-weight:900;position:relative;animation:ultraop-wordmark-shine 7s ease-in-out infinite}
+/* Real character gaps: each letter is its own element, so the font cannot collapse the wordmark. */
+.creator-home .home-hero h1 .ultra-word{display:flex;width:max-content;max-width:100%;margin:0;gap:.075em;align-items:baseline;text-align:left;font-size:inherit;line-height:.82;letter-spacing:0;color:var(--home-ink);white-space:nowrap;text-shadow:0 3px 0 rgba(0,0,0,.035),0 8px 18px rgba(31,24,17,.08)}
+.creator-home .home-hero h1 .ultra-word i,.creator-home .home-hero h1 .op-word i{font-style:normal;display:block;flex:0 0 auto;letter-spacing:0}
+.creator-home .home-hero h1 .op-word{display:flex;width:max-content;margin-left:auto;margin-top:18px;gap:.055em;align-items:baseline;text-align:right;font-size:inherit;line-height:.82;color:var(--home-orange);letter-spacing:0;text-shadow:0 3px 0 rgba(184,65,39,.08),0 8px 20px rgba(255,103,71,.16)}
+.creator-home .home-hero h1 .op-word i{font-size:clamp(76px,7.7vw,126px);line-height:.82}
 .creator-home .home-intro{max-width:650px;font-size:16px;line-height:1.7}
 
 /* Subtle animated sheen: premium polish without changing the layout. */
-.creator-home .home-hero h1{position:relative;text-shadow:0 0 0 transparent;animation:ultraop-wordmark-shine 7s ease-in-out infinite}
 .creator-home .home-portrait{position:relative;overflow:hidden}
 .creator-home .home-portrait:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 50%,transparent 62%);transform:translateX(-130%);animation:ultraop-photo-shine 8s ease-in-out infinite;border-radius:inherit}
 @keyframes ultraop-wordmark-shine{0%,72%,100%{filter:none}78%{filter:drop-shadow(0 0 10px rgba(255,103,71,.13))}}
@@ -81,7 +82,8 @@
 .creator-home .home-hero-grid{gap:30px}
 .creator-home .home-hero h1{font-size:clamp(68px,19vw,104px);margin-bottom:24px}
 .creator-home .home-hero h1 .ultra-word{gap:.045em}
-.creator-home .home-hero h1 .op-word{gap:.028em;margin-top:13px}
+.creator-home .home-hero h1 .op-word{gap:.03em;margin-top:13px}
+.creator-home .home-hero h1 .op-word i{font-size:clamp(68px,19vw,104px)}
 .creator-home .home-hero-side{grid-template-columns:1fr}
 .creator-home .home-portrait{height:320px}
 .creator-home .home-network-panel .network-grid{grid-template-columns:1fr 1fr}
