@@ -9,6 +9,7 @@ import './creator-pages.css';
 import './creator-home-overrides.css';
 import './creator-home.css';
 import './creator-home-refinement.css';
+import './creator-home-final-polish.css';
 import './gallery-pages.css';
 import App from './App';
 import CreatorHome from './CreatorHome';
