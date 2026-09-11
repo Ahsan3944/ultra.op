@@ -19,7 +19,8 @@ export const YOUTUBE_CHANNELS = [
   { key: 'earnings', id: 'UC-KkWDruqOobwZgylSb4kwA', name: 'Op Earnings', handle: '@ultraopearnings', url: 'https://www.youtube.com/@ultraopearnings', focus: 'Creator growth, earnings & behind-the-scenes', uploadsPlaylist: 'UU-KkWDruqOobwZgylSb4kwA' },
 ] as const;
 
-export const SOCIALS = [
+export type Social = { name: string; handle: string; url: string; type: string };
+export const SOCIALS: readonly Social[] = [
   { name: 'Instagram', handle: '@ultraopp', url: 'https://www.instagram.com/ultraopp/', type: 'Social' },
   { name: 'Instagram / Earnings', handle: '@op_earnings', url: 'https://www.instagram.com/op_earnings/', type: 'Social' },
   { name: 'Instagram / Ahsan Now', handle: '@ahsannow', url: 'https://www.instagram.com/ahsannow/', type: 'Social' },
@@ -28,7 +29,7 @@ export const SOCIALS = [
   { name: 'Rooter', handle: 'UltraOP', url: 'https://www.rooter.gg/profile/142404154', type: 'Streaming' },
   { name: 'Discord', handle: '6sWsg324md', url: 'https://discord.gg/6sWsg324md', type: 'Community' },
   { name: 'WhatsApp Channel', handle: 'UltraOP', url: 'https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t', type: 'Community' },
-] as const;
+];
 
 export type BrandCampaign = {
   name: string;
