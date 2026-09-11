@@ -30,11 +30,19 @@ export const SOCIALS = [
   { name: 'WhatsApp Channel', handle: 'UltraOP', url: 'https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t', type: 'Community' },
 ] as const;
 
-export const BRAND_CAMPAIGNS = [
+export type BrandCampaign = {
+  name: string;
+  type: string;
+  category: string;
+  year: string;
+  logo?: string;
+};
+
+export const BRAND_CAMPAIGNS: readonly BrandCampaign[] = [
   { name: 'Amazon', type: 'Promotional Campaign', category: 'E-Commerce & Tech', year: '2023–2024', logo: 'https://cdn.simpleicons.org/amazon/FF9900' },
   { name: 'THE FINALS', type: 'Game Launch & Esports Campaign', category: 'Competitive FPS', year: '2024', logo: 'https://cdn.simpleicons.org/thefinals/111111' },
   { name: 'Wild Stone', type: 'Creator Lifestyle Campaign', category: 'Men’s Grooming & Lifestyle', year: '2023', logo: 'https://www.wildstone.in/cdn/shop/files/Wild_Stone_Logo_973ee566-ce01-45db-8b37-628380b8d85b_1417x.png?v=1672557783' },
   { name: 'Hero', type: 'Mobility & Creator Campaign', category: 'Automotive', year: '2024', logo: 'https://cdn.simpleicons.org/heromotocorp/D71920' },
   { name: 'Parallel Mobile', type: 'Game Launch Campaign', category: 'Mobile Gaming', year: '2024', logo: 'https://www.parallelcorp.com/images/parallel-corporate-logo-2.png' },
   { name: 'TVS', type: 'Brand Partnership', category: 'Automotive & Mobility', year: '2024', logo: 'https://cdn.simpleicons.org/tvs/003B73' },
-] as const;
+];
