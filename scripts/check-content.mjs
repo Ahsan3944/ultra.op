@@ -27,6 +27,9 @@ assert.ok(core.includes('ultraopbiz@gmail.com'), 'Business email was removed fro
 assert.ok(core.includes('Amazon') && core.includes('THE FINALS') && core.includes('Wild Stone'), 'Known campaign records are unexpectedly missing.');
 assert.ok(!studio.includes('estimatedStats'), 'Do not restore a hard-coded fallback statistics object in the new website.');
 assert.ok(studio.includes('subscribersEstimated'), 'Third-party estimated statistics must be explicitly distinguished from direct API values.');
+assert.ok(studio.includes("'?sub_confirmation=1'"), 'Each official channel needs a direct YouTube subscribe URL.');
+assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessible channel-specific labels.');
+assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
