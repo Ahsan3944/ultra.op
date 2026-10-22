@@ -61,7 +61,7 @@ button { color: inherit; }
   gap: 28px;
 }
 .uos-wordmark { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; font-size: 17px; font-weight: 900; letter-spacing: -.07em; }
-.uos-wordmark img { display: block; width: 32px; height: 32px; object-fit: contain; }
+.uos-wordmark img { display: block; width: 36px; height: 45px; object-fit: contain; }
 .uos-wordmark-accent { color: var(--uos-accent); }
 .uos-desktop-nav { display: flex; align-items: center; gap: clamp(17px, 2.4vw, 36px); }
 .uos-desktop-nav a { color: #aaa9a3; font-size: 12px; transition: color .2s ease; }
@@ -118,8 +118,7 @@ button { color: inherit; }
 .uos-cube-top { transform: rotateX(90deg) translateZ(105px); background: linear-gradient(135deg, #55514a, #202224); }
 .uos-cube-bottom { transform: rotateX(-90deg) translateZ(105px); background: #0b0c0d; }
 .uos-cube-front:after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.12); }
-.uos-cube-mark { z-index: 1; font-size: 75px; font-weight: 900; letter-spacing: -.12em; color: var(--uos-paper); }
-.uos-cube-mark span { color: var(--uos-accent); }
+.uos-cube-logo { position: relative; z-index: 1; display: block; width: 118px; height: 150px; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0,0,0,.34)); }
 .uos-pixel { position: absolute; width: 16px; height: 16px; background: var(--uos-accent); }
 .uos-pixel-a { top: 25px; left: 25px; }
 .uos-pixel-b { bottom: 25px; right: 25px; width: 9px; height: 9px; }
@@ -293,7 +292,7 @@ button { color: inherit; }
   .uos-cube-left { transform: rotateY(-90deg) translateZ(87.5px); }
   .uos-cube-top { transform: rotateX(90deg) translateZ(87.5px); }
   .uos-cube-bottom { transform: rotateX(-90deg) translateZ(87.5px); }
-  .uos-cube-mark { font-size: 62px; }
+  .uos-cube-logo { width: 100px; height: 127px; }
   .uos-orbit-one { width: 300px; height: 300px; }
   .uos-orbit-two { width: 360px; height: 230px; }
   .uos-journey-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -328,7 +327,7 @@ button { color: inherit; }
   .uos-header-inner, .uos-container, .uos-hero-inner, .uos-hero-bottom { width: calc(100% - 28px); }
   .uos-header-inner { height: 66px; }
   .uos-wordmark { font-size: 15px; }
-  .uos-wordmark img { width: 29px; height: 29px; }
+  .uos-wordmark img { width: 31px; height: 39px; }
   .uos-hero { padding-top: 21px; }
   .uos-hero-copy { padding-top: 26px; }
   .uos-hero-kicker { font-size: 8px; letter-spacing: .1em; }
@@ -348,7 +347,7 @@ button { color: inherit; }
   .uos-cube-left { transform: rotateY(-90deg) translateZ(72.5px); }
   .uos-cube-top { transform: rotateX(90deg) translateZ(72.5px); }
   .uos-cube-bottom { transform: rotateX(-90deg) translateZ(72.5px); }
-  .uos-cube-mark { font-size: 51px; }
+  .uos-cube-logo { width: 86px; height: 110px; }
   .uos-orbit-one { width: 245px; height: 245px; }
   .uos-orbit-two { width: 280px; height: 190px; }
   .uos-chip-one { left: 4%; top: 20%; }
@@ -389,3 +388,16 @@ button { color: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .uos-cube, .uos-orbit { transform: none !important; }
 }
+
+
+/* Human-readable site directory */
+.uos-sitemap-layout { display: grid; gap: clamp(42px, 6vw, 86px); }
+.uos-sitemap-group { min-width: 0; }
+.uos-sitemap-group h2 { margin: 14px 0 24px; font-size: clamp(28px, 4.5vw, 48px); line-height: 1; letter-spacing: -.06em; }
+.uos-sitemap-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; border-top: 1px solid var(--uos-line); }
+.uos-sitemap-links a { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 18px; align-items: start; gap: 5px 12px; padding: 17px 0; border-bottom: 1px solid var(--uos-line); color: var(--uos-paper); }
+.uos-sitemap-links a strong { font-size: 13px; font-weight: 700; }
+.uos-sitemap-links a span { grid-column: 1; color: #91938f; font-size: 11px; line-height: 1.55; }
+.uos-sitemap-links a svg { grid-column: 2; grid-row: 1 / span 2; color: var(--uos-accent); }
+.uos-sitemap-links a:hover strong { color: var(--uos-accent); }
+@media (max-width: 680px) { .uos-sitemap-links { grid-template-columns: 1fr; } }

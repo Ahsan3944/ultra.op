@@ -20,9 +20,11 @@ Production website for UltraOP / Sk Ahsan Ahmad. The rebuild focuses on a premiu
 - Visitor-facing pages do not expose API keys, tokens or private configuration.
 - The Channels page calls the public SocialCounts endpoint; see the Privacy and Cookie Policies for its data disclosure.
 
-## SEO
+## SEO and discovery
 
-The production build performs a TypeScript check, builds assets, generates static route documents with unique title, description and canonical tags, emits per-page WebPage/ProfilePage JSON-LD, and writes a sitemap based on published routes and journal entries.
+The production build performs a TypeScript check, builds assets, generates static route documents with unique title, description and canonical tags, emits per-page WebPage/ProfilePage JSON-LD, and writes a canonical XML sitemap covering indexable public routes and journal entries. Google and Bing can use the same standard `/sitemap.xml`, declared in `/robots.txt`; the HTML `/site-map/` is for visitors, and `/llms.txt` is a supplemental AI-readable overview (not a guarantee that any engine or AI service will index the site).
+
+Social sharing metadata uses Open Graph tags and Twitter/X large-image card tags with a dedicated 1200×630 banner. Facebook and WhatsApp may display the title, description and image when their crawlers can fetch it; Instagram generally does not render rich link previews in ordinary captions. Share previews may be cached by each service.
 
 ## Security checks
 
@@ -39,3 +41,8 @@ For a production build, run npm run build. To inspect the generated output local
 ## Deployment
 
 The rebuild/premium-creator-studio branch is intended for review. The production deploy workflow runs only from main; merge only after reviewing the page routes, accessibility, build status and security checks. Keep the custom domain configuration (CNAME) intact.
+
+
+## Original creator branding
+
+The header, footer, hero artwork, favicon and social-share preview use the original UltraOP mascot artwork supplied by the creator. The social banner is a dedicated wide image so supported link-preview crawlers can render a title, summary and visual instead of a plain URL.

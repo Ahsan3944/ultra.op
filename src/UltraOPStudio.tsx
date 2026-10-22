@@ -53,6 +53,10 @@ const PAGE_COPY: Record<string, { title: string; description: string }> = {
     title: 'UltraOP Journal — Gaming, Streaming & Creator Journey',
     description: 'Read the UltraOP creator timeline: competitive gaming, PUBG, Rooter, Free Fire, YouTube, Minecraft, community roles and technology projects.'
   },
+  '/site-map': {
+    title: 'Website Map — All Official UltraOP Pages & Resources',
+    description: 'Browse every published UltraOP website page, creator journal entry, official channel links, policies, XML sitemap and AI-readable site information.'
+  },
   '/assets': {
     title: 'UltraOP Creator Toolkit — Published Assets & Resources',
     description: 'Check the public resources and creator toolkit status for UltraOP. Only assets that are actually published will be listed.'
@@ -181,7 +185,7 @@ function SiteHeader({ route }: { route: string }) {
     <header className="uos-header">
       <div className="uos-header-inner">
         <a className="uos-wordmark" href="/" aria-label="UltraOP home">
-          <img src="/brand/ultraop-mark.svg" alt="" width="34" height="34" />
+          <img src="/brand/ultraop-original.png" alt="" width="34" height="34" />
           <span>ULTRA<span className="uos-wordmark-accent">OP</span></span>
         </a>
         <nav className="uos-desktop-nav" aria-label="Main navigation">
@@ -239,7 +243,7 @@ function CubeArtwork() {
       <div className="uos-cube-stage">
         <div className="uos-cube-shadow" />
         <div className="uos-cube">
-          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><span className="uos-cube-mark">U<span>O</span></span></div>
+          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><img className="uos-cube-logo" src="/brand/ultraop-original.png" alt="" width="118" height="150" /></div>
           <div className="uos-cube-face uos-cube-back"><span className="uos-cube-face-label">BUILD<br/>YOUR<br/>WORLD</span></div>
           <div className="uos-cube-face uos-cube-right"><span className="uos-cube-side-mark">OP / 01</span></div>
           <div className="uos-cube-face uos-cube-left"><span className="uos-cube-side-mark">PLAY / CREATE</span></div>
@@ -473,12 +477,12 @@ function SiteFooter() {
       <div className="uos-container">
         <div className="uos-footer-main">
           <div className="uos-footer-brand">
-            <a className="uos-wordmark" href="/" aria-label="UltraOP home"><img src="/brand/ultraop-mark.svg" alt="" width="34" height="34" /><span>ULTRA<span className="uos-wordmark-accent">OP</span></span></a>
+            <a className="uos-wordmark" href="/" aria-label="UltraOP home"><img src="/brand/ultraop-original.png" alt="" width="34" height="34" /><span>ULTRA<span className="uos-wordmark-accent">OP</span></span></a>
             <p>Gaming creator. Storyteller. Builder.<br />The official home of Sk Ahsan Ahmad.</p>
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">EXPLORE</span>
-            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a>
+            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a><a href="/site-map/">Website map</a>
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">INFORMATION</span>
@@ -664,6 +668,51 @@ function SupportPage() {
   );
 }
 
+function SitemapPage() {
+  const mainPages = [
+    { label: 'Home', href: '/', description: 'Official UltraOP creator homepage.' },
+    { label: 'About UltraOP', href: '/about/', description: 'Creator background and journey.' },
+    { label: 'YouTube Channels', href: '/channels/', description: 'Official channels, subscribe links and public stats.' },
+    { label: 'Watch Live', href: '/live/', description: 'Official streaming destinations.' },
+    { label: 'Community', href: '/community/', description: 'Official social and community links.' },
+    { label: 'Brand Work', href: '/work/', description: 'Campaign records and collaboration information.' },
+    { label: 'Contact', href: '/contact/', description: 'Business and sponsorship contact.' },
+    { label: 'Creator Journal', href: '/journal/', description: 'All articles in the creator timeline.' },
+    { label: 'Creator Toolkit', href: '/assets/', description: 'Published creator resources.' },
+    { label: 'Fan Art', href: '/fan-art/', description: 'Community creations and permissions.' },
+    { label: 'Support UltraOP', href: '/support/', description: 'Official ways to follow and support the creator.' }
+  ];
+  const resourcePages = [
+    { label: 'Privacy Policy', href: '/privacy.html', description: 'Public-data and website privacy information.' },
+    { label: 'Cookie Policy', href: '/cookie-policy.html', description: 'Browser and third-party request information.' },
+    { label: 'Terms & Conditions', href: '/terms.html', description: 'Terms for using this website.' },
+    { label: 'XML Sitemap (Google & Bing)', href: '/sitemap.xml', description: 'Machine-readable indexable pages.' },
+    { label: 'robots.txt', href: '/robots.txt', description: 'Crawler access guidance and XML sitemap location.' },
+    { label: 'llms.txt', href: '/llms.txt', description: 'AI-readable overview and official source links.' }
+  ];
+  return (
+    <>
+      <InteriorHero eyebrow="DIRECTORY / ALL PUBLISHED PAGES" title={<>One map.<br /><span>The whole UltraOP world.</span></>} description="A human-readable guide to this official creator website. Search engines use the XML sitemap; AI tools can use the llms.txt overview. These files support discovery but cannot guarantee indexing." />
+      <section className="uos-section">
+        <div className="uos-container uos-sitemap-layout">
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">01 / WEBSITE</p><h2>Main pages</h2>
+            <div className="uos-sitemap-links">{mainPages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">02 / JOURNAL</p><h2>Creator timeline</h2>
+            <div className="uos-sitemap-links">{JOURNAL_ENTRIES.map((item) => <a href={'/journal/' + item.slug + '/'} key={item.slug}><strong>{item.title}</strong><span>{item.summary}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">03 / REFERENCE</p><h2>Policies & crawler files</h2>
+            <div className="uos-sitemap-links">{resourcePages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function NotFoundPage() {
   return (
     <>
@@ -741,6 +790,7 @@ export default function UltraOPStudio() {
     if (route === '/work') return <WorkPage />;
     if (route === '/contact') return <ContactPage />;
     if (route === '/journal') return <JournalPage />;
+    if (route === '/site-map') return <SitemapPage />;
     if (journalSlug && JOURNAL_DETAILS[journalSlug]) return <JournalPage slug={journalSlug} />;
     if (route === '/assets') return <ToolkitPage />;
     if (route === '/fan-art') return <FanArtPage />;

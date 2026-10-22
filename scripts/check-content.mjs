@@ -31,6 +31,11 @@ assert.ok(studio.includes("'?sub_confirmation=1'"), 'Each official channel needs
 assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessible channel-specific labels.');
 assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
+assert.ok(html.includes('summary_large_image'), 'Social cards must request a large image preview.');
+assert.ok(html.includes('/brand/ultraop-social-banner.jpg'), 'Social preview metadata must use the designed banner.');
+assert.ok(html.includes('/brand/ultraop-original.png'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
+assert.ok(studio.includes('/brand/ultraop-original.png'), 'Header, footer and hero artwork must use the original supplied logo.');
+assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.png'), 'Web app manifest must use the supplied original logo.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
 assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html'), 'Terms must link to privacy and cookie policies.');
@@ -45,7 +50,12 @@ const requiredFiles = [
   'work/index.html',
   'contact/index.html',
   'journal/index.html',
+  'site-map/index.html',
   'journal/minecraft-transition/index.html',
+  'llms.txt',
+  'robots.txt',
+  'brand/ultraop-original.png',
+  'brand/ultraop-social-banner.jpg',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
@@ -64,6 +74,7 @@ const staticPages = [
   ['work/index.html', 'https://ultraop.in/work/'],
   ['contact/index.html', 'https://ultraop.in/contact/'],
   ['journal/index.html', 'https://ultraop.in/journal/'],
+  ['site-map/index.html', 'https://ultraop.in/site-map/'],
   ['journal/minecraft-transition/index.html', 'https://ultraop.in/journal/minecraft-transition/']
 ];
 
@@ -88,12 +99,21 @@ assert.ok(sitemapEntries.length >= 25, 'Sitemap should include main routes, lega
 assert.equal(new Set(sitemapEntries).size, sitemapEntries.length, 'Sitemap entries must be unique.');
 assert.ok(!sitemap.includes('/blog/'), 'Removed legacy blog URLs must not remain in the canonical sitemap.');
 assert.ok(!sitemap.includes('/blog.html'), 'Legacy blog.html must not remain in the canonical sitemap.');
+assert.ok(sitemap.includes('https://ultraop.in/site-map/'), 'Search-engine sitemap must include the human-readable site map.');
+const llms = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
+assert.ok(llms.includes('## Primary pages') && llms.includes('## Creator journal'), 'AI-readable llms.txt must include primary pages and journal entries.');
+['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(llms.includes(name), 'AI-readable site overview must include channel: ' + name));
+assert.ok(llms.includes('https://ultraop.in/site-map/'), 'AI-readable overview must link to the site map.');
+const crawlerRules = readFileSync(path.join(dist, 'robots.txt'), 'utf8');
+assert.ok(crawlerRules.includes('Sitemap: https://ultraop.in/sitemap.xml'), 'robots.txt must tell search engines where the XML sitemap lives.');
 const legacyBlog = readFileSync(path.join(dist, 'blog.html'), 'utf8');
 assert.ok(legacyBlog.includes('noindex,follow') && legacyBlog.includes('/journal/'), 'Legacy blog.html must migrate without becoming an indexed duplicate.');
 assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes('Play the game. Build the story.'), 'Homepage fallback content is missing.');
 const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'utf8');
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
 assert.ok(channelFallback.includes('Subscribe — Ultra OP Live') && channelFallback.includes('sub_confirmation=1'), 'Pre-rendered channels page must include direct subscribe links.');
+const siteMapFallback = readFileSync(path.join(dist, 'site-map/index.html'), 'utf8');
+assert.ok(siteMapFallback.includes('Creator timeline') && siteMapFallback.includes('/llms.txt') && siteMapFallback.includes('/sitemap.xml'), 'Human site map must provide journal and crawler-resource links.');
 const homepageFallback = readFileSync(path.join(dist, 'index.html'), 'utf8');
 ['Amazon', 'THE FINALS', 'Wild Stone', 'Hero', 'Parallel Mobile', 'TVS'].forEach((name) => assert.ok(homepageFallback.includes(name), 'Campaign fallback is missing: ' + name));
 ['Twitch', 'Kick', 'Rooter', 'Discord', 'WhatsApp Channel'].forEach((name) => assert.ok(homepageFallback.includes(name), 'Social/community fallback is missing: ' + name));
