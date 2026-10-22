@@ -10,9 +10,9 @@
   "theme_color": "#0a0a0a",
   "icons": [
     {
-      "src": "/brand/ultraop-original.png",
-      "sizes": "260x330",
-      "type": "image/png",
+      "src": "/brand/ultraop-original.webp",
+      "sizes": "142x161",
+      "type": "image/webp",
       "purpose": "any"
     }
   ]

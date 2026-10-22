@@ -32,10 +32,10 @@ assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessibl
 assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
 assert.ok(html.includes('summary_large_image'), 'Social cards must request a large image preview.');
-assert.ok(html.includes('/brand/ultraop-social-banner.jpg'), 'Social preview metadata must use the designed banner.');
-assert.ok(html.includes('/brand/ultraop-original.png'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
-assert.ok(studio.includes('/brand/ultraop-original.png'), 'Header, footer and hero artwork must use the original supplied logo.');
-assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.png'), 'Web app manifest must use the supplied original logo.');
+assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadata must use the designed banner.');
+assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
+assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
+assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
 assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html'), 'Terms must link to privacy and cookie policies.');
@@ -54,8 +54,8 @@ const requiredFiles = [
   'journal/minecraft-transition/index.html',
   'llms.txt',
   'robots.txt',
-  'brand/ultraop-original.png',
-  'brand/ultraop-social-banner.jpg',
+  'brand/ultraop-original.webp',
+  'brand/ultraop-original.webp',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
