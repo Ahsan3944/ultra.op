@@ -1,19 +1,17 @@
 <!doctype html>
 <html lang="en-IN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0a" />
-    <title>UltraOP</title>
-  </head>
-  <body>
-    <script>
-      (function () {
-        var key = 'ultraop:requested-path';
-        var path = window.location.pathname + window.location.search + window.location.hash;
-        if (path && path !== '/') sessionStorage.setItem(key, path);
-        window.location.replace('/');
-      })();
-    </script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090a0c"><meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; form-action 'self'; upgrade-insecure-requests">
+<title>Page not found — UltraOP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090a0c;color:#f1eee7;font:16px/1.8 system-ui,sans-serif}
+main{min-height:100svh;display:flex;flex-direction:column;justify-content:center;width:min(760px,calc(100% - 36px));margin:auto;padding:60px 0}
+.code{font:700 10px ui-monospace,monospace;letter-spacing:.18em;color:#ff6847}h1{font-size:clamp(48px,9vw,92px);line-height:.9;letter-spacing:-.08em;margin:20px 0}
+p{max-width:520px;color:#a4a49f}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+a{display:inline-flex;align-items:center;padding:13px 16px;border:1px solid rgba(241,238,231,.24);color:#f1eee7;text-decoration:none;font-size:12px}a.primary{background:#ff6847;border-color:#ff6847;color:#101112;font-weight:750}
+</style></head><body><main>
+<span class="code">404 / PAGE NOT FOUND</span><h1>This page left<br>the server.</h1>
+<p>The address may have changed or the page may no longer be published. Continue through the official UltraOP website.</p>
+<div class="actions"><a class="primary" href="/">Back to UltraOP</a><a href="/channels/">Official channels</a><a href="/journal/">Creator journal</a></div>
+</main></body></html>
