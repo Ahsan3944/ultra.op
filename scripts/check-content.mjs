@@ -47,6 +47,7 @@ const requiredFiles = [
   'cookie-policy.html',
   'terms.html',
   '404.html',
+  'blog.html',
   'sitemap.xml'
 ];
 requiredFiles.forEach((file) => assert.ok(existsSync(path.join(dist, file)), 'Missing generated production file: dist/' + file));
@@ -83,6 +84,9 @@ const sitemapEntries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match)
 assert.ok(sitemapEntries.length >= 25, 'Sitemap should include main routes, legal pages and creator journal entries.');
 assert.equal(new Set(sitemapEntries).size, sitemapEntries.length, 'Sitemap entries must be unique.');
 assert.ok(!sitemap.includes('/blog/'), 'Removed legacy blog URLs must not remain in the canonical sitemap.');
+assert.ok(!sitemap.includes('/blog.html'), 'Legacy blog.html must not remain in the canonical sitemap.');
+const legacyBlog = readFileSync(path.join(dist, 'blog.html'), 'utf8');
+assert.ok(legacyBlog.includes('noindex,follow') && legacyBlog.includes('/journal/'), 'Legacy blog.html must migrate without becoming an indexed duplicate.');
 assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes('Play the game. Build the story.'), 'Homepage fallback content is missing.');
 const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'utf8');
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
