@@ -176,8 +176,10 @@ button { color: inherit; }
 .uos-channel-stats div { display: grid; gap: 5px; }
 .uos-channel-stats strong { font-size: 20px; letter-spacing: -.04em; }
 .uos-channel-stats span { color: #858784; font: 600 8px/1.4 ui-monospace, monospace; letter-spacing: .09em; text-transform: uppercase; }
-.uos-channel-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 17px; }
-.uos-channel-actions .uos-button { min-height: 41px; padding: 11px 13px; }
+.uos-channel-actions { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8px; margin-top: 17px; }
+.uos-channel-actions .uos-button { min-height: 42px; padding: 11px 12px; font-size: 10px; }
+.uos-subscribe-button { justify-content: center; }
+.uos-channel-visit-button { justify-content: center; }
 .uos-channel-id-note { max-width: 165px; color: #777b7d; font-size: 9px; line-height: 1.5; text-align: right; }
 .uos-data-note { margin: 20px 0 0; color: #777b7d; font-size: 10px; line-height: 1.7; }
 
@@ -358,7 +360,8 @@ button { color: inherit; }
   .uos-channel-grid, .uos-social-grid, .uos-link-panel-grid { grid-template-columns: 1fr; }
   .uos-channel-art { min-height: 200px; }
   .uos-channel-body { padding: 18px; }
-  .uos-channel-actions { align-items: flex-start; flex-direction: column; }
+  .uos-channel-actions { grid-template-columns: 1fr; }
+  .uos-channel-actions .uos-button { width: 100%; justify-content: center; }
   .uos-channel-id-note { max-width: unset; text-align: left; }
   .uos-journey-grid { grid-template-columns: 1fr; }
   .uos-journey-card, .uos-journey-card:nth-child(2), .uos-journey-card:nth-child(3), .uos-journey-card:nth-child(4) { grid-column: auto; min-height: auto; padding: 22px; }
