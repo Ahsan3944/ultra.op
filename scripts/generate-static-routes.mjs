@@ -298,6 +298,7 @@ for (const page of pages) {
 }
 
 const legacyBlogRoutes = [
+  '/blog.html',
   '/blog/',
   '/blog/top-freefire-strategies/',
   '/blog/grow-as-gaming-creator/',
@@ -305,7 +306,8 @@ const legacyBlogRoutes = [
   '/blog/online-gaming-act-2025/'
 ];
 for (const route of legacyBlogRoutes) {
-  const destination = path.join(dist, route.replace(/^\/|\/$/g, ''), 'index.html');
+  const cleanRoute = route.replace(/^\/|\/$/g, '');
+  const destination = route.endsWith('.html') ? path.join(dist, cleanRoute) : path.join(dist, cleanRoute, 'index.html');
   await mkdir(path.dirname(destination), { recursive: true });
   const html = '<!doctype html><html lang="en-IN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
     '<meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">' +
