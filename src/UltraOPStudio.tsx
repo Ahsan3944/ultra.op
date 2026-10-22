@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Blocks, Check, ChevronDown,
   Code2, ExternalLink, Gamepad2, Instagram, Mail, Menu, MessageCircle, Play,
@@ -216,7 +216,7 @@ function SiteHeader({ route }: { route: string }) {
   );
 }
 
-function SectionHeading({ eyebrow, title, copy, action }: { eyebrow: string; title: React.ReactNode; copy?: string; action?: { label: string; href: string } }) {
+function SectionHeading({ eyebrow, title, copy, action }: { eyebrow: string; title: ReactNode; copy?: string; action?: { label: string; href: string } }) {
   return (
     <div className="uos-section-heading" data-reveal>
       <div>
@@ -306,7 +306,7 @@ function Marquee() {
   );
 }
 
-function ChannelCard({ channel, index, stats }: { channel: typeof YOUTUBE_CHANNELS[number]; index: number; stats?: ChannelStats }) {
+function ChannelCard({ channel, index, stats, showStats = true }: { channel: typeof YOUTUBE_CHANNELS[number]; index: number; stats?: ChannelStats; showStats?: boolean }) {
   const subs = formatCount(stats?.subscribers);
   const views = formatCount(stats?.views);
   return (
@@ -320,13 +320,12 @@ function ChannelCard({ channel, index, stats }: { channel: typeof YOUTUBE_CHANNE
       </div>
       <div className="uos-channel-body">
         <p className="uos-channel-focus">{channel.focus}</p>
-        <div className="uos-channel-stats">
+        {showStats && <div className="uos-channel-stats">
           <div><strong>{subs ?? '—'}</strong><span>{stats?.subscribersEstimated ? 'Est. subscribers' : 'Subscribers'}</span></div>
           <div><strong>{views ?? '—'}</strong><span>Total views</span></div>
-        </div>
+        </div>}
         <div className="uos-channel-actions">
           <a className="uos-button uos-button-primary" href={channel.url} target="_blank" rel="noopener noreferrer">Visit channel <ArrowUpRight size={15} aria-hidden="true" /></a>
-          <span className="uos-channel-id-note">Channel identity verified in site registry</span>
         </div>
       </div>
     </article>
@@ -345,7 +344,7 @@ function ChannelsSection({ stats, compact = false }: { stats: StatsState; compac
           action={compact ? { label: 'Explore all channels', href: '/channels/' } : undefined}
         />
         <div className="uos-channel-grid">
-          {channels.map((channel, index) => <ChannelCard key={channel.id} channel={channel} index={index} stats={stats.values[channel.key]} />)}
+          {channels.map((channel, index) => <ChannelCard key={channel.id} channel={channel} index={index} stats={stats.values[channel.key]} showStats={!compact} />)}
         </div>
         {!compact && <p className="uos-data-note">{stats.loading ? 'Checking public channel data…' : 'Subscriber and view counts appear only when a public data source returns a valid reading. No fallback numbers are used.'}</p>}
       </div>
@@ -493,7 +492,7 @@ function HomePage({ stats }: { stats: StatsState }) {
   );
 }
 
-function InteriorHero({ eyebrow, title, description, children }: { eyebrow: string; title: React.ReactNode; description: string; children?: React.ReactNode }) {
+function InteriorHero({ eyebrow, title, description, children }: { eyebrow: string; title: ReactNode; description: string; children?: ReactNode }) {
   return (
     <section className="uos-interior-hero">
       <div className="uos-container">
