@@ -73,6 +73,7 @@ for (const [relativeFile, expectedCanonical] of staticPages) {
   assert.ok(description && description.length >= 50, relativeFile + ' must contain a useful meta description.');
   assert.equal(canonical, expectedCanonical, relativeFile + ' has an incorrect canonical URL.');
   assert.ok(page.includes('application/ld+json'), relativeFile + ' must contain page structured data.');
+  assert.ok(page.includes('class="uos-prerender"'), relativeFile + ' must have useful initial HTML content before JavaScript runs.');
   titles.push(title);
 }
 assert.equal(new Set(titles).size, titles.length, 'Major static route titles must be unique.');
@@ -82,6 +83,9 @@ const sitemapEntries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match)
 assert.ok(sitemapEntries.length >= 25, 'Sitemap should include main routes, legal pages and creator journal entries.');
 assert.equal(new Set(sitemapEntries).size, sitemapEntries.length, 'Sitemap entries must be unique.');
 assert.ok(!sitemap.includes('/blog/'), 'Removed legacy blog URLs must not remain in the canonical sitemap.');
+assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes('Play the game. Build the story.'), 'Homepage fallback content is missing.');
+const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'utf8');
+['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
 
 const builtMain = readFileSync(path.join(dist, 'index.html'), 'utf8');
 assert.ok(builtMain.includes("script-src 'self'"), 'Generated homepage is missing the baseline script-src policy.');
