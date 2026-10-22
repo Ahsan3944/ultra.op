@@ -85,5 +85,6 @@ assert.ok(!sitemap.includes('/blog/'), 'Removed legacy blog URLs must not remain
 
 const builtMain = readFileSync(path.join(dist, 'index.html'), 'utf8');
 assert.ok(builtMain.includes("script-src 'self'"), 'Generated homepage is missing the baseline script-src policy.');
+assert.ok(builtMain.includes("style-src 'self' 'unsafe-inline'"), 'Generated homepage must permit same-origin production CSS.');
 assert.ok(builtMain.includes("frame-src 'none'"), 'Generated homepage must not silently allow embedded frames.');
 console.log('Audit passed: creator data, no fabricated statistics, policy disclosures, generated routes, unique SEO metadata, structured data and sitemap.');
