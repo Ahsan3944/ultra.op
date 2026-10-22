@@ -401,3 +401,16 @@ button { color: inherit; }
 .uos-sitemap-links a svg { grid-column: 2; grid-row: 1 / span 2; color: var(--uos-accent); }
 .uos-sitemap-links a:hover strong { color: var(--uos-accent); }
 @media (max-width: 680px) { .uos-sitemap-links { grid-template-columns: 1fr; } }
+
+
+/* Recovery UI for runtime and React rendering failures */
+.uos-runtime-fallback { min-height: 100svh; display: grid; place-items: center; padding: 28px; box-sizing: border-box; background: radial-gradient(ellipse at 15% 20%, rgba(255,104,71,.1), transparent 35rem), #090a0c; color: #f1eee7; font-family: Inter, "Segoe UI", system-ui, sans-serif; }
+.uos-runtime-fallback-card { width: min(720px, 100%); padding: clamp(26px, 6vw, 68px); box-sizing: border-box; border: 1px solid rgba(241,238,231,.18); background: #101215; }
+.uos-runtime-fallback-code { color: #ff6847; font: 700 10px/1.6 ui-monospace, monospace; letter-spacing: .16em; }
+.uos-runtime-fallback h1 { max-width: 620px; margin: 20px 0; font-size: clamp(42px, 8vw, 76px); line-height: .94; letter-spacing: -.065em; }
+.uos-runtime-fallback p:not(.uos-runtime-fallback-code) { color: #aaa9a3; line-height: 1.8; }
+.uos-runtime-fallback nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0; }
+.uos-runtime-fallback nav a { display: inline-flex; padding: 12px 15px; border: 1px solid rgba(241,238,231,.25); color: #f1eee7; text-decoration: none; font-size: 12px; }
+.uos-runtime-fallback nav .uos-runtime-fallback-primary { background: #ff6847; border-color: #ff6847; color: #111; font-weight: 750; }
+.uos-runtime-fallback-note { padding-top: 15px; border-top: 1px solid rgba(241,238,231,.12); font-size: 12px; }
+@media (max-width: 520px) { .uos-runtime-fallback { padding: 14px; } .uos-runtime-fallback-card { padding: 24px 18px; } .uos-runtime-fallback nav a { flex: 1 1 calc(50% - 10px); justify-content: center; } }

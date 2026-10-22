@@ -285,11 +285,11 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:title', '<meta property="og:title" content="' + escapeAttr(page.title) + '" />');
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
-  html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="https://ultraop.in/brand/ultraop-original.webp" />');
-  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
-  html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="142" />');
-  html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="161" />');
-  html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="UltraOP — Play the game. Build the story." />');
+  html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="https://ultraop.in/brand/ultraop-social-banner.jpg" />');
+  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/jpeg" />');
+  html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="1200" />');
+  html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="630" />');
+  html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="UltraOP social banner with the original mascot, gaming, Minecraft and creator storytelling." />');
   html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary_large_image" />');
   html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="https://ultraop.in/brand/ultraop-original.webp" />');
   html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="UltraOP — Play the game. Build the story." />');

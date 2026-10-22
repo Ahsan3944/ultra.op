@@ -6,6 +6,9 @@ const core = readFileSync('src/data/core.ts', 'utf8');
 const studio = readFileSync('src/UltraOPStudio.tsx', 'utf8');
 const html = readFileSync('index.html', 'utf8');
 const privacy = readFileSync('public/privacy.html', 'utf8');
+const mainSource = readFileSync('src/main.tsx', 'utf8');
+const runtimeFallbackSource = readFileSync('public/runtime-fallback.js', 'utf8');
+const serviceUnavailablePage = readFileSync('public/503.html', 'utf8');
 const cookiePolicy = readFileSync('public/cookie-policy.html', 'utf8');
 const terms = readFileSync('public/terms.html', 'utf8');
 
@@ -32,10 +35,14 @@ assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessibl
 assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
 assert.ok(html.includes('summary_large_image'), 'Social cards must request a large image preview.');
-assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadata must use the designed banner.');
+assert.ok(html.includes('/brand/ultraop-social-banner.jpg'), 'Social preview metadata must use the dedicated wide banner.');
 assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
 assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
 assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
+assert.ok(html.includes('/runtime-fallback.js'), 'The main document must load the runtime fallback watcher.');
+assert.ok(mainSource.includes('AppErrorBoundary') && mainSource.includes('couldn’t load'), 'React rendering failures need an accessible recovery screen.');
+assert.ok(runtimeFallbackSource.includes('data-ultraop-app-ready') && runtimeFallbackSource.includes('503.html'), 'Failed or stalled app boot must show the temporary-unavailable recovery page.');
+assert.ok(serviceUnavailablePage.includes('503 / TEMPORARILY UNAVAILABLE') && serviceUnavailablePage.includes('Try again'), 'A branded static service-unavailable page is required.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
 assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html'), 'Terms must link to privacy and cookie policies.');
@@ -55,6 +62,9 @@ const requiredFiles = [
   'llms.txt',
   'robots.txt',
   'brand/ultraop-original.webp',
+  'brand/ultraop-social-banner.jpg',
+  '503.html',
+  'runtime-fallback.js',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',

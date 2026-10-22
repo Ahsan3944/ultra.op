@@ -24,7 +24,7 @@ Production website for UltraOP / Sk Ahsan Ahmad. The rebuild focuses on a premiu
 
 The production build performs a TypeScript check, builds assets, generates static route documents with unique title, description and canonical tags, emits per-page WebPage/ProfilePage JSON-LD, and writes a canonical XML sitemap covering indexable public routes and journal entries. Google and Bing can use the same standard `/sitemap.xml`, declared in `/robots.txt`; the HTML `/site-map/` is for visitors, and `/llms.txt` is a supplemental AI-readable overview (not a guarantee that any engine or AI service will index the site).
 
-Social sharing metadata uses Open Graph tags and Twitter/X card tags with the supplied original UltraOP mascot image, alongside a page-specific title and description. Facebook and WhatsApp may display a rich preview when their crawlers can fetch the metadata and image; Instagram generally does not render rich link previews in ordinary captions. Share previews may be cached by each service.
+Social sharing metadata uses Open Graph tags and Twitter/X card tags with a dedicated 1200×630 JPEG banner, alongside each page’s title and description. Facebook and WhatsApp may display a rich preview when their crawlers can fetch the metadata and image; Instagram generally does not render rich link previews in ordinary captions. Share previews may be cached by each service.
 
 ## Security checks
 
@@ -42,6 +42,13 @@ For a production build, run npm run build. To inspect the generated output local
 
 The rebuild/premium-creator-studio branch is intended for review. The production deploy workflow runs only from main; merge only after reviewing the page routes, accessibility, build status and security checks. Keep the custom domain configuration (CNAME) intact.
 
+
+## Failure and availability fallback
+
+- `public/404.html` is the branded missing-page response GitHub Pages can serve for missing URLs.
+- `public/503.html` is a branded temporary-unavailability screen for hosts that support custom HTTP 503 documents, and is also available as a direct static URL.
+- `public/runtime-fallback.js` detects a failed main bundle or a stalled app boot and replaces pre-rendered content with a recovery screen. A React error boundary handles rendering exceptions inside the app.
+- Limitation: a static GitHub Pages site cannot guarantee delivery of its own error page when GitHub Pages, DNS, TLS, or the origin network itself is unavailable. A full-host outage requires an independent status page / uptime monitor on a separate host and DNS name.
 
 ## Original creator branding
 
