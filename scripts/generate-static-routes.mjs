@@ -31,7 +31,7 @@ const channelRecords = readRecords(coreSource, /\{\s*key:\s*'[^']+'[^}]*\}/g)
   }))
   .filter((item) => item.name && item.url);
 
-const socialsBlock = capture(coreSource, /export const SOCIALS:[\s\S]*?\n\];/);
+const socialsBlock = capture(coreSource, /(export const SOCIALS:[\s\S]*?\n\];)/);
 const socialRecords = readRecords(socialsBlock, /\{\s*name:\s*'[^']+'[^}]*\}/g)
   .map((record) => ({
     name: field(record, 'name'),
@@ -41,7 +41,7 @@ const socialRecords = readRecords(socialsBlock, /\{\s*name:\s*'[^']+'[^}]*\}/g)
   }))
   .filter((item) => item.name && item.url);
 
-const brandsBlock = capture(coreSource, /export const BRAND_CAMPAIGNS:[\s\S]*?\n\] as const;/);
+const brandsBlock = capture(coreSource, /(export const BRAND_CAMPAIGNS:[\s\S]*?\n\] as const;)/);
 const brandRecords = readRecords(brandsBlock, /\{\s*name:\s*'[^']+'[^}]*\}/g)
   .map((record) => ({
     name: field(record, 'name'),
