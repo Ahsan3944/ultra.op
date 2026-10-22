@@ -55,7 +55,6 @@ const requiredFiles = [
   'llms.txt',
   'robots.txt',
   'brand/ultraop-original.webp',
-  'brand/ultraop-original.webp',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
@@ -113,7 +112,7 @@ const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'ut
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
 assert.ok(channelFallback.includes('Subscribe — Ultra OP Live') && channelFallback.includes('sub_confirmation=1'), 'Pre-rendered channels page must include direct subscribe links.');
 const siteMapFallback = readFileSync(path.join(dist, 'site-map/index.html'), 'utf8');
-assert.ok(siteMapFallback.includes('Creator timeline') && siteMapFallback.includes('/llms.txt') && siteMapFallback.includes('/sitemap.xml'), 'Human site map must provide journal and crawler-resource links.');
+assert.ok(siteMapFallback.includes('Creator journal') && siteMapFallback.includes('/llms.txt') && siteMapFallback.includes('/sitemap.xml'), 'Human site map must provide journal and crawler-resource links.');
 const homepageFallback = readFileSync(path.join(dist, 'index.html'), 'utf8');
 ['Amazon', 'THE FINALS', 'Wild Stone', 'Hero', 'Parallel Mobile', 'TVS'].forEach((name) => assert.ok(homepageFallback.includes(name), 'Campaign fallback is missing: ' + name));
 ['Twitch', 'Kick', 'Rooter', 'Discord', 'WhatsApp Channel'].forEach((name) => assert.ok(homepageFallback.includes(name), 'Social/community fallback is missing: ' + name));
