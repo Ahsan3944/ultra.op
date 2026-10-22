@@ -121,7 +121,10 @@ const pageContent = {
       'The creator journey has moved through competitive PUBG and BGMI, Free Fire live streaming on Rooter, YouTube and a current focus on Minecraft. Variety games including Valorant and GTA, creator technology and story-led gaming remain part of the wider creative world.'
     ],
     sections: [
-      { heading: 'Official YouTube channels', items: channelRecords.map((item) => ({ label: item.name + ' (' + item.handle + ')', href: item.url, detail: item.focus })) },
+      { heading: 'Official YouTube channels', items: channelRecords.flatMap((item) => [
+        { label: 'Subscribe — ' + item.name, href: item.url + '?sub_confirmation=1', detail: item.handle + ' · ' + item.focus },
+        { label: 'View channel — ' + item.name, href: item.url, detail: 'Official YouTube channel.' }
+      ]) },
       { heading: 'Selected brand campaign records', items: brandRecords.map((item) => ({ label: item.name, href: '/work/', detail: item.type + ' · ' + item.category + ' · ' + item.year })) },
       { heading: 'Follow the official network', items: socialRecords.map((item) => ({ label: item.name + ' — ' + item.handle, href: item.url, detail: item.type })) }
     ]
@@ -148,7 +151,10 @@ const pageContent = {
     paragraphs: [
       'Choose the official UltraOP YouTube channel that matches what you want to watch. Public subscriber or view counts are shown only when the public data provider returns a valid reading; this page does not use invented fallback numbers.'
     ],
-    sections: [{ heading: 'Official channels', items: channelRecords.map((item) => ({ label: item.name + ' — ' + item.handle, href: item.url, detail: item.focus + ' · Channel ID: ' + item.id })) }]
+    sections: [{ heading: 'Official channels', items: channelRecords.flatMap((item) => [
+      { label: 'Subscribe — ' + item.name, href: item.url + '?sub_confirmation=1', detail: item.handle + ' · ' + item.focus },
+      { label: 'View channel — ' + item.name, href: item.url, detail: 'Channel ID: ' + item.id }
+    ]) }]
   },
   '/live/': {
     eyebrow: 'Watch / live',
