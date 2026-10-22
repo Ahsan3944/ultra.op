@@ -71,6 +71,7 @@ function createPageHtml(page) {
 }
 
 for (const page of pages) {
+  if (page.path.endsWith('.html')) continue; // Public legal pages are standalone documents in /public.
   const relativeFile = page.path === '/' ? 'index.html' : path.join(page.path.replace(/^\/|\/$/g, ''), 'index.html');
   const destination = path.join(dist, relativeFile);
   await mkdir(path.dirname(destination), { recursive: true });
