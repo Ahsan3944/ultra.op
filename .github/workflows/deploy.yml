@@ -33,11 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Validate creator data
-        run: npm run check:content
-
-      - name: Build production site and static SEO routes
+      - name: Build production site, SEO routes and checks
         run: npm run build
+
+      - name: Dependency vulnerability audit
+        run: npm audit --audit-level=high
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
