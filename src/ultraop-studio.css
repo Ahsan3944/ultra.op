@@ -182,8 +182,10 @@ button { color: inherit; }
 .uos-data-note { margin: 20px 0 0; color: #777b7d; font-size: 10px; line-height: 1.7; }
 
 .uos-journey-section { background: #0d0f11; border-block: 1px solid var(--uos-line); }
-.uos-journey-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1px; border: 1px solid var(--uos-line); background: var(--uos-line); }
-.uos-journey-card { position: relative; min-height: 270px; padding: 26px 22px; background: #0d0f11; transition: background .25s; }
+.uos-journey-grid { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 1px; border: 1px solid var(--uos-line); background: var(--uos-line); }
+.uos-journey-card { position: relative; grid-column: span 5; min-height: 270px; padding: 26px 22px; background: #0d0f11; transition: background .25s; }
+.uos-journey-card:nth-child(2), .uos-journey-card:nth-child(3) { grid-column: span 7; }
+.uos-journey-card:nth-child(4) { grid-column: span 5; }
 .uos-journey-card:hover { background: #151719; }
 .uos-journey-number { display: block; margin-bottom: 54px; color: var(--uos-accent); font: 700 10px ui-monospace, monospace; }
 .uos-journey-card .uos-eyebrow { font-size: 8px; letter-spacing: .1em; }
@@ -293,7 +295,7 @@ button { color: inherit; }
   .uos-orbit-one { width: 300px; height: 300px; }
   .uos-orbit-two { width: 360px; height: 230px; }
   .uos-journey-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .uos-journey-card { min-height: 235px; }
+  .uos-journey-card, .uos-journey-card:nth-child(2), .uos-journey-card:nth-child(3), .uos-journey-card:nth-child(4) { grid-column: span 1; min-height: 235px; }
   .uos-journey-number { margin-bottom: 35px; }
 }
 @media (max-width: 820px) {
@@ -359,7 +361,7 @@ button { color: inherit; }
   .uos-channel-actions { align-items: flex-start; flex-direction: column; }
   .uos-channel-id-note { max-width: unset; text-align: left; }
   .uos-journey-grid { grid-template-columns: 1fr; }
-  .uos-journey-card { min-height: auto; padding: 22px; }
+  .uos-journey-card, .uos-journey-card:nth-child(2), .uos-journey-card:nth-child(3), .uos-journey-card:nth-child(4) { grid-column: auto; min-height: auto; padding: 22px; }
   .uos-journey-number { margin-bottom: 28px; }
   .uos-brand-grid { grid-template-columns: 1fr; }
   .uos-brand-card { min-height: 180px; }
