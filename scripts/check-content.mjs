@@ -41,7 +41,7 @@ assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and h
 assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
 assert.ok(html.includes('/runtime-fallback.js'), 'The main document must load the runtime fallback watcher.');
 assert.ok(mainSource.includes('AppErrorBoundary') && mainSource.includes('couldn’t load'), 'React rendering failures need an accessible recovery screen.');
-assert.ok(runtimeFallbackSource.includes('data-ultraop-app-ready') && runtimeFallbackSource.includes('503.html'), 'Failed or stalled app boot must show the temporary-unavailable recovery page.');
+assert.ok(runtimeFallbackSource.includes('ultraopAppReady') && runtimeFallbackSource.includes('503.html'), 'Failed or stalled app boot must show the temporary-unavailable recovery page.');
 assert.ok(serviceUnavailablePage.includes('503 / TEMPORARILY UNAVAILABLE') && serviceUnavailablePage.includes('Return home'), 'A branded static service-unavailable page is required.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
