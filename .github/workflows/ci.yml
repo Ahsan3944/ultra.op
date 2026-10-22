@@ -29,11 +29,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Validate creator data and SEO generation
-        run: npm run check:content
-
-      - name: Production build and static route generation
+      - name: Production build, route generation and bundled content checks
         run: npm run build
+
+      - name: Recheck generated output
+        run: npm run check:content
 
       - name: Dependency vulnerability audit
         run: npm audit --audit-level=high
