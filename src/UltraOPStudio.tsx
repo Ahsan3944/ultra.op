@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
-  ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Blocks, Check, ChevronDown,
+  ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Blocks,
   Code2, ExternalLink, Gamepad2, Instagram, Mail, Menu, MessageCircle, Play,
-  Radio, ShieldCheck, Sparkles, Twitch, X, Youtube
+  Radio, Sparkles, Twitch, X, Youtube
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -325,7 +325,24 @@ function ChannelCard({ channel, index, stats, showStats = true }: { channel: typ
           <div><strong>{views ?? '—'}</strong><span>Total views</span></div>
         </div>}
         <div className="uos-channel-actions">
-          <a className="uos-button uos-button-primary" href={channel.url} target="_blank" rel="noopener noreferrer">Visit channel <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <a
+            className="uos-button uos-button-primary uos-subscribe-button"
+            href={channel.url + '?sub_confirmation=1'}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={'Subscribe to ' + channel.name + ' on YouTube'}
+          >
+            <Youtube size={15} aria-hidden="true" /> Subscribe <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+          <a
+            className="uos-button uos-button-secondary uos-channel-visit-button"
+            href={channel.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={'View ' + channel.name + ' channel on YouTube'}
+          >
+            View channel <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </article>
