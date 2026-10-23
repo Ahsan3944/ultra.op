@@ -2068,5 +2068,242 @@
       "minecraft-26-2",
       "minecraft-server-version-guide"
     ]
+  },
+  {
+    "slug": "valorant-agent-update-guide",
+    "route": "/games/valorant/updates/agents/",
+    "kind": "guide",
+    "category": "VALORANT Agent Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Agent Updates: Ability Changes, Bug Fixes and Balance",
+    "description": "A focused VALORANT agent-update guide explaining ability balance, tactical roles, agent-specific bug fixes and how to verify changes in Riot's patch notes.",
+    "keywords": [
+      "VALORANT agent updates",
+      "VALORANT ability changes",
+      "VALORANT agent balance patch",
+      "Killjoy Alarmbot fix 13.08",
+      "VALORANT agent patch notes"
+    ],
+    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroAlt": "Original tactical hero-shooter editorial artwork, not an official VALORANT gameplay screenshot.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Agent changes can alter a strategy even when a patch does not introduce a brand-new character. This page focuses on how to read VALORANT agent notes: distinguish balance changes from bug fixes, identify which ability interaction changed, and test the exact behaviour before copying a lineup or team composition.",
+    "takeaways": [
+      "Agent patch changes can be balance updates, gameplay fixes, audio/visual fixes or ability-interaction corrections.",
+      "Patch 13.08 includes a Killjoy Alarmbot feedback fix when a projectile is destroyed by moving doorways.",
+      "A patch summary should not imply a new agent was released unless Riot's official notes say so.",
+      "The full Riot patch note is the source for exact ability values, duration and restrictions."
+    ],
+    "sections": [
+      {
+        "heading": "How agent notes are categorised",
+        "paragraphs": [
+          "A patch can change the power or reliability of an ability, correct a bug, adjust visual/audio feedback or fix an interaction with map geometry. These categories have different competitive effects. A numeric damage or cooldown change can affect balance directly; a feedback fix can make an ability easier to read without necessarily changing its underlying power.",
+          "For each note, identify the agent, ability, what changed and whether the change affects gameplay or presentation. Then check the precise build and mode. Avoid describing a bug fix as an across-the-board nerf or buff unless the official text says the mechanics were changed."
+        ]
+      },
+      {
+        "heading": "Example from Patch 13.08: Killjoy feedback",
+        "paragraphs": [
+          "Riot’s 13.08 notes list a Killjoy fix involving the Alarmbot’s visual and audio feedback when a projectile is destroyed by a moving doorway. This is a good example of a patch note that affects how clearly an interaction is communicated, rather than an announcement of a new agent.",
+          "For a competitive team, such a fix can matter when utility passes through or is destroyed by map geometry. It is still important to compare the official wording with the behaviour in a practice lobby before making claims about lineups or ranked outcomes."
+        ]
+      },
+      {
+        "heading": "Testing agent changes after a patch",
+        "bullets": [
+          "Read the official patch note and identify the exact ability interaction.",
+          "Recreate it in a practice/custom lobby using the current live build.",
+          "Check whether the change is a bug fix, numeric balance adjustment or visual/audio correction.",
+          "Record the map, agent, ability and patch build if reporting a bug.",
+          "Update team lineups only after confirming the new behaviour."
+        ],
+        "paragraphs": [
+          "The same habit helps avoid outdated tutorial advice. A video recorded before a patch can continue circulating long after the interaction has changed, so put the patch number and capture date in a written guide."
+        ]
+      },
+      {
+        "heading": "Follow official agent patch notes",
+        "paragraphs": [
+          "Use the [VALORANT Patch 13.08 guide](/games/valorant/updates/patch-13-08/) for the current patch overview and the [VALORANT updates hub](/games/valorant/updates/) for other categories. Riot’s patch notes archive should be checked before asserting exact values or the current status of a specific agent."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "Riot official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
+    ]
+  },
+  {
+    "slug": "valorant-map-rotation-guide",
+    "route": "/games/valorant/updates/maps/",
+    "kind": "guide",
+    "category": "VALORANT Map Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Map Updates: Rotation, Corrode Changes and Map Rating",
+    "description": "A map-focused VALORANT update guide covering competitive map rotation, Corrode improvements in Patch 13.08, attacker/defender context and how to practise a revised map pool.",
+    "keywords": [
+      "VALORANT map rotation",
+      "VALORANT Corrode changes",
+      "VALORANT map updates 13.08",
+      "Ascent Split rotation",
+      "Bind map pool",
+      "VALORANT map pool update"
+    ],
+    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroAlt": "Original tactical shooter illustration used to explain map pools and rotation strategy.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Map updates can change how quickly defenders rotate, which mid areas are contested and how much utility a team needs to spend before entering a site. This guide records the map changes listed for Patch 13.08 and provides a repeatable way to review a map-pool change without confusing ranked and professional-event rules.",
+    "takeaways": [
+      "Patch 13.08 updated Corrode paths and mid-area flow.",
+      "The 13.08 notes list Ascent and Split leaving the active map rotation while Corrode and Bind enter for the relevant competitive mode.",
+      "Map pool can differ by mode, event format or date; always confirm the current official rotation.",
+      "Review new routes and timings in a custom lobby before using an old lineup guide."
+    ],
+    "sections": [
+      {
+        "heading": "Patch 13.08: Corrode adjustments",
+        "paragraphs": [
+          "Riot’s 13.08 notes discuss defender pathing into the back of A and B sites to shorten rotations and support retakes, alongside changes around Mid intended to make fights more predictable. Those changes can influence how a defending team shares information, holds space and decides when to rotate.",
+          "For attackers, a shorter defender rotation can affect the time available to isolate a site or take control of mid. For defenders, the important task is to practise the new route and avoid relying on timings recorded on the previous layout."
+        ]
+      },
+      {
+        "heading": "Map rotation is date- and mode-specific",
+        "paragraphs": [
+          "Patch 13.08 lists Ascent and Split leaving the active rotation and Corrode and Bind entering the pool in the mode covered by the notes. This is a patch-scoped statement, not a promise that the same maps remain in rotation forever or that the professional tournament pool is identical.",
+          "Competitive games, premier events, unrated queues and professional tournaments can use different rules. For a match-preparation document, write down the tournament season and the published map pool rather than copying the current ranked rotation into an event guide without checking."
+        ]
+      },
+      {
+        "heading": "How to rebuild your map preparation",
+        "bullets": [
+          "Check Riot’s current patch notes and confirm the mode/event map pool.",
+          "Walk every site entry and defender rotation in a custom lobby.",
+          "Re-test lineups and smoke placements against changed geometry.",
+          "Update default positions, trade paths and retake timing notes.",
+          "Record the patch version with any screenshot or practice clip."
+        ],
+        "paragraphs": [
+          "A useful map guide should show what changed, where it changed, and how players can test it. Avoid declaring a map “attacker-sided” or “defender-sided” from one patch alone without enough match data."
+        ]
+      },
+      {
+        "heading": "Related VALORANT updates",
+        "paragraphs": [
+          "Read the [full Patch 13.08 breakdown](/games/valorant/updates/patch-13-08/), the [agent updates guide](/games/valorant/updates/agents/) and the [competitive rating guide](/games/valorant/updates/competitive/) for the other major categories in the same update."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "VALORANT official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-agent-update-guide",
+      "valorant-competitive-features-guide"
+    ]
+  },
+  {
+    "slug": "valorant-competitive-features-guide",
+    "route": "/games/valorant/updates/competitive/",
+    "kind": "guide",
+    "category": "VALORANT Competitive Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Competitive Updates: Map Rating and Performance Score Explained",
+    "description": "Understand VALORANT Patch 13.08's Map Rating, letter grades, recent-match weighting and Performance Score adjustments—without confusing these tools with visible rank or matchmaking guarantees.",
+    "keywords": [
+      "VALORANT Map Rating",
+      "VALORANT Performance Score",
+      "VALORANT competitive updates 13.08",
+      "Map Rating 0 to 500",
+      "VALORANT rank updates",
+      "VALORANT Premier Map Rating"
+    ],
+    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroAlt": "Original tactical FPS editorial artwork for competitive systems and match review.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Patch 13.08 added Map Rating and adjusted Performance Score. These tools offer more context for individual map proficiency and match contributions, but they are not a replacement for the visible competitive rank or a guarantee of rank changes after a match.",
+    "takeaways": [
+      "Map Rating uses a 0–500 scale and a letter grade from C to S.",
+      "Riot says the rating considers overall win rate, attacker win rate, defender win rate and Performance Score, with newer matches weighted more heavily.",
+      "Map Rating is available in Competitive and Premier; historical matches did not count at launch.",
+      "Performance Score adjustments change the impact of damage, adjusted kills and adjusted deaths, including first-blood/first-death context."
+    ],
+    "sections": [
+      {
+        "heading": "What Map Rating measures",
+        "paragraphs": [
+          "Riot describes Map Rating as a map-specific measure on a 0–500 scale with a letter grade from C to S. Its calculation uses Overall Win Rate, Attacker Win Rate, Defender Win Rate and Performance Score, and recent matches contribute more than older ones. It is intended to help a player review proficiency on each map rather than turn one match into a complete evaluation.",
+          "Patch 13.08 notes say Map Rating is available in Competitive and Premier. Riot also states that other players cannot see an individual's Map Rating and that historical matches did not count towards the rating at launch. Check official follow-up notes for later behaviour or availability changes."
+        ]
+      },
+      {
+        "heading": "Map Rating is not the same as rank",
+        "paragraphs": [
+          "A map-specific rating and a displayed competitive rank answer different questions. A player can have a strong history on one map and still lose a match because of opponent strength, team communication, composition, adaptation or match variance. The letter grade should be treated as one review signal, not as a guarantee of rank increase.",
+          "Avoid comparing your Map Rating directly to another player's visible rank or claiming the feature reveals matchmaking rules. The full calculation and data visibility are controlled by Riot, and a summary article should not invent hidden formula weights or penalties."
+        ]
+      },
+      {
+        "heading": "Performance Score changes",
+        "paragraphs": [
+          "Patch 13.08 further adjusted Performance Score after changes in 13.06. Riot increased the impact of Damage, Adjusted Kills and Adjusted Deaths, with the adjusted measures considering First Bloods and First Deaths. Chamber-specific adjustments were also made to better account for utility usage.",
+          "The practical takeaway is to review several parts of a match instead of looking only at final kills. Damage output, opening engagements, deaths, utility value and team role can all help explain why a round went well or badly. The score is an internal evaluation tool; it does not replace round wins or official competitive rules."
+        ]
+      },
+      {
+        "heading": "A useful post-match review",
+        "bullets": [
+          "Look at Map Rating over a meaningful number of games, not a single result.",
+          "Review attack and defence separately if the map splits rounds by side.",
+          "Identify repeated early deaths, wasted utility or failed trade setups.",
+          "Write down one change to test next time instead of changing every setting.",
+          "Use the official Riot notes if a formula, grade scale or display changes."
+        ],
+        "paragraphs": [
+          "The [VALORANT Patch 13.08 article](/games/valorant/updates/patch-13-08/) provides the broader release context. The [agent update guide](/games/valorant/updates/agents/) and [map update guide](/games/valorant/updates/maps/) cover related patch categories."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "Riot official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide"
+    ]
   }
 ]
