@@ -281,7 +281,7 @@
       {
         "heading": "PUBG: BATTLEGROUNDS (PC)",
         "paragraphs": [
-          "The [PUBG Global Championship timeline](/esports/pubg-global-championship-history/) records PGC winners from the modern series era and explains the context around the earlier PUBG Global Invitational. The competitive circuit also includes PUBG Global Series, PUBG Nations Cup and regional series; each has its own champion list."
+          "The [PUBG Global Championship timeline](/esports/pubg-global-championship-history/) records PGC winners from the modern series era and explains the context around the earlier PUBG Global Invitational. The competitive circuit also includes PUBG Global Series, PUBG Nations Cup and regional series; each has its own champion list. PUBG Mobile has a separate PMGC timeline at the [PUBG Mobile championship history](/esports/pubg-mobile-global-championship-history/), while PC results remain in the PGC list."
         ]
       },
       {
@@ -326,7 +326,8 @@
       "bgmi-tournament-winners",
       "free-fire-world-series-history",
       "valorant-champions-history",
-      "valorant-update-hub"
+      "valorant-update-hub",
+      "pubg-mobile-global-championship-history"
     ],
     "route": "/esports/"
   },
@@ -1029,7 +1030,7 @@
       {
         "heading": "Before the PGC era: PUBG Global Invitational 2018",
         "paragraphs": [
-          "The 2018 PUBG Global Invitational (PGI) was an early landmark in the PC esports scene. It separated results into third-person perspective and first-person perspective competitions. Gen.G Gold won the TPP tournament, while Oh My God won the FPP tournament, so calling one of them the only overall PGI 2018 winner loses the format distinction.",
+          "The 2018 PUBG Global Invitational (PGI) was an early landmark in the PC esports scene. It separated results into third-person perspective and first-person perspective competitions. Gen.G Gold won the TPP tournament, while Oh My God won the FPP tournament, so calling one of them the only overall PGI 2018 winner loses the format distinction. For mobile-game champions, see the separate [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/).",
           "The modern PGC timeline should therefore be read separately from PGI’s split-format results. The PUBG Esports official archive includes the historical global series and the later PUBG Global Championship events."
         ]
       },
@@ -1091,7 +1092,8 @@
       "bgmi-tournament-winners",
       "free-fire-world-series-history",
       "esports-history-index",
-      "gaming-guides-index"
+      "gaming-guides-index",
+      "pubg-mobile-global-championship-history"
     ],
     "route": "/esports/pubg-global-championship-history/"
   },
@@ -2310,6 +2312,131 @@
       "valorant-patch-13-08",
       "valorant-agent-update-guide",
       "valorant-map-rotation-guide"
+    ]
+  },
+  {
+    "slug": "pubg-mobile-global-championship-history",
+    "route": "/esports/pubg-mobile-global-championship-history/",
+    "kind": "esports",
+    "category": "PUBG Mobile Esports",
+    "categorySlug": "pubg-mobile",
+    "title": "PUBG Mobile Global Championship Winners: PMGC History 2020–2025",
+    "description": "PMGC champions by year from Nova Esports in 2020 and 2021 to S2G Esports, IHC, Dplus KIA and Alpha7 Esports, plus a clear note about the upcoming 2026 event.",
+    "keywords": [
+      "PUBG Mobile Global Championship winners",
+      "PMGC champions list",
+      "PMGC 2025 winner Alpha7 Esports",
+      "PUBG Mobile tournament history",
+      "PMGC 2024 Dplus KIA",
+      "PMGC 2023 IHC"
+    ],
+    "heroImage": "/knowledge/battle-royale.svg",
+    "heroAlt": "Original battle-royale editorial illustration, not an official PUBG Mobile gameplay screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "PUBG Mobile has a global esports circuit distinct from both PUBG: BATTLEGROUNDS PC and India’s BGMI events. This timeline records the PUBG Mobile Global Championship (PMGC) winner by completed year from 2020 through 2025, and keeps the 2026 event clearly marked as upcoming as of 23 October 2026.",
+    "takeaways": [
+      "Nova Esports won the first two PMGC editions in 2020 and 2021.",
+      "S2G Esports won PMGC 2022; IHC Esports won 2023; Dplus KIA won 2024.",
+      "Alpha7 Esports won PMGC 2025 in Thailand.",
+      "PMGC 2026 is scheduled for November–December 2026 and has no champion yet as of this article’s review date."
+    ],
+    "tables": [
+      {
+        "heading": "PMGC champions by year",
+        "headers": [
+          "Year",
+          "Champion",
+          "Edition note"
+        ],
+        "rows": [
+          [
+            "2020",
+            "Nova Esports",
+            "First PMGC edition."
+          ],
+          [
+            "2021",
+            "Nova Esports",
+            "Second consecutive world title."
+          ],
+          [
+            "2022",
+            "S2G Esports",
+            "Grand Finals concluded in January 2023."
+          ],
+          [
+            "2023",
+            "IHC Esports",
+            "Mongolian team won the Istanbul final."
+          ],
+          [
+            "2024",
+            "Dplus KIA",
+            "South Korean team won the London final."
+          ],
+          [
+            "2025",
+            "Alpha7 Esports",
+            "Brazilian team won the Bangkok Global Finals."
+          ],
+          [
+            "2026",
+            "Upcoming / TBD",
+            "Event scheduled for November–December 2026; final result not yet completed on 23 October."
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "2020–2021: Nova Esports begins the PMGC era",
+        "paragraphs": [
+          "Nova Esports won both the 2020 and 2021 PMGC editions. The first event ran through late 2020 and January 2021, while the second season’s finals concluded in January 2022. Calendar-year labels can therefore differ from the year in which the final match was actually played.",
+          "These were PUBG Mobile mobile-game championships. They must not be entered into a PUBG: BATTLEGROUNDS PC PGC results list, even though the titles share a franchise and a broad Battle Royale format."
+        ]
+      },
+      {
+        "heading": "2022–2024: S2G Esports, IHC Esports and Dplus KIA",
+        "paragraphs": [
+          "S2G Esports won PMGC 2022, whose finals concluded in January 2023. IHC Esports won the 2023 championship, while Dplus KIA claimed the 2024 title. Those are distinct yearly editions, with their own qualifiers, stages and rosters.",
+          "When comparing global mobile teams, note the final event and the year of the season. A league title, regional championship or PUBG Mobile World Cup win is important, but it is not automatically a PMGC crown. The event name belongs next to the champion in any history or trophy list."
+        ]
+      },
+      {
+        "heading": "2025: Alpha7 Esports takes the global title",
+        "paragraphs": [
+          "Alpha7 Esports won PMGC 2025 in Thailand. The event concluded on 14 December 2025 and Alpha7 finished ahead of ULF Esports in the grand-final standings, according to the tournament history record. The result is the most recent completed PMGC championship as of this article’s review date.",
+          "PMGC 2026 is scheduled to return later in 2026, but as of 23 October the event is not yet complete. A live-updating historical article should never label a scheduled event a champion before the grand final is finished and the organiser confirms the result."
+        ]
+      },
+      {
+        "heading": "PMGC, PUBG PC and BGMI are different circuits",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS PC’s headline year-end event is the PUBG Global Championship (PGC), while PUBG Mobile’s global year-end title is PMGC. BGMI serves India’s mobile market and has a separate national series including BGIS and BGMS. Similar names are easy to mix up in social posts, so identify the game and event in every result.",
+          "Continue to the [PUBG PC Global Championship history](/esports/pubg-global-championship-history/) and [BGMI tournament winners](/esports/bgmi-tournament-winners/). The [esports index](/esports/) gathers all the current tournament archives in one place."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Mobile Global Championship history and results",
+        "url": "https://liquipedia.net/pubgmobile/PUBG_Mobile_Global_Championship"
+      },
+      {
+        "label": "PMGC champions summary updated September 2026",
+        "url": "https://www.talkesport.com/wiki/pubg-mobile/pmgc/"
+      },
+      {
+        "label": "PUBG Mobile official news",
+        "url": "https://www.pubgmobile.com/en-US/news.shtml"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "esports-history-index"
     ]
   }
 ]
