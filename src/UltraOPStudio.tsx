@@ -818,8 +818,8 @@ export default function UltraOPStudio() {
     setMeta('og:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
     setMeta('og:image:secure_url', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
     setMeta('og:image:type', 'image/jpeg', 'property');
-    setMeta('og:image:width', '1200', 'property');
-    setMeta('og:image:height', '630', 'property');
+    setMeta('og:image:width', '600', 'property');
+    setMeta('og:image:height', '315', 'property');
     setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator and live streamer on YouTube, Twitch, Rooter and Instagram.', 'property');
     setMeta('twitter:card', 'summary_large_image', 'name');
     setMeta('twitter:title', pageInfo.title, 'name');
