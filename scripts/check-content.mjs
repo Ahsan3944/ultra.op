@@ -7,6 +7,8 @@ const studio = readFileSync('src/UltraOPStudio.tsx', 'utf8');
 const html = readFileSync('index.html', 'utf8');
 const privacy = readFileSync('public/privacy.html', 'utf8');
 const mainSource = readFileSync('src/main.tsx', 'utf8');
+const recoverySource = readFileSync('src/RuntimeErrorBoundary.tsx', 'utf8');
+const studioCss = readFileSync('src/ultraop-studio.css', 'utf8');
 const cookiePolicy = readFileSync('public/cookie-policy.html', 'utf8');
 const terms = readFileSync('public/terms.html', 'utf8');
 const knowledgeArticles = JSON.parse(readFileSync('src/data/knowledge.json', 'utf8'));
@@ -39,7 +41,10 @@ assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons m
 assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
 assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
 assert.ok(!html.includes('/runtime-fallback.js'), 'The main document must not inject the runtime crash fallback.');
-assert.ok(!mainSource.includes('AppErrorBoundary') && !mainSource.includes('ultraopAppReady'), 'React runtime should not replace the page with a custom crash screen.');
+assert.ok(mainSource.includes('<RuntimeErrorBoundary>') && mainSource.includes('./RuntimeErrorBoundary'), 'React rendering must be protected by the runtime recovery boundary.');
+assert.ok(recoverySource.includes('Try again') && recoverySource.includes('window.location.reload()'), 'Recovery screen must provide a working retry action.');
+assert.ok(recoverySource.includes('/guides/') && recoverySource.includes('role="alert"'), 'Recovery screen needs safe navigation and accessible error messaging.');
+assert.ok(studioCss.includes('.uos-runtime-error') && studioCss.includes('@media(max-width:560px)'), 'Recovery screen must have responsive styles.');
 const missingPage = readFileSync('public/404.html', 'utf8');
 assert.ok(missingPage.includes('404 / PAGE NOT FOUND'), 'Keep a branded 404 for invalid or retired URLs.');
 assert.ok(!missingPage.includes('/503.html'), 'The 404 page must not link to the removed temporary-unavailable screen.');
@@ -66,6 +71,12 @@ const requiredFiles = [
   'knowledge/battle-royale.svg',
   'knowledge/esports-championship.svg',
   'knowledge/tactical-fps.svg',
+  'knowledge/pubg-editions-comparison.svg',
+  'knowledge/minecraft-java-bedrock.svg',
+  'knowledge/minecraft-survival-first-day.svg',
+  'knowledge/valorant-beginner.svg',
+  'knowledge/esports-formats.svg',
+  'knowledge/pc-performance-recording.svg',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
@@ -123,6 +134,7 @@ const legacyBlog = readFileSync(path.join(dist, 'blog.html'), 'utf8');
 assert.ok(legacyBlog.includes('noindex,follow') && legacyBlog.includes('/journal/'), 'Legacy blog.html must migrate without becoming an indexed duplicate.');
 assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes('Play the game. Build the story.'), 'Homepage fallback content is missing.');
 ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/', '/games/valorant/updates/'].forEach((route) => assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes(route), 'Homepage fallback is missing a knowledge hub link: ' + route));
+['PUBG PC vs PUBG Mobile vs BGMI', 'Minecraft Java vs Bedrock Edition', 'Esports Tournament Formats Explained', 'PC Game Performance and Recording'].forEach((title) => assert.ok(readFileSync(path.join(dist, 'llms.txt'), 'utf8').includes(title), 'AI index is missing expanded guide: ' + title));
 const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'utf8');
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
 assert.ok(channelFallback.includes('Subscribe — Ultra OP Live') && channelFallback.includes('sub_confirmation=1'), 'Pre-rendered channels page must include direct subscribe links.');
@@ -137,7 +149,7 @@ assert.ok(builtMain.includes("script-src 'self'"), 'Generated homepage is missin
 assert.ok(builtMain.includes("style-src 'self' 'unsafe-inline'"), 'Generated homepage must permit same-origin production CSS.');
 assert.ok(builtMain.includes("frame-src 'none'"), 'Generated homepage must not silently allow embedded frames.');
 
-assert.ok(knowledgeArticles.length >= 20, 'Knowledge hub should contain at least 20 curated pages.');
+assert.ok(knowledgeArticles.length >= 30, 'Knowledge hub should contain at least 30 curated pages.');
 assert.equal(new Set(knowledgeArticles.map((article) => article.slug)).size, knowledgeArticles.length, 'Knowledge article slugs must be unique.');
 assert.equal(new Set(knowledgeArticles.map((article) => article.route)).size, knowledgeArticles.length, 'Knowledge article canonical routes must be unique.');
 const knownSlugs = new Set(knowledgeArticles.map((article) => article.slug));
@@ -177,7 +189,7 @@ for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/ve
 const knowledgeOverview = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
 assert.ok(knowledgeOverview.includes('## Gaming guides, version notes and esports histories'), 'llms.txt must expose the game guides and esports archive.');
 ['minecraft-26-3', 'pubg-global-championship-history', 'free-fire-world-series-history', 'valorant-patch-13-08'].forEach((slug) => { const article = knowledgeArticles.find((item) => item.slug === slug); assert.ok(article && knowledgeOverview.includes(article.title), 'llms.txt is missing article title for slug: ' + slug); });
-const publishedHubPages = ['guides/index.html', 'games/index.html', 'esports/index.html', 'games/minecraft/versions/index.html', 'games/valorant/updates/index.html', 'journal/ultraop-creator-story/index.html'];
+const publishedHubPages = ['guides/index.html', 'games/index.html', 'esports/index.html', 'games/minecraft/versions/index.html', 'games/valorant/updates/index.html', 'games/valorant/updates/agents/index.html', 'games/valorant/updates/maps/index.html', 'games/valorant/updates/competitive/index.html', 'games/valorant/guides/beginner-basics/index.html', 'guides/minecraft-survival-first-day/index.html', 'games/minecraft/java-vs-bedrock/index.html', 'guides/esports-tournament-formats/index.html', 'guides/pc-game-performance-recording/index.html', 'guides/pubg-mobile-bgmi-vs-pubg-pc/index.html', 'journal/ultraop-creator-story/index.html'];
 publishedHubPages.forEach((file) => assert.ok(existsSync(path.join(dist, file)), 'Missing primary knowledge page: ' + file));
 
 console.log('Audit passed: creator data, no fabricated statistics, policy disclosures, generated routes, unique SEO metadata, structured data and sitemap.');
