@@ -24,8 +24,8 @@ type StatsState = {
 
 const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer',
-    description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Find gaming videos, live streams and creator projects on YouTube, Twitch and Rooter.'
+    title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator',
+    description: 'UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.'
   },
   '/about': {
     title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey',
@@ -778,6 +778,8 @@ export default function UltraOPStudio() {
     setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
     setMeta('og:image:alt', 'UltraOP official mascot logo — creator, Minecraft and gaming stories.', 'property');
     setMeta('twitter:card', 'summary', 'name');
+    setMeta('twitter:title', pageInfo.title);
+    setMeta('twitter:description', pageInfo.description);
     setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
