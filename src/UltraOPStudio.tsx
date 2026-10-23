@@ -786,12 +786,16 @@ export default function UltraOPStudio() {
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
     setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
-    setMeta('og:image', 'https://ultraop.in/brand/ultraop-logo.webp', 'property');
-    setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator focused on Minecraft, gaming and live streams.', 'property');
-    setMeta('twitter:card', 'summary', 'name');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-share-card.png', 'property');
+    setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator. Minecraft videos, live streams and creator updates.', 'property');
+    setMeta('og:image:secure_url', 'https://ultraop.in/brand/ultraop-share-card.png', 'property');
+    setMeta('og:image:type', 'image/png', 'property');
+    setMeta('og:image:width', '1200', 'property');
+    setMeta('og:image:height', '630', 'property');
+    setMeta('twitter:card', 'summary_large_image', 'name');
     setMeta('twitter:title', pageInfo.title);
     setMeta('twitter:description', pageInfo.description);
-    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-logo.webp', 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-share-card.png', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');
