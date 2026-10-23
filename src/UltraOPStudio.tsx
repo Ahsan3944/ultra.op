@@ -192,7 +192,7 @@ function SiteHeader({ route }: { route: string }) {
     <header className="uos-header">
       <div className="uos-header-inner">
         <a className="uos-wordmark" href="/" aria-label="UltraOP home">
-          <img src="/brand/ultraop-original.webp" alt="" width="34" height="34" />
+          <img src="/brand/ultraop-logo.webp" alt="" width="34" height="34" />
           <span>ULTRA<span className="uos-wordmark-accent">OP</span></span>
         </a>
         <nav className="uos-desktop-nav" aria-label="Main navigation">
@@ -260,7 +260,7 @@ function CubeArtwork() {
       <div className="uos-cube-stage">
         <div className="uos-cube-shadow" />
         <div className="uos-cube">
-          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><img className="uos-cube-logo" src="/brand/ultraop-original.webp" alt="" width="118" height="150" /></div>
+          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><img className="uos-cube-logo" src="/brand/ultraop-logo.webp" alt="" width="118" height="150" /></div>
           <div className="uos-cube-face uos-cube-back"><span className="uos-cube-face-label">BUILD<br/>YOUR<br/>WORLD</span></div>
           <div className="uos-cube-face uos-cube-right"><span className="uos-cube-side-mark">OP / 01</span></div>
           <div className="uos-cube-face uos-cube-left"><span className="uos-cube-side-mark">PLAY / CREATE</span></div>
@@ -494,7 +494,7 @@ function SiteFooter() {
       <div className="uos-container">
         <div className="uos-footer-main">
           <div className="uos-footer-brand">
-            <a className="uos-wordmark" href="/" aria-label="UltraOP home"><img src="/brand/ultraop-original.webp" alt="" width="34" height="34" /><span>ULTRA<span className="uos-wordmark-accent">OP</span></span></a>
+            <a className="uos-wordmark" href="/" aria-label="UltraOP home"><img src="/brand/ultraop-logo.webp" alt="" width="34" height="34" /><span>ULTRA<span className="uos-wordmark-accent">OP</span></span></a>
             <p>Gaming creator. Storyteller. Builder.<br />The official home of Sk Ahsan Ahmad.</p>
           </div>
           <div className="uos-footer-links">
@@ -786,12 +786,12 @@ export default function UltraOPStudio() {
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
     setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
-    setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
-    setMeta('og:image:alt', 'UltraOP official mascot logo — creator, Minecraft and gaming stories.', 'property');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-logo.webp', 'property');
+    setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator focused on Minecraft, gaming and live streams.', 'property');
     setMeta('twitter:card', 'summary', 'name');
     setMeta('twitter:title', pageInfo.title);
     setMeta('twitter:description', pageInfo.description);
-    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-logo.webp', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');

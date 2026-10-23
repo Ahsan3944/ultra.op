@@ -348,11 +348,11 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
   html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
-  // Social crawlers do not consistently support SVG Open Graph images. Use the published raster mascot until the wide social-share banner is added.
-  const shareImage = 'https://ultraop.in/brand/ultraop-original.webp';
-  const shareImageAlt = 'UltraOP original mascot logo — gaming, Minecraft and creator storytelling.';
-  const shareImageWidth = '142';
-  const shareImageHeight = '161';
+  // Use the updated published raster mascot for social previews; dimensions match the 256×256 WebP asset.
+  const shareImage = 'https://ultraop.in/brand/ultraop-logo.webp';
+  const shareImageAlt = 'UltraOP — Sk Ahsan Ahmad, gaming creator focused on Minecraft, gaming and live streams.';
+  const shareImageWidth = '256';
+  const shareImageHeight = '256';
   html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
   html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');

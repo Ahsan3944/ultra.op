@@ -65,11 +65,16 @@ assert.ok(studioCss.includes('.uos-mobile-nav.is-open') && studioCss.includes('m
 assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects must be restrained and respect reduced-motion preferences.');
 assert.ok(studioCss.includes('transition-duration: .01ms !important'), 'Mobile menu transitions must respect reduced-motion preferences.');
 
-assert.ok(html.includes('twitter:card') && html.includes('twitter:image'), 'Social cards must include Twitter/X card and image metadata.');
-assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadata must point at a published image asset.');
-assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
-assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
-assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
+assert.ok(html.includes('<meta property="og:image" content="https://ultraop.in/brand/ultraop-logo.webp" />'), 'Open Graph must use the current mascot logo asset.');
+assert.ok(html.includes('<meta property="og:image:secure_url" content="https://ultraop.in/brand/ultraop-logo.webp" />'), 'Open Graph must provide the secure image URL.');
+assert.ok(html.includes('<meta property="og:image:type" content="image/webp" />') && html.includes('<meta property="og:image:width" content="256" />') && html.includes('<meta property="og:image:height" content="256" />'), 'Open Graph image MIME type and dimensions must match the published 256×256 WebP asset.');
+assert.ok(html.includes('<meta name="twitter:card" content="summary" />') && html.includes('<meta name="twitter:image" content="https://ultraop.in/brand/ultraop-logo.webp" />'), 'Twitter/X metadata must use the current mascot and a valid summary card.');
+assert.ok(html.includes('"image": "https://ultraop.in/brand/ultraop-logo.webp"'), 'Structured creator data must reference the current mascot logo.');
+assert.ok(studio.includes('/brand/ultraop-logo.webp'), 'Header, hero and footer artwork must use the current mascot logo.');
+assert.ok(studio.includes("setMeta('og:image', 'https://ultraop.in/brand/ultraop-logo.webp', 'property')"), 'Client-side page metadata must use the current mascot logo.');
+assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-logo.webp') && readFileSync('public/site.webmanifest', 'utf8').includes('256x256'), 'The web app manifest must use the current mascot logo and dimensions.');
+assert.ok(readFileSync('public/favicon.svg', 'utf8').includes('/brand/ultraop-logo.webp') && readFileSync('public/brand/ultraop-mark.svg', 'utf8').includes('/brand/ultraop-logo.webp'), 'SVG favicon/brand mark must reference the current mascot logo.');
+assert.ok(staticGenerator.includes("const shareImage = 'https://ultraop.in/brand/ultraop-logo.webp'") && staticGenerator.includes("const shareImageWidth = '256'"), 'Generated static pages must use the current mascot logo and correct image dimensions.');
 assert.ok(!html.includes('/runtime-fallback.js'), 'The main document must not inject the runtime crash fallback.');
 assert.ok(mainSource.includes('<RuntimeErrorBoundary>') && mainSource.includes('./RuntimeErrorBoundary'), 'React rendering must be protected by the runtime recovery boundary.');
 assert.ok(recoverySource.includes('Try again') && recoverySource.includes('window.location.reload()'), 'Recovery screen must provide a working retry action.');
@@ -97,6 +102,7 @@ const requiredFiles = [
   'llms.txt',
   'robots.txt',
   'brand/ultraop-original.webp',
+  'brand/ultraop-logo.webp',
   'knowledge/minecraft-worlds.svg',
   'knowledge/battle-royale.svg',
   'knowledge/esports-championship.svg',
