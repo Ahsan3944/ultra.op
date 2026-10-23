@@ -278,6 +278,11 @@ function renderKnowledgeFallback(article) {
     return '<section><h2>' + escapeHtml(section.heading) + '</h2>' + paragraphs + bullets + tables + '</section>';
   }).join('');
   const takeaways = (article.takeaways ?? []).map((item) => '<li>' + renderRichHtml(item) + '</li>').join('');
+  const topTables = (article.tables ?? []).map((table) =>
+    '<section><h2>' + escapeHtml(table.heading) + '</h2><div class="uos-knowledge-table-wrap"><table><thead><tr>' +
+    table.headers.map((head) => '<th scope="col">' + escapeHtml(head) + '</th>').join('') +
+    '</tr></thead><tbody>' + table.rows.map((row) => '<tr>' + row.map((cell) => '<td>' + escapeHtml(cell) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div></section>'
+  ).join('');
   const sources = (article.sources ?? []).map((item) => '<li><a href="' + escapeAttr(item.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.label) + '</a></li>').join('');
   const related = knowledgeRecords.filter((item) => (article.related ?? []).includes(item.slug)).map((item) =>
     '<li><a href="' + escapeAttr(item.route) + '">' + escapeHtml(item.title) + '</a><p>' + escapeHtml(item.description) + '</p></li>'
@@ -288,7 +293,7 @@ function renderKnowledgeFallback(article) {
     '<img class="uos-knowledge-cover" src="' + escapeAttr(article.heroImage) + '" alt="' + escapeAttr(article.heroAlt) + '" width="600" height="338" fetchpriority="high">' +
     '<p class="uos-prerender-image-note">Original editorial illustration for this article; not an official in-game screenshot.</p>' +
     '<p class="uos-prerender-reading">' + escapeHtml(String(article.readingMinutes)) + ' minute read · Last reviewed ' + escapeHtml(article.updatedAt) + '</p>' +
-    '<section><h2>Key takeaways</h2><ul>' + takeaways + '</ul></section>' + sections +
+    '<section><h2>Key takeaways</h2><ul>' + takeaways + '</ul></section>' + topTables + sections +
     '<section><h2>Sources and further reading</h2><p>Game-specific details should be checked against the publisher or tournament organiser’s original notes. This article is an editorial summary.</p><ul>' + sources + '</ul></section>' +
     '<section><h2>Related guides</h2><ul>' + related + '</ul></section>' +
     '<p class="uos-prerender-foot">Official website of UltraOP / Sk Ahsan Ahmad · <a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/games/">Games</a> · <a href="/esports/">Esports</a></p>' +
