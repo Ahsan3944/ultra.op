@@ -67,7 +67,7 @@ const journalRecords = readRecords(journalSource, /\{\s*slug:\s*'[^']+'[^}]*\}/g
   .filter((entry) => entry.slug && entry.title && entry.summary);
 
 const pages = [
-  { path: '/', title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer', description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.' },
+  { path: '/', title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator', description: 'UltraOP (Sk Ahsan Ahmad) is an Indian gaming creator. Explore gaming videos, Minecraft stories, live streams and official links to YouTube, Twitch, Rooter and Instagram.' },
   { path: '/about/', title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey', description: 'Discover the UltraOP creator journey from PUBG and Free Fire to Rooter streaming, YouTube, Minecraft, community building and technology projects.' },
   { path: '/channels/', title: 'Official Channels — UltraOP | YouTube & Streaming Platforms', description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a public data source is available.' },
   { path: '/live/', title: 'Watch UltraOP Live — YouTube, Twitch, Kick & Rooter', description: 'Open UltraOP’s official streaming destinations on YouTube, Twitch, Kick and Rooter. Stream availability is determined by each platform.' },
@@ -348,17 +348,16 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
   html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
-  // Social crawlers do not consistently support SVG Open Graph images. Use the published raster mascot until the wide social-share banner is added.
-  const shareImage = 'https://ultraop.in/brand/ultraop-original.webp';
-  const shareImageAlt = 'UltraOP original mascot logo — gaming, Minecraft and creator storytelling.';
-  const shareImageWidth = '142';
-  const shareImageHeight = '161';
+  const shareImage = 'https://ultraop.in/brand/ultraop-social-share.jpg';
+  const shareImageAlt = 'UltraOP — Sk Ahsan Ahmad, Indian gaming creator and live streamer. Official destinations: YouTube, Twitch, Rooter and Instagram.';
+  const shareImageWidth = '1200';
+  const shareImageHeight = '630';
   html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
   html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');
   html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="' + shareImageHeight + '" />');
   html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
-  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary" />');
+  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary_large_image" />');
   html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
   html = upsertMeta(html, 'name', 'twitter:url', '<meta name="twitter:url" content="' + escapeAttr(canonical) + '" />');
