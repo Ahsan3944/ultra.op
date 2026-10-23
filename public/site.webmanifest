@@ -10,8 +10,8 @@
   "theme_color": "#0a0a0a",
   "icons": [
     {
-      "src": "/brand/ultraop-original.webp",
-      "sizes": "142x161",
+      "src": "/brand/ultraop-logo.webp",
+      "sizes": "256x256",
       "type": "image/webp",
       "purpose": "any"
     }
