@@ -304,7 +304,29 @@ button { color: inherit; }
   .uos-header-inner { height: 72px; }
   .uos-desktop-nav, .uos-header-cta { display: none; }
   .uos-menu-button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--uos-line-strong); background: transparent; cursor: pointer; }
-  .uos-mobile-nav { display: grid; padding: 8px 20px 18px; border-top: 1px solid var(--uos-line); background: #0b0d0f; }
+  .uos-mobile-nav {
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    visibility: hidden;
+    pointer-events: none;
+    padding: 0 20px;
+    border-top: 1px solid transparent;
+    background: #0b0d0f;
+    transition: max-height .24s ease, opacity .18s ease, transform .24s ease, padding .24s ease, border-color .24s ease, visibility 0s linear .24s;
+  }
+  .uos-mobile-nav.is-open {
+    max-height: 480px;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    padding: 8px 20px 18px;
+    border-top-color: var(--uos-line);
+    transition: max-height .24s ease, opacity .18s ease, transform .24s ease, padding .24s ease, border-color .24s ease, visibility 0s;
+  }
   .uos-mobile-nav a { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--uos-line); color: #ddd; font-size: 13px; }
   .uos-hero { padding-top: 32px; }
   .uos-hero-inner { grid-template-columns: 1fr; min-height: auto; gap: 34px; }
