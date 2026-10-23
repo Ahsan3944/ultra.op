@@ -122,6 +122,7 @@ assert.ok(crawlerRules.includes('Sitemap: https://ultraop.in/sitemap.xml'), 'rob
 const legacyBlog = readFileSync(path.join(dist, 'blog.html'), 'utf8');
 assert.ok(legacyBlog.includes('noindex,follow') && legacyBlog.includes('/journal/'), 'Legacy blog.html must migrate without becoming an indexed duplicate.');
 assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes('Play the game. Build the story.'), 'Homepage fallback content is missing.');
+['/guides/', '/games/', '/esports/', '/games/minecraft/versions/', '/games/valorant/updates/'].forEach((route) => assert.ok(readFileSync(path.join(dist, 'index.html'), 'utf8').includes(route), 'Homepage fallback is missing a knowledge hub link: ' + route));
 const channelFallback = readFileSync(path.join(dist, 'channels/index.html'), 'utf8');
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(channelFallback.includes(name), 'Channel fallback is missing: ' + name));
 assert.ok(channelFallback.includes('Subscribe — Ultra OP Live') && channelFallback.includes('sub_confirmation=1'), 'Pre-rendered channels page must include direct subscribe links.');
@@ -142,20 +143,20 @@ assert.equal(new Set(knowledgeArticles.map((article) => article.route)).size, kn
 const knownSlugs = new Set(knowledgeArticles.map((article) => article.slug));
 for (const article of knowledgeArticles) {
   const articleText = [article.intro, ...(article.takeaways ?? []), ...(article.sections ?? []).flatMap((section) => [...(section.paragraphs ?? []), ...(section.bullets ?? [])])].join(' ');
-  const wordCount = articleText.trim().split(/\\s+/).filter(Boolean).length;
+  const wordCount = articleText.trim().split(/\s+/).filter(Boolean).length;
   assert.ok(wordCount >= 180, article.slug + ' is too thin; expand it beyond short placeholder copy.');
   assert.ok(Array.isArray(article.sections) && article.sections.length >= 3, article.slug + ' needs clear topic sections.');
   assert.ok(Array.isArray(article.sources) && article.sources.length >= 2, article.slug + ' needs external sources.');
   assert.ok(article.route.startsWith('/') && article.route.endsWith('/'), article.slug + ' must have a clean trailing-slash canonical path.');
   assert.ok(article.heroImage.startsWith('/knowledge/'), article.slug + ' must use a same-origin editorial image.');
   assert.ok(existsSync(path.join('public', article.heroImage)), 'Missing editorial artwork: ' + article.heroImage);
-  article.sources.forEach((source) => assert.match(source.url, /^https:\\/\\//, 'Sources must use HTTPS: ' + source.url));
+  article.sources.forEach((source) => assert.match(source.url, /^https:\/\//, 'Sources must use HTTPS: ' + source.url));
   (article.related ?? []).forEach((slug) => assert.ok(knownSlugs.has(slug), article.slug + ' links to unknown related article ' + slug));
-  const relativeFile = article.route.replace(/^\\//, '').replace(/\\/+$/, '') + '/index.html';
+  const relativeFile = article.route.replace(/^\//, '').replace(/\/+$/, '') + '/index.html';
   const builtPath = path.join(dist, relativeFile);
   assert.ok(existsSync(builtPath), 'Missing generated knowledge page: ' + relativeFile);
   const page = readFileSync(builtPath, 'utf8');
-  const title = page.match(/<title>([^<]+)<\\/title>/i)?.[1];
+  const title = page.match(/<title>([^<]+)<\/title>/i)?.[1];
   const canonical = page.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
   const description = page.match(/<meta name="description" content="([^"]+)"/i)?.[1];
   assert.ok(title, relativeFile + ' must have a page title.');
@@ -166,10 +167,11 @@ for (const article of knowledgeArticles) {
   assert.ok(page.includes('application/ld+json'), relativeFile + ' must include structured data.');
   assert.ok(page.includes(article.kind === 'hub' ? '"@type":"CollectionPage"' : '"@type":"Article"'), relativeFile + ' has the wrong structured-data type.');
   article.sources.forEach((source) => assert.ok(page.includes(source.url), relativeFile + ' is missing a cited source link: ' + source.url));
+  (article.tables ?? []).forEach((table) => assert.ok(page.includes(table.heading) && page.includes(table.rows[0]?.[0] ?? ''), relativeFile + ' is missing its main results table: ' + table.heading));
   titles.push(title);
 }
 assert.equal(new Set(titles).size, titles.length, 'Main routes and gaming knowledge pages must have unique titles.');
-for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/26-3/', '/games/valorant/updates/patch-13-08/', '/esports/pubg-global-championship-history/', '/esports/bgmi-tournament-winners/']) {
+for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/26-3/', '/games/minecraft/versions/26-4/', '/games/valorant/updates/patch-13-08/', '/games/valorant/updates/agents/', '/games/valorant/updates/maps/', '/games/valorant/updates/competitive/', '/esports/pubg-global-championship-history/', '/esports/bgmi-tournament-winners/']) {
   assert.ok(sitemap.includes('https://ultraop.in' + expected), 'SEO sitemap is missing core gaming route ' + expected);
 }
 const knowledgeOverview = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
