@@ -119,7 +119,7 @@ export function KnowledgeDirectoryPage({ route }: { route: string }) {
   return (
     <>
       <KnowledgeHero eyebrow={'KNOWLEDGE HUB / ' + (hub?.category ?? 'INDEX').toUpperCase()} title={<>{hub?.title ?? 'Gaming guides and references'}</>} description={hub?.intro ?? hub?.description ?? 'Browse structured guides by game and topic.'}>
-        <div className="uos-knowledge-directory-meta"><span>{ARTICLES.length} published reference pages</span><span>Updated 23 October 2026</span></div>
+        <div className="uos-knowledge-directory-meta"><span>{ARTICLES.length} published reference pages</span><span>Article pages show their individual last-reviewed date</span></div>
       </KnowledgeHero>
       <section className="uos-section uos-knowledge-directory">
         <div className="uos-container">
