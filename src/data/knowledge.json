@@ -349,7 +349,7 @@
     "heroAlt": "Original Minecraft-inspired world-building landscape artwork for the version library.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
-    "intro": "Minecraft version searches often mean different things: a player may want the newest Java Edition release, a creator may need the features of an earlier update, and a server owner may need compatibility information. This library separates release facts from practical advice and links each version to its official notes.",
+    "intro": "Minecraft version searches often mean different things: a player may want the newest stable Java Edition release, a creator may need the features of an earlier update, and a server owner may need compatibility information. As of 23 October 2026, 26.3 is the stable release covered here; 26.4 is still in snapshot testing. This library separates release facts from practical advice and links each version to official notes.",
     "takeaways": [
       "As of 23 October 2026, Minecraft Java Edition 26.3 is the current stable release covered in this library.",
       "Minecraft Java Edition 26.4 is still in snapshot/pre-release testing; Snapshot 5 was published on 20 October 2026.",
@@ -1158,7 +1158,7 @@
           [
             "2026",
             "iQOO Soul",
-            "Published tournament references list Team SouL as champion."
+            "KRAFTON India’s published event record confirms iQOO Soul as champion; check the organiser’s final record for placements and awards."
           ]
         ]
       },
@@ -1203,7 +1203,7 @@
         "heading": "BGIS: the India series timeline",
         "paragraphs": [
           "BGIS has produced a changing list of champions across editions. Skylightz Gaming won the 2021 edition, whose finals took place in January 2022. Team SouL won the 2022 edition, Gladiators Esports won in 2023, and Team XSpark took the 2024 title. The 2025 final crowned Team Versatile at Kolkata’s Biswa Bangla Mela Prangan.",
-          "KRAFTON India’s official post for BGIS 2026 names iQOO Soul as champion, Genesis Esports as runner-up and Orangutan in third place. This is a completed 2026 result, not a prediction; individual awards and the exact final points are linked from the source material."
+          "KRAFTON India’s official esports coverage identifies iQOO Soul as the BGIS 2026 champion. This is a completed 2026 result, not a prediction; confirm exact final points and individual awards from the tournament’s complete event record before quoting them."
         ]
       },
       {
@@ -1231,7 +1231,7 @@
     "sources": [
       {
         "label": "KRAFTON India official BGIS 2026 result",
-        "url": "https://www.linkedin.com/posts/kraftoninc-india_bgis2026-esportsindia-gaming-activity-7444586809973653504-oSCm"
+        "url": "https://www.linkedin.com/posts/kraftoninc-india_bmps2026-bgmi-esports-activity-7473940226378383360-7t86"
       },
       {
         "label": "KRAFTON India official BGIS 2025 recap",
