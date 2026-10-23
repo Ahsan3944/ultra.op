@@ -11,8 +11,6 @@ import { JOURNAL_ENTRIES, type JournalEntry } from './data/journal';
 import KNOWLEDGE_ARTICLES from './data/knowledge.json';
 import { getKnowledgeArticle, KnowledgeArticlePage, KnowledgeDirectoryPage, KnowledgeTeasers } from './KnowledgePages';
 import './ultraop-studio.css';
-type KnowledgeArticle = (typeof KNOWLEDGE_ARTICLES)[number];
-const KNOWLEDGE_BY_PATH = Object.fromEntries(KNOWLEDGE_ARTICLES.map((article) => [article.route.replace(/\\/+$/, ''), article])) as Record<string, KnowledgeArticle>;
 
 type ChannelStats = {
   subscribers: number | null;
