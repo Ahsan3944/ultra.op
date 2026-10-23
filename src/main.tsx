@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import RuntimeErrorBoundary from './RuntimeErrorBoundary';
 import UltraOPStudio from './UltraOPStudio';
 
 const rootElement = document.getElementById('root');
@@ -12,7 +13,9 @@ if (path === '/blog' || path.startsWith('/blog/')) {
 } else {
   createRoot(rootElement).render(
     <StrictMode>
-      <UltraOPStudio />
+      <RuntimeErrorBoundary>
+        <UltraOPStudio />
+      </RuntimeErrorBoundary>
     </StrictMode>
   );
 }
