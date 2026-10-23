@@ -8,7 +8,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS, BRAND_CAMPAIGNS } from './data/core';
 import { JOURNAL_ENTRIES, type JournalEntry } from './data/journal';
+import KNOWLEDGE_ARTICLES from './data/knowledge.json';
 import './ultraop-studio.css';
+type KnowledgeArticle = (typeof KNOWLEDGE_ARTICLES)[number];
+const KNOWLEDGE_BY_PATH = Object.fromEntries(KNOWLEDGE_ARTICLES.map((article) => [article.route.replace(/\\/+$/, ''), article])) as Record<string, KnowledgeArticle>;
 
 type ChannelStats = {
   subscribers: number | null;
@@ -68,7 +71,10 @@ const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/support': {
     title: 'Support UltraOP — Official Creator Links',
     description: 'Find official ways to follow and support UltraOP’s gaming content and creator projects.'
-  }
+  },
+  '/guides': { title: 'Gaming Guides & Esports Knowledge Hub | UltraOP', description: 'Structured Minecraft version guides, tournament histories, VALORANT patch notes and beginner-friendly gaming explainers by UltraOP.' },
+  '/games': { title: 'Game Directory: Minecraft, PUBG, BGMI, Free Fire & VALORANT | UltraOP', description: 'Browse organised game guides, update summaries, Minecraft version notes and competitive gaming reference pages.' },
+  '/esports': { title: 'Esports Tournament Histories & Champions | UltraOP', description: 'Explore separate winner timelines for PUBG Global Championship, BGMI series, Free Fire World Series and VALORANT Champions.' }
 };
 
 const JOURNAL_DETAILS: Record<string, JournalEntry> = Object.fromEntries(
@@ -178,7 +184,9 @@ function SiteHeader({ route }: { route: string }) {
     { label: 'Channels', href: home ? '#channels' : '/channels/' },
     { label: 'Brand work', href: home ? '#work' : '/work/' },
     { label: 'Community', href: home ? '#community' : '/community/' },
-    { label: 'Journal', href: '/journal/' }
+    { label: 'Journal', href: '/journal/' },
+    { label: 'Guides', href: home ? '#knowledge' : '/guides/' },
+    { label: 'Esports', href: home ? '#knowledge' : '/esports/' }
   ];
 
   return (
@@ -482,7 +490,7 @@ function SiteFooter() {
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">EXPLORE</span>
-            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a><a href="/site-map/">Website map</a>
+            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a><a href="/guides/">Gaming guides</a><a href="/games/">Games</a><a href="/esports/">Esports histories</a><a href="/site-map/">Website map</a>
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">INFORMATION</span>
@@ -506,6 +514,7 @@ function HomePage({ stats }: { stats: StatsState }) {
       <Marquee />
       <ChannelsSection stats={stats} compact />
       <CreatorJourney compact />
+      <KnowledgeTeasers />
       <BrandWorkSection compact />
       <CommunitySection compact />
       <ContactSection />
