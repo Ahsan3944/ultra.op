@@ -425,7 +425,7 @@
       "Minecraft poplar wood",
       "Minecraft 26.3 release notes"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-26-3.svg",
     "heroAlt": "Original cinematic Minecraft-inspired wilderness and village artwork; not an official in-game screenshot.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -503,7 +503,7 @@
       "Sulfur Caves biome",
       "Minecraft Vulkan rendering 26.2"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-26-2.svg",
     "heroAlt": "Original Minecraft-inspired cavern and wilderness editorial illustration, not a gameplay capture.",
     "readingMinutes": 5,
     "updatedAt": "2026-10-23",
@@ -576,7 +576,7 @@
       "Minecraft baby mob sounds",
       "Minecraft 26.1 features"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-26-1.svg",
     "heroAlt": "Original Minecraft-inspired landscape artwork for version guides.",
     "readingMinutes": 4,
     "updatedAt": "2026-10-23",
@@ -650,7 +650,7 @@
       "Camel Husk",
       "Minecraft 1.21.11 features"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-1-21-11.svg",
     "heroAlt": "Original Minecraft-style landscape artwork; check the official notes for actual 1.21.11 screenshots.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -723,7 +723,7 @@
       "warm cold mob variants Minecraft",
       "Minecraft lodestone recipe"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-1-21-5.svg",
     "heroAlt": "Original Minecraft-inspired landscape artwork for the Spring to Life release guide.",
     "readingMinutes": 5,
     "updatedAt": "2026-10-23",
@@ -796,7 +796,7 @@
       "1.20.1 mods",
       "Minecraft 1.20.1 release notes"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-1-20-1.svg",
     "heroAlt": "Original Minecraft-inspired world landscape artwork for older-version compatibility guidance.",
     "readingMinutes": 5,
     "updatedAt": "2026-10-23",
@@ -960,7 +960,7 @@
       "FULL SENSE PGC 2025",
       "PUBG PC esports"
     ],
-    "heroImage": "/knowledge/battle-royale.svg",
+    "heroImage": "/knowledge/pubg-pgc.svg",
     "heroAlt": "Original cinematic battle-royale landscape art for PUBG PC tournament-history reading.",
     "readingMinutes": 8,
     "updatedAt": "2026-10-23",
@@ -1112,7 +1112,7 @@
       "BGIS 2025 winner",
       "BGMI Masters Series winner"
     ],
-    "heroImage": "/knowledge/battle-royale.svg",
+    "heroImage": "/knowledge/bgmi-tournament.svg",
     "heroAlt": "Original battle-royale editorial artwork for the BGMI esports article.",
     "readingMinutes": 8,
     "updatedAt": "2026-10-23",
@@ -1279,7 +1279,7 @@
       "FFWS 2023 Magic Squad",
       "Free Fire esports history"
     ],
-    "heroImage": "/knowledge/esports-championship.svg",
+    "heroImage": "/knowledge/free-fire-ffws.svg",
     "heroAlt": "Original esports arena and trophy illustration for Free Fire global tournament history.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -1510,7 +1510,7 @@
       "Performance Score Valorant",
       "VALORANT V26 Act 6"
     ],
-    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroImage": "/knowledge/valorant-patch.svg",
     "heroAlt": "Original tactical shooter scene for VALORANT patch analysis; not official in-game imagery.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -1599,7 +1599,7 @@
       "LOUD Champions 2026",
       "NRG Champions Paris 2025"
     ],
-    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroImage": "/knowledge/valorant-champions.svg",
     "heroAlt": "Original tactical hero-shooter editorial art for the VALORANT esports winners timeline.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -1993,7 +1993,7 @@
       "Jukebox Playlists Minecraft",
       "Minecraft 26.4 update"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-26-4.svg",
     "heroAlt": "Original editorial Minecraft-inspired landscape illustration; snapshot coverage is an editorial guide, not a gameplay screenshot.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -2092,7 +2092,7 @@
       "Killjoy Alarmbot fix 13.08",
       "VALORANT agent patch notes"
     ],
-    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroImage": "/knowledge/valorant-agent-updates.svg",
     "heroAlt": "Original tactical hero-shooter editorial artwork, not an official VALORANT gameplay screenshot.",
     "readingMinutes": 5,
     "updatedAt": "2026-10-23",
@@ -2171,7 +2171,7 @@
       "Bind map pool",
       "VALORANT map pool update"
     ],
-    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroImage": "/knowledge/valorant-map-updates.svg",
     "heroAlt": "Original tactical shooter illustration used to explain map pools and rotation strategy.",
     "readingMinutes": 5,
     "updatedAt": "2026-10-23",
@@ -2250,7 +2250,7 @@
       "VALORANT rank updates",
       "VALORANT Premier Map Rating"
     ],
-    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroImage": "/knowledge/valorant-competitive.svg",
     "heroAlt": "Original tactical FPS editorial artwork for competitive systems and match review.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -2330,7 +2330,7 @@
       "PMGC 2024 Dplus KIA",
       "PMGC 2023 IHC"
     ],
-    "heroImage": "/knowledge/battle-royale.svg",
+    "heroImage": "/knowledge/pubg-mobile-pmgc.svg",
     "heroAlt": "Original battle-royale editorial illustration, not an official PUBG Mobile gameplay screenshot.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
