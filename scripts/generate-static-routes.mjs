@@ -348,17 +348,18 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
   html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
-  // Use the updated published raster mascot for social previews; dimensions match the 256×256 WebP asset.
-  const shareImage = 'https://ultraop.in/brand/ultraop-logo.webp';
-  const shareImageAlt = 'UltraOP — Sk Ahsan Ahmad, gaming creator focused on Minecraft, gaming and live streams.';
-  const shareImageWidth = '256';
-  const shareImageHeight = '256';
+  // Social platforms get a dedicated 1200×630 PNG card; keep the current mascot/logo in site chrome separately.
+  const shareImage = 'https://ultraop.in/brand/ultraop-share-card.png';
+  const shareImageAlt = 'UltraOP — Sk Ahsan Ahmad, gaming creator. Minecraft videos, live streams and creator updates.';
+  const shareImageWidth = '1200';
+  const shareImageHeight = '630';
   html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
-  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
+  html = upsertMeta(html, 'property', 'og:image:secure_url', '<meta property="og:image:secure_url" content="' + escapeAttr(shareImage) + '" />');
+  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/png" />');
   html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');
   html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="' + shareImageHeight + '" />');
   html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
-  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary" />');
+  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary_large_image" />');
   html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
   html = upsertMeta(html, 'name', 'twitter:url', '<meta name="twitter:url" content="' + escapeAttr(canonical) + '" />');
