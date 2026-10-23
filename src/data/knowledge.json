@@ -136,7 +136,7 @@
       {
         "heading": "Esports: tournament histories and winners",
         "paragraphs": [
-          "Browse the [PUBG Global Championship history](/esports/pubg-global-championship-history/) for the PC circuit, the [BGMI tournament winners](/esports/bgmi-tournament-winners/) page for major Indian mobile events, and the [Free Fire World Series history](/esports/free-fire-world-series-history/) for global Battle Royale champions. These are related genres but they are not interchangeable tournament circuits.",
+          "Browse the [PUBG Global Championship history](/esports/pubg-global-championship-history/) for the PC circuit, the [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/) for the global mobile circuit, the [BGMI tournament winners](/esports/bgmi-tournament-winners/) page for major Indian mobile events, and the [Free Fire World Series history](/esports/free-fire-world-series-history/) for global Battle Royale champions. These related games use distinct tournament circuits.",
           "The [VALORANT Champions winners](/esports/valorant-champions-history/) page follows the global VCT world championship by year. Each results table identifies the event series and the season, helping avoid the common mistake of treating a regional league title, Masters event and Champions title as the same competition."
         ]
       },
@@ -218,7 +218,7 @@
         "heading": "Battle royale and mobile competitive games",
         "paragraphs": [
           "PUBG: BATTLEGROUNDS is the PC/console title with its own PUBG Esports global circuit. BGMI is India’s mobile release and has separate events such as BGIS and BGMS. Free Fire’s global scene includes the Free Fire World Series. Their winner lists are kept in separate pages to avoid mixing titles, rulesets and event formats.",
-          "Read the [PUBG global history](/esports/pubg-global-championship-history/), [BGMI tournament history](/esports/bgmi-tournament-winners/) and [Free Fire World Series history](/esports/free-fire-world-series-history/) for year-by-year lists."
+          "BGMI is the India-specific mobile title, and its headline national events include BGIS and BGMS. PUBG Mobile global esports has a separate PMGC history, which is not the same as the PC PGC circuit. For major champions, read the [BGMI tournament winners guide](/esports/bgmi-tournament-winners/) and [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/)."
         ]
       },
       {
@@ -1225,7 +1225,7 @@
       {
         "heading": "BGMI, PUBG Mobile and PUBG PC are distinct",
         "paragraphs": [
-          "BGMI is the Indian mobile release and has its own national events. PUBG Mobile global events have different organisers, regions and eligibility rules, while PUBG: BATTLEGROUNDS PC uses the PUBG Esports circuit. Do not combine their results under a single “PUBG champion” label without naming the actual game and event.",
+          "BGMI is the Indian mobile release and has its own national events. PUBG Mobile global events have different organisers, regions and eligibility rules, while PUBG: BATTLEGROUNDS PC uses the PUBG Esports circuit. Do not combine their results under a single “PUBG champion” label without naming the actual game and event. PUBG Mobile’s global championship has a separate [PMGC winner timeline](/esports/pubg-mobile-global-championship-history/); it should not be combined with BGIS or BGMS results.",
           "For the PC championship timeline, see [PUBG Global Championship history](/esports/pubg-global-championship-history/). For another mobile Battle Royale circuit, read the [Free Fire World Series history](/esports/free-fire-world-series-history/)."
         ]
       }
