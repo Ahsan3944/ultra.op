@@ -347,6 +347,7 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:title', '<meta property="og:title" content="' + escapeAttr(page.title) + '" />');
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
+  html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
   // Social crawlers do not consistently support SVG Open Graph images. Use the published raster mascot until the wide social-share banner is added.
   const shareImage = 'https://ultraop.in/brand/ultraop-original.webp';
   const shareImageAlt = 'UltraOP original mascot logo — gaming, Minecraft and creator storytelling.';
