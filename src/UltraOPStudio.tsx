@@ -181,7 +181,7 @@ function SiteHeader({ route }: { route: string }) {
   const navItems = [
     { label: 'Creator', href: home ? '#creator' : '/about/', active: route === '/about' },
     { label: 'Channels', href: home ? '#channels' : '/channels/', active: route === '/channels' },
-    { label: 'Explore', href: home ? '#knowledge' : '/guides/', active: route === '/guides' || route === '/games' || route === '/esports' || route.startsWith('/games/') || route.startsWith('/esports/') },
+    { label: 'Explore', href: home ? '#knowledge' : '/guides/', active: route === '/guides' || route.startsWith('/guides/') || route === '/games' || route === '/esports' || route.startsWith('/games/') || route.startsWith('/esports/') },
     { label: 'Community', href: home ? '#community' : '/community/', active: route === '/community' },
     { label: 'Journal', href: '/journal/', active: route === '/journal' || route.startsWith('/journal/') },
     { label: 'Brand work', href: home ? '#work' : '/work/', active: route === '/work' }
