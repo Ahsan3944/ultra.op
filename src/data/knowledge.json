@@ -2426,5 +2426,549 @@
       "free-fire-world-series-history",
       "esports-history-index"
     ]
+  },
+  {
+    "slug": "pubg-mobile-vs-bgmi-vs-pubg-pc",
+    "route": "/guides/pubg-mobile-bgmi-vs-pubg-pc/",
+    "kind": "guide",
+    "category": "Battle Royale Guide",
+    "categorySlug": "guides",
+    "title": "PUBG PC vs PUBG Mobile vs BGMI: The Differences Explained",
+    "description": "Compare PUBG: BATTLEGROUNDS PC, PUBG Mobile and BGMI by platform, controls, competitive circuit and tournament history—without mixing their champions.",
+    "keywords": [
+      "PUBG PC vs BGMI",
+      "PUBG Mobile vs BGMI",
+      "PUBG BATTLEGROUNDS PC vs mobile",
+      "PUBG tournament difference",
+      "BGMI esports vs PMGC"
+    ],
+    "heroImage": "/knowledge/battle-royale.svg",
+    "heroAlt": "Original editorial battle-royale map artwork illustrating distinct game ecosystems, not official gameplay imagery.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "PUBG: BATTLEGROUNDS, PUBG Mobile and Battlegrounds Mobile India share a franchise history and a last-team-standing format, but they are separate game products with different platforms, gameplay tuning and esports calendars. This guide gives players and esports readers a reliable way to identify the correct game before choosing a version, joining a server or quoting a tournament result.",
+    "takeaways": [
+      "PUBG: BATTLEGROUNDS is the PC/console game and uses its own PUBG Esports circuit.",
+      "PUBG Mobile is a mobile game with its own global competition, including PMGC.",
+      "BGMI is the India-specific mobile release and uses India-focused events such as BGIS and BGMS.",
+      "Settings, updates, event eligibility and tournament champions cannot automatically be transferred between these games."
+    ],
+    "sections": [
+      {
+        "heading": "1. PUBG: BATTLEGROUNDS on PC and console",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS is the PC/console version, with controls, graphics settings, input options and competitive systems tuned for those platforms. Its global esports circuit includes the PUBG Global Championship (PGC), PUBG Global Series (PGS) and PUBG Nations Cup (PNC). These events have different eligibility rules and formats.",
+          "When a search asks for a PUBG PC world champion, the relevant source is the PGC winner history—not a mobile event, national BGMI series or PUBG Mobile championship. Use the [PUBG PC championship history](/esports/pubg-global-championship-history/) for event-by-event results."
+        ]
+      },
+      {
+        "heading": "2. PUBG Mobile and the PMGC circuit",
+        "paragraphs": [
+          "PUBG Mobile is a separate mobile title built around touchscreen play and mobile devices. It has its own release cadence, match configuration and global competition. The PUBG Mobile Global Championship (PMGC) is distinct from PUBG: BATTLEGROUNDS’ PGC, despite the similar abbreviations.",
+          "To track the mobile global champions, use the [PMGC history](/esports/pubg-mobile-global-championship-history/). Regional events, other international tournaments and a world championship should remain separately labelled so readers can tell exactly what a team won."
+        ]
+      },
+      {
+        "heading": "3. BGMI and India-specific tournaments",
+        "paragraphs": [
+          "Battlegrounds Mobile India (BGMI) is the India-specific mobile release. Its competitive calendar includes events such as the Battlegrounds Mobile India Series (BGIS) and BGMI Masters Series (BGMS). These are different series with separate champions and rules; winning BGIS does not automatically mean the same roster has won BGMS.",
+          "Visit the [BGMI tournament winners guide](/esports/bgmi-tournament-winners/) for the Indian event timeline. Check KRAFTON India’s current announcements for the exact dates, eligibility, scoring and roster requirements of the season you want to enter."
+        ]
+      },
+      {
+        "heading": "4. How to choose the right version",
+        "bullets": [
+          "Start with the device and operating system you actually use.",
+          "Use the exact game name and version in tutorials, settings guides and troubleshooting searches.",
+          "Check the event title and organiser before trusting a “world champion” list.",
+          "Do not assume PC keybinds, recoil behaviour, cross-play, updates or server compatibility match the mobile games.",
+          "Before entering a tournament, read its region, age, team and account eligibility rules."
+        ],
+        "paragraphs": [
+          "The game you should choose is the one your device supports and your friends or competitive community play. There is no universal winner between PC and mobile: each asks players to learn its own movement, aim, map rotations and team communication."
+        ]
+      },
+      {
+        "heading": "Reliable places to verify the details",
+        "paragraphs": [
+          "Official game pages and event organisers should be the first stop for patch details and current rules. Use the site’s [esports history index](/esports/) to compare the separate circuits, and the [battle-royale games explained guide](/guides/battle-royale-games-explained/) for the genre’s shared strategy basics."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports official event archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "PUBG Mobile official news",
+        "url": "https://www.pubgmobile.com/en-US/news.shtml"
+      },
+      {
+        "label": "KRAFTON India official newsroom",
+        "url": "https://krafton.in/news/"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "pubg-mobile-global-championship-history",
+      "bgmi-tournament-winners",
+      "battle-royale-games-explained",
+      "esports-history-index"
+    ]
+  },
+  {
+    "slug": "minecraft-java-vs-bedrock",
+    "route": "/games/minecraft/java-vs-bedrock/",
+    "kind": "guide",
+    "category": "Minecraft Guide",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java vs Bedrock Edition: Platform, Mods and Multiplayer Differences",
+    "description": "A practical Minecraft Java Edition vs Bedrock Edition comparison covering platforms, multiplayer, mods and add-ons, redstone differences and version-specific updates.",
+    "keywords": [
+      "Minecraft Java vs Bedrock",
+      "Minecraft editions difference",
+      "Minecraft Java mods",
+      "Minecraft Bedrock crossplay",
+      "Minecraft server version difference"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original block-world illustration used for the Java-versus-Bedrock guide; not an official gameplay screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition and Minecraft Bedrock Edition share the Minecraft name, core survival loop and many familiar blocks, but they are different editions. The best choice depends on the device you use, whom you want to play with, whether you want Java mod loaders, and how your server or add-ons are configured.",
+    "takeaways": [
+      "Java Edition is available on Windows, macOS and Linux; Bedrock serves a wider set of platforms, including consoles and mobile.",
+      "Cross-play depends on edition and platform support; Java players do not automatically join Bedrock servers.",
+      "Java mods and Bedrock add-ons/Marketplace content use different ecosystems and are not interchangeable.",
+      "Redstone behaviour, technical details and update availability can differ, so cite the edition and exact version in a tutorial."
+    ],
+    "sections": [
+      {
+        "heading": "Platform and account basics",
+        "paragraphs": [
+          "Java Edition is the traditional PC edition for Windows, macOS and Linux. Bedrock Edition is available across supported mobile, console and Windows platforms, with its own cross-platform multiplayer ecosystem. The exact purchase bundle, account requirements and platform capabilities can change, so check the official Minecraft edition page for your device before buying or reinstalling.",
+          "People often say “Minecraft PC” as though it names one edition. When following a guide, confirm the Edition first. A Bedrock tutorial may describe controller controls, add-ons or marketplace content that does not exist in the same form on Java."
+        ]
+      },
+      {
+        "heading": "Multiplayer and server compatibility",
+        "paragraphs": [
+          "Java and Bedrock servers have different network protocols and server ecosystems. A Java client does not automatically connect to an ordinary Bedrock server, and vice versa. Cross-play can be possible through supported editions, realms or purpose-built server bridges, but that requires an explicit compatibility path and may have limitations.",
+          "For a long-running multiplayer world, name the server platform and exact Minecraft version in the rules. Read the [server version selection guide](/games/minecraft/server-version-guide/) before upgrading plugins or mods; a player being able to join is not proof that every entity, item or mechanic works identically."
+        ]
+      },
+      {
+        "heading": "Mods, add-ons and custom content",
+        "paragraphs": [
+          "Java Edition has an extensive ecosystem of mods and loaders such as Fabric and Forge/NeoForge, alongside datapacks and resource packs. Bedrock uses add-ons, behaviour/resource packs and its own marketplace ecosystem. These systems have different file formats and technical APIs. A Java mod jar should not be installed into Bedrock, and a Bedrock add-on should not be assumed to work on a Java server.",
+          "Check the exact Minecraft version, loader, dependencies and required client/server installation for any modification. A mod listed for 1.21.1 is not necessarily compatible with 1.21.11 or 26.x, even if the update numbers look close."
+        ]
+      },
+      {
+        "heading": "Redstone, mechanics and technical guides",
+        "paragraphs": [
+          "Players who build farms, redstone machines or command systems should use edition-specific instructions. Java and Bedrock can differ in redstone update behaviour, mob spawning, entity mechanics, commands and technical interfaces. A build that depends on a particular timing or quasi-connectivity behaviour should be tested in the edition where it will be used.",
+          "Version numbering also matters. A feature announced for Java Edition should not automatically be described as arriving in Bedrock in the same release or under an identical name. Start with the [Minecraft version library](/games/minecraft/versions/) to find the edition and stable-versus-snapshot status."
+        ]
+      },
+      {
+        "heading": "Which edition should you choose?",
+        "bullets": [
+          "Choose Bedrock if you need supported play across a mix of consoles, phones and other Bedrock devices.",
+          "Choose Java if your target community uses Java servers, loaders, datapacks or Java-focused technical content.",
+          "Confirm what edition your friends or server actually run before purchasing or migrating a world.",
+          "Back up and test the world before switching server software or edition; do not assume the same save will transfer perfectly.",
+          "Use official release notes when a feature, recipe or compatibility statement depends on version."
+        ],
+        "paragraphs": [
+          "Neither edition is universally better. Choose for the platform, players, custom content and server requirements you actually have—not only because a video calls one edition the best."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official game and edition pages",
+        "url": "https://www.minecraft.net/en-us"
+      },
+      {
+        "label": "Official Minecraft Java release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "Minecraft Help Center",
+        "url": "https://help.minecraft.net/"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "minecraft-26-3",
+      "minecraft-26-4-preview",
+      "gaming-guides-index"
+    ]
+  },
+  {
+    "slug": "minecraft-survival-first-day",
+    "route": "/guides/minecraft-survival-first-day/",
+    "kind": "guide",
+    "category": "Minecraft Survival Guide",
+    "categorySlug": "guides",
+    "title": "Minecraft Survival: A Beginner’s First-Day Checklist",
+    "description": "A beginner-friendly Minecraft survival guide covering the first resources, crafting table, tools, food, shelter, light and how to prepare for the first night.",
+    "keywords": [
+      "Minecraft first day survival",
+      "Minecraft beginner survival guide",
+      "Minecraft first night checklist",
+      "Minecraft basic crafting",
+      "Minecraft early game tips"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original Minecraft-inspired forest trail and starter shelter artwork, not an official gameplay screenshot.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "The first day in a new Minecraft survival world is about building a safe loop: collect the basic resources, make tools, secure food and light, then build enough shelter to survive the night. You do not need a perfect base on the first evening; prioritise safety and leave bigger builds for when you have a reliable supply of resources.",
+    "takeaways": [
+      "Collect wood first and craft a crafting table, sticks and basic tools.",
+      "Gather stone, food and coal or another reliable light source before nightfall.",
+      "Build a simple shelter or use a naturally safe location while you prepare.",
+      "Carry a bed when possible, but keep a torch-lit fallback plan in unfamiliar terrain.",
+      "Explore further only after food, tools, health and a safe return route are under control."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Get the basic materials",
+        "paragraphs": [
+          "Start by punching a tree to collect logs. Convert logs into planks, then craft a crafting table and sticks. Use those materials to make the tools that help you gather stone and other resources more efficiently. The exact best opening can vary by biome and nearby structures, but wood is a reliable starting resource in a normal Overworld spawn.",
+          "Do not spend the whole daylight period searching for an ideal base. A small amount of wood, a few tools and a safe place to return to are more important than finding the rarest biome on the first walk."
+        ]
+      },
+      {
+        "heading": "Step 2: Upgrade tools and find food",
+        "paragraphs": [
+          "Use a pickaxe to collect stone and upgrade from wooden to stone tools. Gather food from safe nearby sources, and cook raw food when you have the means to do so. Keep enough inventory space for essential items rather than filling every slot with decorative blocks.",
+          "Listen for nearby hostile mobs and pay attention to the terrain. Caves can provide stone and coal, but a deep cave expedition is a poor first-day plan if you have no armour, low food or no clear exit route."
+        ]
+      },
+      {
+        "heading": "Step 3: Make light and shelter",
+        "paragraphs": [
+          "Before night, place torches in the area where you plan to spend time and block off openings in a simple shelter. It can be a compact dirt or wood structure, a cleared-out hillside space or another defensible location. The aim is a safe point to recover, craft and wait—not a finished base.",
+          "Light and a closed entrance help make the area easier to manage, but a shelter is not automatically safe if you leave openings or let hostile mobs enter. Check corners, close doors or block gaps, and keep your tools ready if the surroundings are not secure."
+        ]
+      },
+      {
+        "heading": "Step 4: Prepare a small survival kit",
+        "bullets": [
+          "Crafting table and basic pickaxe/axe.",
+          "Enough food to restore hunger during a return trip.",
+          "Torch supply or materials to make more light.",
+          "A few building blocks to close an opening or bridge a small gap.",
+          "Weapon and any early armour that you can craft safely.",
+          "Coordinates or a clear landmark if you plan to roam away from the spawn area."
+        ],
+        "paragraphs": [
+          "If you find wool and can craft a bed, it can help you manage the night cycle and establish a respawn point. Be careful with sleeping near danger or in an unfamiliar structure; the goal is to make the next morning safer, not to rush into a risky location."
+        ]
+      },
+      {
+        "heading": "What to do on day two",
+        "paragraphs": [
+          "Once you have shelter, food and tools, choose one next objective: build a small crop plot, explore the nearby area, look for iron, improve storage or mark a route to a river or village. A single goal helps avoid wandering until the inventory is full and you cannot remember how to return.",
+          "These are general survival tips rather than version-specific mechanics. If a guide depends on a new item or recipe, check the exact release in the [Minecraft version library](/games/minecraft/versions/). For multiplayer, use the [server version guide](/games/minecraft/server-version-guide/) to check your world’s target version."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official beginner and game information",
+        "url": "https://www.minecraft.net/en-us"
+      },
+      {
+        "label": "Minecraft official release changelog index",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-java-vs-bedrock",
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "game-genres-guide"
+    ]
+  },
+  {
+    "slug": "valorant-beginner-guide",
+    "route": "/games/valorant/guides/beginner-basics/",
+    "kind": "guide",
+    "category": "VALORANT Beginner Guide",
+    "categorySlug": "valorant",
+    "title": "VALORANT Beginner Guide: Aim, Utility, Economy and Team Play",
+    "description": "A practical VALORANT starter guide covering crosshair discipline, movement, agent roles, ability timing, economy decisions and how to review rounds without chasing kills alone.",
+    "keywords": [
+      "VALORANT beginner guide",
+      "how to improve in VALORANT",
+      "VALORANT aim tips",
+      "VALORANT economy guide",
+      "VALORANT agent roles",
+      "VALORANT new player tips"
+    ],
+    "heroImage": "/knowledge/valorant-patch.svg",
+    "heroAlt": "Original tactical FPS editorial illustration with target reticle and patch panel; not official VALORANT gameplay.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "VALORANT rewards accurate shooting, disciplined movement, careful use of agent abilities and communication. Beginners often try to improve everything at once or judge each round by kills alone. A better path is to learn one reliable routine, understand the objective, and make each decision with the team’s economy and position in mind.",
+    "takeaways": [
+      "Stop moving before taking accurate rifle shots unless your weapon/ability specifically supports moving fire.",
+      "Use abilities to gain information, deny space, protect a teammate or enable an entry—not simply because the cooldown is ready.",
+      "Understand the buy phase and coordinate economy with the team.",
+      "Trade with teammates and use cover instead of taking repeated isolated fights.",
+      "Review one repeat mistake after a match; change one habit before changing all settings."
+    ],
+    "sections": [
+      {
+        "heading": "1. Build a consistent aim routine",
+        "paragraphs": [
+          "Choose a comfortable sensitivity and keep it stable long enough to evaluate. Practise placing the crosshair at likely head height, clearing common angles in a deliberate order and stopping movement before firing with weapons that reward stationary accuracy. A large number of random flicks is less useful than repeated, controlled shots that resemble actual fights.",
+          "Settings are personal and depend on hardware, desk space and control style. There is no single sensitivity number guaranteed to improve every player. If you change your settings, test them in the practice range and across several matches rather than judging the new setup from one round."
+        ]
+      },
+      {
+        "heading": "2. Learn your agent’s job",
+        "paragraphs": [
+          "Agents have different roles and ability kits. Use utility according to the role and the round’s plan: gather information, block a sightline, delay a push, help a teammate enter, or protect a post-plant position. Using an ability with no plan can reveal your position or leave the team without that tool later in the round.",
+          "Read each ability’s current official description and practise its interactions on the maps you play. Updates can change ability behaviour, bug fixes or maps. Check the [VALORANT agent updates guide](/games/valorant/updates/agents/) when a patch affects a specific ability."
+        ]
+      },
+      {
+        "heading": "3. Use the economy as a team decision",
+        "paragraphs": [
+          "Buying a powerful weapon and full utility in every round can leave the team unable to afford a coordinated purchase later. Learn the current credit rules, understand whether the team is saving, buying or forcing, and communicate before the buy phase ends. Exact costs and weapon balances can change with patches, so use the live game and official update notes for current values.",
+          "Do not assume that copying a professional buy plan is always correct in a ranked lobby. Economy decisions depend on available credits, the current round, weapon recovery, teammates’ resources and the team’s plan."
+        ]
+      },
+      {
+        "heading": "4. Play with information and trades",
+        "paragraphs": [
+          "Before a fight, ask what information the team has, which angles are covered, and whether a teammate can trade if the first player is eliminated. Avoid wide-swinging several angles without a plan when a slower peek or utility setup would create a safer duel. After gaining a numbers advantage, protect it rather than giving opponents isolated fights.",
+          "Communication should be brief and useful: location, enemy count, damage if known, direction of travel and what you are doing next. Long explanations during a live round can obscure the information teammates need."
+        ]
+      },
+      {
+        "heading": "5. Review rounds, not only the scoreboard",
+        "bullets": [
+          "Notice your most common early death and what information you had at the time.",
+          "Check whether utility helped a teammate or was used too late.",
+          "Review crosshair placement before the opponent appeared.",
+          "Ask whether you could trade, reposition or avoid the fight.",
+          "Choose one repeatable improvement for the next session."
+        ],
+        "paragraphs": [
+          "Patch changes can affect map routes, ability interactions and the available map pool. Read the [VALORANT update hub](/games/valorant/updates/) and [Patch 13.08 breakdown](/games/valorant/updates/patch-13-08/) rather than relying on an old strategy video after a major update."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT game updates",
+        "url": "https://playvalorant.com/en-us/news/game-updates/"
+      },
+      {
+        "label": "Riot official VALORANT patch notes",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide",
+      "valorant-champions-history"
+    ]
+  },
+  {
+    "slug": "esports-tournament-formats",
+    "route": "/guides/esports-tournament-formats/",
+    "kind": "guide",
+    "category": "Esports Guide",
+    "categorySlug": "guides",
+    "title": "Esports Tournament Formats Explained: League, Groups, Swiss and Finals",
+    "description": "Understand the main esports tournament formats—round robin, group stage, Swiss, single elimination, double elimination and points-based battle royale scoring.",
+    "keywords": [
+      "esports tournament formats",
+      "Swiss stage explained esports",
+      "double elimination tournament bracket",
+      "round robin esports",
+      "battle royale scoring format",
+      "esports group stage"
+    ],
+    "heroImage": "/knowledge/esports-championship.svg",
+    "heroAlt": "Original esports arena illustration for an explainer on tournament formats; not a real tournament screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Tournament formats determine how teams qualify, how often they play, and how a champion is decided. A bracket image alone rarely tells the whole story: some events use group points, some use a Swiss stage, and others use elimination brackets before a final. This guide explains the vocabulary that helps viewers read esports results correctly.",
+    "takeaways": [
+      "Round robin gives each participant a defined set of opponents; group stages often use round robin within each group.",
+      "Swiss stages pair teams with similar records over a set number of rounds, with event-specific qualification rules.",
+      "Single and double elimination brackets differ in how a loss affects a team’s path.",
+      "Battle royale events often combine placement and elimination points across several matches.",
+      "Always check the event’s official rulebook for tie-breaks, map pool, roster rules and qualification criteria."
+    ],
+    "sections": [
+      {
+        "heading": "Round robin and groups",
+        "paragraphs": [
+          "In a round-robin stage, each participant plays the other participants in the group or league according to the event schedule. Points or match wins determine the table, followed by published tie-breakers where needed. It can give teams a more complete set of opponents, but the number of matches grows quickly as the field gets larger.",
+          "A group-stage event divides the field into smaller pools. Teams may play round robin within each group, with the top finishers qualifying for playoffs. The event rulebook decides how many advance, whether records carry forward and how ties are broken."
+        ]
+      },
+      {
+        "heading": "Swiss stage",
+        "paragraphs": [
+          "A Swiss stage runs a set number of rounds without requiring every team to play every other team. Teams are usually paired against opponents with similar win-loss records, and published rules determine when a team qualifies or is eliminated. The exact number of rounds, seeding and tie-break calculations differ by event.",
+          "Do not infer that all Swiss stages use the same number of wins to qualify. Read the tournament’s format announcement and official bracket; one event may use different qualification thresholds from another."
+        ]
+      },
+      {
+        "heading": "Single and double elimination",
+        "paragraphs": [
+          "In single elimination, a team exits the bracket after its first tournament loss. It is easy to follow and creates a direct path to the final, but one poor match can end a team’s run. Double elimination gives a team that loses in the upper bracket another route through a lower bracket; a second loss usually ends the run.",
+          "Some double-elimination formats also have a grand-final reset rule, while others do not. The phrase “double elimination” alone does not tell you all the details. Check how the lower-bracket winner must defeat the upper-bracket winner and whether a reset match is possible."
+        ]
+      },
+      {
+        "heading": "Points-based battle royale",
+        "paragraphs": [
+          "Battle royale events commonly play several matches and assign points for placement and eliminations, with the weights defined in the season’s rulebook. The final leaderboard aggregates results across the designated matches; one match win does not automatically mean the team wins the whole tournament.",
+          "Rules can change between events, including match count, placement-point curve, tie-breakers, lobby composition and any match-point system. Compare teams using the scoring rules that were active in that specific year, rather than applying a current points table to a historical tournament."
+        ]
+      },
+      {
+        "heading": "How to verify a champion result",
+        "bullets": [
+          "Use the full event title and year.",
+          "Confirm the exact game and mode.",
+          "Find the organiser’s final result or official bracket.",
+          "Record the grand-final placement and tie-break details when relevant.",
+          "Keep regional league, Masters event, national series and world championship winners separate."
+        ],
+        "paragraphs": [
+          "This is why UltraOP maintains individual history pages for [PUBG PC PGC](/esports/pubg-global-championship-history/), [PUBG Mobile PMGC](/esports/pubg-mobile-global-championship-history/), [BGIS/BGMS](/esports/bgmi-tournament-winners/), [Free Fire World Series](/esports/free-fire-world-series-history/) and [VALORANT Champions](/esports/valorant-champions-history/). Each page labels its own series instead of combining trophies into one misleading list."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports official event archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT Esports official event portal",
+        "url": "https://valorantesports.com/en-US/"
+      },
+      {
+        "label": "KRAFTON India official newsroom",
+        "url": "https://krafton.in/news/"
+      }
+    ],
+    "related": [
+      "esports-history-index",
+      "pubg-global-championship-history",
+      "pubg-mobile-global-championship-history",
+      "bgmi-tournament-winners",
+      "valorant-champions-history"
+    ]
+  },
+  {
+    "slug": "pc-game-performance-recording",
+    "route": "/guides/pc-game-performance-recording/",
+    "kind": "guide",
+    "category": "Gaming Technology",
+    "categorySlug": "guides",
+    "title": "PC Game Performance and Recording: FPS, Stutter and Capture Checklist",
+    "description": "A practical PC gaming troubleshooting guide for frame rate, frame pacing, graphics drivers and screen recording—covering reproducible tests without risky one-click fixes.",
+    "keywords": [
+      "PC gaming FPS guide",
+      "Minecraft recording stutter",
+      "game recording performance",
+      "FPS drops fix PC",
+      "frame pacing explained",
+      "OBS game capture troubleshooting"
+    ],
+    "heroImage": "/knowledge/valorant-patch.svg",
+    "heroAlt": "Original editorial performance-monitor and target illustration for a PC gaming troubleshooting guide; not a real benchmark screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "A game can report a high average FPS and still feel choppy if frame times are uneven, the system is overheating, or recording software competes for the same resources. This guide focuses on simple, reversible tests for PC game performance and capture problems rather than recommending random system tweaks that can make troubleshooting harder.",
+    "takeaways": [
+      "Record a baseline FPS and frame-time observation before changing settings.",
+      "Separate game-rendering problems from recording, storage, network and server-lag problems.",
+      "Change one setting at a time and repeat the same test scenario.",
+      "Monitor temperatures, clock behaviour, system memory, VRAM and storage activity while reproducing the issue.",
+      "Back up configurations and avoid unofficial driver packs or unknown optimisation tools."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Identify what is actually lagging",
+        "paragraphs": [
+          "Low FPS, frame-time stutter, delayed input, network latency and dropped recording frames feel similar to a viewer but have different causes. If the image visibly pauses while the FPS counter remains high, look at frame-time consistency. If players teleport but local movement remains smooth, check network/server latency. If gameplay is smooth but the captured file stutters, inspect recording settings and capture performance.",
+          "Write down the game and exact version, display resolution, graphics preset, capture resolution/frame rate, GPU driver version and whether the issue occurs with recording turned off. A repeatable baseline is more useful than changing several settings at once."
+        ]
+      },
+      {
+        "heading": "Step 2: Check thermals and resource pressure",
+        "paragraphs": [
+          "During a controlled reproduction, monitor CPU/GPU temperature, clock speeds, system memory, VRAM use and storage activity. High utilisation is not automatically a fault, and temperature limits depend on the specific hardware model. Compare the behaviour against the manufacturer’s normal operating guidance instead of using one universal temperature number for every device.",
+          "If the machine gets progressively slower after ten to fifteen minutes, check whether temperatures, clocks or memory pressure change at the same time. Keep the case vents clear, confirm fans are working and remove dust safely according to the hardware maker’s instructions. Avoid opening a power supply or making risky electrical repairs."
+        ]
+      },
+      {
+        "heading": "Step 3: Tune the game and capture workload",
+        "bullets": [
+          "Start with the game at a known resolution and a stable, supported graphics preset.",
+          "Use a reasonable FPS cap if uncapped rendering keeps the GPU saturated and leaves no headroom for capture.",
+          "Match recording resolution and frame rate to the actual output goal rather than recording at an unnecessarily high setting.",
+          "Check whether hardware encoding is available and supported by the GPU/driver.",
+          "Record to a drive with sufficient free space and healthy write performance.",
+          "Test a short local recording before a live broadcast or a long session."
+        ],
+        "paragraphs": [
+          "Exact encoder settings vary by recording application, codec, GPU and target platform. Use the application’s official guide and test the file’s playback, not just the recording preview."
+        ]
+      },
+      {
+        "heading": "Step 4: Update software carefully",
+        "paragraphs": [
+          "Use the official GPU vendor or computer manufacturer source for graphics drivers and release notes. Before a driver change, note the current version and create a recovery point or backup where supported. If an update introduces instability, follow the vendor’s documented rollback path instead of downloading an unofficial package from an unknown site.",
+          "Game engines and capture apps can change their GPU scheduling, encoding and compatibility requirements between releases. Update one component at a time when possible, and retest the same scene so that the result can be compared."
+        ]
+      },
+      {
+        "heading": "Step 5: Write down the successful configuration",
+        "paragraphs": [
+          "Once a stable setting is found, save a short profile with the game version, resolution, graphics preset, FPS cap, capture encoder, output resolution and driver version. Keep the settings together with a sample clip. This makes it easier to restore the workflow after a future update or hardware change.",
+          "For version-specific Minecraft behaviour, start with the [Minecraft version library](/games/minecraft/versions/). If a multiplayer server is involved, also separate client performance from server tick rate and ping; one can be healthy while the other is not."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "NVIDIA official driver downloads and documentation",
+        "url": "https://www.nvidia.com/Download/index.aspx"
+      },
+      {
+        "label": "AMD official drivers and support",
+        "url": "https://www.amd.com/en/support/download/drivers.html"
+      },
+      {
+        "label": "Minecraft official release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "game-genres-guide",
+      "how-to-start-esports"
+    ]
   }
 ]
