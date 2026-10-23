@@ -816,6 +816,7 @@ export default function UltraOPStudio() {
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
     setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
     setMeta('og:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
+    setMeta('og:image:secure_url', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
     setMeta('og:image:type', 'image/jpeg', 'property');
     setMeta('og:image:width', '1200', 'property');
     setMeta('og:image:height', '630', 'property');
