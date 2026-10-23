@@ -52,7 +52,7 @@ assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes(
 
 assert.ok(html.includes('twitter:card') && html.includes('summary_large_image') && html.includes('twitter:image'), 'Social cards must use a large Twitter/X card with an image.');
 assert.ok(html.includes('https://ultraop.in/brand/ultraop-social-share.jpg'), 'Social preview metadata must point at the dedicated published share-card image.');
-assert.ok(html.includes('og:image:width') && html.includes('1200') && html.includes('630') && html.includes('image/jpeg'), 'Open Graph image dimensions and MIME type must match the 1200×630 JPEG asset.');
+assert.ok(html.includes('og:image:width') && html.includes('600') && html.includes('315') && html.includes('image/jpeg'), 'Open Graph image dimensions and MIME type must match the 600×315 JPEG asset.');
 assert.ok(staticGenerator.includes('og:image:secure_url') && staticGenerator.includes('content="image/jpeg"') && staticGenerator.includes('summary_large_image'), 'Every generated route must keep social image metadata consistent.');
 assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
 assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
