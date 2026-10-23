@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, preview]
   pull_request:
-    branches: [main]
+    branches: [main, preview]
 
 permissions:
   contents: read
@@ -12,7 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,12 +22,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: package.json
 
       - name: Install dependencies
         run: npm install
 
-      - name: Production build
+      - name: Production build, route generation and bundled content checks
         run: npm run build
+
+      - name: Recheck generated output
+        run: npm run check:content
+
+      - name: Dependency vulnerability audit
+        run: npm audit --audit-level=high

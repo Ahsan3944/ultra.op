@@ -1,38 +1,54 @@
 # UltraOP — Official Creator Website
 
-Production website for UltraOP and creator Sk Ahsan Ahmad.
-
-## Project direction
-
-This repository is the production build target for the official UltraOP creator website. It presents the creator's channels, live presence, brand work, community platforms, support options and archived journal content in a professional creator-focused experience.
-
-### Non-negotiable data
-
-- Official YouTube channel IDs are canonical identifiers and must not be changed unless explicitly instructed.
-- Verified creator, social, business, support and brand-campaign records are preserved.
-- Existing production URLs and legacy content are treated as migration references.
-- No games/arcade portal is part of the current website direction.
-- Secrets and API credentials must never be committed.
+Production website for UltraOP / Sk Ahsan Ahmad. The rebuild focuses on a premium, responsive creator portfolio with clear channel information, selected campaign records, community destinations and a creator journal.
 
 ## Stack
 
 - React 19 + TypeScript
 - Vite
-- Tailwind CSS v4
+- Tailwind CSS v4 (existing project tooling)
+- GSAP + ScrollTrigger for scoped motion
 - Lucide React
-- Responsive, accessibility-minded UI
-- Static-friendly routing with legacy blog support
-- Technical SEO, structured data and PWA metadata
+- GitHub Actions and GitHub Pages
+
+## Data integrity
+
+- Official YouTube channel IDs and upload playlist IDs remain in src/data/core.ts.
+- Social, streaming, business and campaign records are centralised in the same registry.
+- The new site does not use hard-coded fallback subscriber or view counts. Channel counts are displayed only when the public endpoint returns a valid reading; third-party estimates are labelled.
+- Brand records are shown without unverified performance claims.
+- Visitor-facing pages do not expose API keys, tokens or private configuration.
+- The Channels page calls the public SocialCounts endpoint; see the Privacy and Cookie Policies for its data disclosure.
+
+## SEO and discovery
+
+The production build performs a TypeScript check, builds assets, generates static route documents with unique title, description and canonical tags, emits per-page WebPage/ProfilePage JSON-LD, and writes a canonical XML sitemap covering indexable public routes and journal entries. Google and Bing can use the same standard `/sitemap.xml`, declared in `/robots.txt`; the HTML `/site-map/` is for visitors, and `/llms.txt` is a supplemental AI-readable overview (not a guarantee that any engine or AI service will index the site).
+
+Social sharing metadata uses Open Graph tags and Twitter/X card tags with the published creator image, alongside each page’s title and description. A separate wide social-share banner is tracked in issue #48. Facebook and WhatsApp may display a rich preview when their crawlers can fetch the metadata and image; Instagram generally does not render rich link previews in ordinary captions. Share previews may be cached by each service.
+
+## Security checks
+
+The content audit validates known channel IDs and playlist IDs, checks HTTPS social URLs, protects the campaign registry, and checks that no hard-coded statistics fallback has returned.
+
+CI also runs a production build and an npm vulnerability audit at the high severity threshold. GitHub Pages hosts public static content; it is not a private backend. Never put secrets or privileged API credentials in client-side code or public repository files. A meta Content Security Policy is included as a browser-side baseline; response-header controls still depend on the hosting layer.
 
 ## Local development
 
-```bash
-npm install
-npm run dev
-```
+Install packages with npm install, then start the development server with npm run dev.
 
-Production build:
+For a production build, run npm run build. To inspect the generated output locally, run npm run preview.
 
-```bash
-npm run build
-```
+## Deployment
+
+The rebuild/premium-creator-studio branch is intended for review. The production deploy workflow runs only from main; merge only after reviewing the page routes, accessibility, build status and security checks. Keep the custom domain configuration (CNAME) intact.
+
+
+## Error handling
+
+- The branded `public/404.html` handles missing or retired URLs on GitHub Pages.
+- The site does not replace a page with a custom crash/503 recovery screen when JavaScript fails. Route-specific pre-rendered HTML remains in the page as the initial content.
+- GitHub Pages is static hosting; platform-level availability, DDoS protection and response security headers are controlled by GitHub and the domain/DNS configuration, not by browser JavaScript.
+
+## Original creator branding
+
+The header, footer, hero artwork, favicon and social-share preview use the original UltraOP mascot artwork supplied by the creator. Open Graph and Twitter/X metadata provide the page title, description, canonical URL and original mascot image for supported link-preview crawlers.

@@ -5,3 +5,5 @@ Disallow: /dist/
 Disallow: /node_modules/
 
 Sitemap: https://ultraop.in/sitemap.xml
+# Human-readable page directory: https://ultraop.in/site-map/
+# AI-readable site overview: https://ultraop.in/llms.txt

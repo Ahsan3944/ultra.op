@@ -10,10 +10,10 @@
   "theme_color": "#0a0a0a",
   "icons": [
     {
-      "src": "/brand/ultraop-mark.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "/brand/ultraop-original.webp",
+      "sizes": "142x161",
+      "type": "image/webp",
+      "purpose": "any"
     }
   ]
 }
