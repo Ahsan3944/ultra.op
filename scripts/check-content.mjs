@@ -65,6 +65,7 @@ assert.ok(studioCss.includes('.uos-mobile-nav.is-open') && studioCss.includes('m
 assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects must be restrained and respect reduced-motion preferences.');
 assert.ok(studioCss.includes('transition-duration: .01ms !important'), 'Mobile menu transitions must respect reduced-motion preferences.');
 
+assert.ok(html.includes('<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />'), 'Google-compatible PNG favicon must point to the updated mascot icon.');
 assert.ok(html.includes('<meta property="og:image" content="https://ultraop.in/brand/ultraop-logo.webp" />'), 'Open Graph must use the current mascot logo asset.');
 assert.ok(html.includes('<meta property="og:image:secure_url" content="https://ultraop.in/brand/ultraop-logo.webp" />'), 'Open Graph must provide the secure image URL.');
 assert.ok(html.includes('<meta property="og:image:type" content="image/webp" />') && html.includes('<meta property="og:image:width" content="256" />') && html.includes('<meta property="og:image:height" content="256" />'), 'Open Graph image MIME type and dimensions must match the published 256×256 WebP asset.');
@@ -90,6 +91,7 @@ assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html')
 const dist = path.resolve('dist');
 const requiredFiles = [
   'index.html',
+  'favicon.png',
   'about/index.html',
   'channels/index.html',
   'live/index.html',
