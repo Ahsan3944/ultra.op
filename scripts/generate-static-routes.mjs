@@ -350,8 +350,8 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
   const shareImage = 'https://ultraop.in/brand/ultraop-social-share.jpg';
   const shareImageAlt = 'UltraOP — Sk Ahsan Ahmad, Indian gaming creator and live streamer. Official destinations: YouTube, Twitch, Rooter and Instagram.';
-  const shareImageWidth = '1200';
-  const shareImageHeight = '630';
+  const shareImageWidth = '600';
+  const shareImageHeight = '315';
   html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'property', 'og:image:secure_url', '<meta property="og:image:secure_url" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/jpeg" />');
