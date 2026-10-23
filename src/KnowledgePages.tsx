@@ -2,9 +2,31 @@ import { ArrowRight, ArrowUpRight, BookOpen, ExternalLink, Gamepad2, Radio } fro
 import type { ReactNode } from 'react';
 import KNOWLEDGE_ARTICLES from './data/knowledge.json';
 
-export type KnowledgeArticle = (typeof KNOWLEDGE_ARTICLES)[number];
+export type KnowledgeTable = { heading: string; headers: string[]; rows: string[][] };
+export type KnowledgeSection = { heading: string; paragraphs?: string[]; bullets?: string[]; tables?: KnowledgeTable[] };
+export type KnowledgeArticle = {
+  slug: string;
+  route: string;
+  kind: 'hub' | 'creator' | 'guide' | 'esports';
+  category: string;
+  categorySlug: string;
+  title: string;
+  description: string;
+  keywords: string[];
+  heroImage: string;
+  heroAlt: string;
+  readingMinutes: number;
+  updatedAt: string;
+  intro: string;
+  takeaways: string[];
+  sections: KnowledgeSection[];
+  tables?: KnowledgeTable[];
+  sources: { label: string; url: string }[];
+  related: string[];
+};
+const ARTICLES = KNOWLEDGE_ARTICLES as KnowledgeArticle[];
 export const KNOWLEDGE_BY_PATH = Object.fromEntries(
-  KNOWLEDGE_ARTICLES.map((article) => [article.route.replace(/\/+$/, ''), article])
+  ARTICLES.map((article) => [article.route.replace(/\/+$/, ''), article])
 ) as Record<string, KnowledgeArticle>;
 
 export function getKnowledgeArticle(path: string): KnowledgeArticle | undefined {
@@ -53,8 +75,8 @@ function KnowledgeCard({ article }: { article: KnowledgeArticle }) {
 }
 
 export function KnowledgeTeasers() {
-  const featuredSlugs = ['minecraft-version-library', 'pubg-global-championship-history', 'valorant-patch-13-08'];
-  const featured = featuredSlugs.map((slug) => KNOWLEDGE_ARTICLES.find((article) => article.slug === slug)).filter((article): article is KnowledgeArticle => Boolean(article));
+  const featuredSlugs = ['minecraft-26-4-preview', 'pubg-global-championship-history', 'valorant-patch-13-08'];
+  const featured = featuredSlugs.map((slug) => ARTICLES.find((article) => article.slug === slug)).filter((article): article is KnowledgeArticle => Boolean(article));
   return (
     <section className="uos-section uos-knowledge-section" id="knowledge">
       <div className="uos-container">
@@ -73,7 +95,7 @@ export function KnowledgeDirectoryPage({ route }: { route: string }) {
   const hub = KNOWLEDGE_BY_PATH[route];
   let groups: { title: string; articles: KnowledgeArticle[] }[] = [];
   if (route === '/esports') {
-    groups = [{ title: 'Tournament history and champions', articles: KNOWLEDGE_ARTICLES.filter((article) => article.kind === 'esports') }];
+    groups = [{ title: 'Tournament history and champions', articles: ARTICLES.filter((article) => article.kind === 'esports') }];
   } else if (route === '/games/minecraft/versions') {
     groups = [{ title: 'Minecraft Java Edition versions', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind === 'guide') }];
   } else if (route === '/games/valorant/updates') {
@@ -96,7 +118,7 @@ export function KnowledgeDirectoryPage({ route }: { route: string }) {
   return (
     <>
       <KnowledgeHero eyebrow={'KNOWLEDGE HUB / ' + (hub?.category ?? 'INDEX').toUpperCase()} title={<>{hub?.title ?? 'Gaming guides and references'}</>} description={hub?.intro ?? hub?.description ?? 'Browse structured guides by game and topic.'}>
-        <div className="uos-knowledge-directory-meta"><span>{KNOWLEDGE_ARTICLES.length} published reference pages</span><span>Updated 23 October 2026</span></div>
+        <div className="uos-knowledge-directory-meta"><span>{ARTICLES.length} published reference pages</span><span>Updated 23 October 2026</span></div>
       </KnowledgeHero>
       <section className="uos-section uos-knowledge-directory">
         <div className="uos-container">
@@ -128,6 +150,9 @@ export function KnowledgeArticlePage({ article }: { article: KnowledgeArticle })
           <div className="uos-article-layout">
             <article className="uos-article-body">
               <section className="uos-takeaways"><h2>Key takeaways</h2><ul>{article.takeaways.map((item, index) => <li key={index}><RichText value={item} /></li>)}</ul></section>
+              <section className="uos-article-tables">
+                {(article.tables ?? []).map((table) => <div className="uos-article-table-wrap" key={table.heading}><h2>{table.heading}</h2><div className="uos-table-scroll"><table><thead><tr>{table.headers.map((head) => <th scope="col" key={head}>{head}</th>)}</tr></thead><tbody>{table.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}</tr>)}</tbody></table></div></div>)}
+              </section>
               {article.sections.map((section, index) => (
                 <section className="uos-article-section" key={section.heading}>
                   <p className="uos-eyebrow">{String(index + 1).padStart(2, '0')} / {article.category}</p><h2>{section.heading}</h2>
