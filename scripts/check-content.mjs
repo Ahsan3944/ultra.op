@@ -45,7 +45,9 @@ assert.ok(html.includes('<meta name="twitter:title" content="UltraOP | Sk Ahsan 
 assert.ok(html.includes('"https://kick.com/ultraopp"'), 'Structured creator profiles must use the verified Kick URL.');
 assert.ok(core.includes("{ name: 'Kick', handle: '@ultraopp', url: 'https://kick.com/ultraopp', type: 'Streaming' }"), 'The official Kick profile must match the supplied creator handle and URL.');
 assert.ok(!html.includes('Explore Minecraft, the creator journey, official channels and brand collaborations.') && !html.includes('PUBG esports roots, Rooter streaming and moderation, Free Fire'), 'Homepage metadata must not lead with outdated individual-game/history snippets.');
-assert.ok(staticGenerator.includes("title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator'") && staticGenerator.includes('UltraOP and Kick links.'), 'Generated homepage metadata and crawler overview must reflect the current creator identity.');
+assert.ok(staticGenerator.includes("title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator'") && staticGenerator.includes("UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links."), 'Generated homepage metadata must reflect the current creator identity.');
+assert.ok(studio.includes("title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator'") && studio.includes("description: 'UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.'"), 'Runtime homepage metadata must match the initial HTML.');
+assert.ok(studio.includes("setMeta('twitter:title', pageInfo.title)") && studio.includes("setMeta('twitter:description', pageInfo.description)"), 'Runtime metadata must update Twitter/X title and description for the current route.');
 const headerStart = studio.indexOf('function SiteHeader({ route }: { route: string }) {');
 const headerEnd = studio.indexOf('\nfunction SectionHeading', headerStart);
 const headerSource = headerStart >= 0 && headerEnd > headerStart ? studio.slice(headerStart, headerEnd) : '';
