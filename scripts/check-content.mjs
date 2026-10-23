@@ -55,7 +55,15 @@ assert.ok(headerSource.includes("label: 'Explore'") && headerSource.includes("hr
 assert.equal((headerSource.match(/label: 'Explore'/g) ?? []).length, 1, 'Only one Explore entry should appear in the header navigation.');
 assert.ok(headerSource.includes("label: 'Community'") && headerSource.includes("label: 'Journal'") && headerSource.includes("label: 'Brand work'"), 'Community, Journal and Brand work must remain distinct navigation items.');
 assert.ok(headerSource.includes("className={item.active ? 'is-active' : undefined}"), 'Navigation should indicate the current section accessibly.');
+const mobileNavStart = headerSource.indexOf('className={\'uos-mobile-nav\' + (menuOpen ? \' is-open\' : \'\')}');
+const mobileNavEnd = headerSource.indexOf('</nav>', mobileNavStart);
+const mobileNavSource = mobileNavStart >= 0 && mobileNavEnd > mobileNavStart ? headerSource.slice(mobileNavStart, mobileNavEnd) : '';
+assert.ok(mobileNavSource.includes('navItems.map((item) => (') && !mobileNavSource.includes('Watch live') && !mobileNavSource.includes('Business contact'), 'Mobile navigation must use the same primary links as desktop without extra menu entries.');
+assert.ok(mobileNavSource.includes("href={home ? '#contact' : '/contact/'}") && mobileNavSource.includes('Let’s work'), 'Mobile menu CTA must match the desktop CTA destination and label.');
+assert.ok(mobileNavSource.includes('aria-hidden={!menuOpen}') && mobileNavSource.includes('inert={!menuOpen}') && mobileNavSource.includes("event.key === 'Escape'"), 'Closed mobile navigation must be hidden from keyboard/accessibility APIs and closable with Escape.');
+assert.ok(studioCss.includes('.uos-mobile-nav.is-open') && studioCss.includes('max-height: 0') && studioCss.includes('visibility: hidden'), 'Mobile menu must animate open and closed without being removed from the DOM.');
 assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects must be restrained and respect reduced-motion preferences.');
+assert.ok(studioCss.includes('transition-duration: .01ms !important'), 'Mobile menu transitions must respect reduced-motion preferences.');
 
 assert.ok(html.includes('twitter:card') && html.includes('twitter:image'), 'Social cards must include Twitter/X card and image metadata.');
 assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadata must point at a published image asset.');
