@@ -642,6 +642,12 @@ function JournalPage({ slug }: { slug?: string }) {
       <InteriorHero eyebrow="JOURNAL / THE CREATOR TIMELINE" title={<>The story behind<br /><span>the uploads.</span></>} description="A chronological look at the games, communities and creative shifts that shaped UltraOP. Dates are omitted where exact dates have not been confirmed." />
       <section className="uos-section">
         <div className="uos-container uos-journal-list">
+          <a className="uos-journal-featured" href="/journal/ultraop-creator-story/" data-reveal>
+            <span className="uos-eyebrow">FEATURED / THE CREATOR BEHIND ULTRAOP</span>
+            <h2>UltraOP: The Creator Journey of Sk Ahsan Ahmad</h2>
+            <p>A fuller story from PUBG and competitive scrims to Rooter streaming, YouTube, Minecraft storytelling and creator technology.</p>
+            <span className="uos-knowledge-read">Read the creator story <ArrowUpRight size={15} aria-hidden="true" /></span>
+          </a>
           {JOURNAL_ENTRIES.map((entry, index) => <a className="uos-journal-row" href={'/journal/' + entry.slug + '/'} key={entry.slug} data-reveal><span className="uos-journal-row-index">{String(index + 1).padStart(2, '0')}</span><span className="uos-journal-row-main"><small>{entry.eyebrow} / {entry.era}</small><strong>{entry.title}</strong><span>{entry.summary}</span></span><ArrowUpRight size={18} aria-hidden="true" /></a>)}
         </div>
       </section>
