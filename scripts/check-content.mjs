@@ -10,6 +10,8 @@ const mainSource = readFileSync('src/main.tsx', 'utf8');
 const recoverySource = readFileSync('src/RuntimeErrorBoundary.tsx', 'utf8');
 const studioCss = readFileSync('src/ultraop-studio.css', 'utf8');
 const staticGenerator = readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
+const indexNowKey = '04a242e293fc40108455e9f4353a6e8e';
 const cookiePolicy = readFileSync('public/cookie-policy.html', 'utf8');
 const terms = readFileSync('public/terms.html', 'utf8');
 const knowledgeArticles = JSON.parse(readFileSync('src/data/knowledge.json', 'utf8'));
@@ -66,6 +68,8 @@ assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes(
 assert.ok(studioCss.includes('transition-duration: .01ms !important'), 'Mobile menu transitions must respect reduced-motion preferences.');
 
 assert.ok(html.includes('<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />'), 'Google-compatible PNG favicon must point to the updated mascot icon.');
+assert.equal(readFileSync(path.join('public', indexNowKey + '.txt'), 'utf8').trim(), indexNowKey, 'IndexNow ownership key file must contain the exact filename key.');
+assert.ok(deployWorkflow.includes('https://api.indexnow.org/indexnow') && deployWorkflow.includes('INDEXNOW_KEY') && deployWorkflow.includes('sitemap.xml'), 'Production deployment must validate the IndexNow key and notify IndexNow with the published sitemap URLs.');
 assert.ok(html.includes('<meta property="og:image" content="https://ultraop.in/brand/ultraop-share-card.png" />'), 'Open Graph must use the dedicated UltraOP share-card image.');
 assert.ok(html.includes('<meta property="og:image:secure_url" content="https://ultraop.in/brand/ultraop-share-card.png" />'), 'Open Graph must provide the same secure share-card URL.');
 assert.ok(html.includes('<meta property="og:image:type" content="image/png" />') && html.includes('<meta property="og:image:width" content="1200" />') && html.includes('<meta property="og:image:height" content="630" />'), 'Open Graph image type and dimensions must match the published 1200×630 PNG share card.');
@@ -93,6 +97,7 @@ const dist = path.resolve('dist');
 const requiredFiles = [
   'index.html',
   'favicon.png',
+  '04a242e293fc40108455e9f4353a6e8e.txt',
   'brand/ultraop-share-card.png',
   'about/index.html',
   'channels/index.html',
