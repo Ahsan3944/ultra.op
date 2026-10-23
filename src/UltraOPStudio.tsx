@@ -815,16 +815,16 @@ export default function UltraOPStudio() {
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
     setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
-    setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
-    setMeta('og:image:secure_url', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
-    setMeta('og:image:type', 'image/webp', 'property');
-    setMeta('og:image:width', '142', 'property');
-    setMeta('og:image:height', '161', 'property');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
+    setMeta('og:image:secure_url', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
+    setMeta('og:image:type', 'image/jpeg', 'property');
+    setMeta('og:image:width', '400', 'property');
+    setMeta('og:image:height', '210', 'property');
     setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator and live streamer on YouTube, Twitch, Rooter and Instagram.', 'property');
-    setMeta('twitter:card', 'summary', 'name');
+    setMeta('twitter:card', 'summary_large_image', 'name');
     setMeta('twitter:title', pageInfo.title, 'name');
     setMeta('twitter:description', pageInfo.description, 'name');
-    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'name');
     setMeta('twitter:image:alt', 'UltraOP — Sk Ahsan Ahmad | Gaming Creator and Live Streamer', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
