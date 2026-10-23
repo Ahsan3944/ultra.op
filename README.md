@@ -56,7 +56,7 @@ The header, footer, hero artwork, favicon and social-share preview use the origi
 
 ## Gaming knowledge and search discovery
 
-The knowledge library contains 32 long-form and reference pages as of 23 October 2026, data-driven from `src/data/knowledge.json`. Each entry defines a canonical route, title and description, intended search terms, category, update date, editorial illustration, article sections, key takeaways, optional result tables, external sources and related articles.
+The knowledge library contains 32 long-form and reference pages, with automated coverage for all canonical routes as of 23 October 2026, data-driven from `src/data/knowledge.json`. Each entry defines a canonical route, title and description, intended search terms, category, update date, editorial illustration, article sections, key takeaways, optional result tables, external sources and related articles.
 
 Current topic directories:
 - `/guides/`: grouped how-to guides and reference articles.
