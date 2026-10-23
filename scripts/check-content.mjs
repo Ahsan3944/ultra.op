@@ -7,8 +7,6 @@ const studio = readFileSync('src/UltraOPStudio.tsx', 'utf8');
 const html = readFileSync('index.html', 'utf8');
 const privacy = readFileSync('public/privacy.html', 'utf8');
 const mainSource = readFileSync('src/main.tsx', 'utf8');
-const runtimeFallbackSource = readFileSync('public/runtime-fallback.js', 'utf8');
-const serviceUnavailablePage = readFileSync('public/503.html', 'utf8');
 const cookiePolicy = readFileSync('public/cookie-policy.html', 'utf8');
 const terms = readFileSync('public/terms.html', 'utf8');
 
@@ -39,10 +37,11 @@ assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadat
 assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
 assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
 assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
-assert.ok(html.includes('/runtime-fallback.js'), 'The main document must load the runtime fallback watcher.');
-assert.ok(mainSource.includes('AppErrorBoundary') && mainSource.includes('couldn’t load'), 'React rendering failures need an accessible recovery screen.');
-assert.ok(runtimeFallbackSource.includes('ultraopAppReady') && runtimeFallbackSource.includes('503.html'), 'Failed or stalled app boot must show the temporary-unavailable recovery page.');
-assert.ok(serviceUnavailablePage.includes('503 / TEMPORARILY UNAVAILABLE') && serviceUnavailablePage.includes('Return home'), 'A branded static service-unavailable page is required.');
+assert.ok(!html.includes('/runtime-fallback.js'), 'The main document must not inject the runtime crash fallback.');
+assert.ok(!mainSource.includes('AppErrorBoundary') && !mainSource.includes('ultraopAppReady'), 'React runtime should not replace the page with a custom crash screen.');
+const missingPage = readFileSync('public/404.html', 'utf8');
+assert.ok(missingPage.includes('404 / PAGE NOT FOUND'), 'Keep a branded 404 for invalid or retired URLs.');
+assert.ok(!missingPage.includes('/503.html'), 'The 404 page must not link to the removed temporary-unavailable screen.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
 assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html'), 'Terms must link to privacy and cookie policies.');
@@ -62,8 +61,6 @@ const requiredFiles = [
   'llms.txt',
   'robots.txt',
   'brand/ultraop-original.webp',
-  '503.html',
-  'runtime-fallback.js',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
@@ -72,6 +69,8 @@ const requiredFiles = [
   'sitemap.xml'
 ];
 requiredFiles.forEach((file) => assert.ok(existsSync(path.join(dist, file)), 'Missing generated production file: dist/' + file));
+assert.ok(!existsSync(path.join(dist, '503.html')), 'The removed temporary-unavailable screen must not be published.');
+assert.ok(!existsSync(path.join(dist, 'runtime-fallback.js')), 'The removed runtime crash fallback must not be published.');
 
 const staticPages = [
   ['index.html', 'https://ultraop.in/'],
