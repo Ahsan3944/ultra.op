@@ -67,9 +67,9 @@ const journalRecords = readRecords(journalSource, /\{\s*slug:\s*'[^']+'[^}]*\}/g
   .filter((entry) => entry.slug && entry.title && entry.summary);
 
 const pages = [
-  { path: '/', title: 'UltraOP — Sk Ahsan Ahmad | Official Gaming Creator', description: 'The official website of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Explore Minecraft, the creator journey, official channels and brand collaborations.' },
+  { path: '/', title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer', description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.' },
   { path: '/about/', title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey', description: 'Discover the UltraOP creator journey from PUBG and Free Fire to Rooter streaming, YouTube, Minecraft, community building and technology projects.' },
-  { path: '/channels/', title: 'Official Channels — UltraOP | YouTube, Minecraft & Gaming', description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a public data source is available.' },
+  { path: '/channels/', title: 'Official Channels — UltraOP | YouTube & Streaming Platforms', description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a public data source is available.' },
   { path: '/live/', title: 'Watch UltraOP Live — YouTube, Twitch, Kick & Rooter', description: 'Open UltraOP’s official streaming destinations on YouTube, Twitch, Kick and Rooter. Stream availability is determined by each platform.' },
   { path: '/community/', title: 'UltraOP Community — Official Social Media & Streaming Links', description: 'Find UltraOP’s official Instagram profiles, YouTube channels, Twitch, Kick, Rooter, Discord and WhatsApp community channel.' },
   { path: '/work/', title: 'Brand Collaborations — UltraOP | Creator Partnerships', description: 'Explore selected brand and campaign records from UltraOP’s gaming creator journey and contact UltraOP for business collaborations.' },
@@ -126,8 +126,8 @@ const pageContent = {
     eyebrow: 'Official creator website / India',
     heading: 'Play the game. Build the story.',
     paragraphs: [
-      'Sk Ahsan Ahmad, known online as UltraOP, is an Indian gaming creator, live streamer and technology-focused creator.',
-      'The creator journey has moved through competitive PUBG and BGMI, Free Fire live streaming on Rooter, YouTube and a current focus on Minecraft. Variety games including Valorant and GTA, creator technology and story-led gaming remain part of the wider creative world.'
+      'Sk Ahsan Ahmad, known online as UltraOP, is an Indian gaming creator and live streamer.',
+      'The official creator network brings together gaming videos, live streams, storytelling, community and creator projects across YouTube, Twitch and Rooter.'
     ],
     sections: [
       { heading: 'Official YouTube channels', items: channelRecords.flatMap((item) => [
@@ -437,7 +437,7 @@ await writeFile(path.join(dist, 'sitemap.xml'), sitemap, 'utf8');
 const llmsLines = [
   '# UltraOP',
   '',
-  '> Official website for Sk Ahsan Ahmad, known as UltraOP: an Indian gaming creator, live streamer, Minecraft storyteller, community builder and technology creator.',
+  '> Official website for Sk Ahsan Ahmad, known as UltraOP: an Indian gaming creator and live streamer with video, live-streaming and creator projects on YouTube, Twitch and Rooter.',
   '',
   '## Primary pages',
   '- Official homepage: https://ultraop.in/',
