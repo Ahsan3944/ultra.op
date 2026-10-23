@@ -97,7 +97,8 @@
       "bgmi-tournament-winners",
       "valorant-update-hub",
       "gaming-guides-index"
-    ]
+    ],
+    "route": "/journal/ultraop-creator-story/"
   },
   {
     "slug": "gaming-guides-index",
@@ -175,7 +176,8 @@
       "free-fire-world-series-history",
       "valorant-update-hub",
       "valorant-champions-history"
-    ]
+    ],
+    "route": "/guides/"
   },
   {
     "slug": "game-directory",
@@ -248,7 +250,8 @@
       "bgmi-tournament-winners",
       "free-fire-world-series-history",
       "valorant-update-hub"
-    ]
+    ],
+    "route": "/games/"
   },
   {
     "slug": "esports-history-index",
@@ -324,7 +327,8 @@
       "free-fire-world-series-history",
       "valorant-champions-history",
       "valorant-update-hub"
-    ]
+    ],
+    "route": "/esports/"
   },
   {
     "slug": "minecraft-version-library",
@@ -397,7 +401,8 @@
       "minecraft-1-21-5",
       "minecraft-1-20-1",
       "minecraft-server-version-guide"
-    ]
+    ],
+    "route": "/games/minecraft/versions/"
   },
   {
     "slug": "minecraft-26-3",
@@ -475,7 +480,8 @@
       "minecraft-26-1",
       "minecraft-server-version-guide",
       "ultraop-creator-story"
-    ]
+    ],
+    "route": "/games/minecraft/versions/26-3/"
   },
   {
     "slug": "minecraft-26-2",
@@ -547,7 +553,8 @@
       "minecraft-26-3",
       "minecraft-26-1",
       "minecraft-server-version-guide"
-    ]
+    ],
+    "route": "/games/minecraft/versions/26-2/"
   },
   {
     "slug": "minecraft-26-1",
@@ -619,7 +626,8 @@
       "minecraft-26-2",
       "minecraft-26-3",
       "minecraft-1-21-11"
-    ]
+    ],
+    "route": "/games/minecraft/versions/26-1/"
   },
   {
     "slug": "minecraft-1-21-11",
@@ -692,7 +700,8 @@
       "minecraft-1-21-5",
       "minecraft-server-version-guide",
       "minecraft-26-3"
-    ]
+    ],
+    "route": "/games/minecraft/versions/1-21-11/"
   },
   {
     "slug": "minecraft-1-21-5",
@@ -764,7 +773,8 @@
       "minecraft-1-21-11",
       "minecraft-1-20-1",
       "minecraft-server-version-guide"
-    ]
+    ],
+    "route": "/games/minecraft/versions/1-21-5/"
   },
   {
     "slug": "minecraft-1-20-1",
@@ -842,7 +852,8 @@
       "minecraft-server-version-guide",
       "minecraft-1-21-5",
       "minecraft-1-21-11"
-    ]
+    ],
+    "route": "/games/minecraft/versions/1-20-1/"
   },
   {
     "slug": "minecraft-server-version-guide",
@@ -925,7 +936,8 @@
       "minecraft-26-3",
       "minecraft-1-20-1",
       "minecraft-1-21-11"
-    ]
+    ],
+    "route": "/games/minecraft/server-version-guide/"
   },
   {
     "slug": "pubg-global-championship-history",
@@ -1075,7 +1087,8 @@
       "free-fire-world-series-history",
       "esports-history-index",
       "gaming-guides-index"
-    ]
+    ],
+    "route": "/esports/pubg-global-championship-history/"
   },
   {
     "slug": "bgmi-tournament-winners",
@@ -1229,7 +1242,8 @@
       "free-fire-world-series-history",
       "esports-history-index",
       "ultraop-creator-story"
-    ]
+    ],
+    "route": "/esports/bgmi-tournament-winners/"
   },
   {
     "slug": "free-fire-world-series-history",
@@ -1365,7 +1379,8 @@
       "bgmi-tournament-winners",
       "esports-history-index",
       "gaming-guides-index"
-    ]
+    ],
+    "route": "/esports/free-fire-world-series-history/"
   },
   {
     "slug": "valorant-update-hub",
@@ -1451,7 +1466,8 @@
       "valorant-champions-history",
       "gaming-guides-index",
       "esports-history-index"
-    ]
+    ],
+    "route": "/games/valorant/updates/"
   },
   {
     "slug": "valorant-patch-13-08",
@@ -1536,7 +1552,8 @@
       "valorant-update-hub",
       "valorant-champions-history",
       "gaming-guides-index"
-    ]
+    ],
+    "route": "/games/valorant/updates/patch-13-08/"
   },
   {
     "slug": "valorant-champions-history",
@@ -1668,7 +1685,8 @@
       "valorant-patch-13-08",
       "pubg-global-championship-history",
       "esports-history-index"
-    ]
+    ],
+    "route": "/esports/valorant-champions-history/"
   },
   {
     "slug": "battle-royale-games-explained",
@@ -1751,7 +1769,8 @@
       "free-fire-world-series-history",
       "how-to-start-esports",
       "game-directory"
-    ]
+    ],
+    "route": "/guides/battle-royale-games-explained/"
   },
   {
     "slug": "how-to-start-esports",
@@ -1841,7 +1860,8 @@
       "esports-history-index",
       "pubg-global-championship-history",
       "valorant-champions-history"
-    ]
+    ],
+    "route": "/guides/how-to-start-esports/"
   },
   {
     "slug": "game-genres-guide",
@@ -1925,6 +1945,7 @@
       "minecraft-version-library",
       "valorant-update-hub",
       "how-to-start-esports"
-    ]
+    ],
+    "route": "/guides/game-genres-explained/"
   }
 ]
