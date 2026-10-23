@@ -41,7 +41,9 @@ assert.ok(html.includes('<title>UltraOP — Sk Ahsan Ahmad | Gaming Creator &amp
 assert.ok(html.includes('Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Homepage search description must use the current platform-focused creator positioning.');
 assert.ok(!html.includes('Explore Minecraft, the creator journey, official channels and brand collaborations.') && !html.includes('PUBG esports roots, Rooter streaming and moderation, Free Fire'), 'Homepage metadata must not lead with outdated individual-game/history snippets.');
 assert.ok(staticGenerator.includes("title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer'") && staticGenerator.includes('Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Generated homepage metadata must match the HTML template.');
-const headerSource = studio.match(/function SiteHeader[\\s\\S]*?\\nfunction SectionHeading/)?.[0] ?? '';
+const headerStart = studio.indexOf('function SiteHeader({ route }: { route: string }) {');
+const headerEnd = studio.indexOf('\nfunction SectionHeading', headerStart);
+const headerSource = headerStart >= 0 && headerEnd > headerStart ? studio.slice(headerStart, headerEnd) : '';
 assert.ok(headerSource.includes("label: 'Explore'") && headerSource.includes("href: home ? '#knowledge' : '/guides/'"), 'Header must consolidate Guides and Esports under one Explore link.');
 assert.equal((headerSource.match(/label: 'Explore'/g) ?? []).length, 1, 'Only one Explore entry should appear in the header navigation.');
 assert.ok(headerSource.includes("label: 'Community'") && headerSource.includes("label: 'Journal'") && headerSource.includes("label: 'Brand work'"), 'Community, Journal and Brand work must remain distinct navigation items.');
