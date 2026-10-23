@@ -256,8 +256,8 @@ pageContent['/journal/'].sections[0].items.unshift({ label: 'Featured creator st
 
 function renderRichHtml(value) {
   const escaped = escapeHtml(value);
-  return escaped.replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]+|\\/[^)\\s]*)\\)/g, (match, label, href) => {
-    const external = /^https?:\\/\\//i.test(href);
+  return escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)\s]*)\)/g, (match, label, href) => {
+    const external = /^https?:\/\//i.test(href);
     const safeHref = escapeAttr(href);
     return '<a href="' + safeHref + '"' + (external ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + label + '</a>';
   });
