@@ -176,7 +176,7 @@ for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/ve
 }
 const knowledgeOverview = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
 assert.ok(knowledgeOverview.includes('## Gaming guides, version notes and esports histories'), 'llms.txt must expose the game guides and esports archive.');
-['Minecraft Java Edition 26.3', 'PUBG Global Championship History', 'Free Fire World Series Winners', 'VALORANT Patch 13.08'].forEach((title) => assert.ok(knowledgeOverview.includes(title), 'llms.txt is missing article title: ' + title));
+['minecraft-26-3', 'pubg-global-championship-history', 'free-fire-world-series-history', 'valorant-patch-13-08'].forEach((slug) => { const article = knowledgeArticles.find((item) => item.slug === slug); assert.ok(article && knowledgeOverview.includes(article.title), 'llms.txt is missing article title for slug: ' + slug); });
 const publishedHubPages = ['guides/index.html', 'games/index.html', 'esports/index.html', 'games/minecraft/versions/index.html', 'games/valorant/updates/index.html', 'journal/ultraop-creator-story/index.html'];
 publishedHubPages.forEach((file) => assert.ok(existsSync(path.join(dist, file)), 'Missing primary knowledge page: ' + file));
 
