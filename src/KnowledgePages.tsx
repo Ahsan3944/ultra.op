@@ -97,22 +97,23 @@ export function KnowledgeDirectoryPage({ route }: { route: string }) {
   if (route === '/esports') {
     groups = [{ title: 'Tournament history and champions', articles: ARTICLES.filter((article) => article.kind === 'esports') }];
   } else if (route === '/games/minecraft/versions') {
-    groups = [{ title: 'Minecraft Java Edition versions', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind === 'guide') }];
+    groups = [{ title: 'Minecraft Java Edition versions', articles: ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind === 'guide') }];
   } else if (route === '/games/valorant/updates') {
-    groups = [{ title: 'VALORANT updates and patch guides', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') }];
+    groups = [{ title: 'VALORANT updates and patch guides', articles: ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') }];
   } else if (route === '/games') {
     groups = [
-      { title: 'Minecraft versions and server compatibility', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind !== 'hub') },
-      { title: 'VALORANT updates and patch coverage', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') },
-      { title: 'General game guides', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'guides') }
+      { title: 'Minecraft versions and server compatibility', articles: ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind !== 'hub') },
+      { title: 'Battle royale games and tournament histories', articles: ARTICLES.filter((article) => ['pubg', 'bgmi', 'free-fire'].includes(article.categorySlug) || article.slug === 'battle-royale-games-explained') },
+      { title: 'VALORANT updates and patch coverage', articles: ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') },
+      { title: 'General game guides', articles: ARTICLES.filter((article) => article.categorySlug === 'guides') }
     ];
   } else {
     groups = [
-      { title: 'Minecraft versions and server guides', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind === 'guide') },
-      { title: 'PUBG, BGMI, Free Fire and VALORANT tournament history', articles: KNOWLEDGE_ARTICLES.filter((article) => article.kind === 'esports') },
-      { title: 'VALORANT updates', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') },
-      { title: 'General gaming explainers', articles: KNOWLEDGE_ARTICLES.filter((article) => article.categorySlug === 'guides') },
-      { title: 'The UltraOP creator journey', articles: KNOWLEDGE_ARTICLES.filter((article) => article.kind === 'creator') }
+      { title: 'Minecraft versions and server guides', articles: ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind === 'guide') },
+      { title: 'PUBG, BGMI, Free Fire and VALORANT tournament history', articles: ARTICLES.filter((article) => article.kind === 'esports') },
+      { title: 'VALORANT updates', articles: ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') },
+      { title: 'General gaming explainers', articles: ARTICLES.filter((article) => article.categorySlug === 'guides') },
+      { title: 'The UltraOP creator journey', articles: ARTICLES.filter((article) => article.kind === 'creator') }
     ];
   }
   return (
@@ -163,7 +164,7 @@ export function KnowledgeArticlePage({ article }: { article: KnowledgeArticle })
               ))}
               <section className="uos-article-sources"><h2>Sources and further reading</h2><p>Use these publisher, game-developer and tournament-organiser references for full rules, exact values and official result corrections.</p><div className="uos-source-links">{article.sources.map((source) => <a href={source.url} key={source.url} target="_blank" rel="noopener noreferrer"><ExternalLink size={15} aria-hidden="true" /><span>{source.label}</span></a>)}</div></section>
             </article>
-            <aside className="uos-related-panel"><p className="uos-eyebrow">KEEP EXPLORING</p><h2>Related articles</h2><div className="uos-related-links">{KNOWLEDGE_ARTICLES.filter((candidate) => (article.related ?? []).includes(candidate.slug)).map((candidate) => <a key={candidate.slug} href={candidate.route}><span>{candidate.category}</span><strong>{candidate.title}</strong><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div><a className="uos-button uos-button-secondary" href="/guides/">All gaming guides <ArrowRight size={15} aria-hidden="true" /></a></aside>
+            <aside className="uos-related-panel"><p className="uos-eyebrow">KEEP EXPLORING</p><h2>Related articles</h2><div className="uos-related-links">{ARTICLES.filter((candidate) => (article.related ?? []).includes(candidate.slug)).map((candidate) => <a key={candidate.slug} href={candidate.route}><span>{candidate.category}</span><strong>{candidate.title}</strong><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div><a className="uos-button uos-button-secondary" href="/guides/">All gaming guides <ArrowRight size={15} aria-hidden="true" /></a></aside>
           </div>
         </div>
       </section>
