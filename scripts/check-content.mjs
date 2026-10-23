@@ -68,6 +68,7 @@ assert.ok(studioCss.includes('.uos-mobile-nav.is-open') && studioCss.includes('m
 assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects must be restrained and respect reduced-motion preferences.');
 assert.ok(studioCss.includes('transition-duration: .01ms !important'), 'Mobile menu transitions must respect reduced-motion preferences.');
 
+assert.ok(html.includes('<link rel="icon" type="image/x-icon" href="/favicon.ico" />'), 'Homepage must advertise a root-level ICO favicon for search crawlers.');
 assert.ok(html.includes('<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />'), 'Google-compatible PNG favicon must point to the updated mascot icon.');
 assert.equal(readFileSync(path.join('public', indexNowKey + '.txt'), 'utf8').trim(), indexNowKey, 'IndexNow ownership key file must contain the exact filename key.');
 assert.ok(deployWorkflow.includes('https://api.indexnow.org/indexnow') && deployWorkflow.includes('INDEXNOW_KEY') && deployWorkflow.includes('sitemap.xml'), 'Production deployment must validate the IndexNow key and notify IndexNow with the published sitemap URLs.');
@@ -90,6 +91,7 @@ assert.ok(studioCss.includes('.uos-runtime-error') && studioCss.includes('@media
 const missingPage = readFileSync('public/404.html', 'utf8');
 assert.ok(missingPage.includes('404 / PAGE NOT FOUND'), 'Keep a branded 404 for invalid or retired URLs.');
 assert.ok(missingPage.includes('/brand/ultraop-logo.webp') && !missingPage.includes('/brand/ultraop-original.webp'), '404 page must use the current UltraOP logo.');
+assert.ok(missingPage.includes('href="/favicon.ico"'), '404 page must advertise the root-level favicon.');
 assert.ok(!missingPage.includes('/503.html'), 'The 404 page must not link to the removed temporary-unavailable screen.');
 assert.ok(privacy.includes('SocialCounts'), 'Privacy notice must disclose the public statistics data provider.');
 assert.ok(cookiePolicy.includes('SocialCounts'), 'Cookie notice must disclose the public statistics request.');
@@ -98,6 +100,7 @@ assert.ok(terms.includes('privacy.html') && terms.includes('cookie-policy.html')
 const dist = path.resolve('dist');
 const requiredFiles = [
   'index.html',
+  'favicon.ico',
   'favicon.png',
   '04a242e293fc40108455e9f4353a6e8e.txt',
   'brand/ultraop-share-card.png',
