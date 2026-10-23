@@ -177,6 +177,7 @@ function setMeta(name: string, content: string, attribute: 'name' | 'property' =
 
 function SiteHeader({ route }: { route: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const home = route === '/';
   const navItems = [
     { label: 'Creator', href: home ? '#creator' : '/about/', active: route === '/about' },
@@ -201,6 +202,7 @@ function SiteHeader({ route }: { route: string }) {
           Let’s work <ArrowUpRight size={15} aria-hidden="true" />
         </a>
         <button
+          ref={menuButtonRef}
           className="uos-menu-button"
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
@@ -211,17 +213,26 @@ function SiteHeader({ route }: { route: string }) {
           {menuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
-      {menuOpen && (
-        <nav className="uos-mobile-nav" id="uos-mobile-nav" aria-label="Mobile navigation">
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
-              {item.label}<ArrowUpRight size={15} aria-hidden="true" />
-            </a>
-          ))}
-          <a href="/live/" onClick={() => setMenuOpen(false)}>Watch live<ArrowUpRight size={15} aria-hidden="true" /></a>
-          <a href="/contact/" onClick={() => setMenuOpen(false)}>Business contact<ArrowUpRight size={15} aria-hidden="true" /></a>
-        </nav>
-      )}
+      <nav
+        className={'uos-mobile-nav' + (menuOpen ? ' is-open' : '')}
+        id="uos-mobile-nav"
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            setMenuOpen(false);
+            menuButtonRef.current?.focus();
+          }
+        }}
+      >
+        {navItems.map((item) => (
+          <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
+            {item.label}<ArrowUpRight size={15} aria-hidden="true" />
+          </a>
+        ))}
+        <a href={home ? '#contact' : '/contact/'} onClick={() => setMenuOpen(false)}>Let’s work<ArrowUpRight size={15} aria-hidden="true" /></a>
+      </nav>
     </header>
   );
 }
