@@ -37,10 +37,15 @@ assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessibl
 assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
 
-assert.ok(html.includes('<title>UltraOP — Sk Ahsan Ahmad | Gaming Creator &amp; Streamer</title>'), 'Homepage title must present UltraOP as a gaming creator and streamer.');
-assert.ok(html.includes('Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Homepage search description must use the current platform-focused creator positioning.');
+assert.ok(html.includes('<title>UltraOP | Sk Ahsan Ahmad — Gaming Creator</title>'), 'Homepage title must identify UltraOP as a gaming creator.');
+assert.ok(html.includes('UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.'), 'Homepage meta description must highlight Minecraft, current gaming content and all verified streaming platforms.');
+assert.ok(html.includes('<meta property="og:description" content="UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links." />'), 'Open Graph description must match homepage positioning.');
+assert.ok(html.includes('<meta name="twitter:description" content="UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links." />'), 'Twitter/X description must match homepage positioning.');
+assert.ok(html.includes('<meta name="twitter:title" content="UltraOP | Sk Ahsan Ahmad — Gaming Creator" />'), 'Twitter/X title must match the homepage title.');
+assert.ok(html.includes('"https://kick.com/ultraopp"'), 'Structured creator profiles must use the verified Kick URL.');
+assert.ok(core.includes("{ name: 'Kick', handle: '@ultraopp', url: 'https://kick.com/ultraopp', type: 'Streaming' }"), 'The official Kick profile must match the supplied creator handle and URL.');
 assert.ok(!html.includes('Explore Minecraft, the creator journey, official channels and brand collaborations.') && !html.includes('PUBG esports roots, Rooter streaming and moderation, Free Fire'), 'Homepage metadata must not lead with outdated individual-game/history snippets.');
-assert.ok(staticGenerator.includes("title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer'") && staticGenerator.includes('Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Generated homepage metadata must match the HTML template.');
+assert.ok(staticGenerator.includes("title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator'") && staticGenerator.includes('UltraOP and Kick links.'), 'Generated homepage metadata and crawler overview must reflect the current creator identity.');
 const headerStart = studio.indexOf('function SiteHeader({ route }: { route: string }) {');
 const headerEnd = studio.indexOf('\nfunction SectionHeading', headerStart);
 const headerSource = headerStart >= 0 && headerEnd > headerStart ? studio.slice(headerStart, headerEnd) : '';
