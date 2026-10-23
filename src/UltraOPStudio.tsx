@@ -25,7 +25,7 @@ type StatsState = {
 const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/': {
     title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator',
-    description: 'UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.'
+    description: 'Official UltraOP site by Sk Ahsan Ahmad. Explore Minecraft videos, live streams, creator updates, and links to YouTube, Twitch, Rooter and Kick.'
   },
   '/about': {
     title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey',
@@ -260,7 +260,7 @@ function CubeArtwork() {
       <div className="uos-cube-stage">
         <div className="uos-cube-shadow" />
         <div className="uos-cube">
-          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><img className="uos-cube-logo" src="/brand/ultraop-logo.webp" alt="" width="118" height="150" /></div>
+          <div className="uos-cube-face uos-cube-front"><span className="uos-pixel uos-pixel-a" /><span className="uos-pixel uos-pixel-b" /><span className="uos-pixel uos-pixel-c" /><img className="uos-cube-logo" src="/brand/ultraop-logo.webp" alt="UltraOP mascot logo" width="118" height="150" /></div>
           <div className="uos-cube-face uos-cube-back"><span className="uos-cube-face-label">BUILD<br/>YOUR<br/>WORLD</span></div>
           <div className="uos-cube-face uos-cube-right"><span className="uos-cube-side-mark">OP / 01</span></div>
           <div className="uos-cube-face uos-cube-left"><span className="uos-cube-side-mark">PLAY / CREATE</span></div>
