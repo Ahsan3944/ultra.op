@@ -9,6 +9,7 @@ const privacy = readFileSync('public/privacy.html', 'utf8');
 const mainSource = readFileSync('src/main.tsx', 'utf8');
 const cookiePolicy = readFileSync('public/cookie-policy.html', 'utf8');
 const terms = readFileSync('public/terms.html', 'utf8');
+const knowledgeArticles = JSON.parse(readFileSync('src/data/knowledge.json', 'utf8'));
 
 const channelIds = [...core.matchAll(/\bid:\s*'([A-Za-z0-9_-]+)'/g)].map((match) => match[1]);
 assert.equal(channelIds.length, 4, 'Expected exactly four official YouTube channel IDs in the source registry.');
@@ -61,6 +62,10 @@ const requiredFiles = [
   'llms.txt',
   'robots.txt',
   'brand/ultraop-original.webp',
+  'knowledge/minecraft-worlds.svg',
+  'knowledge/battle-royale.svg',
+  'knowledge/esports-championship.svg',
+  'knowledge/tactical-fps.svg',
   'privacy.html',
   'cookie-policy.html',
   'terms.html',
@@ -102,11 +107,12 @@ assert.equal(new Set(titles).size, titles.length, 'Major static route titles mus
 
 const sitemap = readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
 const sitemapEntries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
-assert.ok(sitemapEntries.length >= 25, 'Sitemap should include main routes, legal pages and creator journal entries.');
+assert.ok(sitemapEntries.length >= 45, 'Sitemap should include main routes, legal pages, creator journal entries and new game knowledge articles.');
 assert.equal(new Set(sitemapEntries).size, sitemapEntries.length, 'Sitemap entries must be unique.');
 assert.ok(!sitemap.includes('/blog/'), 'Removed legacy blog URLs must not remain in the canonical sitemap.');
 assert.ok(!sitemap.includes('/blog.html'), 'Legacy blog.html must not remain in the canonical sitemap.');
 assert.ok(sitemap.includes('https://ultraop.in/site-map/'), 'Search-engine sitemap must include the human-readable site map.');
+knowledgeArticles.forEach((article) => assert.ok(sitemap.includes('https://ultraop.in' + article.route), 'Sitemap is missing knowledge route: ' + article.route));
 const llms = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
 assert.ok(llms.includes('## Primary pages') && llms.includes('## Creator journal'), 'AI-readable llms.txt must include primary pages and journal entries.');
 ['Ultra OP Live', 'Roblox UltraOP3', 'Ultra OP 2.0', 'Op Earnings'].forEach((name) => assert.ok(llms.includes(name), 'AI-readable site overview must include channel: ' + name));
@@ -129,4 +135,47 @@ const builtMain = readFileSync(path.join(dist, 'index.html'), 'utf8');
 assert.ok(builtMain.includes("script-src 'self'"), 'Generated homepage is missing the baseline script-src policy.');
 assert.ok(builtMain.includes("style-src 'self' 'unsafe-inline'"), 'Generated homepage must permit same-origin production CSS.');
 assert.ok(builtMain.includes("frame-src 'none'"), 'Generated homepage must not silently allow embedded frames.');
+
+assert.ok(knowledgeArticles.length >= 20, 'Knowledge hub should contain at least 20 curated pages.');
+assert.equal(new Set(knowledgeArticles.map((article) => article.slug)).size, knowledgeArticles.length, 'Knowledge article slugs must be unique.');
+assert.equal(new Set(knowledgeArticles.map((article) => article.route)).size, knowledgeArticles.length, 'Knowledge article canonical routes must be unique.');
+const knownSlugs = new Set(knowledgeArticles.map((article) => article.slug));
+for (const article of knowledgeArticles) {
+  const articleText = [article.intro, ...(article.takeaways ?? []), ...(article.sections ?? []).flatMap((section) => [...(section.paragraphs ?? []), ...(section.bullets ?? [])])].join(' ');
+  const wordCount = articleText.trim().split(/\\s+/).filter(Boolean).length;
+  assert.ok(wordCount >= 180, article.slug + ' is too thin; expand it beyond short placeholder copy.');
+  assert.ok(Array.isArray(article.sections) && article.sections.length >= 3, article.slug + ' needs clear topic sections.');
+  assert.ok(Array.isArray(article.sources) && article.sources.length >= 2, article.slug + ' needs external sources.');
+  assert.ok(article.route.startsWith('/') && article.route.endsWith('/'), article.slug + ' must have a clean trailing-slash canonical path.');
+  assert.ok(article.heroImage.startsWith('/knowledge/'), article.slug + ' must use a same-origin editorial image.');
+  assert.ok(existsSync(path.join('public', article.heroImage)), 'Missing editorial artwork: ' + article.heroImage);
+  article.sources.forEach((source) => assert.match(source.url, /^https:\\/\\//, 'Sources must use HTTPS: ' + source.url));
+  (article.related ?? []).forEach((slug) => assert.ok(knownSlugs.has(slug), article.slug + ' links to unknown related article ' + slug));
+  const relativeFile = article.route.replace(/^\\//, '').replace(/\\/+$/, '') + '/index.html';
+  const builtPath = path.join(dist, relativeFile);
+  assert.ok(existsSync(builtPath), 'Missing generated knowledge page: ' + relativeFile);
+  const page = readFileSync(builtPath, 'utf8');
+  const title = page.match(/<title>([^<]+)<\\/title>/i)?.[1];
+  const canonical = page.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
+  const description = page.match(/<meta name="description" content="([^"]+)"/i)?.[1];
+  assert.ok(title, relativeFile + ' must have a page title.');
+  assert.ok(description && description.length >= 50, relativeFile + ' needs a useful meta description.');
+  assert.equal(canonical, 'https://ultraop.in' + article.route, relativeFile + ' has an incorrect canonical URL.');
+  assert.ok(page.includes('class="uos-prerender-knowledge"'), relativeFile + ' must include readable article HTML before JavaScript runs.');
+  assert.ok(page.includes(article.heroImage), relativeFile + ' must show its custom editorial artwork.');
+  assert.ok(page.includes('application/ld+json'), relativeFile + ' must include structured data.');
+  assert.ok(page.includes(article.kind === 'hub' ? '"@type":"CollectionPage"' : '"@type":"Article"'), relativeFile + ' has the wrong structured-data type.');
+  article.sources.forEach((source) => assert.ok(page.includes(source.url), relativeFile + ' is missing a cited source link: ' + source.url));
+  titles.push(title);
+}
+assert.equal(new Set(titles).size, titles.length, 'Main routes and gaming knowledge pages must have unique titles.');
+for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/26-3/', '/games/valorant/updates/patch-13-08/', '/esports/pubg-global-championship-history/', '/esports/bgmi-tournament-winners/']) {
+  assert.ok(sitemap.includes('https://ultraop.in' + expected), 'SEO sitemap is missing core gaming route ' + expected);
+}
+const knowledgeOverview = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
+assert.ok(knowledgeOverview.includes('## Gaming guides, version notes and esports histories'), 'llms.txt must expose the game guides and esports archive.');
+['Minecraft Java Edition 26.3', 'PUBG Global Championship History', 'Free Fire World Series Winners', 'VALORANT Patch 13.08'].forEach((title) => assert.ok(knowledgeOverview.includes(title), 'llms.txt is missing article title: ' + title));
+const publishedHubPages = ['guides/index.html', 'games/index.html', 'esports/index.html', 'games/minecraft/versions/index.html', 'games/valorant/updates/index.html', 'journal/ultraop-creator-story/index.html'];
+publishedHubPages.forEach((file) => assert.ok(existsSync(path.join(dist, file)), 'Missing primary knowledge page: ' + file));
+
 console.log('Audit passed: creator data, no fabricated statistics, policy disclosures, generated routes, unique SEO metadata, structured data and sitemap.');
