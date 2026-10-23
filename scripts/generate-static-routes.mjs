@@ -208,7 +208,7 @@ const pageContent = {
     heading: 'The whole UltraOP website, in one place.',
     paragraphs: ['Use this human-readable directory to explore every published page, journal entry, official channel and crawler resource. Search engines should use sitemap.xml; AI tools can use llms.txt for a concise overview.'],
     sections: [
-      { heading: 'Main pages', items: pages.filter((item) => !item.path.endsWith('.html') && !item.path.startsWith('/journal/') && !item.noindex && item.path !== '/site-map/').map((item) => ({ label: item.title, href: item.path, detail: item.description })) },
+      { heading: 'Main pages', items: pages.filter((item) => !item.path.endsWith('.html') && !item.path.startsWith('/journal/') && !item.noindex && !item.knowledgeArticle && item.path !== '/site-map/').map((item) => ({ label: item.title, href: item.path, detail: item.description })) },
       { heading: 'Creator journal', items: journalRecords.map((item) => ({ label: item.title, href: '/journal/' + item.slug + '/', detail: item.summary })) },
       { heading: 'Policies and machine-readable resources', items: [
         { label: 'Privacy Policy', href: '/privacy.html', detail: 'Website privacy and public data.' },
@@ -350,7 +350,7 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');
   html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="' + shareImageHeight + '" />');
   html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
-  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary_large_image" />');
+  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary" />');
   html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
   html = upsertMeta(html, 'name', 'twitter:url', '<meta name="twitter:url" content="' + escapeAttr(canonical) + '" />');
