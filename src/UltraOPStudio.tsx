@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS, BRAND_CAMPAIGNS } from './data/core';
 import { JOURNAL_ENTRIES, type JournalEntry } from './data/journal';
 import KNOWLEDGE_ARTICLES from './data/knowledge.json';
+import { getKnowledgeArticle, KnowledgeArticlePage, KnowledgeDirectoryPage, KnowledgeTeasers } from './KnowledgePages';
 import './ultraop-studio.css';
 type KnowledgeArticle = (typeof KNOWLEDGE_ARTICLES)[number];
 const KNOWLEDGE_BY_PATH = Object.fromEntries(KNOWLEDGE_ARTICLES.map((article) => [article.route.replace(/\\/+$/, ''), article])) as Record<string, KnowledgeArticle>;
@@ -692,6 +693,11 @@ function SitemapPage() {
     { label: 'Support UltraOP', href: '/support/', description: 'Official ways to follow and support the creator.' }
   ];
   const resourcePages = [
+    { label: 'Gaming Guides', href: '/guides/', description: 'Structured gaming knowledge library.' },
+    { label: 'Games Directory', href: '/games/', description: 'Game-specific reference articles and update notes.' },
+    { label: 'Esports Histories', href: '/esports/', description: 'Tournament winners by game, event and year.' },
+    { label: 'Minecraft Versions', href: '/games/minecraft/versions/', description: 'Java Edition release guides and server-version advice.' },
+    { label: 'VALORANT Updates', href: '/games/valorant/updates/', description: 'Patch notes organised by feature category.' },
     { label: 'Privacy Policy', href: '/privacy.html', description: 'Public-data and website privacy information.' },
     { label: 'Cookie Policy', href: '/cookie-policy.html', description: 'Browser and third-party request information.' },
     { label: 'Terms & Conditions', href: '/terms.html', description: 'Terms for using this website.' },
@@ -713,7 +719,11 @@ function SitemapPage() {
             <div className="uos-sitemap-links">{JOURNAL_ENTRIES.map((item) => <a href={'/journal/' + item.slug + '/'} key={item.slug}><strong>{item.title}</strong><span>{item.summary}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
           <div className="uos-sitemap-group" data-reveal>
-            <p className="uos-eyebrow">03 / REFERENCE</p><h2>Policies & crawler files</h2>
+            <p className="uos-eyebrow">03 / KNOWLEDGE</p><h2>Games, versions & esports</h2>
+            <div className="uos-sitemap-links">{KNOWLEDGE_ARTICLES.filter((item) => item.kind !== 'hub').map((item) => <a href={item.route} key={item.slug}><strong>{item.title}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">04 / REFERENCE</p><h2>Policies & crawler files</h2>
             <div className="uos-sitemap-links">{resourcePages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
         </div>
@@ -739,7 +749,11 @@ export default function UltraOPStudio() {
 
   useEffect(() => {
     const detail = journalSlug ? JOURNAL_DETAILS[journalSlug] : undefined;
-    const pageInfo = PAGE_COPY[route] ?? (detail ? {
+    const knowledge = getKnowledgeArticle(route);
+    const pageInfo = PAGE_COPY[route] ?? (knowledge ? {
+      title: knowledge.title,
+      description: knowledge.description
+    } : detail ? {
       title: detail.title + ' | UltraOP Journal',
       description: detail.summary
     } : {
@@ -751,6 +765,11 @@ export default function UltraOPStudio() {
     setMeta('og:title', pageInfo.title, 'property');
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
+    setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
+    setMeta('og:image:alt', 'UltraOP official mascot logo — creator, Minecraft and gaming stories.', 'property');
+    setMeta('twitter:card', 'summary', 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');
@@ -800,7 +819,10 @@ export default function UltraOPStudio() {
     if (route === '/contact') return <ContactPage />;
     if (route === '/journal') return <JournalPage />;
     if (route === '/site-map') return <SitemapPage />;
+    if (route === '/guides' || route === '/games' || route === '/esports' || route === '/games/minecraft/versions' || route === '/games/valorant/updates') return <KnowledgeDirectoryPage route={route} />;
     if (journalSlug && JOURNAL_DETAILS[journalSlug]) return <JournalPage slug={journalSlug} />;
+    const knowledge = getKnowledgeArticle(route);
+    if (knowledge) return knowledge.kind === 'hub' ? <KnowledgeDirectoryPage route={route} /> : <KnowledgeArticlePage article={knowledge} />;
     if (route === '/assets') return <ToolkitPage />;
     if (route === '/fan-art') return <FanArtPage />;
     if (route === '/support') return <SupportPage />;
