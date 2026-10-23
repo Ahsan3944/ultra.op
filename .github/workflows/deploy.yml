@@ -57,3 +57,60 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify IndexNow about published sitemap URLs
+        env:
+          INDEXNOW_KEY: "04a242e293fc40108455e9f4353a6e8e"
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          key_url="https://ultraop.in/${INDEXNOW_KEY}.txt"
+          if ! curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 30 "$key_url" -o /tmp/indexnow-key.txt; then
+            echo "::warning:: IndexNow key file is not reachable after deployment; skipping notification."
+            exit 0
+          fi
+          published_key="$(tr -d '\r\n' < /tmp/indexnow-key.txt)"
+          if [ "$published_key" != "$INDEXNOW_KEY" ]; then
+            echo "::warning:: Published IndexNow key file does not match; skipping notification."
+            exit 0
+          fi
+
+          if ! curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 30 https://ultraop.in/sitemap.xml -o /tmp/indexnow-sitemap.xml; then
+            echo "::warning:: Sitemap could not be fetched after deployment; skipping IndexNow notification."
+            exit 0
+          fi
+
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const xml = readFileSync('/tmp/indexnow-sitemap.xml', 'utf8');
+          const urls = [...xml.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/g)]
+            .map((match) => match[1].trim().replace(/&amp;/g, '&'))
+            .filter(Boolean);
+          const uniqueUrls = [...new Set(urls)];
+          if (uniqueUrls.length === 0) throw new Error('No URLs found in the published sitemap.');
+          for (const url of uniqueUrls) {
+            const parsed = new URL(url);
+            if (parsed.protocol !== 'https:' || parsed.hostname !== 'ultraop.in') {
+              throw new Error('Unexpected URL in sitemap: ' + url);
+            }
+          }
+          writeFileSync('/tmp/indexnow-payload.json', JSON.stringify({
+            host: 'ultraop.in',
+            key: process.env.INDEXNOW_KEY,
+            urlList: uniqueUrls
+          }));
+          console.log(`Prepared IndexNow notification for ${uniqueUrls.length} canonical URLs.`);
+          NODE
+
+          for attempt in 1 2 3; do
+            status="$(curl --silent --show-error --max-time 30 --output /tmp/indexnow-response.txt --write-out '%{http_code}' --request POST 'https://api.indexnow.org/indexnow' --header 'Content-Type: application/json; charset=utf-8' --data-binary @/tmp/indexnow-payload.json)" || status="000"
+            if [ "$status" = "200" ] || [ "$status" = "202" ]; then
+              echo "IndexNow accepted ${#INDEXNOW_KEY} character-key submission for the published sitemap (HTTP $status)."
+              if [ "$status" = "202" ]; then echo "IndexNow is validating the key; URL receipt is acknowledged."; fi
+              exit 0
+            fi
+            echo "::warning:: IndexNow attempt $attempt returned HTTP $status: $(cat /tmp/indexnow-response.txt 2>/dev/null || true)"
+            sleep $((attempt * 5))
+          done
+          echo "::warning:: IndexNow could not confirm the submission. The site is deployed; retry later from Bing Webmaster Tools."
