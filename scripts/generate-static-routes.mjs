@@ -67,7 +67,7 @@ const journalRecords = readRecords(journalSource, /\{\s*slug:\s*'[^']+'[^}]*\}/g
   .filter((entry) => entry.slug && entry.title && entry.summary);
 
 const pages = [
-  { path: '/', title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer', description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.' },
+  { path: '/', title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator', description: 'UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.' },
   { path: '/about/', title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey', description: 'Discover the UltraOP creator journey from PUBG and Free Fire to Rooter streaming, YouTube, Minecraft, community building and technology projects.' },
   { path: '/channels/', title: 'Official Channels — UltraOP | YouTube & Streaming Platforms', description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a public data source is available.' },
   { path: '/live/', title: 'Watch UltraOP Live — YouTube, Twitch, Kick & Rooter', description: 'Open UltraOP’s official streaming destinations on YouTube, Twitch, Kick and Rooter. Stream availability is determined by each platform.' },
@@ -127,7 +127,7 @@ const pageContent = {
     heading: 'Play the game. Build the story.',
     paragraphs: [
       'Sk Ahsan Ahmad, known online as UltraOP, is an Indian gaming creator and live streamer.',
-      'The official creator network brings together gaming videos, live streams, storytelling, community and creator projects across YouTube, Twitch and Rooter.'
+      'The official creator network centres on Minecraft and general gaming videos, live streams, storytelling, community and creator projects across YouTube, Twitch, Rooter and Kick.'
     ],
     sections: [
       { heading: 'Official YouTube channels', items: channelRecords.flatMap((item) => [
@@ -437,7 +437,7 @@ await writeFile(path.join(dist, 'sitemap.xml'), sitemap, 'utf8');
 const llmsLines = [
   '# UltraOP',
   '',
-  '> Official website for Sk Ahsan Ahmad, known as UltraOP: an Indian gaming creator and live streamer with video, live-streaming and creator projects on YouTube, Twitch and Rooter.',
+  '> Official website for Sk Ahsan Ahmad, known as UltraOP: a gaming creator focused on Minecraft and general gaming videos, live streams and creator projects across YouTube, Twitch, Rooter and Kick.',
   '',
   '## Primary pages',
   '- Official homepage: https://ultraop.in/',
