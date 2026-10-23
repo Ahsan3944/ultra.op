@@ -67,7 +67,7 @@ const journalRecords = readRecords(journalSource, /\{\s*slug:\s*'[^']+'[^}]*\}/g
   .filter((entry) => entry.slug && entry.title && entry.summary);
 
 const pages = [
-  { path: '/', title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator', description: 'UltraOP is Sk Ahsan Ahmad’s gaming creator brand. Explore Minecraft videos, live streams, creator updates and official YouTube, Twitch, Rooter and Kick links.' },
+  { path: '/', title: 'UltraOP | Sk Ahsan Ahmad — Gaming Creator', description: 'Official UltraOP site by Sk Ahsan Ahmad. Explore Minecraft videos, live streams, creator updates, and links to YouTube, Twitch, Rooter and Kick.' },
   { path: '/about/', title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey', description: 'Discover the UltraOP creator journey from PUBG and Free Fire to Rooter streaming, YouTube, Minecraft, community building and technology projects.' },
   { path: '/channels/', title: 'Official Channels — UltraOP | YouTube & Streaming Platforms', description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a public data source is available.' },
   { path: '/live/', title: 'Watch UltraOP Live — YouTube, Twitch, Kick & Rooter', description: 'Open UltraOP’s official streaming destinations on YouTube, Twitch, Kick and Rooter. Stream availability is determined by each platform.' },
