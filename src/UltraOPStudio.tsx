@@ -24,19 +24,19 @@ type StatsState = {
 
 const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'UltraOP — Sk Ahsan Ahmad | Official Gaming Creator',
-    description: 'The official website of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Explore Minecraft, the creator journey, official channels and brand collaborations.'
+    title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer',
+    description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Find gaming videos, live streams and creator projects on YouTube, Twitch and Rooter.'
   },
   '/about': {
     title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey',
     description: 'Discover the UltraOP creator journey from PUBG and Free Fire to Rooter streaming, YouTube, Minecraft, community building and technology projects.'
   },
   '/channels': {
-    title: 'Official Channels — UltraOP | YouTube, Minecraft & Gaming',
+    title: 'Official Channels — UltraOP | YouTube & Streaming Platforms',
     description: 'Find the official UltraOP YouTube channels, their focus, public links and current channel statistics when a live public data source is available.'
   },
   '/live': {
-    title: 'Watch UltraOP Live — YouTube, Twitch, Kick & Rooter',
+    title: 'Watch UltraOP Live — YouTube, Twitch, Rooter & Kick',
     description: 'Open UltraOP’s official streaming destinations on YouTube, Twitch, Kick and Rooter. Stream availability is determined by each platform.'
   },
   '/community': {
@@ -179,13 +179,12 @@ function SiteHeader({ route }: { route: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const home = route === '/';
   const navItems = [
-    { label: 'Creator', href: home ? '#creator' : '/about/' },
-    { label: 'Channels', href: home ? '#channels' : '/channels/' },
-    { label: 'Brand work', href: home ? '#work' : '/work/' },
-    { label: 'Community', href: home ? '#community' : '/community/' },
-    { label: 'Journal', href: '/journal/' },
-    { label: 'Guides', href: home ? '#knowledge' : '/guides/' },
-    { label: 'Esports', href: home ? '#knowledge' : '/esports/' }
+    { label: 'Creator', href: home ? '#creator' : '/about/', active: route === '/about' },
+    { label: 'Channels', href: home ? '#channels' : '/channels/', active: route === '/channels' },
+    { label: 'Explore', href: home ? '#knowledge' : '/guides/', active: route === '/guides' || route === '/games' || route === '/esports' || route.startsWith('/games/') || route.startsWith('/esports/') },
+    { label: 'Community', href: home ? '#community' : '/community/', active: route === '/community' },
+    { label: 'Journal', href: '/journal/', active: route === '/journal' || route.startsWith('/journal/') },
+    { label: 'Brand work', href: home ? '#work' : '/work/', active: route === '/work' }
   ];
 
   return (
@@ -196,7 +195,7 @@ function SiteHeader({ route }: { route: string }) {
           <span>ULTRA<span className="uos-wordmark-accent">OP</span></span>
         </a>
         <nav className="uos-desktop-nav" aria-label="Main navigation">
-          {navItems.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}
+          {navItems.map((item) => <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined}>{item.label}</a>)}
         </nav>
         <a className="uos-header-cta" href={home ? '#contact' : '/contact/'}>
           Let’s work <ArrowUpRight size={15} aria-hidden="true" />
@@ -215,7 +214,7 @@ function SiteHeader({ route }: { route: string }) {
       {menuOpen && (
         <nav className="uos-mobile-nav" id="uos-mobile-nav" aria-label="Mobile navigation">
           {navItems.map((item) => (
-            <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>
+            <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
               {item.label}<ArrowUpRight size={15} aria-hidden="true" />
             </a>
           ))}
