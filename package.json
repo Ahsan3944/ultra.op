@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build && node scripts/generate-static-routes.mjs && npm run check:content",
     "preview": "vite preview",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "node scripts/check-content.mjs",
+    "prebuild": "node scripts/assemble-social-share.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.4",
