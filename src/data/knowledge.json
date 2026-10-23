@@ -1152,7 +1152,7 @@
           ],
           [
             "2026",
-            "Team SouL",
+            "iQOO Soul",
             "Published tournament references list Team SouL as champion."
           ]
         ]
@@ -1198,7 +1198,7 @@
         "heading": "BGIS: the India series timeline",
         "paragraphs": [
           "BGIS has produced a changing list of champions across editions. Skylightz Gaming won the 2021 edition, whose finals took place in January 2022. Team SouL won the 2022 edition, Gladiators Esports won in 2023, and Team XSpark took the 2024 title. The 2025 final crowned Team Versatile at Kolkata’s Biswa Bangla Mela Prangan.",
-          "KRAFTON India’s official BGIS 2025 recap names Team Versatile as champion, with GodLike Esports as first runner-up and Orangutan third. For the 2026 entry, this directory follows the published tournament records and will refresh the winner if the official archive supplies a correction."
+          "KRAFTON India’s official post for BGIS 2026 names iQOO Soul as champion, Genesis Esports as runner-up and Orangutan in third place. This is a completed 2026 result, not a prediction; individual awards and the exact final points are linked from the source material."
         ]
       },
       {
@@ -1225,16 +1225,28 @@
     ],
     "sources": [
       {
-        "label": "KRAFTON India: BGIS 2025 final and winner",
+        "label": "KRAFTON India official BGIS 2026 result",
+        "url": "https://www.linkedin.com/posts/kraftoninc-india_bgis2026-esportsindia-gaming-activity-7444586809973653504-oSCm"
+      },
+      {
+        "label": "KRAFTON India official BGIS 2025 recap",
         "url": "https://krafton.in/news/bgis-2025-kolkata-india/"
       },
       {
-        "label": "BGIS tournament history reference",
+        "label": "KRAFTON India official BGIS 2024 recap",
+        "url": "https://krafton.in/news/1299/"
+      },
+      {
+        "label": "BGIS event history reference",
         "url": "https://liquipedia.net/pubgmobile/Battlegrounds_Mobile_India"
       },
       {
-        "label": "BGMS champions summary",
+        "label": "BGMS champions summary including 2026 season",
         "url": "https://www.sportsadda.asia/esports/features-esports/bgms-winners-list-bgmi-masters-series-champions/"
+      },
+      {
+        "label": "BGMS Season 5 champion recap",
+        "url": "https://www.hindustantimes.com/sports/others/nebula-esports-crowned-bgmi-masters-series-season-5-champions-as-inr-1-crore-championship-battle-comes-to-a-close-101788865327556.html"
       }
     ],
     "related": [
@@ -1366,11 +1378,15 @@
         "url": "https://ff.garena.com/en/article/1566/"
       },
       {
-        "label": "FFWS tournament history reference",
+        "label": "Garena official FFWS 2023 champion article",
+        "url": "https://ff.garena.com/en/article/1299/"
+      },
+      {
+        "label": "Free Fire World Series tournament history reference",
         "url": "https://liquipedia.net/freefire/Free_Fire_World_Series"
       },
       {
-        "label": "Free Fire official news",
+        "label": "Free Fire official news archive",
         "url": "https://ff.garena.com/en/article/"
       }
     ],
@@ -1668,12 +1684,12 @@
     ],
     "sources": [
       {
-        "label": "Official VALORANT Esports event site",
-        "url": "https://valorantesports.com/en-US/"
+        "label": "Official VALORANT Esports Champions Shanghai 2026 event page",
+        "url": "https://valorantesports.com/en-US/tournament/115576361459045501/overview"
       },
       {
-        "label": "Champions Shanghai official event information",
-        "url": "https://valorantesports.com/en-US/news/champions-shanghai-everything-you-need-to-know"
+        "label": "Official VALORANT Esports schedule and match results",
+        "url": "https://valorantesports.com/en-US/"
       },
       {
         "label": "VALORANT official news",
