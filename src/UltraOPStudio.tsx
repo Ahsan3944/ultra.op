@@ -8,6 +8,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SITE, YOUTUBE_CHANNELS, SOCIALS, BRAND_CAMPAIGNS } from './data/core';
 import { JOURNAL_ENTRIES, type JournalEntry } from './data/journal';
+import KNOWLEDGE_ARTICLES from './data/knowledge.json';
+import { getKnowledgeArticle, KnowledgeArticlePage, KnowledgeDirectoryPage, KnowledgeTeasers } from './KnowledgePages';
 import './ultraop-studio.css';
 
 type ChannelStats = {
@@ -68,7 +70,10 @@ const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/support': {
     title: 'Support UltraOP — Official Creator Links',
     description: 'Find official ways to follow and support UltraOP’s gaming content and creator projects.'
-  }
+  },
+  '/guides': { title: 'Gaming Guides & Esports Knowledge Hub | UltraOP', description: 'Structured Minecraft version guides, tournament histories, VALORANT patch notes and beginner-friendly gaming explainers by UltraOP.' },
+  '/games': { title: 'Game Directory: Minecraft, PUBG, BGMI, Free Fire & VALORANT | UltraOP', description: 'Browse organised game guides, update summaries, Minecraft version notes and competitive gaming reference pages.' },
+  '/esports': { title: 'Esports Tournament Histories & Champions | UltraOP', description: 'Explore separate winner timelines for PUBG Global Championship, BGMI series, Free Fire World Series and VALORANT Champions.' }
 };
 
 const JOURNAL_DETAILS: Record<string, JournalEntry> = Object.fromEntries(
@@ -178,7 +183,9 @@ function SiteHeader({ route }: { route: string }) {
     { label: 'Channels', href: home ? '#channels' : '/channels/' },
     { label: 'Brand work', href: home ? '#work' : '/work/' },
     { label: 'Community', href: home ? '#community' : '/community/' },
-    { label: 'Journal', href: '/journal/' }
+    { label: 'Journal', href: '/journal/' },
+    { label: 'Guides', href: home ? '#knowledge' : '/guides/' },
+    { label: 'Esports', href: home ? '#knowledge' : '/esports/' }
   ];
 
   return (
@@ -482,7 +489,7 @@ function SiteFooter() {
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">EXPLORE</span>
-            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a><a href="/site-map/">Website map</a>
+            <a href="/about/">Creator story</a><a href="/channels/">Channels</a><a href="/live/">Watch live</a><a href="/work/">Brand work</a><a href="/journal/">Journal</a><a href="/guides/">Gaming guides</a><a href="/games/">Games</a><a href="/esports/">Esports histories</a><a href="/site-map/">Website map</a>
           </div>
           <div className="uos-footer-links">
             <span className="uos-eyebrow">INFORMATION</span>
@@ -506,6 +513,7 @@ function HomePage({ stats }: { stats: StatsState }) {
       <Marquee />
       <ChannelsSection stats={stats} compact />
       <CreatorJourney compact />
+      <KnowledgeTeasers />
       <BrandWorkSection compact />
       <CommunitySection compact />
       <ContactSection />
@@ -634,6 +642,12 @@ function JournalPage({ slug }: { slug?: string }) {
       <InteriorHero eyebrow="JOURNAL / THE CREATOR TIMELINE" title={<>The story behind<br /><span>the uploads.</span></>} description="A chronological look at the games, communities and creative shifts that shaped UltraOP. Dates are omitted where exact dates have not been confirmed." />
       <section className="uos-section">
         <div className="uos-container uos-journal-list">
+          <a className="uos-journal-featured" href="/journal/ultraop-creator-story/" data-reveal>
+            <span className="uos-eyebrow">FEATURED / THE CREATOR BEHIND ULTRAOP</span>
+            <h2>UltraOP: The Creator Journey of Sk Ahsan Ahmad</h2>
+            <p>A fuller story from PUBG and competitive scrims to Rooter streaming, YouTube, Minecraft storytelling and creator technology.</p>
+            <span className="uos-knowledge-read">Read the creator story <ArrowUpRight size={15} aria-hidden="true" /></span>
+          </a>
           {JOURNAL_ENTRIES.map((entry, index) => <a className="uos-journal-row" href={'/journal/' + entry.slug + '/'} key={entry.slug} data-reveal><span className="uos-journal-row-index">{String(index + 1).padStart(2, '0')}</span><span className="uos-journal-row-main"><small>{entry.eyebrow} / {entry.era}</small><strong>{entry.title}</strong><span>{entry.summary}</span></span><ArrowUpRight size={18} aria-hidden="true" /></a>)}
         </div>
       </section>
@@ -682,6 +696,13 @@ function SitemapPage() {
     { label: 'Fan Art', href: '/fan-art/', description: 'Community creations and permissions.' },
     { label: 'Support UltraOP', href: '/support/', description: 'Official ways to follow and support the creator.' }
   ];
+  const topicPages = [
+    { label: 'Gaming Guides', href: '/guides/', description: 'Structured gaming knowledge library.' },
+    { label: 'Games Directory', href: '/games/', description: 'Game-specific reference articles and update notes.' },
+    { label: 'Esports Histories', href: '/esports/', description: 'Tournament winners by game, event and year.' },
+    { label: 'Minecraft Versions', href: '/games/minecraft/versions/', description: 'Java Edition release guides and server-version advice.' },
+    { label: 'VALORANT Updates', href: '/games/valorant/updates/', description: 'Patch notes organised by feature category.' }
+  ];
   const resourcePages = [
     { label: 'Privacy Policy', href: '/privacy.html', description: 'Public-data and website privacy information.' },
     { label: 'Cookie Policy', href: '/cookie-policy.html', description: 'Browser and third-party request information.' },
@@ -704,7 +725,15 @@ function SitemapPage() {
             <div className="uos-sitemap-links">{JOURNAL_ENTRIES.map((item) => <a href={'/journal/' + item.slug + '/'} key={item.slug}><strong>{item.title}</strong><span>{item.summary}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
           <div className="uos-sitemap-group" data-reveal>
-            <p className="uos-eyebrow">03 / REFERENCE</p><h2>Policies & crawler files</h2>
+            <p className="uos-eyebrow">03 / TOPIC DIRECTORY</p><h2>Topic directories</h2>
+            <div className="uos-sitemap-links">{topicPages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">04 / KNOWLEDGE</p><h2>Games, versions & esports</h2>
+            <div className="uos-sitemap-links">{KNOWLEDGE_ARTICLES.filter((item) => item.kind !== 'hub').map((item) => <a href={item.route} key={item.slug}><strong>{item.title}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">05 / REFERENCE</p><h2>Policies & crawler files</h2>
             <div className="uos-sitemap-links">{resourcePages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
         </div>
@@ -730,7 +759,11 @@ export default function UltraOPStudio() {
 
   useEffect(() => {
     const detail = journalSlug ? JOURNAL_DETAILS[journalSlug] : undefined;
-    const pageInfo = PAGE_COPY[route] ?? (detail ? {
+    const knowledge = getKnowledgeArticle(route);
+    const pageInfo = PAGE_COPY[route] ?? (knowledge ? {
+      title: knowledge.title,
+      description: knowledge.description
+    } : detail ? {
       title: detail.title + ' | UltraOP Journal',
       description: detail.summary
     } : {
@@ -742,6 +775,11 @@ export default function UltraOPStudio() {
     setMeta('og:title', pageInfo.title, 'property');
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
+    setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
+    setMeta('og:image:alt', 'UltraOP official mascot logo — creator, Minecraft and gaming stories.', 'property');
+    setMeta('twitter:card', 'summary', 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');
@@ -791,7 +829,10 @@ export default function UltraOPStudio() {
     if (route === '/contact') return <ContactPage />;
     if (route === '/journal') return <JournalPage />;
     if (route === '/site-map') return <SitemapPage />;
+    if (route === '/guides' || route === '/games' || route === '/esports' || route === '/games/minecraft/versions' || route === '/games/valorant/updates') return <KnowledgeDirectoryPage route={route} />;
     if (journalSlug && JOURNAL_DETAILS[journalSlug]) return <JournalPage slug={journalSlug} />;
+    const knowledge = getKnowledgeArticle(route);
+    if (knowledge) return knowledge.kind === 'hub' ? <KnowledgeDirectoryPage route={route} /> : <KnowledgeArticlePage article={knowledge} />;
     if (route === '/assets') return <ToolkitPage />;
     if (route === '/fan-art') return <FanArtPage />;
     if (route === '/support') return <SupportPage />;

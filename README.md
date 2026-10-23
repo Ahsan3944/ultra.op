@@ -52,3 +52,21 @@ The rebuild/premium-creator-studio branch is intended for review. The production
 ## Original creator branding
 
 The header, footer, hero artwork, favicon and social-share preview use the original UltraOP mascot artwork supplied by the creator. Open Graph and Twitter/X metadata provide the page title, description, canonical URL and original mascot image for supported link-preview crawlers.
+
+
+## Gaming knowledge and search discovery
+
+The knowledge library contains 32 long-form and reference pages, with automated coverage for all canonical routes as of 23 October 2026, data-driven from `src/data/knowledge.json`. Each entry defines a canonical route, title and description, intended search terms, category, update date, editorial illustration, article sections, key takeaways, optional result tables, external sources and related articles.
+
+Current topic directories:
+- `/guides/`: grouped how-to guides and reference articles.
+- `/games/`: game-focused guides, version notes and patch coverage.
+- `/esports/`: tournament histories separated by game and event series.
+- `/games/minecraft/versions/`: Java Edition releases and server-version planning.
+- `/games/valorant/updates/`: patch, agent, map and competitive-feature categories.
+
+A React runtime-error boundary provides a responsive recovery screen with a working retry button and safe links to the homepage, guide library and contact page if a render fails. This protects render-time failures; a full domain, DNS or network outage still needs the hosting provider’s own fallback. The build pre-renders each knowledge route as readable HTML before the React bundle runs, emits unique page title/description/canonical tags and Article or CollectionPage JSON-LD, places every indexable route in `sitemap.xml`, and lists all entries in `llms.txt`. The content checker validates article depth, source URL scheme, route uniqueness, related links, images, canonical metadata, structured-data type, table presence and sitemap coverage. It also verifies the runtime recovery action and the new guide routes.
+
+Minecraft 26.3 is labelled stable for the 23 October 2026 update date; 26.4 is explicitly labelled snapshot/pre-release content. Tournament history pages identify the game and event series instead of mixing PUBG PC, PUBG Mobile, BGMI and Free Fire results. Every article lists source links to game publishers, event organisers or established results archives. Editorial SVG illustrations are clearly labelled as original artwork, not in-game screenshots.
+
+Publishing helpful, accurate pages improves crawlability but cannot guarantee indexing or a specific Google ranking. Re-check dates, tournament results and official patch notes when content is refreshed. The current social-share metadata still uses the small supplied UltraOP mascot; the dedicated wide 1200×630 raster preview remains separately tracked in issue #48.

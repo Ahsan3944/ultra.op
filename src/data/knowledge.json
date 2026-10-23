@@ -1,0 +1,2974 @@
+[
+  {
+    "slug": "ultraop-creator-story",
+    "kind": "creator",
+    "category": "Creator Story",
+    "categorySlug": "creator",
+    "title": "UltraOP: The Creator Journey of Sk Ahsan Ahmad",
+    "description": "Meet UltraOP, the gaming creator behind ultraop.in: from PUBG and competitive scrims to Rooter live streaming, YouTube, Minecraft storytelling and creator technology projects.",
+    "keywords": [
+      "UltraOP",
+      "Sk Ahsan Ahmad",
+      "Ultra OP Live",
+      "Indian gaming creator",
+      "Minecraft YouTuber India",
+      "PUBG gaming journey",
+      "Rooter streamer"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original cinematic Minecraft-inspired landscape artwork created for the UltraOP creator story.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "UltraOP is the online creator identity of Sk Ahsan Ahmad. The journey has moved through competitive PUBG-era gaming, organised scrims, Free Fire live streaming, community responsibilities, YouTube growth and a current focus on Minecraft, storytelling and technology. This page brings those chapters together without inventing dates or private statistics.",
+    "takeaways": [
+      "Competitive gaming came before the creator-focused era.",
+      "The Rooter chapter combined Free Fire streaming with community and moderation responsibilities.",
+      "YouTube later became the main home for gaming content.",
+      "Minecraft is the current creative focus, with story-led series and technology projects part of the wider plan."
+    ],
+    "sections": [
+      {
+        "heading": "Where the journey began: PUBG and competitive play",
+        "paragraphs": [
+          "The early chapter was built around PUBG and the competitive side of gaming. Playing was not just about finishing matches: teams, practice, coordination, scrims and the learning that comes from competition all helped shape the creator’s approach to games.",
+          "The connected team and community chapters included Indian Falcon and Esports Mania. Team histories and tournament results can change depending on the event and region, so this biography does not treat an unverified placement as a world championship. It focuses on the experience that carried forward: teamwork, match analysis and an interest in building spaces where other players could compete too."
+        ]
+      },
+      {
+        "heading": "Esports Mania: beyond playing matches",
+        "paragraphs": [
+          "Esports Mania grew into a Discord-based scrim ecosystem for PUBG and BGMI. The structure used different competitive tiers, including T1, T2 and T3, to help organise matches for players at different stages. Running or supporting that kind of community calls for schedules, rules, match coordination, communication and consistency—not only individual aim.",
+          "That experience also explains why competitive tournament histories belong beside the creator story. A result is most useful when readers know which game, format, year and tournament it belongs to. The esports guides on this site separate PUBG: BATTLEGROUNDS PC, PUBG Mobile, and India’s BGMI circuit rather than mixing their champions together."
+        ]
+      },
+      {
+        "heading": "Rooter, Free Fire and community work",
+        "paragraphs": [
+          "When PUBG was banned in India, the creator journey changed direction. Rooter became a place to stream Free Fire live, learn a different game publicly and develop the habit of communicating with viewers while playing. The platform chapter lasted roughly two to three years, according to the creator’s own account; exact start and end dates are intentionally left out until they can be verified.",
+          "The Rooter chapter was not only about broadcasts. Moderation and community responsibilities grew alongside streaming, including experience described as moderator, Head Moderator and Community Intern. These roles added a different perspective on online communities: player support, fair conduct, team coordination and the everyday work that keeps a community active."
+        ]
+      },
+      {
+        "heading": "YouTube becomes the main platform",
+        "paragraphs": [
+          "The next shift was to YouTube, first alongside Rooter and later as the primary platform. The creator has described an early milestone of reaching about 5,000 subscribers in roughly one month and becoming monetized during that growth phase. Because that is creator-provided history, it is presented as such instead of being treated as a third-party audited metric.",
+          "UltraOP’s public channel network now separates different interests across four channels: Ultra OP Live, Roblox UltraOP3, Ultra OP 2.0 and Op Earnings. The website links to each channel directly and avoids fabricating subscriber totals when a public data source returns no valid number. For the official destinations, visit the [channel directory](/channels/)."
+        ]
+      },
+      {
+        "heading": "Minecraft: the current creative world",
+        "paragraphs": [
+          "Minecraft is the current main game focus. It offers a wide range of formats—from live survival and multiplayer sessions to builds, experiments, challenge videos and story-led SMP episodes. The long-term creative goal is to make videos that have clear stakes, memorable characters and connected stories rather than relying only on unstructured gameplay.",
+          "The [Minecraft version library](/games/minecraft/versions/) is designed for readers who search for specific Java Edition releases, update features and compatibility questions. Version-specific pages distinguish official changes from practical server advice, and they link back to the creator’s public channels so readers can move between reference content and gameplay."
+        ]
+      },
+      {
+        "heading": "The builder side: websites, tools and systems",
+        "paragraphs": [
+          "Outside streaming, technology is another creative outlet. Website work, Minecraft-related tools, server systems and production workflows sit alongside gaming rather than replacing it. Those interests make the official website a useful long-term home for tutorials and reference pages as well as a creator profile.",
+          "Future plans should be treated as plans until a series or tool is publicly released. That distinction matters to readers and to search engines: a clear article with an honest status is more helpful than a promise of a launch date that has not been confirmed. Explore the current [guides and knowledge hub](/guides/) for the latest published articles."
+        ]
+      },
+      {
+        "heading": "Follow the official UltraOP network",
+        "paragraphs": [
+          "The best place to verify the current public identity is this website and the profiles linked from its [official community page](/community/). Game interests can evolve, and streaming availability changes by platform, so direct profile links are more reliable than an old embedded status or copied statistic.",
+          "UltraOP’s content direction brings gaming, competition, Minecraft storytelling and creator technology into one network. This biography is a living overview—not a claim that every planned project is already live. It will be updated as new series, projects and independently verifiable milestones become public."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official UltraOP homepage",
+        "url": "https://ultraop.in/"
+      },
+      {
+        "label": "Official YouTube channel directory",
+        "url": "https://ultraop.in/channels/"
+      },
+      {
+        "label": "PUBG Esports history",
+        "url": "https://pubgesports.com/en/pubgesports"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "valorant-update-hub",
+      "gaming-guides-index"
+    ],
+    "route": "/journal/ultraop-creator-story/"
+  },
+  {
+    "slug": "gaming-guides-index",
+    "kind": "hub",
+    "category": "Game Guides",
+    "categorySlug": "guides",
+    "title": "Gaming Guides, Game Updates and Esports Knowledge Hub",
+    "description": "Browse structured game guides, Minecraft version notes, PUBG and BGMI tournament histories, Free Fire champions, VALORANT patch updates and practical gaming explainers by UltraOP.",
+    "keywords": [
+      "gaming guides",
+      "game update guides",
+      "Minecraft version guide",
+      "esports tournament history",
+      "PUBG BGMI Free Fire Valorant guides"
+    ],
+    "heroImage": "/knowledge/esports-championship.svg",
+    "heroAlt": "Original editorial illustration of a global esports championship arena.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "The UltraOP Gaming Guides hub is organised by game and reader intent, so update notes, how-to articles and tournament records do not become one long, cluttered feed. Use the topic groups below to find Minecraft release information, battle-royale histories, VALORANT updates and beginner-friendly explanations.",
+    "takeaways": [
+      "Minecraft version guides focus on release-specific changes and compatibility context.",
+      "PUBG PC, BGMI and Free Fire tournament records are kept in separate histories.",
+      "VALORANT updates are grouped by patch, agents, maps, competitive systems and game modes.",
+      "Tournament results are dated and linked to official or established reference sources."
+    ],
+    "sections": [
+      {
+        "heading": "Minecraft: versions, features and server planning",
+        "paragraphs": [
+          "Start with the [Minecraft Java version library](/games/minecraft/versions/) for the latest stable release covered here, feature summaries and older versions people still use for modded or server play. Individual pages include the Java version number in the title and URL, which helps a reader find the right page directly.",
+          "The library separates what the official changelog says from server-planning advice. Compatibility depends on the exact game version, loader, server software and plugin/mod releases, so always check project-specific compatibility notes before upgrading a world or a production server."
+        ]
+      },
+      {
+        "heading": "Esports: tournament histories and winners",
+        "paragraphs": [
+          "Browse the [PUBG Global Championship history](/esports/pubg-global-championship-history/) for the PC circuit, the [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/) for the global mobile circuit, the [BGMI tournament winners](/esports/bgmi-tournament-winners/) page for major Indian mobile events, and the [Free Fire World Series history](/esports/free-fire-world-series-history/) for global Battle Royale champions. These related games use distinct tournament circuits.",
+          "The [VALORANT Champions winners](/esports/valorant-champions-history/) page follows the global VCT world championship by year. Each results table identifies the event series and the season, helping avoid the common mistake of treating a regional league title, Masters event and Champions title as the same competition."
+        ]
+      },
+      {
+        "heading": "VALORANT: changes grouped for easier reading",
+        "paragraphs": [
+          "The [VALORANT update hub](/games/valorant/updates/) groups patch coverage by gameplay systems, agents, maps, weapons, competitive systems, anti-cheat, progression and modes. The current article covers Patch 13.08, dated 13 October 2026, and points readers to Riot’s complete patch notes for detailed or region-specific information. Each category also has a dedicated page for [agent updates](/games/valorant/updates/agents/), [map rotation](/games/valorant/updates/maps/) and [competitive features](/games/valorant/updates/competitive/).",
+          "Patch notes can affect the meta in ways that a short headline misses. Read the summary first, then confirm exact agent values, queue availability and map rotations in the official release notes before changing a competitive strategy."
+        ]
+      },
+      {
+        "heading": "General gaming explainers",
+        "paragraphs": [
+          "The site also publishes evergreen explainers about battle-royale mechanics, how esports qualification works, and how to choose a game or mode based on time, hardware and skill level. These guides are intended to answer the question the reader searched for—not to promise that any game will produce easy rank-ups, income or tournament qualification.",
+          "Articles show their update date and reference links. Search engines decide whether a page appears or ranks for a query; publishing helpful, technically accessible pages improves discoverability but cannot guarantee a particular ranking or redirect."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "PUBG Esports official history",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT official news",
+        "url": "https://playvalorant.com/en-us/news/"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "valorant-update-hub",
+      "valorant-champions-history"
+    ],
+    "route": "/guides/"
+  },
+  {
+    "slug": "game-directory",
+    "kind": "hub",
+    "category": "Games",
+    "categorySlug": "games",
+    "title": "Games Directory: Minecraft, PUBG, BGMI, Free Fire and VALORANT",
+    "description": "Explore UltraOP’s organised game directory with version guides, tournament history, patch notes, practical gameplay explainers and official sources for major gaming titles.",
+    "keywords": [
+      "Minecraft guide",
+      "PUBG esports history",
+      "BGMI tournaments",
+      "Free Fire World Series",
+      "VALORANT patch notes",
+      "game directory"
+    ],
+    "heroImage": "/knowledge/battle-royale.svg",
+    "heroAlt": "Original editorial tactical battle-royale landscape illustration.",
+    "readingMinutes": 4,
+    "updatedAt": "2026-10-23",
+    "intro": "This game directory organises reference articles around the game readers are looking for. Each section has its own route, topic list and internal links; Minecraft releases are not mixed into esports results, and PUBG PC tournament records are kept separate from BGMI.",
+    "takeaways": [
+      "Minecraft: Java version features, version comparisons and server compatibility.",
+      "PUBG: BATTLEGROUNDS PC: global championship timeline and esports formats.",
+      "BGMI: India-specific tournament winners and competitive series.",
+      "Free Fire: FFWS global championship results.",
+      "VALORANT: patch notes, maps, agents, competitive features and Champions history."
+    ],
+    "sections": [
+      {
+        "heading": "Sandbox, survival and version-based games",
+        "paragraphs": [
+          "Minecraft has many release and modding questions, from what changed in a new version to which version a server or modpack expects. Start at the [Minecraft version library](/games/minecraft/versions/) and the [server version selection guide](/games/minecraft/server-version-guide/).",
+          "Minecraft Java Edition and Bedrock Edition share the franchise but differ in platform support, mechanics, add-ons/mods and server ecosystems. Confirm which edition an official note refers to before assuming a feature or version number applies to both."
+        ]
+      },
+      {
+        "heading": "Battle royale and mobile competitive games",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS is the PC/console title with its own PUBG Esports global circuit. BGMI is India’s mobile release and has separate events such as BGIS and BGMS. Free Fire’s global scene includes the Free Fire World Series. Their winner lists are kept in separate pages to avoid mixing titles, rulesets and event formats.",
+          "BGMI is the India-specific mobile title, and its headline national events include BGIS and BGMS. PUBG Mobile global esports has a separate PMGC history, which is not the same as the PC PGC circuit. For major champions, read the [BGMI tournament winners guide](/esports/bgmi-tournament-winners/) and [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/)."
+        ]
+      },
+      {
+        "heading": "Tactical shooters and esports updates",
+        "paragraphs": [
+          "VALORANT combines round-based tactical shooting, agent abilities, map-specific strategies and a global esports circuit. Update coverage is split into categories—agents, maps, balance, competitive systems, modes and anti-cheat—so it is easier to scan the impact of a patch. The update categories have their own guides for [agent changes](/games/valorant/updates/agents/), [map rotations](/games/valorant/updates/maps/) and [competitive ratings](/games/valorant/updates/competitive/).",
+          "For the newest published entry, see [VALORANT Patch 13.08](/games/valorant/updates/patch-13-08/) or browse the full [VALORANT updates hub](/games/valorant/updates/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "PUBG Esports",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT patch notes",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "valorant-update-hub"
+    ],
+    "route": "/games/"
+  },
+  {
+    "slug": "esports-history-index",
+    "kind": "hub",
+    "category": "Esports",
+    "categorySlug": "esports",
+    "title": "Esports Tournament History: PUBG, BGMI, Free Fire and VALORANT",
+    "description": "A structured esports reference for global PUBG championships, BGMI India series and Masters Series winners, Free Fire World Series champions and VALORANT Champions winners.",
+    "keywords": [
+      "esports tournament winners",
+      "PUBG tournament history",
+      "BGMI champions list",
+      "Free Fire world champion",
+      "VALORANT Champions winners"
+    ],
+    "heroImage": "/knowledge/esports-championship.svg",
+    "heroAlt": "Original illustrated global esports final arena and trophy.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Esports tournaments are easier to understand when each event is identified by its game, organiser, year and competition tier. This index separates the global PUBG PC championship, India’s BGMI tournaments, Free Fire’s global series and the VALORANT Champions Tour.",
+    "takeaways": [
+      "A world championship is not the same as a regional league or seasonal tournament.",
+      "PUBG PC, PUBG Mobile and BGMI have distinct competition records.",
+      "Year-by-year lists include source links and avoid claiming that an incomplete list represents every tournament ever held."
+    ],
+    "sections": [
+      {
+        "heading": "PUBG: BATTLEGROUNDS (PC)",
+        "paragraphs": [
+          "The [PUBG Global Championship timeline](/esports/pubg-global-championship-history/) records PGC winners from the modern series era and explains the context around the earlier PUBG Global Invitational. The competitive circuit also includes PUBG Global Series, PUBG Nations Cup and regional series; each has its own champion list. PUBG Mobile has a separate PMGC timeline at the [PUBG Mobile championship history](/esports/pubg-mobile-global-championship-history/), while PC results remain in the PGC list."
+        ]
+      },
+      {
+        "heading": "BGMI: India’s competitive circuit",
+        "paragraphs": [
+          "The [BGMI tournament winners guide](/esports/bgmi-tournament-winners/) separates BGIS champions from BGMS champions. BGIS is a national-series event while BGMS is a distinct Masters Series. A team winning one is not automatically the champion of the other."
+        ]
+      },
+      {
+        "heading": "Free Fire global championships",
+        "paragraphs": [
+          "The [Free Fire World Series history](/esports/free-fire-world-series-history/) lists major Battle Royale Global Finals, including the 2019, 2021, 2022, 2023, 2024 and 2025 editions. FFWS Clash Squad events are a different competitive format and should not be folded into the Battle Royale winners table."
+        ]
+      },
+      {
+        "heading": "VALORANT Champions Tour",
+        "paragraphs": [
+          "The [VALORANT Champions winners guide](/esports/valorant-champions-history/) tracks the end-of-season world championship, from Acend in 2021 through the 2026 event. Masters events and regional leagues are tracked separately because they are important but distinct levels of the circuit."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports tournament archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "KRAFTON India official news",
+        "url": "https://krafton.in/news/"
+      },
+      {
+        "label": "Garena Free Fire official news",
+        "url": "https://ff.garena.com/en/article/"
+      },
+      {
+        "label": "VALORANT Esports",
+        "url": "https://valorantesports.com/en-US/"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "valorant-champions-history",
+      "valorant-update-hub",
+      "pubg-mobile-global-championship-history"
+    ],
+    "route": "/esports/"
+  },
+  {
+    "slug": "minecraft-version-library",
+    "kind": "hub",
+    "category": "Minecraft",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition Version Guide: 26.3, 26.2, 26.1 and 1.21",
+    "description": "Find Minecraft Java Edition release guides, major changes, update notes and version-selection advice, from the 26.3 Wilderness Bound drop to 1.21 and older server versions.",
+    "keywords": [
+      "Minecraft Java Edition version list",
+      "Minecraft 26.3 features",
+      "Minecraft 26.2 update",
+      "Minecraft 1.21.11",
+      "Minecraft 1.20.1 server version",
+      "Minecraft latest version"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original Minecraft-inspired world-building landscape artwork for the version library.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft version searches often mean different things: a player may want the newest stable Java Edition release, a creator may need the features of an earlier update, and a server owner may need compatibility information. As of 23 October 2026, 26.3 is the stable release covered here; 26.4 is still in snapshot testing. This library separates release facts from practical advice and links each version to official notes.",
+    "takeaways": [
+      "As of 23 October 2026, Minecraft Java Edition 26.3 is the current stable release covered in this library.",
+      "Minecraft Java Edition 26.4 is still in snapshot/pre-release testing; Snapshot 5 was published on 20 October 2026.",
+      "26.3 is Wilderness Bound; 26.2 is Chaos Cubed; 26.1 is Tiny Takeover.",
+      "Older releases such as 1.21.11, 1.21.5 and 1.20.1 remain relevant for existing servers and modpacks."
+    ],
+    "sections": [
+      {
+        "heading": "Current version overview",
+        "paragraphs": [
+          "Minecraft Java Edition 26.3, released on 15 September 2026, is the Wilderness Bound game drop. Its major additions include the Dappled Forest biome, poplar trees and a wood set, abandoned camps, explorer maps, cushions and straw beds. It also adds wool and concrete stairs/slabs and several supporting changes. Read the [26.3 feature guide](/games/minecraft/versions/26-3/).",
+          "The 26.4 snapshot branch is also active, but a snapshot is not the final stable release. Snapshot 5, published on 20 October 2026, adds Packed Ice Bricks and variants. Read the [Minecraft 26.4 Snapshot 5 guide](/games/minecraft/versions/26-4/) for experimental features and safe testing advice before trying it."
+        ]
+      },
+      {
+        "heading": "Explore releases by version",
+        "paragraphs": [
+          "Open the [Minecraft 26.3 guide](/games/minecraft/versions/26-3/) for Wilderness Bound, [26.2](/games/minecraft/versions/26-2/) for Chaos Cubed, or [26.1](/games/minecraft/versions/26-1/) for Tiny Takeover. For the 1.21 line, see [1.21.11 Mounts of Mayhem](/games/minecraft/versions/1-21-11/) and [1.21.5 Spring to Life](/games/minecraft/versions/1-21-5/).",
+          "Older versions can remain relevant for modpacks, server communities or tutorial reproducibility. Our [1.20.1 guide](/games/minecraft/versions/1-20-1/) focuses on its role as a stable, widely targeted historic baseline—not on claiming that it is the newest version."
+        ]
+      },
+      {
+        "heading": "How to use this library safely",
+        "paragraphs": [
+          "Separate Java Edition from Bedrock Edition. They share the Minecraft name but do not always use the same version number, release cadence or technical feature set. The official changelog lists should be treated as the source of truth for release specifics.",
+          "For server upgrades, back up the world and configuration files, review the server software’s supported version, and verify each plugin/mod explicitly. A client version working in single-player does not prove that a server with mods or plugins is compatible. Use the [server version selection guide](/games/minecraft/server-version-guide/) before changing a long-running world."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "Minecraft updates timeline",
+        "url": "https://www.minecraft.net/en-us/updates/minecraft-updates-timeline-and-evolution"
+      },
+      {
+        "label": "Minecraft Java Edition 26.3 notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/48913133328013-Minecraft-Java-Edition-26-3"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 5",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49759185020173-Minecraft-Java-Edition-26-4-Snapshot-5"
+      }
+    ],
+    "related": [
+      "minecraft-26-3",
+      "minecraft-26-2",
+      "minecraft-26-1",
+      "minecraft-1-21-11",
+      "minecraft-1-21-5",
+      "minecraft-1-20-1",
+      "minecraft-server-version-guide",
+      "minecraft-26-4-preview"
+    ],
+    "route": "/games/minecraft/versions/"
+  },
+  {
+    "slug": "minecraft-26-3",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 26.3: Wilderness Bound Features and Changes",
+    "description": "Minecraft Java Edition 26.3 guide covering Wilderness Bound features: Dappled Forest, poplar trees, abandoned camps, explorer maps, straw beds, cushions and building blocks.",
+    "keywords": [
+      "Minecraft 26.3",
+      "Minecraft Java 26.3 features",
+      "Wilderness Bound update",
+      "Minecraft Dappled Forest biome",
+      "Minecraft poplar wood",
+      "Minecraft 26.3 release notes"
+    ],
+    "heroImage": "/knowledge/minecraft-26-3.svg",
+    "heroAlt": "Original editorial illustration of a block-built wilderness camp and poplar forest for Minecraft 26.3; not an official in-game screenshot.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 26.3 is the Wilderness Bound game drop, released on 15 September 2026. This guide summarises the notable additions and explains what players, builders and server owners should check before moving an existing world to the release.",
+    "takeaways": [
+      "The Dappled Forest biome adds a new woodland environment.",
+      "Poplar trees, fallen poplars, colour variants of poplar leaves and a poplar wood set expand building options.",
+      "Abandoned camps, explorer maps, cushions and straw beds add exploration and camping details.",
+      "Wool and concrete stairs/slabs add more flexible block palettes."
+    ],
+    "sections": [
+      {
+        "heading": "New wilderness biome and trees",
+        "paragraphs": [
+          "The official 26.3 notes introduce the Dappled Forest biome, poplar trees and fallen poplar trees. The new wood set includes poplar wood, while leaf variants include red, orange and yellow poplar leaves. Together, these features give builders a fresh palette for cabins, trails, forest villages and themed survival bases.",
+          "The update also adds shelf mushrooms and red shrubs. When describing a biome or block for a tutorial, use the exact names from the version’s changelog; similar-looking blocks from older releases should not be presented as new 26.3 additions."
+        ]
+      },
+      {
+        "heading": "Exploration and camping features",
+        "paragraphs": [
+          "Abandoned Camp structures and new Explorer Maps support a more deliberate exploring loop. Cushions and Straw Beds add a camping theme for player-made outposts, temporary shelters and role-play builds. These systems also create new ideas for survival challenges and story-led Minecraft videos: travel to a mapped location, discover a camp, then build a safe base before nightfall.",
+          "This is a game-drop article, not a claim that every world generation seed contains every feature nearby. Terrain generation and structure discovery depend on the world and where you explore."
+        ]
+      },
+      {
+        "heading": "New building blocks and smaller changes",
+        "paragraphs": [
+          "Version 26.3 adds Wool Stairs and Wool Slabs for all wool blocks and Concrete Stairs and Concrete Slabs for all concrete blocks. These variants make colour-matched stairs, roofs, ramps and decorative trim easier to build without mixing unrelated materials.",
+          "The changelog also notes that players in spectator mode can interact with portals to teleport. Check the official full notes for the rest of the gameplay and technical adjustments rather than relying on a short highlights list."
+        ]
+      },
+      {
+        "heading": "Should a server owner update now?",
+        "paragraphs": [
+          "For single-player, make sure the launcher selects the desired stable release and keep a copy of valuable worlds. For multiplayer, wait until the server software you use explicitly supports 26.3, then verify plugin and mod compatibility one by one. A client running 26.3 does not automatically mean every Paper, Fabric or modpack setup is ready.",
+          "For a practical checklist, use the [Minecraft server version selection guide](/games/minecraft/server-version-guide/). For the previous game drops, compare the [26.2 guide](/games/minecraft/versions/26-2/) and [26.1 guide](/games/minecraft/versions/26-1/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 26.3 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/48913133328013-Minecraft-Java-Edition-26-3"
+      },
+      {
+        "label": "Official Wilderness Bound overview",
+        "url": "https://www.minecraft.net/en-us/article/play-wilderness-bound-game-drop"
+      },
+      {
+        "label": "Full Minecraft release changelog index",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-2",
+      "minecraft-26-1",
+      "minecraft-server-version-guide",
+      "ultraop-creator-story"
+    ],
+    "route": "/games/minecraft/versions/26-3/"
+  },
+  {
+    "slug": "minecraft-26-2",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 26.2: Chaos Cubed Update Guide",
+    "description": "Minecraft Java 26.2 Chaos Cubed guide: Sulfur Cube mob, Sulfur Caves, sulfur and cinnabar blocks, new music, Friends List and experimental Vulkan rendering.",
+    "keywords": [
+      "Minecraft 26.2",
+      "Chaos Cubed Minecraft",
+      "Minecraft Sulfur Cube",
+      "Sulfur Caves biome",
+      "Minecraft Vulkan rendering 26.2"
+    ],
+    "heroImage": "/knowledge/minecraft-26-2.svg",
+    "heroAlt": "Original editorial illustration of a glowing sulfur cave and geometric sulfur cube for Minecraft 26.2; not an official in-game screenshot.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 26.2 is the Chaos Cubed drop. The main additions centre on Sulfur Caves, the Sulfur Cube mob and a set of sulfur and cinnabar blocks, with additional social, audio and graphics options listed in the official changelog.",
+    "takeaways": [
+      "Sulfur Cube is a new mob associated with the Chaos Cubed drop.",
+      "Sulfur Caves, sulfur and cinnabar blocks expand underground exploration and building.",
+      "The release adds a Friends List and related online options.",
+      "Vulkan rendering support is experimental; graphics behaviour may depend on hardware and drivers."
+    ],
+    "sections": [
+      {
+        "heading": "Sulfur Caves and new blocks",
+        "paragraphs": [
+          "The Chaos Cubed update introduces the Sulfur Caves biome and the Cinnabar and Sulfur block sets, including Sulfur Spike and Potent Sulfur blocks. These changes offer new underground themes for cave exploration, base design, mining routes and custom adventure maps.",
+          "If you are writing a build tutorial, distinguish the blocks that were introduced in 26.2 from older stone variants or modded content with similar names. The official Java Edition changelog is the reference point for feature lists."
+        ]
+      },
+      {
+        "heading": "Meet the Sulfur Cube",
+        "paragraphs": [
+          "The Sulfur Cube is the named mob highlighted in the Chaos Cubed drop. Its behaviour opens up physics-oriented play and unusual interactions with blocks. For the exact mob rules, item interactions and balancing details, the full official release note should be read rather than inferring behaviour from artwork or short clips.",
+          "This article focuses on what the release formally introduces. It does not promise that a particular farm, redstone design or mod works with the new mob without a version-specific test."
+        ]
+      },
+      {
+        "heading": "Audio, multiplayer and graphics",
+        "paragraphs": [
+          "Version 26.2 adds a music disc featuring “Bounce” by fingerspit, five additional tracks by the same artist, and a Friends List with settings in Online Options. It also adds experimental support for rendering through Vulkan and a Graphics API option in Video Settings.",
+          "Because Vulkan support is experimental, test it on the device and driver you actually use. If you experience visual glitches, crashes or lower performance, capture your graphics configuration and compare behaviour with the officially supported/default option before assuming that the world or save is damaged."
+        ]
+      },
+      {
+        "heading": "26.2 versus 26.3",
+        "paragraphs": [
+          "The distinction is simple: 26.2 is Chaos Cubed; 26.3 is Wilderness Bound. The former emphasises the Sulfur Cube, underground sulfur systems and graphics/social additions. The latter emphasises the Dappled Forest, poplar trees, abandoned camps and camping items.",
+          "For the newest stable version covered in this library, continue to the [Minecraft Java 26.3 guide](/games/minecraft/versions/26-3/). For the broader sequence, visit the [version library](/games/minecraft/versions/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 26.2 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46690753273997-Minecraft-Java-Edition-26-2"
+      },
+      {
+        "label": "Official Minecraft release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-3",
+      "minecraft-26-1",
+      "minecraft-server-version-guide"
+    ],
+    "route": "/games/minecraft/versions/26-2/"
+  },
+  {
+    "slug": "minecraft-26-1",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 26.1: Tiny Takeover Features",
+    "description": "Minecraft Java Edition 26.1 Tiny Takeover overview: baby animal variants and sounds, Golden Dandelion, Note Block trumpet and the main update themes.",
+    "keywords": [
+      "Minecraft 26.1",
+      "Minecraft Tiny Takeover",
+      "Golden Dandelion Minecraft",
+      "Minecraft baby mob sounds",
+      "Minecraft 26.1 features"
+    ],
+    "heroImage": "/knowledge/minecraft-26-1.svg",
+    "heroAlt": "Original editorial illustration of baby-mob-inspired geometric tiles and a Golden Dandelion for Minecraft 26.1; not an official in-game screenshot.",
+    "readingMinutes": 4,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 26.1 is the Tiny Takeover drop. Its focus is on baby mobs, sound and small interactions that change the atmosphere of a world rather than on one huge new dimension or combat system.",
+    "takeaways": [
+      "Tiny Takeover gives selected baby mobs new sounds.",
+      "The Golden Dandelion is a new feature in the 26.1 changelog.",
+      "A Note Block placed on a Copper Block can play a trumpet instrument.",
+      "Use the official notes for the exact list of supported mob variants and technical changes."
+    ],
+    "sections": [
+      {
+        "heading": "Baby mob sounds and variants",
+        "paragraphs": [
+          "The official changelog lists new baby sounds for wolves, cats, pigs, horses and chickens. Adult sound variants were also added for cats, pigs, cows and chickens, and the release notes explain how the classic/original sounds are handled within the random assignment system.",
+          "These changes can matter to builders who create farms, animal enclosures, role-play worlds or ambient sound scenes. A texture pack or mod may customise the same entities, so if a player’s sounds differ from the guide, first check the game version and client modifications."
+        ]
+      },
+      {
+        "heading": "Golden Dandelion",
+        "paragraphs": [
+          "The Golden Dandelion is one of the signature additions associated with Tiny Takeover. It adds a new item to the way players interact with the baby-mob theme. Before using it in a farm or survival tutorial, check the official recipe and behaviour directly in the 26.1 notes rather than relying on a short social post.",
+          "Version-specific item guides should mention the edition and version number near the start, because a new item added to Java Edition may not appear in an older Java release or in a different Bedrock update in the same way."
+        ]
+      },
+      {
+        "heading": "Note Block and technical detail",
+        "paragraphs": [
+          "A trumpet instrument is added when a Note Block is placed on a Copper Block. This gives builders and musicians another sound palette for custom music, mini-games and themed areas.",
+          "This guide intentionally covers the headline features instead of reproducing every line of the changelog. For a complete list of bug fixes, technical updates and any additional additions, use the original Minecraft release page."
+        ]
+      },
+      {
+        "heading": "Comparing 26.1 with newer drops",
+        "paragraphs": [
+          "Tiny Takeover is mainly about mob variety and ambience; 26.2 adds the Sulfur Cube and Sulfur Caves; 26.3 adds the Dappled Forest, poplar wood and camping features. Each release supports a different kind of build or gameplay idea.",
+          "Explore [Minecraft 26.2](/games/minecraft/versions/26-2/), [Minecraft 26.3](/games/minecraft/versions/26-3/) and the full [version library](/games/minecraft/versions/) for a clear version-by-version comparison."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 26.1 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/44551668333837-Minecraft-Java-Edition-26-1"
+      },
+      {
+        "label": "Minecraft release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-2",
+      "minecraft-26-3",
+      "minecraft-1-21-11"
+    ],
+    "route": "/games/minecraft/versions/26-1/"
+  },
+  {
+    "slug": "minecraft-1-21-11",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 1.21.11: Mounts of Mayhem Guide",
+    "description": "Minecraft 1.21.11 Mounts of Mayhem details: Spear weapon, Nautilus mounts, Camel Husk, Parched, Zombie Horses, texture filtering and other release changes.",
+    "keywords": [
+      "Minecraft 1.21.11",
+      "Mounts of Mayhem",
+      "Minecraft Spear weapon",
+      "Nautilus Minecraft",
+      "Camel Husk",
+      "Minecraft 1.21.11 features"
+    ],
+    "heroImage": "/knowledge/minecraft-1-21-11.svg",
+    "heroAlt": "Original editorial illustration inspired by the Spear, aquatic mounts and desert encounters from Minecraft 1.21.11; not an official in-game screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 1.21.11 is the Mounts of Mayhem drop. It adds the Spear weapon, several mount-related mobs and equipment, and new visual settings. It remains important for readers using a 1.21-era world, server or modpack even though the newer 26.x releases are available.",
+    "takeaways": [
+      "The Spear has Jab and Charge attacks, with damage affected by material and motion.",
+      "Nautilus and Zombie Nautilus mobs add underwater mount and combat interactions.",
+      "Camel Husk and Parched add desert-themed hostile encounters.",
+      "Texture filtering and chunk fade-in options affect the visual experience."
+    ],
+    "sections": [
+      {
+        "heading": "The Spear: Jab, Charge and Lunge",
+        "paragraphs": [
+          "The 1.21.11 notes add Spear weapons across multiple materials, including a Netherite variant created by upgrading a Diamond Spear. The Spear has a quick Jab and a Charge attack. Its reach and damage rules differ from a sword, and performance depends on factors such as material, view angle and the velocity of the attacker and target.",
+          "The Lunge enchantment is exclusive to the Spear and works with the Jab attack. It propels the player horizontally in the view direction and comes with its own hunger and durability costs. Because it changes movement as well as combat, practise the weapon in a safe test world before relying on it in a survival run or competitive challenge."
+        ]
+      },
+      {
+        "heading": "Nautilus and underwater encounters",
+        "paragraphs": [
+          "The Nautilus is a neutral aquatic mob that spawns in ocean biomes and can be tamed and ridden with a saddle. Nautilus Armor and the Zombie Nautilus variant expand the update’s underwater theme. The official notes list how the mount behaves and which items it can use.",
+          "Do not treat every Nautilus variant as harmless: the Zombie Nautilus is described as an underwater mob spawning with a hostile rider. Learn the encounter rules directly from the version notes before creating a farm, adventure map or mob showcase."
+        ]
+      },
+      {
+        "heading": "Camel Husk, Parched and Zombie Horses",
+        "paragraphs": [
+          "Mounts of Mayhem also introduces the Camel Husk and Parched and changes how Zombie Horses spawn. These additions create new desert encounters and broaden the range of mobs players can meet while exploring. The Camel Husk’s behaviour depends in part on its rider, while Zombie Horses now have natural spawning rules in the update.",
+          "Mob behaviour, spawn conditions and drops are easy to misstate in short guides. This page summarises the main additions, while the linked official changelog is the reference for exact light levels, riders, drop quantities and advancement requirements."
+        ]
+      },
+      {
+        "heading": "Visual options, world and server planning",
+        "paragraphs": [
+          "Version 1.21.11 adds Texture Filtering and Anisotropic Filtering options, and chunks can fade in rather than appearing instantly. It also includes changes to horse movement in water, Creative Inventory grouping, debug renderers and technical protocol details.",
+          "If you operate a Paper or Fabric server, check which build of the server software supports 1.21.11 and verify plugins/mods separately. A technical protocol or gameplay feature in the official game does not guarantee that every third-party plugin will understand it. Before upgrading, follow the [server version selection guide](/games/minecraft/server-version-guide/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 1.21.11 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/41809981427213-Minecraft-Java-Edition-1-21-11-Mounts-of-Mayhem"
+      },
+      {
+        "label": "Minecraft Java and Bedrock release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-1-21-5",
+      "minecraft-server-version-guide",
+      "minecraft-26-3"
+    ],
+    "route": "/games/minecraft/versions/1-21-11/"
+  },
+  {
+    "slug": "minecraft-1-21-5",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 1.21.5: Spring to Life Features",
+    "description": "Minecraft 1.21.5 Spring to Life guide with warm and cold pig, cow and chicken variants, biome-dependent sheep wool, ambient sounds and lodestone changes.",
+    "keywords": [
+      "Minecraft 1.21.5",
+      "Spring to Life update",
+      "Minecraft 1.21.5 features",
+      "warm cold mob variants Minecraft",
+      "Minecraft lodestone recipe"
+    ],
+    "heroImage": "/knowledge/minecraft-1-21-5.svg",
+    "heroAlt": "Original editorial illustration of warm and cold animal variants and spring vegetation for Minecraft 1.21.5; not an official in-game screenshot.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 1.21.5 is the Spring to Life drop from 2025. It focuses on the feeling of a more varied Overworld: regional animal variants, ambient sound and small changes to existing features.",
+    "takeaways": [
+      "Pigs, cows and chickens have cold and warm variants.",
+      "Sheep wool colour depends on the biome where the sheep spawns.",
+      "Lodestone crafting and loot rules were changed.",
+      "The official notes include movement-related and technical changes beyond the headline features."
+    ],
+    "sections": [
+      {
+        "heading": "Warm and cold animal variants",
+        "paragraphs": [
+          "The update adds cold and warm variants for pigs, cows and chickens. Sheep can spawn with wool colours influenced by their biome, and the textures/models for temperate cows, Mooshrooms and sheep were updated. These details matter to players building biome-specific farms, zoos and scenic survival worlds.",
+          "The visual differences do not mean every animal behaves as a different species. When making a guide or resource pack, use the changelog to distinguish appearance/variant differences from actual mechanics."
+        ]
+      },
+      {
+        "heading": "Ambient sounds and world atmosphere",
+        "paragraphs": [
+          "Spring to Life introduces additional ambient sounds and minor changes to blocks, items and entities. A good guide should explain what players can notice in a normal world, and avoid inflating small adjustments into a new major game system.",
+          "These ambient details are useful for creators who build cinematic worlds or record videos. For clean comparisons, record in the same biome and similar conditions, and note whether a resource pack or shader changes the appearance or audio."
+        ]
+      },
+      {
+        "heading": "Lodestone changes",
+        "paragraphs": [
+          "The official 1.21.5 changelog changes how Lodestones are crafted: one Iron Ingot surrounded by eight Chiseled Stone Bricks. Lodestones can also be found in Ruined Portal loot in the Overworld or Nether, and an advancement category was changed.",
+          "Because recipes and loot tables are common search queries, this article keeps the exact version in the title. A recipe from 1.21.5 should not be copied blindly into a tutorial for another version without checking whether it remains accurate there."
+        ]
+      },
+      {
+        "heading": "Who should use 1.21.5?",
+        "paragraphs": [
+          "1.21.5 remains relevant to players whose servers or modpacks intentionally target an earlier 1.21 build. It is not the newest stable Java version covered in this library. If you are starting a fresh installation, check the official current release first; if joining an existing community server, use the server owner’s supported version instead.",
+          "Continue to [1.21.11 Mounts of Mayhem](/games/minecraft/versions/1-21-11/) or the current [version library](/games/minecraft/versions/) for nearby releases."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 1.21.5 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/35298208390797-Minecraft-Java-Edition-1-21-5-Spring-to-Life"
+      },
+      {
+        "label": "Official Minecraft update timeline",
+        "url": "https://www.minecraft.net/en-us/updates/minecraft-updates-timeline-and-evolution"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-1-21-11",
+      "minecraft-1-20-1",
+      "minecraft-server-version-guide"
+    ],
+    "route": "/games/minecraft/versions/1-21-5/"
+  },
+  {
+    "slug": "minecraft-1-20-1",
+    "kind": "guide",
+    "category": "Minecraft Versions",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 1.20.1: Trails & Tales Hotfix and Legacy Compatibility",
+    "description": "Minecraft Java 1.20.1 release guide: critical crash, Realms, interface and server-join fixes, plus what modded server owners should check before upgrading.",
+    "keywords": [
+      "Minecraft 1.20.1",
+      "Minecraft Java 1.20.1 server",
+      "Minecraft 1.20.1 hotfix",
+      "1.20.1 mods",
+      "Minecraft 1.20.1 release notes"
+    ],
+    "heroImage": "/knowledge/minecraft-1-20-1.svg",
+    "heroAlt": "Original editorial illustration of stone blocks and a server configuration panel for the Minecraft 1.20.1 compatibility guide; not an official in-game screenshot.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 1.20.1 is a hotfix release following 1.20 Trails & Tales. It is still searched by players who use version-specific mods, modpacks and servers. It should be treated as an older compatibility target, not the current release.",
+    "takeaways": [
+      "1.20.1 focused on critical issues discovered after Minecraft 1.20.",
+      "The official notes list disk-permission crash, Realms invite icon, interface rendering and joining-server fixes.",
+      "Mod and server compatibility is specific to exact versions and loaders.",
+      "Back up worlds/configuration before changing a long-running setup."
+    ],
+    "sections": [
+      {
+        "heading": "What did 1.20.1 fix?",
+        "paragraphs": [
+          "The official Java Edition 1.20.1 notes describe a hotfix for critical issues found in 1.20. The list includes a disk-permissions crash, a wrongly displayed Realms invitation icon, buttons in the Realms menu that no longer rendered correctly, a softlock after cancelling a server join, and a chunk-generation status issue.",
+          "These fixes are important for people searching for the exact 1.20.1 version because a patch label is not just a cosmetic name. It identifies a concrete client/server build with its own bug fixes and compatibility expectations."
+        ]
+      },
+      {
+        "heading": "Why servers and modpacks still use older versions",
+        "paragraphs": [
+          "A server community may stay on an older Minecraft release because a modpack, client mod, plugin or custom map has been tested against it. That choice can be reasonable when it is deliberate and documented. It can also mean the server will not contain later features or fixes, and the server owner should explain the exact version players need.",
+          "Do not assume that a Fabric mod, Paper plugin or Forge mod can be moved unchanged from 1.20.1 to 1.21 or 26.x. Loader, API, configuration format, world generation and server internals can change between versions."
+        ]
+      },
+      {
+        "heading": "Safe version-switch checklist",
+        "bullets": [
+          "Back up the world folder, server configuration and mod/plugin lists before changing versions.",
+          "Confirm the target server software officially supports the exact Minecraft version.",
+          "Check every critical mod or plugin’s supported Minecraft version and loader.",
+          "Test the upgrade on a copy of the world before deploying it to a public server.",
+          "Tell players which client version and modpack they need, and keep a rollback path."
+        ],
+        "paragraphs": [
+          "These checks are especially important for a world with extensive claims, redstone builds, custom structures or story content. A successful client launch alone does not prove that every chunk or plugin will behave as expected."
+        ]
+      },
+      {
+        "heading": "Find the right release notes",
+        "paragraphs": [
+          "For a new world, start with the [Minecraft version library](/games/minecraft/versions/) and current Java Edition release notes. For a legacy server that must remain on 1.20.1, keep that version as a named compatibility target and document the reasons for staying there.",
+          "The main point is simple: select a version because the project has tested it—not just because a tutorial from several years ago says it worked for someone else."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 1.20.1 release notes",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/34595082538637-Minecraft-Java-Edition-1-20-1"
+      },
+      {
+        "label": "Minecraft official release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "minecraft-1-21-5",
+      "minecraft-1-21-11"
+    ],
+    "route": "/games/minecraft/versions/1-20-1/"
+  },
+  {
+    "slug": "minecraft-server-version-guide",
+    "kind": "guide",
+    "category": "Minecraft Servers",
+    "categorySlug": "minecraft",
+    "title": "How to Choose a Minecraft Server Version for Plugins and Mods",
+    "description": "A practical Minecraft server version guide for Paper, Fabric, plugins, mods and client compatibility. Learn how to check support, back up worlds and avoid unsafe upgrades.",
+    "keywords": [
+      "Minecraft server version",
+      "Paper version compatibility",
+      "Fabric server mods",
+      "Minecraft plugins version",
+      "Minecraft 26.3 server compatibility",
+      "Minecraft modpack version"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original Minecraft-inspired landscape artwork used for the server version compatibility guide.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "The newest Minecraft version is not automatically the right server version. A good choice is the version supported by your server software, the essential plugins/mods your players need and the world you are prepared to test or migrate.",
+    "takeaways": [
+      "Match the Minecraft version, server software, loader, mods/plugins and client pack as one stack.",
+      "Do not upgrade a live world before creating a full backup and testing a copy.",
+      "Paper plugins and Fabric/Forge mods are not interchangeable by default.",
+      "A compatibility statement should name the exact version rather than saying only “latest”."
+    ],
+    "sections": [
+      {
+        "heading": "1. Identify the server platform",
+        "paragraphs": [
+          "First decide whether you are running vanilla, Paper, another Bukkit-compatible server, Fabric or Forge/NeoForge. These platforms have different purposes and extension systems. Paper is generally used for plugin-oriented servers; Fabric and other mod loaders use mods compiled for that loader and game version.",
+          "A plugin does not automatically become a mod, and a Fabric mod does not automatically run on Paper. Compatibility layers exist for specific use cases, but they are not a substitute for checking the project’s own documentation."
+        ]
+      },
+      {
+        "heading": "2. Check exact version support",
+        "paragraphs": [
+          "For Minecraft Java 26.3, confirm that the exact server distribution you plan to use has a release for 26.3, then check each required plugin or mod. If one essential plugin only supports an older release, either wait for an update or choose a tested older version deliberately.",
+          "Avoid version claims based solely on a file name, server panel dropdown or another creator’s video. Inspect the official release notes, supported Minecraft versions, release date and recent issue tracker for the relevant project."
+        ]
+      },
+      {
+        "heading": "3. Back up and test safely",
+        "bullets": [
+          "Stop the server cleanly before copying world and configuration folders.",
+          "Keep the world, plugins/mods, configs, permissions, datapacks and server startup arguments in the backup.",
+          "Test the new version on a separate copy and check startup logs for missing dependencies or unsupported APIs.",
+          "Join with the actual client and test world loading, permissions, claims, economy, teleportation, inventories, redstone and critical builds.",
+          "Only upgrade production after the test passes; keep the old backup until the new version is stable."
+        ],
+        "paragraphs": [
+          "World generation and data conversion can be one-way in practice. Never assume that a new-format world can be opened safely again by an older server. Test restoration instead of simply trusting that a backup folder exists."
+        ]
+      },
+      {
+        "heading": "4. Communicate with players",
+        "paragraphs": [
+          "Post the exact game version, loader and required modpack/version in the server description. If you accept cross-version clients through a compatibility plugin, explain its limits and test the features your community uses. Connecting to a server is not proof that every item, entity or new mechanic will behave identically.",
+          "For an older target such as 1.20.1, link to the [1.20.1 hotfix guide](/games/minecraft/versions/1-20-1/). For newer Java drops, review the [26.3 features](/games/minecraft/versions/26-3/) and the [version library](/games/minecraft/versions/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "Paper documentation",
+        "url": "https://docs.papermc.io/"
+      },
+      {
+        "label": "Fabric documentation",
+        "url": "https://docs.fabricmc.net/"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-3",
+      "minecraft-1-20-1",
+      "minecraft-1-21-11"
+    ],
+    "route": "/games/minecraft/server-version-guide/"
+  },
+  {
+    "slug": "pubg-global-championship-history",
+    "kind": "esports",
+    "category": "PUBG Esports",
+    "categorySlug": "pubg",
+    "title": "PUBG Global Championship History: Winners from 2019 to 2025",
+    "description": "A year-by-year PUBG: BATTLEGROUNDS PC global championship guide, including PGC winners Gen.G, NewHappy, NAVI, Danawa Esports, The Expendables and FULL SENSE.",
+    "keywords": [
+      "PUBG tournament history",
+      "PUBG Global Championship winners",
+      "PGC champions list",
+      "PUBG esports champions 2019 2025",
+      "FULL SENSE PGC 2025",
+      "PUBG PC esports"
+    ],
+    "heroImage": "/knowledge/pubg-pgc.svg",
+    "heroAlt": "Original cinematic battle-royale landscape art for PUBG PC tournament-history reading.",
+    "readingMinutes": 8,
+    "updatedAt": "2026-10-23",
+    "intro": "PUBG: BATTLEGROUNDS has a global esports circuit built from regional competitions, global events and the PUBG Global Championship (PGC). This timeline focuses on the headline PGC champion for each completed edition from 2019 to 2025 and separately explains the earlier 2018 Global Invitational.",
+    "takeaways": [
+      "PGI 2018 used separate TPP and FPP results; it did not have one single winner for both perspectives.",
+      "The PGC winner timeline covered here begins in 2019, skips 2020 as a PGC season, then continues in 2021–2025.",
+      "FULL SENSE won PGC 2025 in Bangkok, Thailand.",
+      "Regional events, PUBG Global Series and PUBG Nations Cup have distinct champions and should not be confused with PGC."
+    ],
+    "tables": [
+      {
+        "heading": "PGC champions timeline",
+        "headers": [
+          "Year",
+          "Event",
+          "Champion",
+          "Context"
+        ],
+        "rows": [
+          [
+            "2019",
+            "PUBG Global Championship 2019",
+            "Gen.G Esports",
+            "The inaugural modern PGC championship era."
+          ],
+          [
+            "2020",
+            "No PGC edition",
+            "—",
+            "The standard PGC season was not held; other PUBG esports events continued."
+          ],
+          [
+            "2021",
+            "PUBG Global Championship 2021",
+            "NewHappy",
+            "Chinese roster crowned world champion in Incheon."
+          ],
+          [
+            "2022",
+            "PUBG Global Championship 2022",
+            "Natus Vincere",
+            "NAVI won the Dubai grand final."
+          ],
+          [
+            "2023",
+            "PUBG Global Championship 2023",
+            "Danawa e-sports",
+            "Danawa finished ahead of 17Gaming."
+          ],
+          [
+            "2024",
+            "PUBG Global Championship 2024",
+            "The Expendables",
+            "The APAC team secured the title in Kuala Lumpur."
+          ],
+          [
+            "2025",
+            "PUBG Global Championship 2025",
+            "FULL SENSE",
+            "Thai team won the Bangkok final."
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Before the PGC era: PUBG Global Invitational 2018",
+        "paragraphs": [
+          "The 2018 PUBG Global Invitational (PGI) was an early landmark in the PC esports scene. It separated results into third-person perspective and first-person perspective competitions. Gen.G Gold won the TPP tournament, while Oh My God won the FPP tournament, so calling one of them the only overall PGI 2018 winner loses the format distinction. For mobile-game champions, see the separate [PUBG Mobile Global Championship history](/esports/pubg-mobile-global-championship-history/).",
+          "The modern PGC timeline should therefore be read separately from PGI’s split-format results. The PUBG Esports official archive includes the historical global series and the later PUBG Global Championship events."
+        ]
+      },
+      {
+        "heading": "2019: Gen.G Esports",
+        "paragraphs": [
+          "Gen.G took the 2019 PUBG Global Championship title. The event helped establish PGC as the main end-of-year global title for PUBG: BATTLEGROUNDS. Competitive PUBG is a battle royale built around survival, rotations, positioning, information and team coordination; a single winner table does not capture every strategy that shaped the season."
+        ]
+      },
+      {
+        "heading": "2021–2023: NewHappy, NAVI and Danawa",
+        "paragraphs": [
+          "NewHappy won PGC 2021 after a month-long event in Incheon. Natus Vincere won PGC 2022 with a strong bracket run and a late grand-final push. Danawa e-sports won PGC 2023, with 17Gaming finishing second in the final leaderboard.",
+          "These teams won different editions under each season’s competitive environment. A historical article should preserve the event year rather than implying that one team’s title carries into later seasons or into PUBG Mobile/BGMI."
+        ]
+      },
+      {
+        "heading": "2024–2025: The Expendables and FULL SENSE",
+        "paragraphs": [
+          "The Expendables won PGC 2024, a notable APAC-region result. FULL SENSE claimed the PGC 2025 crown in Bangkok, defeating a field that included Virtus.pro and Natus Vincere. PUBG’s official announcement later confirmed FULL SENSE as the 2025 champion when it announced champion-themed in-game items.",
+          "For the up-to-date history, use the official [PUBG Esports archive](https://pubgesports.com/en/pubgesports) and tournament announcements. PGC 2026 is a future event as of this article’s update date and is therefore not listed as a completed championship."
+        ]
+      },
+      {
+        "heading": "How PUBG tournaments differ",
+        "paragraphs": [
+          "PGC is the global championship event. PUBG Global Series (PGS) events are separate international competitions; PUBG Nations Cup (PNC) fields national teams; regional series feed the season. A team's regional title, PGS win or nations-cup win is significant, but it should not be entered in a PGC winners list unless it actually won PGC.",
+          "This page covers the main PGC champions timeline, not every regional league, qualifier, invitational, mobile championship or exhibition tournament. That scoped approach makes the results easier to verify and keeps future updates manageable."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official PUBG Esports event archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "Official PGC 2022 champion recap",
+        "url": "https://pubgesports.com/en/news/5194"
+      },
+      {
+        "label": "Official PGC 2023 champion announcement",
+        "url": "https://pubgesports.com/en/news/6955"
+      },
+      {
+        "label": "Official PGC 2024 champion announcement",
+        "url": "https://pubgesports.com/en/news/8133"
+      },
+      {
+        "label": "Official FULL SENSE PGC 2025 champion confirmation",
+        "url": "https://pubgesports.com/en/news/10499"
+      },
+      {
+        "label": "PGI 2018 results reference",
+        "url": "https://liquipedia.net/pubg/PUBG_Global_Invitational/2018"
+      }
+    ],
+    "related": [
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "esports-history-index",
+      "gaming-guides-index",
+      "pubg-mobile-global-championship-history"
+    ],
+    "route": "/esports/pubg-global-championship-history/"
+  },
+  {
+    "slug": "bgmi-tournament-winners",
+    "kind": "esports",
+    "category": "BGMI Esports",
+    "categorySlug": "bgmi",
+    "title": "BGMI Tournament Winners: BGIS and BGMS Champions List",
+    "description": "BGMI esports history with separate year-by-year BGIS and BGMI Masters Series champions, including Team SouL, Gladiators, Team XSpark, Versatile, K9 and Nebula Esports.",
+    "keywords": [
+      "BGMI tournament winners",
+      "BGIS winner list",
+      "BGMS champions",
+      "BGMI champions 2026",
+      "BGIS 2025 winner",
+      "BGMI Masters Series winner"
+    ],
+    "heroImage": "/knowledge/bgmi-tournament.svg",
+    "heroAlt": "Original battle-royale editorial artwork for the BGMI esports article.",
+    "readingMinutes": 8,
+    "updatedAt": "2026-10-23",
+    "intro": "Battlegrounds Mobile India (BGMI) has an India-specific competitive circuit that includes BGIS and BGMI Masters Series (BGMS). This guide lists major champions by event series instead of mixing national-series winners and Masters Series winners into one table.",
+    "takeaways": [
+      "BGIS and BGMS are different tournament series.",
+      "Team SouL, Gladiators Esports, Team XSpark and Team Versatile appear in the BGIS champion timeline.",
+      "BGMS champions have included Global Esports, Gladiators, Team SouL, K9 Esports and Nebula Esports.",
+      "A yearly winner is meaningful only when the event name and final stage are stated."
+    ],
+    "tables": [
+      {
+        "heading": "Battlegrounds Mobile India Series (BGIS)",
+        "headers": [
+          "Year",
+          "Champion",
+          "Runner-up / context"
+        ],
+        "rows": [
+          [
+            "2021 edition (finals held Jan 2022)",
+            "Skylightz Gaming",
+            "TSM finished second."
+          ],
+          [
+            "2022",
+            "Team SouL",
+            "Separate BGIS title; not the same as BGMS."
+          ],
+          [
+            "2023",
+            "Gladiators Esports",
+            "Big Brother Esports finished second."
+          ],
+          [
+            "2024",
+            "Team XSpark",
+            "Global Esports finished second."
+          ],
+          [
+            "2025",
+            "Team Versatile",
+            "GodLike Esports finished as first runner-up; Orangutan third."
+          ],
+          [
+            "2026",
+            "iQOO Soul",
+            "KRAFTON India’s published event record confirms iQOO Soul as champion; check the organiser’s final record for placements and awards."
+          ]
+        ]
+      },
+      {
+        "heading": "BGMI Masters Series (BGMS)",
+        "headers": [
+          "Season / year",
+          "Champion",
+          "Runner-up"
+        ],
+        "rows": [
+          [
+            "Season 1 (2022)",
+            "Global Esports",
+            "GodLike Esports"
+          ],
+          [
+            "Season 2 (2023)",
+            "Gladiators Esports",
+            "Orangutan"
+          ],
+          [
+            "Season 3 (2024)",
+            "Team SouL",
+            "Entity Gaming"
+          ],
+          [
+            "Season 4 (2025)",
+            "K9 Esports",
+            "Sinewy Esports"
+          ],
+          [
+            "Season 5 (2026)",
+            "Nebula Esports",
+            "Gladiators Esports"
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "BGIS: the India series timeline",
+        "paragraphs": [
+          "BGIS has produced a changing list of champions across editions. Skylightz Gaming won the 2021 edition, whose finals took place in January 2022. Team SouL won the 2022 edition, Gladiators Esports won in 2023, and Team XSpark took the 2024 title. The 2025 final crowned Team Versatile at Kolkata’s Biswa Bangla Mela Prangan.",
+          "KRAFTON India’s official esports coverage identifies iQOO Soul as the BGIS 2026 champion. This is a completed 2026 result, not a prediction; confirm exact final points and individual awards from the tournament’s complete event record before quoting them."
+        ]
+      },
+      {
+        "heading": "BGMS: a separate Masters Series",
+        "paragraphs": [
+          "BGMS has its own seasonal champions. Global Esports won Season 1 in 2022, Gladiators Esports won Season 2 in 2023, Team SouL won Season 3 in 2024, K9 Esports took Season 4 in 2025 and Nebula Esports won Season 5 in 2026 according to published series summaries.",
+          "This separate table matters because BGIS and BGMS can be won by different teams in the same year. A headline such as “BGMI champion” is incomplete without the tournament name, season and grand-final context."
+        ]
+      },
+      {
+        "heading": "How to read a BGMI result",
+        "paragraphs": [
+          "A competitive final leaderboard is usually the sum of placement points and elimination points across a defined set of matches. Teams can win through a balanced set of high placements and eliminations, not necessarily by having the most eliminations in every match. Format and scoring can change between editions, so consult the ruleset for the year you are reviewing.",
+          "Team name changes and roster changes can complicate historical comparisons. This article records the champion organisation/team name used in the event recap and does not assume that a later roster is identical to the winning lineup."
+        ]
+      },
+      {
+        "heading": "BGMI, PUBG Mobile and PUBG PC are distinct",
+        "paragraphs": [
+          "BGMI is the Indian mobile release and has its own national events. PUBG Mobile global events have different organisers, regions and eligibility rules, while PUBG: BATTLEGROUNDS PC uses the PUBG Esports circuit. Do not combine their results under a single “PUBG champion” label without naming the actual game and event. PUBG Mobile’s global championship has a separate [PMGC winner timeline](/esports/pubg-mobile-global-championship-history/); it should not be combined with BGIS or BGMS results.",
+          "For the PC championship timeline, see [PUBG Global Championship history](/esports/pubg-global-championship-history/). For another mobile Battle Royale circuit, read the [Free Fire World Series history](/esports/free-fire-world-series-history/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "KRAFTON India official BGIS 2026 announcement",
+        "url": "https://www.linkedin.com/posts/kraftoninc-india_bgis2026-esportsindia-gaming-activity-7444586809973653504-oSCm"
+      },
+      {
+        "label": "BGIS tournament history and results reference",
+        "url": "https://liquipedia.net/pubgmobile/Battlegrounds_Mobile_India"
+      },
+      {
+        "label": "BGMS champions summary",
+        "url": "https://www.sportsadda.asia/esports/features-esports/bgms-winners-list-bgmi-masters-series-champions/"
+      },
+      {
+        "label": "BGMS Season 5 champion report",
+        "url": "https://www.hindustantimes.com/sports/others/nebula-esports-crowned-bgmi-masters-series-season-5-champions-as-inr-1-crore-championship-battle-comes-to-a-close-101788865327556.html"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "free-fire-world-series-history",
+      "esports-history-index",
+      "ultraop-creator-story"
+    ],
+    "route": "/esports/bgmi-tournament-winners/"
+  },
+  {
+    "slug": "free-fire-world-series-history",
+    "kind": "esports",
+    "category": "Free Fire Esports",
+    "categorySlug": "free-fire",
+    "title": "Free Fire World Series Winners: Global Finals from 2019 to 2025",
+    "description": "Free Fire World Series winner history with Battle Royale Global Finals champions Corinthians, Phoenix Force, Attack All Around, EVOS Phoenix, Magic Squad, Fluxo and Buriram United Esports.",
+    "keywords": [
+      "Free Fire World Series winners",
+      "FFWS champions list",
+      "Free Fire world champion 2025",
+      "FFWS 2024 winner Fluxo",
+      "FFWS 2023 Magic Squad",
+      "Free Fire esports history"
+    ],
+    "heroImage": "/knowledge/free-fire-ffws.svg",
+    "heroAlt": "Original esports arena and trophy illustration for Free Fire global tournament history.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "The Free Fire World Series (FFWS) has crowned teams from multiple regions in high-stakes global Battle Royale finals. This article tracks major Global Finals winners from 2019 to 2025 and keeps the distinct Clash Squad format separate.",
+    "takeaways": [
+      "Corinthians won the 2019 Free Fire World Series.",
+      "Phoenix Force won FFWS 2021 Singapore.",
+      "Attack All Around and EVOS Phoenix won the two 2022 global events in Sentosa and Bangkok, respectively.",
+      "Magic Squad, Fluxo and Buriram United Esports won the 2023, 2024 and 2025 Global Finals."
+    ],
+    "tables": [
+      {
+        "heading": "FFWS Global Finals winners",
+        "headers": [
+          "Year / event",
+          "Champion",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "2019",
+            "Corinthians",
+            "The first FFWS global final in Rio de Janeiro."
+          ],
+          [
+            "2020",
+            "No FFWS world final",
+            "The original event schedule was disrupted by the COVID-19 period; regional/continental competition used other formats."
+          ],
+          [
+            "2021 Singapore",
+            "Phoenix Force",
+            "Thai team won the return of the global finals."
+          ],
+          [
+            "2022 Sentosa",
+            "Attack All Around",
+            "First of two separate 2022 Global Finals."
+          ],
+          [
+            "2022 Bangkok",
+            "EVOS Phoenix",
+            "Second global event in the 2022 calendar."
+          ],
+          [
+            "2023 Bangkok",
+            "Magic Squad",
+            "Brazilian team won the 2023 global final."
+          ],
+          [
+            "2024 Rio de Janeiro",
+            "Fluxo",
+            "Brazilian team won the 2024 edition."
+          ],
+          [
+            "2025 Jakarta",
+            "Buriram United Esports",
+            "Thai team won the Global Finals on 15 November 2025."
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "2019: Corinthians opens the global story",
+        "paragraphs": [
+          "Corinthians won the Free Fire World Series in 2019 in Rio de Janeiro. The result established an early global champion in the Free Fire competitive scene and became a reference point for future editions.",
+          "Do not treat every invitational or regional event from 2019 as a World Series title. The FFWS name belongs to a particular global competition, while national leagues and qualifiers have their own winners."
+        ]
+      },
+      {
+        "heading": "2021–2022: Phoenix Force, Attack All Around and EVOS Phoenix",
+        "paragraphs": [
+          "Phoenix Force won FFWS Singapore in 2021. In 2022 the circuit held two distinct global events: Attack All Around won the Sentosa final, while EVOS Phoenix won the Bangkok edition later that year. The two winners must not be collapsed into a single “FFWS 2022” result without the event location/date.",
+          "These tournaments also illustrate why an event series can change its format or calendar over time. Match count, points and eligibility should be taken from the official rules and final recap for that year."
+        ]
+      },
+      {
+        "heading": "2023–2025: Magic Squad, Fluxo and Buriram United Esports",
+        "paragraphs": [
+          "Magic Squad won the 2023 FFWS in Bangkok. Fluxo took the 2024 Global Finals in Rio de Janeiro. In 2025, Buriram United Esports from Thailand won the FFWS Global Finals in Jakarta, with Wassana receiving the Grand Finals MVP and Predator awards according to Garena’s official recap.",
+          "Garena’s 19 November 2025 article reports that Buriram United Esports won the final at Indonesia Arena, Jakarta on 15 November. That direct tournament recap is the best source for the 2025 result and player award details."
+        ]
+      },
+      {
+        "heading": "Battle Royale and Clash Squad are different formats",
+        "paragraphs": [
+          "The Global Finals Battle Royale competition is not the same tournament mode as Clash Squad. The 2025 series included separate Clash Squad competition details, so its champion should not be substituted for the main Battle Royale world champion.",
+          "This page is specifically about FFWS Battle Royale Global Finals. It is not an exhaustive list of every Free Fire national league, regional qualifier, EWC event or Clash Squad event."
+        ]
+      },
+      {
+        "heading": "How to follow the next season",
+        "paragraphs": [
+          "The event calendar and format may change. Before sharing a prediction or winner list, verify the current season’s dates, rules, teams and result from Garena’s official esports/news channels. An event listed as upcoming is not a completed championship and should not appear in a winners table as if the result were final.",
+          "For other Battle Royale circuits, read the separate [PUBG Global Championship history](/esports/pubg-global-championship-history/) and [BGMI tournament winners](/esports/bgmi-tournament-winners/) pages."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Garena official FFWS 2025 champion recap",
+        "url": "https://ff.garena.com/en/article/1566/"
+      },
+      {
+        "label": "Free Fire World Series historical results reference",
+        "url": "https://liquipedia.net/freefire/Free_Fire_World_Series"
+      },
+      {
+        "label": "Garena Free Fire official news archive",
+        "url": "https://ff.garena.com/en/article/"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "esports-history-index",
+      "gaming-guides-index"
+    ],
+    "route": "/esports/free-fire-world-series-history/"
+  },
+  {
+    "slug": "valorant-update-hub",
+    "kind": "hub",
+    "category": "VALORANT Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Updates Hub: Patch Notes, Agents, Maps and Competitive Changes",
+    "description": "A structured VALORANT updates index covering patch notes, agents, map rotation, weapons, competitive rating, game modes, performance systems and anti-cheat changes.",
+    "keywords": [
+      "VALORANT updates",
+      "VALORANT patch notes 2026",
+      "VALORANT new agent",
+      "VALORANT maps update",
+      "VALORANT competitive updates",
+      "VALORANT latest patch"
+    ],
+    "heroImage": "/knowledge/tactical-fps.svg",
+    "heroAlt": "Original tactical hero-shooter editorial artwork; not official VALORANT gameplay.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "VALORANT changes across several systems at once. The UltraOP updates hub groups coverage into categories—agents, maps, weapons, competitive tools, game modes, progression and anti-cheat—so readers can find the relevant part of a patch instead of wading through a mixed feed.",
+    "takeaways": [
+      "Patch 13.08, dated 13 October 2026, is the latest patch covered here as of the update date.",
+      "13.08 introduced Map Rating and adjusted Performance Score; it also changed the Corrode map and map rotation.",
+      "Patch 13.06 introduced Agent Mastery, a new home/lobby experience, Gauntlet: Glitched and the Warden.",
+      "Use Riot’s full notes for exact agent values, queue availability and platform-specific details."
+    ],
+    "sections": [
+      {
+        "heading": "Category 1: Agents and balance",
+        "paragraphs": [
+          "Agent updates can change damage, ability duration, deployable behaviour, utility reliability or how an ability interacts with a map object. A small fix can be important in ranked play even when it does not introduce a new agent. For the current detail, see [Patch 13.08](/games/valorant/updates/patch-13-08/) and Riot’s official [patch notes archive](https://playvalorant.com/en-us/news/tags/patch-notes/). For focused reading, see the separate [agent update guide](/games/valorant/updates/agents/)."
+        ]
+      },
+      {
+        "heading": "Category 2: Maps and competitive rotation",
+        "paragraphs": [
+          "Map changes can adjust defender rotations, sightlines, site entries, mid control and how predictable an execute is. Patch 13.08 included changes to Corrode and changed which maps are in the competitive rotation, according to Riot’s official notes. Always check the current rotation for the region and mode you actually play. The [map update guide](/games/valorant/updates/maps/) explains how to track route and rotation changes."
+        ]
+      },
+      {
+        "heading": "Category 3: Competitive rating and post-match systems",
+        "paragraphs": [
+          "Competitive updates include rankings, rating displays, match performance metrics and the post-game experience. Patch 13.08 introduced Map Rating on a 0–500 scale with letter grades and updated Performance Score. These systems help players review map performance, but they should not be treated as a guarantee of rank gain or as a public rating visible to every opponent. For the rating calculation and review workflow, use the [competitive features guide](/games/valorant/updates/competitive/)."
+        ]
+      },
+      {
+        "heading": "Category 4: Weapons, economy and game modes",
+        "paragraphs": [
+          "Weapon and mode changes affect the economy, the risk-reward value of buys, ability to retake and how a team rehearses specific situations. New or updated modes may have different queue availability and rules. This hub records the major category affected by each patch and links to the full official article for exact changes."
+        ]
+      },
+      {
+        "heading": "Category 5: Progression, client, anti-cheat and bug fixes",
+        "paragraphs": [
+          "Patch coverage also includes the client experience, progression, reporting, anti-cheat enforcement and general bug fixes. Patch 13.06, for example, included an updated home/lobby experience, Agent Mastery and other large system changes; 13.08 introduced navigation updates and published additional information about enforcement actions.",
+          "This site’s summaries are editorial explainers, not a substitute for Riot’s rules, competitive policies or full notes. If a change affects account penalties, eligibility or a current tournament, follow the official Riot announcement."
+        ]
+      },
+      {
+        "heading": "Latest covered article",
+        "paragraphs": [
+          "Read [VALORANT Patch 13.08: Map Rating, Performance Score and Corrode Changes](/games/valorant/updates/patch-13-08/) for the October 2026 update. For global tournament results, open the [VALORANT Champions history](/esports/valorant-champions-history/) page."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      },
+      {
+        "label": "Official Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "Official Patch Notes 13.06",
+        "url": "https://playvalorant.com/en-gb/news/game-updates/valorant-patch-notes-13-06/"
+      }
+    ],
+    "related": [
+      "valorant-patch-13-08",
+      "valorant-champions-history",
+      "gaming-guides-index",
+      "esports-history-index",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
+    ],
+    "route": "/games/valorant/updates/"
+  },
+  {
+    "slug": "valorant-patch-13-08",
+    "kind": "guide",
+    "category": "VALORANT Patch Notes",
+    "categorySlug": "valorant",
+    "title": "VALORANT Patch 13.08: Map Rating, Performance Score and Corrode Changes",
+    "description": "VALORANT Patch 13.08 overview for 13 October 2026: Map Rating, Performance Score adjustments, Corrode map updates, map rotation changes, new client navigation and anti-cheat transparency.",
+    "keywords": [
+      "VALORANT Patch 13.08",
+      "Valorant 13.08 update",
+      "Map Rating Valorant",
+      "Corrode map changes",
+      "Performance Score Valorant",
+      "VALORANT V26 Act 6"
+    ],
+    "heroImage": "/knowledge/valorant-patch.svg",
+    "heroAlt": "Original tactical FPS patch-notes illustration with a map, score panel and reticle; not official VALORANT gameplay imagery.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Riot published VALORANT Patch 13.08 on 13 October 2026 as Act 6 began. The notes focus on Map Rating, Performance Score adjustments, Corrode map improvements, competitive map rotation, client navigation and transparency around player enforcement.",
+    "takeaways": [
+      "Map Rating evaluates map proficiency on a 0–500 scale and C-to-S grades.",
+      "The rating uses win rate, attacker win rate, defender win rate and Performance Score; recent matches contribute more.",
+      "Performance Score adjustments increase the impact of damage, adjusted kills and adjusted deaths, with a Chamber-specific adjustment.",
+      "Corrode had defender-route and mid-area updates; Ascent and Split moved out of the rotation while Corrode and Bind came in per the patch notes."
+    ],
+    "sections": [
+      {
+        "heading": "Competitive feature: Map Rating",
+        "paragraphs": [
+          "Map Rating is the most prominent competitive feature in 13.08. It gives players a map-specific measure using a 0–500 rating and a C-to-S letter grade. Riot says the calculation considers Overall Win Rate, Attacker Win Rate, Defender Win Rate and Performance Score, and that recent matches carry more weight than older matches.",
+          "The feature is available in Competitive and Premier. Riot’s notes also state that other players cannot see an individual’s Map Rating, and historical matches do not count toward ratings at launch. In practice, use the rating as a private map review tool, not as proof that a single map is inherently easier or that the rating directly equals your rank."
+        ]
+      },
+      {
+        "heading": "Performance Score adjustments",
+        "paragraphs": [
+          "Patch 13.08 describes further adjustments to Performance Score after earlier changes in 13.06. Riot increased the impact of Damage, Adjusted Kills and Adjusted Deaths, which include First Bloods and First Deaths, and made Chamber-specific adjustments to better reflect utility use.",
+          "For players reviewing their games, the takeaway is that the evaluation system is intended to value multiple forms of contribution, not simply the raw kill count. Do not compare a current Performance Score to a past ACS number as if both used exactly the same method."
+        ]
+      },
+      {
+        "heading": "Corrode map updates and rotation",
+        "paragraphs": [
+          "The Corrode update addresses defender pathing into the back of A and B sites to shorten rotations and support retakes. Riot also describes changes around Mid to make fights more predictable. The patch notes list Ascent and Split leaving the active rotation and Corrode and Bind entering it for the relevant mode.",
+          "Map rotations are mode- and date-sensitive. When preparing a tournament plan, verify the map pool used in that competition rather than assuming the live ranked rotation is identical to the professional event’s rules."
+        ]
+      },
+      {
+        "heading": "Client, agents and enforcement transparency",
+        "paragraphs": [
+          "The patch includes a new queue/mode-selection interface for matchmade and custom games and a navigation bar in Career to reach areas such as Rank Legacy, Accolades and Map Rating. The Agent notes include a Killjoy Alarmbot visual/audio feedback fix when a projectile is destroyed by moving doorways.",
+          "Riot’s general updates also published additional penalty numbers for the previous detection period. Those numbers describe accounts banned or penalised for different categories in the period Riot identifies; they are not an estimate of every problematic player in the game. Use the linked official patch notes for the full explanation."
+        ]
+      },
+      {
+        "heading": "What to do after updating",
+        "bullets": [
+          "Check the active map pool and queue options in your region and mode.",
+          "Review Map Rating across maps after enough matches; do not overreact to a small sample.",
+          "Review team roles and map-specific defaults after the Corrode changes.",
+          "Use the Career navigation and Performance Score as supplementary review tools.",
+          "For exact agent ability behaviour and bug fixes, consult Riot’s full 13.08 notes."
+        ],
+        "paragraphs": [
+          "For the complete patch source, visit Riot’s official [VALORANT Patch Notes 13.08](https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/). This article is a structured summary and is updated when the official notes materially change or Riot publishes a follow-up correction."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Riot Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "VALORANT official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-champions-history",
+      "gaming-guides-index",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
+    ],
+    "route": "/games/valorant/updates/patch-13-08/"
+  },
+  {
+    "slug": "valorant-champions-history",
+    "kind": "esports",
+    "category": "VALORANT Esports",
+    "categorySlug": "valorant",
+    "title": "VALORANT Champions Winners: World Champions from 2021 to 2026",
+    "description": "Complete VALORANT Champions winner timeline from Acend in 2021, LOUD in 2022, Evil Geniuses in 2023, EDward Gaming in 2024, NRG in 2025 and LOUD in 2026.",
+    "keywords": [
+      "VALORANT Champions winners",
+      "VCT Champions champions list",
+      "Valorant world champion 2026",
+      "Valorant Champions winners by year",
+      "LOUD Champions 2026",
+      "NRG Champions Paris 2025"
+    ],
+    "heroImage": "/knowledge/valorant-champions.svg",
+    "heroAlt": "Original tactical hero-shooter editorial art for the VALORANT esports winners timeline.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "VALORANT Champions is the end-of-season global championship of the VALORANT Champions Tour (VCT). This page lists the main Champions winner by year and distinguishes it from Masters events, regional league finals and Game Changers.",
+    "takeaways": [
+      "Acend won the first Champions event in 2021.",
+      "LOUD won in 2022 and again in 2026.",
+      "Evil Geniuses, EDward Gaming and NRG won the 2023, 2024 and 2025 editions respectively.",
+      "Masters events are separate international tournaments and do not replace the Champions winner."
+    ],
+    "tables": [
+      {
+        "heading": "VALORANT Champions timeline",
+        "headers": [
+          "Year",
+          "Event",
+          "Champion",
+          "Final"
+        ],
+        "rows": [
+          [
+            "2021",
+            "Champions Berlin",
+            "Acend",
+            "Beat Gambit Esports."
+          ],
+          [
+            "2022",
+            "Champions Istanbul",
+            "LOUD",
+            "Beat OpTic Gaming."
+          ],
+          [
+            "2023",
+            "Champions Los Angeles",
+            "Evil Geniuses",
+            "Beat Paper Rex."
+          ],
+          [
+            "2024",
+            "Champions Seoul",
+            "EDward Gaming",
+            "Beat Team Heretics."
+          ],
+          [
+            "2025",
+            "Champions Paris",
+            "NRG",
+            "Beat Fnatic."
+          ],
+          [
+            "2026",
+            "Champions Shanghai",
+            "LOUD",
+            "Beat Team Vitality."
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "2021: Acend and the first Champions title",
+        "paragraphs": [
+          "Acend won the inaugural VALORANT Champions event in Berlin in 2021. This was the first end-of-season world championship in the VCT Champions series and set the template for teams advancing through regional competition to the global event.",
+          "Masters tournaments had their own winners, so Acend’s Champions title should be understood as the first winner of the world championship event, not the winner of every international event that year."
+        ]
+      },
+      {
+        "heading": "2022–2024: LOUD, Evil Geniuses and EDward Gaming",
+        "paragraphs": [
+          "LOUD won Champions Istanbul in 2022. Evil Geniuses won Champions Los Angeles in 2023, then China’s EDward Gaming took Champions Seoul in 2024. These outcomes show how the title has moved across regions and how the international field evolves between seasons.",
+          "Champions brackets are typically built around the season’s regional qualifiers and points, and formats can change. A year-by-year winner page is a record of completed events, while each event’s official page remains the source for bracket details, score lines and MVP awards."
+        ]
+      },
+      {
+        "heading": "2025–2026: NRG and LOUD",
+        "paragraphs": [
+          "NRG won Champions Paris in 2025. LOUD claimed the 2026 Champions Shanghai title, defeating Team Vitality in the grand final according to the published results. LOUD became the first organisation in this timeline to win Champions twice.",
+          "As of the update date (23 October 2026), the 2026 Champions event is complete. This page will change if Riot corrects an official result, but it does not predict future season winners."
+        ]
+      },
+      {
+        "heading": "Champions, Masters and regional leagues",
+        "paragraphs": [
+          "VCT Champions is distinct from the two Masters international events that have appeared in many seasons. Masters winners include organisations such as Sentinels, Fnatic, Gen.G, T1, Paper Rex, Nongshim RedForce and Leviatán across different years and events. They deserve their own table rather than being mixed into the Champions list.",
+          "Regional leagues—Americas, EMEA, Pacific and China—also have separate winners, qualification rules and playoff brackets. When comparing a team’s trophy record, name the event tier and season for each title."
+        ]
+      },
+      {
+        "heading": "How to follow VALORANT esports",
+        "paragraphs": [
+          "Use the official [VALORANT Esports site](https://valorantesports.com/en-US/) for event formats, brackets and active announcements. For changes to the live game that can affect professional play, also read the [VALORANT update hub](/games/valorant/updates/) and the [Patch 13.08 guide](/games/valorant/updates/patch-13-08/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official VALORANT Esports Champions Shanghai 2026 event page",
+        "url": "https://valorantesports.com/en-US/tournament/115576361459045501/overview"
+      },
+      {
+        "label": "Official VALORANT Esports schedule and match results",
+        "url": "https://valorantesports.com/en-US/"
+      },
+      {
+        "label": "VALORANT official news",
+        "url": "https://playvalorant.com/en-us/news/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "pubg-global-championship-history",
+      "esports-history-index"
+    ],
+    "route": "/esports/valorant-champions-history/"
+  },
+  {
+    "slug": "battle-royale-games-explained",
+    "kind": "guide",
+    "category": "Game Guides",
+    "categorySlug": "guides",
+    "title": "Battle Royale Games Explained: PUBG, BGMI and Free Fire Compared",
+    "description": "A beginner-friendly comparison of battle-royale formats, strategy, match pacing and competitive scenes across PUBG: BATTLEGROUNDS, BGMI and Free Fire.",
+    "keywords": [
+      "battle royale games explained",
+      "PUBG vs BGMI vs Free Fire",
+      "best battle royale genre guide",
+      "battle royale esports",
+      "PUBG Mobile BGMI differences"
+    ],
+    "heroImage": "/knowledge/battle-royale.svg",
+    "heroAlt": "Original editorial battle-royale landscape illustration created for the game genre guide.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Battle royale games share a broad idea—players or teams enter a large combat space, gather resources, survive a shrinking safe area and try to be the last team standing—but their pacing, controls, maps and competitive ecosystems differ. This guide helps beginners compare the format without declaring one game universally best.",
+    "takeaways": [
+      "Battle royale matches reward decisions as well as aim: positioning, rotations, information and timing matter.",
+      "PUBG: BATTLEGROUNDS PC, BGMI and Free Fire have different controls, gameplay tuning and tournament circuits.",
+      "The best fit depends on device, friends, preferred pacing and whether you enjoy casual play or competitive improvement.",
+      "Tournament histories are different by title and should be researched separately."
+    ],
+    "sections": [
+      {
+        "heading": "What defines a battle royale?",
+        "paragraphs": [
+          "The core loop is to enter a large map, loot or prepare, make decisions as the playable area changes, defeat opponents and survive until the final squad or player. The map and safe-zone timer create pressure: a team can win a fight but lose position, resources or time if it stays too long.",
+          "Good battle-royale play is therefore broader than raw aim. Loot routes, choosing engagements, cover, transport, sound awareness, team communications and late-game rotations can matter as much as winning a direct duel."
+        ]
+      },
+      {
+        "heading": "PUBG: BATTLEGROUNDS",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS is the PC/console version with a dedicated PUBG Esports ecosystem. Its competitive history includes PUBG Global Championship, PUBG Global Series and PUBG Nations Cup. PC tournament teams often build strategy around map rotations, utility, vehicle use and the game's specific weapon, recoil and movement systems.",
+          "For historical champions, start with the [PUBG Global Championship timeline](/esports/pubg-global-championship-history/). That page does not mix PC winners with mobile tournaments."
+        ]
+      },
+      {
+        "heading": "BGMI and Free Fire",
+        "paragraphs": [
+          "BGMI is the India-specific mobile title, and its headline national events include BGIS and BGMS. It has a distinct ruleset and event structure from PUBG: BATTLEGROUNDS PC. For the event-by-event winner list, see the [BGMI tournaments guide](/esports/bgmi-tournament-winners/).",
+          "Free Fire offers its own mobile battle-royale pacing, character and ability systems, and global tournament circuit. Its FFWS Global Finals are separate from both BGMI events and PUBG PC championships. Read the [Free Fire World Series history](/esports/free-fire-world-series-history/) for global champions."
+        ]
+      },
+      {
+        "heading": "How to choose a game",
+        "bullets": [
+          "Choose the platform you already use and the control style you can practise consistently.",
+          "Play a few matches with friends before investing in competitive settings or paid cosmetics.",
+          "Prefer a game whose match length and pacing fit your available time.",
+          "If you want esports, look at the game’s current official events, qualification path and regional availability.",
+          "Review game-specific safety, account and age guidance through the official publisher."
+        ],
+        "paragraphs": [
+          "No single game is objectively best for every player. A useful first choice is the title where you enjoy improving and can get regular, fair practice with a stable squad or community."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official PUBG Esports",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "KRAFTON India esports news",
+        "url": "https://krafton.in/news/"
+      },
+      {
+        "label": "Garena Free Fire official news",
+        "url": "https://ff.garena.com/en/article/"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "how-to-start-esports",
+      "game-directory"
+    ],
+    "route": "/guides/battle-royale-games-explained/"
+  },
+  {
+    "slug": "how-to-start-esports",
+    "kind": "guide",
+    "category": "Esports Guides",
+    "categorySlug": "guides",
+    "title": "How to Start in Esports: Practice, Teams, Tournaments and Player Safety",
+    "description": "A practical beginner guide to competitive gaming: choose a title, build a practice routine, find legitimate tournaments, review matches and protect your account.",
+    "keywords": [
+      "how to start esports",
+      "beginner esports guide",
+      "join gaming tournaments",
+      "esports practice routine",
+      "gaming tournament safety",
+      "competitive gaming for beginners"
+    ],
+    "heroImage": "/knowledge/esports-championship.svg",
+    "heroAlt": "Original esports arena illustration for the beginner competitive gaming guide.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Getting into esports takes more than playing long hours. A strong start is to choose one game, understand its current ruleset, practise a few measurable skills, review your own matches and look for legitimate competitions appropriate to your level and region.",
+    "takeaways": [
+      "Choose one main game and study its current competitive format.",
+      "Use deliberate practice and match review instead of only increasing hours played.",
+      "Check tournament rules, eligibility, anti-cheat and schedule before entering.",
+      "Never share passwords, one-time codes or account recovery details with a team organiser."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Choose a main title and format",
+        "paragraphs": [
+          "Pick a game you genuinely enjoy and can practise regularly. Learn whether its competitive format is solo, duo, squad, 5v5 or another mode, and understand ranked play versus official tournaments. These may use different maps, restrictions and scoring rules.",
+          "For a battle royale player, the improvement plan may focus on rotations, information and team decisions. In a tactical shooter, it may focus on crosshair placement, utility, role coordination and map control. The training target should match the game rather than copying another title’s routine."
+        ]
+      },
+      {
+        "heading": "Step 2: Practise deliberately",
+        "bullets": [
+          "Choose one or two skills to improve during each session.",
+          "Review deaths and lost rounds: was the cause aim, positioning, timing, information or communication?",
+          "Use a repeatable warm-up rather than changing sensitivity and settings every day.",
+          "Track trends across many matches, not one good or bad result.",
+          "Schedule rest; tired practice can reinforce mistakes."
+        ],
+        "paragraphs": [
+          "A good routine has feedback. Play, record or review the match, note one improvement, then practise it. You do not need to copy a professional player's full settings or schedule to learn from how they explain decisions."
+        ]
+      },
+      {
+        "heading": "Step 3: Find a team and real tournaments",
+        "paragraphs": [
+          "Start with legitimate community scrims, qualifiers or tournaments announced through official publishers and organisers. Check event eligibility, region, age restrictions, game version, anti-cheat, roster rules, match schedule and whether the organiser has published the rules and contact details.",
+          "Avoid suspicious offers that demand account passwords, one-time codes, remote-access software or payment just to “unlock” a guaranteed esports contract. Real competition does not require you to give away account ownership. Verify the URL and organiser independently before submitting personal details."
+        ]
+      },
+      {
+        "heading": "Step 4: Learn competitive integrity",
+        "paragraphs": [
+          "Use only permitted software, communicate respectfully and follow tournament rules. Cheats, account sharing, win trading, boosting and harassment can put an account or roster at risk. If a tournament has a dispute process, save match IDs and relevant evidence and follow its official reporting channel instead of escalating publicly with private player information.",
+          "A result matters only in context. Record the event, date, game version, roster and placement clearly. Do not present a scrim result as a national or world championship."
+        ]
+      },
+      {
+        "heading": "Step 5: Build a sustainable path",
+        "paragraphs": [
+          "Many competitive players will not become full-time professionals, and that does not make the practice worthless. The skills you build—teamwork, analysis, communication, content production and event organisation—can support other roles in gaming communities and creator work.",
+          "For tournament context, see the [PUBG PC champions](/esports/pubg-global-championship-history/), [BGMI event winners](/esports/bgmi-tournament-winners/), [Free Fire global finals](/esports/free-fire-world-series-history/) and [VALORANT Champions](/esports/valorant-champions-history/) guides."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports official portal",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT Esports official portal",
+        "url": "https://valorantesports.com/en-US/"
+      },
+      {
+        "label": "KRAFTON India official news",
+        "url": "https://krafton.in/news/"
+      }
+    ],
+    "related": [
+      "battle-royale-games-explained",
+      "esports-history-index",
+      "pubg-global-championship-history",
+      "valorant-champions-history"
+    ],
+    "route": "/guides/how-to-start-esports/"
+  },
+  {
+    "slug": "game-genres-guide",
+    "kind": "guide",
+    "category": "Game Guides",
+    "categorySlug": "guides",
+    "title": "Gaming Genres Explained: Sandbox, Survival, Battle Royale and Tactical FPS",
+    "description": "Understand the main game genres—sandbox, survival, battle royale, tactical FPS and multiplayer competition—with examples and tips for choosing what to play.",
+    "keywords": [
+      "gaming genres explained",
+      "sandbox vs survival",
+      "battle royale vs tactical FPS",
+      "popular game genres",
+      "best game genre for beginners"
+    ],
+    "heroImage": "/knowledge/esports-championship.svg",
+    "heroAlt": "Original broad gaming and esports artwork for the guide to video-game genres.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Game genres describe the kind of decisions a game asks you to make. They are not strict boxes: a game may combine survival, building, combat and multiplayer systems. This overview explains the differences and points readers to more detailed guides.",
+    "takeaways": [
+      "Sandbox games emphasise player choice and creating or changing the world.",
+      "Survival games add resource management, risk and progression.",
+      "Battle royale games focus on surviving a contested match area until the final player or team remains.",
+      "Tactical FPS games reward precise gunplay, utility, map control and communication."
+    ],
+    "sections": [
+      {
+        "heading": "Sandbox and building games",
+        "paragraphs": [
+          "Sandbox games give players systems to experiment with and often offer several valid goals. Minecraft is a clear example: players can explore, build, farm, automate, survive, role-play or create a story world. The freedom makes it suitable for both tutorials and ongoing creator series.",
+          "A sandbox guide works best when it includes version numbers if a mechanic changes between releases. For those questions, use the [Minecraft version library](/games/minecraft/versions/)."
+        ]
+      },
+      {
+        "heading": "Survival games",
+        "paragraphs": [
+          "Survival gameplay adds resource gathering and risk management to exploration. Players must consider food, tools, equipment, enemies and safe locations. Some titles are open-ended; others structure survival around missions or extraction mechanics.",
+          "A useful survival strategy weighs expected reward against risk. Carrying too much loot or staying in one area for too long can turn a good run into a loss, depending on the game's rules."
+        ]
+      },
+      {
+        "heading": "Battle royale",
+        "paragraphs": [
+          "Battle royale games commonly drop players or teams into a shared arena where the playable area shrinks or pressure increases over time. Teams need to decide where to land, what to loot, when to rotate and when to avoid a fight.",
+          "Different battle royale games tune time-to-kill, abilities, vehicle use and pacing differently. Check the [PUBG, BGMI and Free Fire comparison](/guides/battle-royale-games-explained/) before assuming a strategy transfers directly between titles."
+        ]
+      },
+      {
+        "heading": "Tactical first-person shooters",
+        "paragraphs": [
+          "Tactical shooters such as VALORANT combine gunplay with character abilities and round-based objectives. Economy, utility, map control, trades, timing and communication matter. A player can help the team without topping the kill scoreboard if their utility enables a successful round.",
+          "These games also update regularly. Browse the [VALORANT updates hub](/games/valorant/updates/) for patch categories and the [Champions history](/esports/valorant-champions-history/) for the main world championship winners."
+        ]
+      },
+      {
+        "heading": "Which genre should you try first?",
+        "paragraphs": [
+          "Choose based on the experience you want: build and explore in a sandbox, manage resources in survival, compete in short high-pressure rounds in battle royale, or learn ability and map coordination in a tactical FPS. Try the game's free modes or a few sessions with friends before spending money.",
+          "The best genre is the one that fits your play style, hardware and time. Search by the task you need—version guide, beginner tips, tournament results or update notes—to get a more helpful answer than a generic list of “best games”."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official update timeline",
+        "url": "https://www.minecraft.net/en-us/updates/minecraft-updates-timeline-and-evolution"
+      },
+      {
+        "label": "PUBG Esports official portal",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT official update archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "game-directory",
+      "battle-royale-games-explained",
+      "minecraft-version-library",
+      "valorant-update-hub",
+      "how-to-start-esports"
+    ],
+    "route": "/guides/game-genres-explained/"
+  },
+  {
+    "slug": "minecraft-26-4-preview",
+    "route": "/games/minecraft/versions/26-4/",
+    "kind": "guide",
+    "category": "Minecraft Preview",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 26.4 Snapshot 5: New Features and Preview Status",
+    "description": "Minecraft Java Edition 26.4 Snapshot 5 guide: Packed Ice Bricks, Brittle Ice, Jukebox Playlists, F3 redesign and Vulkan changes—and why 26.4 is not a stable release yet.",
+    "keywords": [
+      "Minecraft 26.4 snapshot 5",
+      "Minecraft 26.4 features",
+      "Packed Ice Bricks",
+      "Brittle Ice Minecraft",
+      "Jukebox Playlists Minecraft",
+      "Minecraft 26.4 update"
+    ],
+    "heroImage": "/knowledge/minecraft-26-4.svg",
+    "heroAlt": "Original editorial illustration of Packed Ice Bricks and angular ice crystals for Minecraft 26.4 Snapshot 5; not an official in-game screenshot.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 26.4 is still in snapshot testing as of 23 October 2026. Snapshot 5 was published on 20 October and adds Packed Ice Bricks. Earlier snapshots in the same series introduced Brittle Ice and Jukebox Playlists, F3 screen changes and a Vulkan graphics setting change. These are experimental pre-release details, not a claim that 26.4 has shipped as a stable release.",
+    "takeaways": [
+      "26.3 remains the stable Java Edition release covered by this library as of 23 October 2026.",
+      "26.4 Snapshot 5 was published on 20 October 2026 and introduces Packed Ice Bricks.",
+      "Snapshot 4 introduced Brittle Ice and Jukebox Playlists; Snapshot 2 updated the F3 debug overlay and improved render-distance fog.",
+      "Snapshot 1 changed the Graphics API setting so Default behaves like Prefer Vulkan.",
+      "Do not use snapshots on the only copy of an important world or public production server."
+    ],
+    "sections": [
+      {
+        "heading": "First check the release status",
+        "paragraphs": [
+          "Minecraft Java Edition 26.4 is a work-in-progress snapshot series. The release-changelog index still lists 26.3 as the full stable Java Edition release, while 26.4 entries are listed under Snapshot Information and Changelogs. Feature details can change between snapshots and before the eventual release.",
+          "A snapshot may be useful for testing upcoming mechanics or creating preview content, but it should not be labelled simply as “Minecraft 26.4 stable”. Always include the snapshot number and date so players know which build a guide describes."
+        ]
+      },
+      {
+        "heading": "Snapshot 5: Packed Ice Bricks",
+        "paragraphs": [
+          "Snapshot 5, published on 20 October 2026, adds Packed Ice Bricks crafted from a 2-by-2 pattern of Packed Ice. The family includes Slabs, Stairs, Walls and Chiseled Packed Ice. Several of these variants can also be crafted using a Stonecutter, making the block family more flexible for icy builds and decorative paths.",
+          "The same snapshot adds the “What Goes Around Comes Around” Adventure advancement for killing a Frostbite with an Ice Ball. The changelog also adjusts projectile interactions with certain blocks in Adventure Mode worlds, subject to the mobGriefing game rule."
+        ]
+      },
+      {
+        "heading": "Snapshot 4: Brittle Ice and Jukebox Playlists",
+        "paragraphs": [
+          "Snapshot 4 introduced Brittle Ice, a block found naturally in Ice Caves as part of the crevasse feature. Players or mobs standing on it cause it to crack and eventually break, while the Frostbite mob can walk across it without breaking it. The official notes also describe obtaining it with Silk Touch and creating it when water flows onto Blue Ice.",
+          "Jukebox Playlists let players place a Chest, Trapped Chest or Copper Chest variant directly above a Jukebox. Music discs in the chest play in slot order, skip empty slots and non-disc items, and loop back to the start. Removing the current disc skips to the next available disc."
+        ]
+      },
+      {
+        "heading": "Earlier snapshots: F3 interface, fog and Vulkan",
+        "paragraphs": [
+          "Snapshot 2 changed render-distance fog blending when Improved Transparency is enabled, added a celestial occluder to the Overworld skybox and redesigned the F3 debug overlay to be easier to read. Because the debug screen is often used for coordinates, performance diagnostics and tutorial recordings, interface changes can affect creators and server administrators who rely on familiar layouts.",
+          "Snapshot 1 changed the Graphics API setting so Default behaves like Prefer Vulkan, and it altered the game’s behaviour after a startup crash. Graphics support is hardware- and driver-dependent; do not assume a setting that works on one PC will be ideal for every system. Follow the latest snapshot notes and test with your own GPU and drivers."
+        ]
+      },
+      {
+        "heading": "How to test a snapshot safely",
+        "bullets": [
+          "Create a separate launcher installation or game directory for snapshots.",
+          "Back up the world and copy it before opening it in a snapshot.",
+          "Do not load the only copy of a production or long-running server world in a test version.",
+          "Check snapshot-specific notes and server-software support before testing multiplayer.",
+          "Keep the exact snapshot number in video titles, bug reports and screenshots."
+        ],
+        "paragraphs": [
+          "Snapshot worlds and data can change between builds, and worlds opened in a newer experimental version may not be suitable for older stable versions afterward. For a stable new world, start with the [Minecraft Java 26.3 guide](/games/minecraft/versions/26-3/) and the [version library](/games/minecraft/versions/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 5",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49759185020173-Minecraft-Java-Edition-26-4-Snapshot-5"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 4",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49579562483853-Minecraft-Java-Edition-26-4-Snapshot-4"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 2",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49295421760909-Minecraft-Java-Edition-26-4-Snapshot-2"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 1",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49076034811533-Minecraft-Java-Edition-26-4-Snapshot-1"
+      },
+      {
+        "label": "Minecraft official snapshot changelog index",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360002267532-Snapshot-Information-and-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-3",
+      "minecraft-26-2",
+      "minecraft-server-version-guide"
+    ]
+  },
+  {
+    "slug": "valorant-agent-update-guide",
+    "route": "/games/valorant/updates/agents/",
+    "kind": "guide",
+    "category": "VALORANT Agent Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Agent Updates: Ability Changes, Bug Fixes and Balance",
+    "description": "A focused VALORANT agent-update guide explaining ability balance, tactical roles, agent-specific bug fixes and how to verify changes in Riot's patch notes.",
+    "keywords": [
+      "VALORANT agent updates",
+      "VALORANT ability changes",
+      "VALORANT agent balance patch",
+      "Killjoy Alarmbot fix 13.08",
+      "VALORANT agent patch notes"
+    ],
+    "heroImage": "/knowledge/valorant-agent-updates.svg",
+    "heroAlt": "Original tactical hero-shooter editorial artwork, not an official VALORANT gameplay screenshot.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Agent changes can alter a strategy even when a patch does not introduce a brand-new character. This page focuses on how to read VALORANT agent notes: distinguish balance changes from bug fixes, identify which ability interaction changed, and test the exact behaviour before copying a lineup or team composition.",
+    "takeaways": [
+      "Agent patch changes can be balance updates, gameplay fixes, audio/visual fixes or ability-interaction corrections.",
+      "Patch 13.08 includes a Killjoy Alarmbot feedback fix when a projectile is destroyed by moving doorways.",
+      "A patch summary should not imply a new agent was released unless Riot's official notes say so.",
+      "The full Riot patch note is the source for exact ability values, duration and restrictions."
+    ],
+    "sections": [
+      {
+        "heading": "How agent notes are categorised",
+        "paragraphs": [
+          "A patch can change the power or reliability of an ability, correct a bug, adjust visual/audio feedback or fix an interaction with map geometry. These categories have different competitive effects. A numeric damage or cooldown change can affect balance directly; a feedback fix can make an ability easier to read without necessarily changing its underlying power.",
+          "For each note, identify the agent, ability, what changed and whether the change affects gameplay or presentation. Then check the precise build and mode. Avoid describing a bug fix as an across-the-board nerf or buff unless the official text says the mechanics were changed."
+        ]
+      },
+      {
+        "heading": "Example from Patch 13.08: Killjoy feedback",
+        "paragraphs": [
+          "Riot’s 13.08 notes list a Killjoy fix involving the Alarmbot’s visual and audio feedback when a projectile is destroyed by a moving doorway. This is a good example of a patch note that affects how clearly an interaction is communicated, rather than an announcement of a new agent.",
+          "For a competitive team, such a fix can matter when utility passes through or is destroyed by map geometry. It is still important to compare the official wording with the behaviour in a practice lobby before making claims about lineups or ranked outcomes."
+        ]
+      },
+      {
+        "heading": "Testing agent changes after a patch",
+        "bullets": [
+          "Read the official patch note and identify the exact ability interaction.",
+          "Recreate it in a practice/custom lobby using the current live build.",
+          "Check whether the change is a bug fix, numeric balance adjustment or visual/audio correction.",
+          "Record the map, agent, ability and patch build if reporting a bug.",
+          "Update team lineups only after confirming the new behaviour."
+        ],
+        "paragraphs": [
+          "The same habit helps avoid outdated tutorial advice. A video recorded before a patch can continue circulating long after the interaction has changed, so put the patch number and capture date in a written guide."
+        ]
+      },
+      {
+        "heading": "Follow official agent patch notes",
+        "paragraphs": [
+          "Use the [VALORANT Patch 13.08 guide](/games/valorant/updates/patch-13-08/) for the current patch overview and the [VALORANT updates hub](/games/valorant/updates/) for other categories. Riot’s patch notes archive should be checked before asserting exact values or the current status of a specific agent."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "Riot official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
+    ]
+  },
+  {
+    "slug": "valorant-map-rotation-guide",
+    "route": "/games/valorant/updates/maps/",
+    "kind": "guide",
+    "category": "VALORANT Map Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Map Updates: Rotation, Corrode Changes and Map Rating",
+    "description": "A map-focused VALORANT update guide covering competitive map rotation, Corrode improvements in Patch 13.08, attacker/defender context and how to practise a revised map pool.",
+    "keywords": [
+      "VALORANT map rotation",
+      "VALORANT Corrode changes",
+      "VALORANT map updates 13.08",
+      "Ascent Split rotation",
+      "Bind map pool",
+      "VALORANT map pool update"
+    ],
+    "heroImage": "/knowledge/valorant-map-updates.svg",
+    "heroAlt": "Original tactical shooter illustration used to explain map pools and rotation strategy.",
+    "readingMinutes": 5,
+    "updatedAt": "2026-10-23",
+    "intro": "Map updates can change how quickly defenders rotate, which mid areas are contested and how much utility a team needs to spend before entering a site. This guide records the map changes listed for Patch 13.08 and provides a repeatable way to review a map-pool change without confusing ranked and professional-event rules.",
+    "takeaways": [
+      "Patch 13.08 updated Corrode paths and mid-area flow.",
+      "The 13.08 notes list Ascent and Split leaving the active map rotation while Corrode and Bind enter for the relevant competitive mode.",
+      "Map pool can differ by mode, event format or date; always confirm the current official rotation.",
+      "Review new routes and timings in a custom lobby before using an old lineup guide."
+    ],
+    "sections": [
+      {
+        "heading": "Patch 13.08: Corrode adjustments",
+        "paragraphs": [
+          "Riot’s 13.08 notes discuss defender pathing into the back of A and B sites to shorten rotations and support retakes, alongside changes around Mid intended to make fights more predictable. Those changes can influence how a defending team shares information, holds space and decides when to rotate.",
+          "For attackers, a shorter defender rotation can affect the time available to isolate a site or take control of mid. For defenders, the important task is to practise the new route and avoid relying on timings recorded on the previous layout."
+        ]
+      },
+      {
+        "heading": "Map rotation is date- and mode-specific",
+        "paragraphs": [
+          "Patch 13.08 lists Ascent and Split leaving the active rotation and Corrode and Bind entering the pool in the mode covered by the notes. This is a patch-scoped statement, not a promise that the same maps remain in rotation forever or that the professional tournament pool is identical.",
+          "Competitive games, premier events, unrated queues and professional tournaments can use different rules. For a match-preparation document, write down the tournament season and the published map pool rather than copying the current ranked rotation into an event guide without checking."
+        ]
+      },
+      {
+        "heading": "How to rebuild your map preparation",
+        "bullets": [
+          "Check Riot’s current patch notes and confirm the mode/event map pool.",
+          "Walk every site entry and defender rotation in a custom lobby.",
+          "Re-test lineups and smoke placements against changed geometry.",
+          "Update default positions, trade paths and retake timing notes.",
+          "Record the patch version with any screenshot or practice clip."
+        ],
+        "paragraphs": [
+          "A useful map guide should show what changed, where it changed, and how players can test it. Avoid declaring a map “attacker-sided” or “defender-sided” from one patch alone without enough match data."
+        ]
+      },
+      {
+        "heading": "Related VALORANT updates",
+        "paragraphs": [
+          "Read the [full Patch 13.08 breakdown](/games/valorant/updates/patch-13-08/), the [agent updates guide](/games/valorant/updates/agents/) and the [competitive rating guide](/games/valorant/updates/competitive/) for the other major categories in the same update."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "VALORANT official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-agent-update-guide",
+      "valorant-competitive-features-guide"
+    ]
+  },
+  {
+    "slug": "valorant-competitive-features-guide",
+    "route": "/games/valorant/updates/competitive/",
+    "kind": "guide",
+    "category": "VALORANT Competitive Updates",
+    "categorySlug": "valorant",
+    "title": "VALORANT Competitive Updates: Map Rating and Performance Score Explained",
+    "description": "Understand VALORANT Patch 13.08's Map Rating, letter grades, recent-match weighting and Performance Score adjustments—without confusing these tools with visible rank or matchmaking guarantees.",
+    "keywords": [
+      "VALORANT Map Rating",
+      "VALORANT Performance Score",
+      "VALORANT competitive updates 13.08",
+      "Map Rating 0 to 500",
+      "VALORANT rank updates",
+      "VALORANT Premier Map Rating"
+    ],
+    "heroImage": "/knowledge/valorant-competitive.svg",
+    "heroAlt": "Original tactical FPS editorial artwork for competitive systems and match review.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Patch 13.08 added Map Rating and adjusted Performance Score. These tools offer more context for individual map proficiency and match contributions, but they are not a replacement for the visible competitive rank or a guarantee of rank changes after a match.",
+    "takeaways": [
+      "Map Rating uses a 0–500 scale and a letter grade from C to S.",
+      "Riot says the rating considers overall win rate, attacker win rate, defender win rate and Performance Score, with newer matches weighted more heavily.",
+      "Map Rating is available in Competitive and Premier; historical matches did not count at launch.",
+      "Performance Score adjustments change the impact of damage, adjusted kills and adjusted deaths, including first-blood/first-death context."
+    ],
+    "sections": [
+      {
+        "heading": "What Map Rating measures",
+        "paragraphs": [
+          "Riot describes Map Rating as a map-specific measure on a 0–500 scale with a letter grade from C to S. Its calculation uses Overall Win Rate, Attacker Win Rate, Defender Win Rate and Performance Score, and recent matches contribute more than older ones. It is intended to help a player review proficiency on each map rather than turn one match into a complete evaluation.",
+          "Patch 13.08 notes say Map Rating is available in Competitive and Premier. Riot also states that other players cannot see an individual's Map Rating and that historical matches did not count towards the rating at launch. Check official follow-up notes for later behaviour or availability changes."
+        ]
+      },
+      {
+        "heading": "Map Rating is not the same as rank",
+        "paragraphs": [
+          "A map-specific rating and a displayed competitive rank answer different questions. A player can have a strong history on one map and still lose a match because of opponent strength, team communication, composition, adaptation or match variance. The letter grade should be treated as one review signal, not as a guarantee of rank increase.",
+          "Avoid comparing your Map Rating directly to another player's visible rank or claiming the feature reveals matchmaking rules. The full calculation and data visibility are controlled by Riot, and a summary article should not invent hidden formula weights or penalties."
+        ]
+      },
+      {
+        "heading": "Performance Score changes",
+        "paragraphs": [
+          "Patch 13.08 further adjusted Performance Score after changes in 13.06. Riot increased the impact of Damage, Adjusted Kills and Adjusted Deaths, with the adjusted measures considering First Bloods and First Deaths. Chamber-specific adjustments were also made to better account for utility usage.",
+          "The practical takeaway is to review several parts of a match instead of looking only at final kills. Damage output, opening engagements, deaths, utility value and team role can all help explain why a round went well or badly. The score is an internal evaluation tool; it does not replace round wins or official competitive rules."
+        ]
+      },
+      {
+        "heading": "A useful post-match review",
+        "bullets": [
+          "Look at Map Rating over a meaningful number of games, not a single result.",
+          "Review attack and defence separately if the map splits rounds by side.",
+          "Identify repeated early deaths, wasted utility or failed trade setups.",
+          "Write down one change to test next time instead of changing every setting.",
+          "Use the official Riot notes if a formula, grade scale or display changes."
+        ],
+        "paragraphs": [
+          "The [VALORANT Patch 13.08 article](/games/valorant/updates/patch-13-08/) provides the broader release context. The [agent update guide](/games/valorant/updates/agents/) and [map update guide](/games/valorant/updates/maps/) cover related patch categories."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT Patch Notes 13.08",
+        "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-08/"
+      },
+      {
+        "label": "Riot official patch notes archive",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-patch-13-08",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide"
+    ]
+  },
+  {
+    "slug": "pubg-mobile-global-championship-history",
+    "route": "/esports/pubg-mobile-global-championship-history/",
+    "kind": "esports",
+    "category": "PUBG Mobile Esports",
+    "categorySlug": "pubg-mobile",
+    "title": "PUBG Mobile Global Championship Winners: PMGC History 2020–2025",
+    "description": "PMGC champions by year from Nova Esports in 2020 and 2021 to S2G Esports, IHC, Dplus KIA and Alpha7 Esports, plus a clear note about the upcoming 2026 event.",
+    "keywords": [
+      "PUBG Mobile Global Championship winners",
+      "PMGC champions list",
+      "PMGC 2025 winner Alpha7 Esports",
+      "PUBG Mobile tournament history",
+      "PMGC 2024 Dplus KIA",
+      "PMGC 2023 IHC"
+    ],
+    "heroImage": "/knowledge/pubg-mobile-pmgc.svg",
+    "heroAlt": "Original battle-royale editorial illustration, not an official PUBG Mobile gameplay screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "PUBG Mobile has a global esports circuit distinct from both PUBG: BATTLEGROUNDS PC and India’s BGMI events. This timeline records the PUBG Mobile Global Championship (PMGC) winner by completed year from 2020 through 2025, and keeps the 2026 event clearly marked as upcoming as of 23 October 2026.",
+    "takeaways": [
+      "Nova Esports won the first two PMGC editions in 2020 and 2021.",
+      "S2G Esports won PMGC 2022; IHC Esports won 2023; Dplus KIA won 2024.",
+      "Alpha7 Esports won PMGC 2025 in Thailand.",
+      "PMGC 2026 is scheduled for November–December 2026 and has no champion yet as of this article’s review date."
+    ],
+    "tables": [
+      {
+        "heading": "PMGC champions by year",
+        "headers": [
+          "Year",
+          "Champion",
+          "Edition note"
+        ],
+        "rows": [
+          [
+            "2020",
+            "Nova Esports",
+            "First PMGC edition."
+          ],
+          [
+            "2021",
+            "Nova Esports",
+            "Second consecutive world title."
+          ],
+          [
+            "2022",
+            "S2G Esports",
+            "Grand Finals concluded in January 2023."
+          ],
+          [
+            "2023",
+            "IHC Esports",
+            "Mongolian team won the Istanbul final."
+          ],
+          [
+            "2024",
+            "Dplus KIA",
+            "South Korean team won the London final."
+          ],
+          [
+            "2025",
+            "Alpha7 Esports",
+            "Brazilian team won the Bangkok Global Finals."
+          ],
+          [
+            "2026",
+            "Upcoming / TBD",
+            "Event scheduled for November–December 2026; final result not yet completed on 23 October."
+          ]
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "2020–2021: Nova Esports begins the PMGC era",
+        "paragraphs": [
+          "Nova Esports won both the 2020 and 2021 PMGC editions. The first event ran through late 2020 and January 2021, while the second season’s finals concluded in January 2022. Calendar-year labels can therefore differ from the year in which the final match was actually played.",
+          "These were PUBG Mobile mobile-game championships. They must not be entered into a PUBG: BATTLEGROUNDS PC PGC results list, even though the titles share a franchise and a broad Battle Royale format."
+        ]
+      },
+      {
+        "heading": "2022–2024: S2G Esports, IHC Esports and Dplus KIA",
+        "paragraphs": [
+          "S2G Esports won PMGC 2022, whose finals concluded in January 2023. IHC Esports won the 2023 championship, while Dplus KIA claimed the 2024 title. Those are distinct yearly editions, with their own qualifiers, stages and rosters.",
+          "When comparing global mobile teams, note the final event and the year of the season. A league title, regional championship or PUBG Mobile World Cup win is important, but it is not automatically a PMGC crown. The event name belongs next to the champion in any history or trophy list."
+        ]
+      },
+      {
+        "heading": "2025: Alpha7 Esports takes the global title",
+        "paragraphs": [
+          "Alpha7 Esports won PMGC 2025 in Thailand. The event concluded on 14 December 2025 and Alpha7 finished ahead of ULF Esports in the grand-final standings, according to the tournament history record. The result is the most recent completed PMGC championship as of this article’s review date.",
+          "PMGC 2026 is scheduled to return later in 2026, but as of 23 October the event is not yet complete. A live-updating historical article should never label a scheduled event a champion before the grand final is finished and the organiser confirms the result."
+        ]
+      },
+      {
+        "heading": "PMGC, PUBG PC and BGMI are different circuits",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS PC’s headline year-end event is the PUBG Global Championship (PGC), while PUBG Mobile’s global year-end title is PMGC. BGMI serves India’s mobile market and has a separate national series including BGIS and BGMS. Similar names are easy to mix up in social posts, so identify the game and event in every result.",
+          "Continue to the [PUBG PC Global Championship history](/esports/pubg-global-championship-history/) and [BGMI tournament winners](/esports/bgmi-tournament-winners/). The [esports index](/esports/) gathers all the current tournament archives in one place."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Mobile Global Championship event history and results",
+        "url": "https://liquipedia.net/pubgmobile/PUBG_Mobile_Global_Championship"
+      },
+      {
+        "label": "PMGC champions history reference",
+        "url": "https://www.talkesport.com/wiki/pubg-mobile/pmgc/"
+      },
+      {
+        "label": "PUBG Mobile official news",
+        "url": "https://www.pubgmobile.com/en-US/news.shtml"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "bgmi-tournament-winners",
+      "free-fire-world-series-history",
+      "esports-history-index"
+    ]
+  },
+  {
+    "slug": "pubg-mobile-vs-bgmi-vs-pubg-pc",
+    "route": "/guides/pubg-mobile-bgmi-vs-pubg-pc/",
+    "kind": "guide",
+    "category": "Battle Royale Guide",
+    "categorySlug": "guides",
+    "title": "PUBG PC vs PUBG Mobile vs BGMI: The Differences Explained",
+    "description": "Compare PUBG: BATTLEGROUNDS PC, PUBG Mobile and BGMI by platform, controls, competitive circuit and tournament history—without mixing their champions.",
+    "keywords": [
+      "PUBG PC vs BGMI",
+      "PUBG Mobile vs BGMI",
+      "PUBG BATTLEGROUNDS PC vs mobile",
+      "PUBG tournament difference",
+      "BGMI esports vs PMGC"
+    ],
+    "heroImage": "/knowledge/pubg-editions-comparison.svg",
+    "heroAlt": "Original editorial battle-royale map artwork illustrating distinct game ecosystems, not official gameplay imagery.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "PUBG: BATTLEGROUNDS, PUBG Mobile and Battlegrounds Mobile India share a franchise history and a last-team-standing format, but they are separate game products with different platforms, gameplay tuning and esports calendars. This guide gives players and esports readers a reliable way to identify the correct game before choosing a version, joining a server or quoting a tournament result.",
+    "takeaways": [
+      "PUBG: BATTLEGROUNDS is the PC/console game and uses its own PUBG Esports circuit.",
+      "PUBG Mobile is a mobile game with its own global competition, including PMGC.",
+      "BGMI is the India-specific mobile release and uses India-focused events such as BGIS and BGMS.",
+      "Settings, updates, event eligibility and tournament champions cannot automatically be transferred between these games."
+    ],
+    "sections": [
+      {
+        "heading": "1. PUBG: BATTLEGROUNDS on PC and console",
+        "paragraphs": [
+          "PUBG: BATTLEGROUNDS is the PC/console version, with controls, graphics settings, input options and competitive systems tuned for those platforms. Its global esports circuit includes the PUBG Global Championship (PGC), PUBG Global Series (PGS) and PUBG Nations Cup (PNC). These events have different eligibility rules and formats.",
+          "When a search asks for a PUBG PC world champion, the relevant source is the PGC winner history—not a mobile event, national BGMI series or PUBG Mobile championship. Use the [PUBG PC championship history](/esports/pubg-global-championship-history/) for event-by-event results."
+        ]
+      },
+      {
+        "heading": "2. PUBG Mobile and the PMGC circuit",
+        "paragraphs": [
+          "PUBG Mobile is a separate mobile title built around touchscreen play and mobile devices. It has its own release cadence, match configuration and global competition. The PUBG Mobile Global Championship (PMGC) is distinct from PUBG: BATTLEGROUNDS’ PGC, despite the similar abbreviations.",
+          "To track the mobile global champions, use the [PMGC history](/esports/pubg-mobile-global-championship-history/). Regional events, other international tournaments and a world championship should remain separately labelled so readers can tell exactly what a team won."
+        ]
+      },
+      {
+        "heading": "3. BGMI and India-specific tournaments",
+        "paragraphs": [
+          "Battlegrounds Mobile India (BGMI) is the India-specific mobile release. Its competitive calendar includes events such as the Battlegrounds Mobile India Series (BGIS) and BGMI Masters Series (BGMS). These are different series with separate champions and rules; winning BGIS does not automatically mean the same roster has won BGMS.",
+          "Visit the [BGMI tournament winners guide](/esports/bgmi-tournament-winners/) for the Indian event timeline. Check KRAFTON India’s current announcements for the exact dates, eligibility, scoring and roster requirements of the season you want to enter."
+        ]
+      },
+      {
+        "heading": "4. How to choose the right version",
+        "bullets": [
+          "Start with the device and operating system you actually use.",
+          "Use the exact game name and version in tutorials, settings guides and troubleshooting searches.",
+          "Check the event title and organiser before trusting a “world champion” list.",
+          "Do not assume PC keybinds, recoil behaviour, cross-play, updates or server compatibility match the mobile games.",
+          "Before entering a tournament, read its region, age, team and account eligibility rules."
+        ],
+        "paragraphs": [
+          "The game you should choose is the one your device supports and your friends or competitive community play. There is no universal winner between PC and mobile: each asks players to learn its own movement, aim, map rotations and team communication."
+        ]
+      },
+      {
+        "heading": "Reliable places to verify the details",
+        "paragraphs": [
+          "Official game pages and event organisers should be the first stop for patch details and current rules. Use the site’s [esports history index](/esports/) to compare the separate circuits, and the [battle-royale games explained guide](/guides/battle-royale-games-explained/) for the genre’s shared strategy basics."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports official event archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "PUBG Mobile official news",
+        "url": "https://www.pubgmobile.com/en-US/news.shtml"
+      },
+      {
+        "label": "KRAFTON India official newsroom",
+        "url": "https://krafton.in/news/"
+      }
+    ],
+    "related": [
+      "pubg-global-championship-history",
+      "pubg-mobile-global-championship-history",
+      "bgmi-tournament-winners",
+      "battle-royale-games-explained",
+      "esports-history-index"
+    ]
+  },
+  {
+    "slug": "minecraft-java-vs-bedrock",
+    "route": "/games/minecraft/java-vs-bedrock/",
+    "kind": "guide",
+    "category": "Minecraft Guide",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java vs Bedrock Edition: Platform, Mods and Multiplayer Differences",
+    "description": "A practical Minecraft Java Edition vs Bedrock Edition comparison covering platforms, multiplayer, mods and add-ons, redstone differences and version-specific updates.",
+    "keywords": [
+      "Minecraft Java vs Bedrock",
+      "Minecraft editions difference",
+      "Minecraft Java mods",
+      "Minecraft Bedrock crossplay",
+      "Minecraft server version difference"
+    ],
+    "heroImage": "/knowledge/minecraft-java-bedrock.svg",
+    "heroAlt": "Original block-world illustration used for the Java-versus-Bedrock guide; not an official gameplay screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition and Minecraft Bedrock Edition share the Minecraft name, core survival loop and many familiar blocks, but they are different editions. The best choice depends on the device you use, whom you want to play with, whether you want Java mod loaders, and how your server or add-ons are configured.",
+    "takeaways": [
+      "Java Edition is available on Windows, macOS and Linux; Bedrock serves a wider set of platforms, including consoles and mobile.",
+      "Cross-play depends on edition and platform support; Java players do not automatically join Bedrock servers.",
+      "Java mods and Bedrock add-ons/Marketplace content use different ecosystems and are not interchangeable.",
+      "Redstone behaviour, technical details and update availability can differ, so cite the edition and exact version in a tutorial."
+    ],
+    "sections": [
+      {
+        "heading": "Platform and account basics",
+        "paragraphs": [
+          "Java Edition is the traditional PC edition for Windows, macOS and Linux. Bedrock Edition is available across supported mobile, console and Windows platforms, with its own cross-platform multiplayer ecosystem. The exact purchase bundle, account requirements and platform capabilities can change, so check the official Minecraft edition page for your device before buying or reinstalling.",
+          "People often say “Minecraft PC” as though it names one edition. When following a guide, confirm the Edition first. A Bedrock tutorial may describe controller controls, add-ons or marketplace content that does not exist in the same form on Java."
+        ]
+      },
+      {
+        "heading": "Multiplayer and server compatibility",
+        "paragraphs": [
+          "Java and Bedrock servers have different network protocols and server ecosystems. A Java client does not automatically connect to an ordinary Bedrock server, and vice versa. Cross-play can be possible through supported editions, realms or purpose-built server bridges, but that requires an explicit compatibility path and may have limitations.",
+          "For a long-running multiplayer world, name the server platform and exact Minecraft version in the rules. Read the [server version selection guide](/games/minecraft/server-version-guide/) before upgrading plugins or mods; a player being able to join is not proof that every entity, item or mechanic works identically."
+        ]
+      },
+      {
+        "heading": "Mods, add-ons and custom content",
+        "paragraphs": [
+          "Java Edition has an extensive ecosystem of mods and loaders such as Fabric and Forge/NeoForge, alongside datapacks and resource packs. Bedrock uses add-ons, behaviour/resource packs and its own marketplace ecosystem. These systems have different file formats and technical APIs. A Java mod jar should not be installed into Bedrock, and a Bedrock add-on should not be assumed to work on a Java server.",
+          "Check the exact Minecraft version, loader, dependencies and required client/server installation for any modification. A mod listed for 1.21.1 is not necessarily compatible with 1.21.11 or 26.x, even if the update numbers look close."
+        ]
+      },
+      {
+        "heading": "Redstone, mechanics and technical guides",
+        "paragraphs": [
+          "Players who build farms, redstone machines or command systems should use edition-specific instructions. Java and Bedrock can differ in redstone update behaviour, mob spawning, entity mechanics, commands and technical interfaces. A build that depends on a particular timing or quasi-connectivity behaviour should be tested in the edition where it will be used.",
+          "Version numbering also matters. A feature announced for Java Edition should not automatically be described as arriving in Bedrock in the same release or under an identical name. Start with the [Minecraft version library](/games/minecraft/versions/) to find the edition and stable-versus-snapshot status."
+        ]
+      },
+      {
+        "heading": "Which edition should you choose?",
+        "bullets": [
+          "Choose Bedrock if you need supported play across a mix of consoles, phones and other Bedrock devices.",
+          "Choose Java if your target community uses Java servers, loaders, datapacks or Java-focused technical content.",
+          "Confirm what edition your friends or server actually run before purchasing or migrating a world.",
+          "Back up and test the world before switching server software or edition; do not assume the same save will transfer perfectly.",
+          "Use official release notes when a feature, recipe or compatibility statement depends on version."
+        ],
+        "paragraphs": [
+          "Neither edition is universally better. Choose for the platform, players, custom content and server requirements you actually have—not only because a video calls one edition the best."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official game and edition pages",
+        "url": "https://www.minecraft.net/en-us"
+      },
+      {
+        "label": "Official Minecraft Java release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      },
+      {
+        "label": "Minecraft Help Center",
+        "url": "https://help.minecraft.net/"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "minecraft-26-3",
+      "minecraft-26-4-preview",
+      "gaming-guides-index"
+    ]
+  },
+  {
+    "slug": "minecraft-survival-first-day",
+    "route": "/guides/minecraft-survival-first-day/",
+    "kind": "guide",
+    "category": "Minecraft Survival Guide",
+    "categorySlug": "guides",
+    "title": "Minecraft Survival: A Beginner’s First-Day Checklist",
+    "description": "A beginner-friendly Minecraft survival guide covering the first resources, crafting table, tools, food, shelter, light and how to prepare for the first night.",
+    "keywords": [
+      "Minecraft first day survival",
+      "Minecraft beginner survival guide",
+      "Minecraft first night checklist",
+      "Minecraft basic crafting",
+      "Minecraft early game tips"
+    ],
+    "heroImage": "/knowledge/minecraft-survival-first-day.svg",
+    "heroAlt": "Original Minecraft-inspired forest trail and starter shelter artwork, not an official gameplay screenshot.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "The first day in a new Minecraft survival world is about building a safe loop: collect the basic resources, make tools, secure food and light, then build enough shelter to survive the night. You do not need a perfect base on the first evening; prioritise safety and leave bigger builds for when you have a reliable supply of resources.",
+    "takeaways": [
+      "Collect wood first and craft a crafting table, sticks and basic tools.",
+      "Gather stone, food and coal or another reliable light source before nightfall.",
+      "Build a simple shelter or use a naturally safe location while you prepare.",
+      "Carry a bed when possible, but keep a torch-lit fallback plan in unfamiliar terrain.",
+      "Explore further only after food, tools, health and a safe return route are under control."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Get the basic materials",
+        "paragraphs": [
+          "Start by punching a tree to collect logs. Convert logs into planks, then craft a crafting table and sticks. Use those materials to make the tools that help you gather stone and other resources more efficiently. The exact best opening can vary by biome and nearby structures, but wood is a reliable starting resource in a normal Overworld spawn.",
+          "Do not spend the whole daylight period searching for an ideal base. A small amount of wood, a few tools and a safe place to return to are more important than finding the rarest biome on the first walk."
+        ]
+      },
+      {
+        "heading": "Step 2: Upgrade tools and find food",
+        "paragraphs": [
+          "Use a pickaxe to collect stone and upgrade from wooden to stone tools. Gather food from safe nearby sources, and cook raw food when you have the means to do so. Keep enough inventory space for essential items rather than filling every slot with decorative blocks.",
+          "Listen for nearby hostile mobs and pay attention to the terrain. Caves can provide stone and coal, but a deep cave expedition is a poor first-day plan if you have no armour, low food or no clear exit route."
+        ]
+      },
+      {
+        "heading": "Step 3: Make light and shelter",
+        "paragraphs": [
+          "Before night, place torches in the area where you plan to spend time and block off openings in a simple shelter. It can be a compact dirt or wood structure, a cleared-out hillside space or another defensible location. The aim is a safe point to recover, craft and wait—not a finished base.",
+          "Light and a closed entrance help make the area easier to manage, but a shelter is not automatically safe if you leave openings or let hostile mobs enter. Check corners, close doors or block gaps, and keep your tools ready if the surroundings are not secure."
+        ]
+      },
+      {
+        "heading": "Step 4: Prepare a small survival kit",
+        "bullets": [
+          "Crafting table and basic pickaxe/axe.",
+          "Enough food to restore hunger during a return trip.",
+          "Torch supply or materials to make more light.",
+          "A few building blocks to close an opening or bridge a small gap.",
+          "Weapon and any early armour that you can craft safely.",
+          "Coordinates or a clear landmark if you plan to roam away from the spawn area."
+        ],
+        "paragraphs": [
+          "If you find wool and can craft a bed, it can help you manage the night cycle and establish a respawn point. Be careful with sleeping near danger or in an unfamiliar structure; the goal is to make the next morning safer, not to rush into a risky location."
+        ]
+      },
+      {
+        "heading": "What to do on day two",
+        "paragraphs": [
+          "Once you have shelter, food and tools, choose one next objective: build a small crop plot, explore the nearby area, look for iron, improve storage or mark a route to a river or village. A single goal helps avoid wandering until the inventory is full and you cannot remember how to return.",
+          "These are general survival tips rather than version-specific mechanics. If a guide depends on a new item or recipe, check the exact release in the [Minecraft version library](/games/minecraft/versions/). For multiplayer, use the [server version guide](/games/minecraft/server-version-guide/) to check your world’s target version."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Minecraft official beginner and game information",
+        "url": "https://www.minecraft.net/en-us"
+      },
+      {
+        "label": "Minecraft official release changelog index",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-java-vs-bedrock",
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "game-genres-guide"
+    ]
+  },
+  {
+    "slug": "valorant-beginner-guide",
+    "route": "/games/valorant/guides/beginner-basics/",
+    "kind": "guide",
+    "category": "VALORANT Beginner Guide",
+    "categorySlug": "valorant",
+    "title": "VALORANT Beginner Guide: Aim, Utility, Economy and Team Play",
+    "description": "A practical VALORANT starter guide covering crosshair discipline, movement, agent roles, ability timing, economy decisions and how to review rounds without chasing kills alone.",
+    "keywords": [
+      "VALORANT beginner guide",
+      "how to improve in VALORANT",
+      "VALORANT aim tips",
+      "VALORANT economy guide",
+      "VALORANT agent roles",
+      "VALORANT new player tips"
+    ],
+    "heroImage": "/knowledge/valorant-beginner.svg",
+    "heroAlt": "Original tactical FPS editorial illustration with target reticle and patch panel; not official VALORANT gameplay.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "VALORANT rewards accurate shooting, disciplined movement, careful use of agent abilities and communication. Beginners often try to improve everything at once or judge each round by kills alone. A better path is to learn one reliable routine, understand the objective, and make each decision with the team’s economy and position in mind.",
+    "takeaways": [
+      "Stop moving before taking accurate rifle shots unless your weapon/ability specifically supports moving fire.",
+      "Use abilities to gain information, deny space, protect a teammate or enable an entry—not simply because the cooldown is ready.",
+      "Understand the buy phase and coordinate economy with the team.",
+      "Trade with teammates and use cover instead of taking repeated isolated fights.",
+      "Review one repeat mistake after a match; change one habit before changing all settings."
+    ],
+    "sections": [
+      {
+        "heading": "1. Build a consistent aim routine",
+        "paragraphs": [
+          "Choose a comfortable sensitivity and keep it stable long enough to evaluate. Practise placing the crosshair at likely head height, clearing common angles in a deliberate order and stopping movement before firing with weapons that reward stationary accuracy. A large number of random flicks is less useful than repeated, controlled shots that resemble actual fights.",
+          "Settings are personal and depend on hardware, desk space and control style. There is no single sensitivity number guaranteed to improve every player. If you change your settings, test them in the practice range and across several matches rather than judging the new setup from one round."
+        ]
+      },
+      {
+        "heading": "2. Learn your agent’s job",
+        "paragraphs": [
+          "Agents have different roles and ability kits. Use utility according to the role and the round’s plan: gather information, block a sightline, delay a push, help a teammate enter, or protect a post-plant position. Using an ability with no plan can reveal your position or leave the team without that tool later in the round.",
+          "Read each ability’s current official description and practise its interactions on the maps you play. Updates can change ability behaviour, bug fixes or maps. Check the [VALORANT agent updates guide](/games/valorant/updates/agents/) when a patch affects a specific ability."
+        ]
+      },
+      {
+        "heading": "3. Use the economy as a team decision",
+        "paragraphs": [
+          "Buying a powerful weapon and full utility in every round can leave the team unable to afford a coordinated purchase later. Learn the current credit rules, understand whether the team is saving, buying or forcing, and communicate before the buy phase ends. Exact costs and weapon balances can change with patches, so use the live game and official update notes for current values.",
+          "Do not assume that copying a professional buy plan is always correct in a ranked lobby. Economy decisions depend on available credits, the current round, weapon recovery, teammates’ resources and the team’s plan."
+        ]
+      },
+      {
+        "heading": "4. Play with information and trades",
+        "paragraphs": [
+          "Before a fight, ask what information the team has, which angles are covered, and whether a teammate can trade if the first player is eliminated. Avoid wide-swinging several angles without a plan when a slower peek or utility setup would create a safer duel. After gaining a numbers advantage, protect it rather than giving opponents isolated fights.",
+          "Communication should be brief and useful: location, enemy count, damage if known, direction of travel and what you are doing next. Long explanations during a live round can obscure the information teammates need."
+        ]
+      },
+      {
+        "heading": "5. Review rounds, not only the scoreboard",
+        "bullets": [
+          "Notice your most common early death and what information you had at the time.",
+          "Check whether utility helped a teammate or was used too late.",
+          "Review crosshair placement before the opponent appeared.",
+          "Ask whether you could trade, reposition or avoid the fight.",
+          "Choose one repeatable improvement for the next session."
+        ],
+        "paragraphs": [
+          "Patch changes can affect map routes, ability interactions and the available map pool. Read the [VALORANT update hub](/games/valorant/updates/) and [Patch 13.08 breakdown](/games/valorant/updates/patch-13-08/) rather than relying on an old strategy video after a major update."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Riot official VALORANT game updates",
+        "url": "https://playvalorant.com/en-us/news/game-updates/"
+      },
+      {
+        "label": "Riot official VALORANT patch notes",
+        "url": "https://playvalorant.com/en-us/news/tags/patch-notes/"
+      }
+    ],
+    "related": [
+      "valorant-update-hub",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide",
+      "valorant-champions-history"
+    ]
+  },
+  {
+    "slug": "esports-tournament-formats",
+    "route": "/guides/esports-tournament-formats/",
+    "kind": "guide",
+    "category": "Esports Guide",
+    "categorySlug": "guides",
+    "title": "Esports Tournament Formats Explained: League, Groups, Swiss and Finals",
+    "description": "Understand the main esports tournament formats—round robin, group stage, Swiss, single elimination, double elimination and points-based battle royale scoring.",
+    "keywords": [
+      "esports tournament formats",
+      "Swiss stage explained esports",
+      "double elimination tournament bracket",
+      "round robin esports",
+      "battle royale scoring format",
+      "esports group stage"
+    ],
+    "heroImage": "/knowledge/esports-formats.svg",
+    "heroAlt": "Original esports arena illustration for an explainer on tournament formats; not a real tournament screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "Tournament formats determine how teams qualify, how often they play, and how a champion is decided. A bracket image alone rarely tells the whole story: some events use group points, some use a Swiss stage, and others use elimination brackets before a final. This guide explains the vocabulary that helps viewers read esports results correctly.",
+    "takeaways": [
+      "Round robin gives each participant a defined set of opponents; group stages often use round robin within each group.",
+      "Swiss stages pair teams with similar records over a set number of rounds, with event-specific qualification rules.",
+      "Single and double elimination brackets differ in how a loss affects a team’s path.",
+      "Battle royale events often combine placement and elimination points across several matches.",
+      "Always check the event’s official rulebook for tie-breaks, map pool, roster rules and qualification criteria."
+    ],
+    "sections": [
+      {
+        "heading": "Round robin and groups",
+        "paragraphs": [
+          "In a round-robin stage, each participant plays the other participants in the group or league according to the event schedule. Points or match wins determine the table, followed by published tie-breakers where needed. It can give teams a more complete set of opponents, but the number of matches grows quickly as the field gets larger.",
+          "A group-stage event divides the field into smaller pools. Teams may play round robin within each group, with the top finishers qualifying for playoffs. The event rulebook decides how many advance, whether records carry forward and how ties are broken."
+        ]
+      },
+      {
+        "heading": "Swiss stage",
+        "paragraphs": [
+          "A Swiss stage runs a set number of rounds without requiring every team to play every other team. Teams are usually paired against opponents with similar win-loss records, and published rules determine when a team qualifies or is eliminated. The exact number of rounds, seeding and tie-break calculations differ by event.",
+          "Do not infer that all Swiss stages use the same number of wins to qualify. Read the tournament’s format announcement and official bracket; one event may use different qualification thresholds from another."
+        ]
+      },
+      {
+        "heading": "Single and double elimination",
+        "paragraphs": [
+          "In single elimination, a team exits the bracket after its first tournament loss. It is easy to follow and creates a direct path to the final, but one poor match can end a team’s run. Double elimination gives a team that loses in the upper bracket another route through a lower bracket; a second loss usually ends the run.",
+          "Some double-elimination formats also have a grand-final reset rule, while others do not. The phrase “double elimination” alone does not tell you all the details. Check how the lower-bracket winner must defeat the upper-bracket winner and whether a reset match is possible."
+        ]
+      },
+      {
+        "heading": "Points-based battle royale",
+        "paragraphs": [
+          "Battle royale events commonly play several matches and assign points for placement and eliminations, with the weights defined in the season’s rulebook. The final leaderboard aggregates results across the designated matches; one match win does not automatically mean the team wins the whole tournament.",
+          "Rules can change between events, including match count, placement-point curve, tie-breakers, lobby composition and any match-point system. Compare teams using the scoring rules that were active in that specific year, rather than applying a current points table to a historical tournament."
+        ]
+      },
+      {
+        "heading": "How to verify a champion result",
+        "bullets": [
+          "Use the full event title and year.",
+          "Confirm the exact game and mode.",
+          "Find the organiser’s final result or official bracket.",
+          "Record the grand-final placement and tie-break details when relevant.",
+          "Keep regional league, Masters event, national series and world championship winners separate."
+        ],
+        "paragraphs": [
+          "This is why UltraOP maintains individual history pages for [PUBG PC PGC](/esports/pubg-global-championship-history/), [PUBG Mobile PMGC](/esports/pubg-mobile-global-championship-history/), [BGIS/BGMS](/esports/bgmi-tournament-winners/), [Free Fire World Series](/esports/free-fire-world-series-history/) and [VALORANT Champions](/esports/valorant-champions-history/). Each page labels its own series instead of combining trophies into one misleading list."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "PUBG Esports official event archive",
+        "url": "https://pubgesports.com/en/pubgesports"
+      },
+      {
+        "label": "VALORANT Esports official event portal",
+        "url": "https://valorantesports.com/en-US/"
+      },
+      {
+        "label": "KRAFTON India official newsroom",
+        "url": "https://krafton.in/news/"
+      }
+    ],
+    "related": [
+      "esports-history-index",
+      "pubg-global-championship-history",
+      "pubg-mobile-global-championship-history",
+      "bgmi-tournament-winners",
+      "valorant-champions-history"
+    ]
+  },
+  {
+    "slug": "pc-game-performance-recording",
+    "route": "/guides/pc-game-performance-recording/",
+    "kind": "guide",
+    "category": "Gaming Technology",
+    "categorySlug": "guides",
+    "title": "PC Game Performance and Recording: FPS, Stutter and Capture Checklist",
+    "description": "A practical PC gaming troubleshooting guide for frame rate, frame pacing, graphics drivers and screen recording—covering reproducible tests without risky one-click fixes.",
+    "keywords": [
+      "PC gaming FPS guide",
+      "Minecraft recording stutter",
+      "game recording performance",
+      "FPS drops fix PC",
+      "frame pacing explained",
+      "OBS game capture troubleshooting"
+    ],
+    "heroImage": "/knowledge/pc-performance-recording.svg",
+    "heroAlt": "Original editorial performance-monitor and target illustration for a PC gaming troubleshooting guide; not a real benchmark screenshot.",
+    "readingMinutes": 7,
+    "updatedAt": "2026-10-23",
+    "intro": "A game can report a high average FPS and still feel choppy if frame times are uneven, the system is overheating, or recording software competes for the same resources. This guide focuses on simple, reversible tests for PC game performance and capture problems rather than recommending random system tweaks that can make troubleshooting harder.",
+    "takeaways": [
+      "Record a baseline FPS and frame-time observation before changing settings.",
+      "Separate game-rendering problems from recording, storage, network and server-lag problems.",
+      "Change one setting at a time and repeat the same test scenario.",
+      "Monitor temperatures, clock behaviour, system memory, VRAM and storage activity while reproducing the issue.",
+      "Back up configurations and avoid unofficial driver packs or unknown optimisation tools."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Identify what is actually lagging",
+        "paragraphs": [
+          "Low FPS, frame-time stutter, delayed input, network latency and dropped recording frames feel similar to a viewer but have different causes. If the image visibly pauses while the FPS counter remains high, look at frame-time consistency. If players teleport but local movement remains smooth, check network/server latency. If gameplay is smooth but the captured file stutters, inspect recording settings and capture performance.",
+          "Write down the game and exact version, display resolution, graphics preset, capture resolution/frame rate, GPU driver version and whether the issue occurs with recording turned off. A repeatable baseline is more useful than changing several settings at once."
+        ]
+      },
+      {
+        "heading": "Step 2: Check thermals and resource pressure",
+        "paragraphs": [
+          "During a controlled reproduction, monitor CPU/GPU temperature, clock speeds, system memory, VRAM use and storage activity. High utilisation is not automatically a fault, and temperature limits depend on the specific hardware model. Compare the behaviour against the manufacturer’s normal operating guidance instead of using one universal temperature number for every device.",
+          "If the machine gets progressively slower after ten to fifteen minutes, check whether temperatures, clocks or memory pressure change at the same time. Keep the case vents clear, confirm fans are working and remove dust safely according to the hardware maker’s instructions. Avoid opening a power supply or making risky electrical repairs."
+        ]
+      },
+      {
+        "heading": "Step 3: Tune the game and capture workload",
+        "bullets": [
+          "Start with the game at a known resolution and a stable, supported graphics preset.",
+          "Use a reasonable FPS cap if uncapped rendering keeps the GPU saturated and leaves no headroom for capture.",
+          "Match recording resolution and frame rate to the actual output goal rather than recording at an unnecessarily high setting.",
+          "Check whether hardware encoding is available and supported by the GPU/driver.",
+          "Record to a drive with sufficient free space and healthy write performance.",
+          "Test a short local recording before a live broadcast or a long session."
+        ],
+        "paragraphs": [
+          "Exact encoder settings vary by recording application, codec, GPU and target platform. Use the application’s official guide and test the file’s playback, not just the recording preview."
+        ]
+      },
+      {
+        "heading": "Step 4: Update software carefully",
+        "paragraphs": [
+          "Use the official GPU vendor or computer manufacturer source for graphics drivers and release notes. Before a driver change, note the current version and create a recovery point or backup where supported. If an update introduces instability, follow the vendor’s documented rollback path instead of downloading an unofficial package from an unknown site.",
+          "Game engines and capture apps can change their GPU scheduling, encoding and compatibility requirements between releases. Update one component at a time when possible, and retest the same scene so that the result can be compared."
+        ]
+      },
+      {
+        "heading": "Step 5: Write down the successful configuration",
+        "paragraphs": [
+          "Once a stable setting is found, save a short profile with the game version, resolution, graphics preset, FPS cap, capture encoder, output resolution and driver version. Keep the settings together with a sample clip. This makes it easier to restore the workflow after a future update or hardware change.",
+          "For version-specific Minecraft behaviour, start with the [Minecraft version library](/games/minecraft/versions/). If a multiplayer server is involved, also separate client performance from server tick rate and ping; one can be healthy while the other is not."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "NVIDIA official driver downloads and documentation",
+        "url": "https://www.nvidia.com/Download/index.aspx"
+      },
+      {
+        "label": "AMD official drivers and support",
+        "url": "https://www.amd.com/en/support/download/drivers.html"
+      },
+      {
+        "label": "Minecraft official release changelogs",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-server-version-guide",
+      "game-genres-guide",
+      "how-to-start-esports"
+    ]
+  }
+]
