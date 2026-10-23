@@ -143,7 +143,7 @@
       {
         "heading": "VALORANT: changes grouped for easier reading",
         "paragraphs": [
-          "The [VALORANT update hub](/games/valorant/updates/) groups patch coverage by gameplay systems, agents, maps, weapons, competitive systems, anti-cheat, progression and modes. The current article covers Patch 13.08, dated 13 October 2026, and points readers to Riot’s complete patch notes for detailed or region-specific information.",
+          "The [VALORANT update hub](/games/valorant/updates/) groups patch coverage by gameplay systems, agents, maps, weapons, competitive systems, anti-cheat, progression and modes. The current article covers Patch 13.08, dated 13 October 2026, and points readers to Riot’s complete patch notes for detailed or region-specific information. Each category also has a dedicated page for [agent updates](/games/valorant/updates/agents/), [map rotation](/games/valorant/updates/maps/) and [competitive features](/games/valorant/updates/competitive/).",
           "Patch notes can affect the meta in ways that a short headline misses. Read the summary first, then confirm exact agent values, queue availability and map rotations in the official release notes before changing a competitive strategy."
         ]
       },
@@ -224,7 +224,7 @@
       {
         "heading": "Tactical shooters and esports updates",
         "paragraphs": [
-          "VALORANT combines round-based tactical shooting, agent abilities, map-specific strategies and a global esports circuit. Update coverage is split into categories—agents, maps, balance, competitive systems, modes and anti-cheat—so it is easier to scan the impact of a patch.",
+          "VALORANT combines round-based tactical shooting, agent abilities, map-specific strategies and a global esports circuit. Update coverage is split into categories—agents, maps, balance, competitive systems, modes and anti-cheat—so it is easier to scan the impact of a patch. The update categories have their own guides for [agent changes](/games/valorant/updates/agents/), [map rotations](/games/valorant/updates/maps/) and [competitive ratings](/games/valorant/updates/competitive/).",
           "For the newest published entry, see [VALORANT Patch 13.08](/games/valorant/updates/patch-13-08/) or browse the full [VALORANT updates hub](/games/valorant/updates/)."
         ]
       }
@@ -1433,19 +1433,19 @@
       {
         "heading": "Category 1: Agents and balance",
         "paragraphs": [
-          "Agent updates can change damage, ability duration, deployable behaviour, utility reliability or how an ability interacts with a map object. A small fix can be important in ranked play even when it does not introduce a new agent. For the current detail, see [Patch 13.08](/games/valorant/updates/patch-13-08/) and Riot’s official [patch notes archive](https://playvalorant.com/en-us/news/tags/patch-notes/)."
+          "Agent updates can change damage, ability duration, deployable behaviour, utility reliability or how an ability interacts with a map object. A small fix can be important in ranked play even when it does not introduce a new agent. For the current detail, see [Patch 13.08](/games/valorant/updates/patch-13-08/) and Riot’s official [patch notes archive](https://playvalorant.com/en-us/news/tags/patch-notes/). For focused reading, see the separate [agent update guide](/games/valorant/updates/agents/)."
         ]
       },
       {
         "heading": "Category 2: Maps and competitive rotation",
         "paragraphs": [
-          "Map changes can adjust defender rotations, sightlines, site entries, mid control and how predictable an execute is. Patch 13.08 included changes to Corrode and changed which maps are in the competitive rotation, according to Riot’s official notes. Always check the current rotation for the region and mode you actually play."
+          "Map changes can adjust defender rotations, sightlines, site entries, mid control and how predictable an execute is. Patch 13.08 included changes to Corrode and changed which maps are in the competitive rotation, according to Riot’s official notes. Always check the current rotation for the region and mode you actually play. The [map update guide](/games/valorant/updates/maps/) explains how to track route and rotation changes."
         ]
       },
       {
         "heading": "Category 3: Competitive rating and post-match systems",
         "paragraphs": [
-          "Competitive updates include rankings, rating displays, match performance metrics and the post-game experience. Patch 13.08 introduced Map Rating on a 0–500 scale with letter grades and updated Performance Score. These systems help players review map performance, but they should not be treated as a guarantee of rank gain or as a public rating visible to every opponent."
+          "Competitive updates include rankings, rating displays, match performance metrics and the post-game experience. Patch 13.08 introduced Map Rating on a 0–500 scale with letter grades and updated Performance Score. These systems help players review map performance, but they should not be treated as a guarantee of rank gain or as a public rating visible to every opponent. For the rating calculation and review workflow, use the [competitive features guide](/games/valorant/updates/competitive/)."
         ]
       },
       {
@@ -1486,7 +1486,10 @@
       "valorant-patch-13-08",
       "valorant-champions-history",
       "gaming-guides-index",
-      "esports-history-index"
+      "esports-history-index",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
     ],
     "route": "/games/valorant/updates/"
   },
@@ -1572,7 +1575,10 @@
     "related": [
       "valorant-update-hub",
       "valorant-champions-history",
-      "gaming-guides-index"
+      "gaming-guides-index",
+      "valorant-agent-update-guide",
+      "valorant-map-rotation-guide",
+      "valorant-competitive-features-guide"
     ],
     "route": "/games/valorant/updates/patch-13-08/"
   },
