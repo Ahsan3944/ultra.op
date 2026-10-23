@@ -171,7 +171,7 @@ for (const article of knowledgeArticles) {
   titles.push(title);
 }
 assert.equal(new Set(titles).size, titles.length, 'Main routes and gaming knowledge pages must have unique titles.');
-for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/26-3/', '/games/minecraft/versions/26-4/', '/games/valorant/updates/patch-13-08/', '/games/valorant/updates/agents/', '/games/valorant/updates/maps/', '/games/valorant/updates/competitive/', '/esports/pubg-global-championship-history/', '/esports/bgmi-tournament-winners/']) {
+for (const expected of ['/guides/', '/games/', '/esports/', '/games/minecraft/versions/26-3/', '/games/minecraft/versions/26-4/', '/games/valorant/updates/patch-13-08/', '/games/valorant/updates/agents/', '/games/valorant/updates/maps/', '/games/valorant/updates/competitive/', '/esports/pubg-global-championship-history/', '/esports/pubg-mobile-global-championship-history/', '/esports/bgmi-tournament-winners/']) {
   assert.ok(sitemap.includes('https://ultraop.in' + expected), 'SEO sitemap is missing core gaming route ' + expected);
 }
 const knowledgeOverview = readFileSync(path.join(dist, 'llms.txt'), 'utf8');
