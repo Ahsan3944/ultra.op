@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
-  ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Blocks,
+  ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Blocks, ChevronDown,
   Code2, ExternalLink, Gamepad2, Instagram, Mail, Menu, MessageCircle, Play,
   Radio, Sparkles, Twitch, X, Youtube
 } from 'lucide-react';
@@ -24,8 +24,8 @@ type StatsState = {
 
 const PAGE_COPY: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer',
-    description: 'Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Find gaming videos, live streams and creator projects on YouTube, Twitch and Rooter.'
+    title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator',
+    description: 'UltraOP (Sk Ahsan Ahmad) is an Indian gaming creator. Explore gaming videos, Minecraft stories, live streams and official links to YouTube, Twitch, Rooter and Instagram.'
   },
   '/about': {
     title: 'About UltraOP — Sk Ahsan Ahmad | Gaming Creator Journey',
@@ -177,15 +177,23 @@ function setMeta(name: string, content: string, attribute: 'name' | 'property' =
 
 function SiteHeader({ route }: { route: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [exploreOpen, setExploreOpen] = useState(false);
   const home = route === '/';
   const navItems = [
     { label: 'Creator', href: home ? '#creator' : '/about/', active: route === '/about' },
     { label: 'Channels', href: home ? '#channels' : '/channels/', active: route === '/channels' },
-    { label: 'Explore', href: home ? '#knowledge' : '/guides/', active: route === '/guides' || route.startsWith('/guides/') || route === '/games' || route === '/esports' || route.startsWith('/games/') || route.startsWith('/esports/') },
     { label: 'Community', href: home ? '#community' : '/community/', active: route === '/community' },
     { label: 'Journal', href: '/journal/', active: route === '/journal' || route.startsWith('/journal/') },
     { label: 'Brand work', href: home ? '#work' : '/work/', active: route === '/work' }
   ];
+  const exploreItems = [
+    { label: 'Games & versions', detail: 'Game directory and version notes', href: '/games/', active: route === '/games' },
+    { label: 'Gaming guides', detail: 'How-to articles and game explainers', href: '/guides/', active: route === '/guides' || route.startsWith('/guides/') },
+    { label: 'Esports histories', detail: 'Tournament winners and event records', href: '/esports/', active: route === '/esports' || route.startsWith('/esports/') },
+    { label: 'Minecraft versions', detail: 'Release details and compatibility', href: '/games/minecraft/versions/', active: route.startsWith('/games/minecraft/') },
+    { label: 'VALORANT updates', detail: 'Patch notes, agents, maps and ranked', href: '/games/valorant/updates/', active: route.startsWith('/games/valorant/') }
+  ];
+  const exploreActive = exploreItems.some((item) => item.active);
 
   return (
     <header className="uos-header">
@@ -195,7 +203,26 @@ function SiteHeader({ route }: { route: string }) {
           <span>ULTRA<span className="uos-wordmark-accent">OP</span></span>
         </a>
         <nav className="uos-desktop-nav" aria-label="Main navigation">
-          {navItems.map((item) => <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined}>{item.label}</a>)}
+          {navItems.slice(0, 2).map((item) => <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined}>{item.label}</a>)}
+          <div
+            className={['uos-nav-dropdown', exploreActive ? 'is-active' : '', exploreOpen ? 'is-open' : ''].filter(Boolean).join(' ')}
+            onMouseEnter={() => setExploreOpen(true)}
+            onMouseLeave={() => setExploreOpen(false)}
+            onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setExploreOpen(false); }}
+          >
+            <button type="button" aria-haspopup="true" aria-expanded={exploreOpen} onClick={() => setExploreOpen((open) => !open)}>
+              Explore <ChevronDown size={14} aria-hidden="true" />
+            </button>
+            <div className="uos-nav-dropdown-menu" role="menu" aria-label="Explore gaming content">
+              {exploreItems.map((item) => (
+                <a key={item.label} href={item.href} role="menuitem" className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setExploreOpen(false)}>
+                  <span>{item.label}<ArrowUpRight size={13} aria-hidden="true" /></span>
+                  <small>{item.detail}</small>
+                </a>
+              ))}
+            </div>
+          </div>
+          {navItems.slice(2).map((item) => <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined}>{item.label}</a>)}
         </nav>
         <a className="uos-header-cta" href={home ? '#contact' : '/contact/'}>
           Let’s work <ArrowUpRight size={15} aria-hidden="true" />
@@ -213,7 +240,20 @@ function SiteHeader({ route }: { route: string }) {
       </div>
       {menuOpen && (
         <nav className="uos-mobile-nav" id="uos-mobile-nav" aria-label="Mobile navigation">
-          {navItems.map((item) => (
+          {navItems.slice(0, 2).map((item) => (
+            <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
+              {item.label}<ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          ))}
+          <div className="uos-mobile-nav-group">
+            <p>Explore</p>
+            {exploreItems.map((item) => (
+              <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
+                <span>{item.label}<small>{item.detail}</small></span><ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+          {navItems.slice(2).map((item) => (
             <a key={item.label} href={item.href} className={item.active ? 'is-active' : undefined} aria-current={item.active ? 'page' : undefined} onClick={() => setMenuOpen(false)}>
               {item.label}<ArrowUpRight size={15} aria-hidden="true" />
             </a>
@@ -775,10 +815,16 @@ export default function UltraOPStudio() {
     setMeta('og:description', pageInfo.description, 'property');
     setMeta('og:url', 'https://ultraop.in' + (route === '/' ? '/' : route + '/'), 'property');
     setMeta('og:type', knowledge && knowledge.kind !== 'hub' ? 'article' : 'website', 'property');
-    setMeta('og:image', 'https://ultraop.in/brand/ultraop-original.webp', 'property');
-    setMeta('og:image:alt', 'UltraOP official mascot logo — creator, Minecraft and gaming stories.', 'property');
-    setMeta('twitter:card', 'summary', 'name');
-    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-original.webp', 'name');
+    setMeta('og:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'property');
+    setMeta('og:image:type', 'image/jpeg', 'property');
+    setMeta('og:image:width', '1200', 'property');
+    setMeta('og:image:height', '630', 'property');
+    setMeta('og:image:alt', 'UltraOP — Sk Ahsan Ahmad, gaming creator and live streamer on YouTube, Twitch, Rooter and Instagram.', 'property');
+    setMeta('twitter:card', 'summary_large_image', 'name');
+    setMeta('twitter:title', pageInfo.title, 'name');
+    setMeta('twitter:description', pageInfo.description, 'name');
+    setMeta('twitter:image', 'https://ultraop.in/brand/ultraop-social-share.jpg', 'name');
+    setMeta('twitter:image:alt', 'UltraOP — Sk Ahsan Ahmad | Gaming Creator and Live Streamer', 'name');
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');
