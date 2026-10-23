@@ -248,6 +248,8 @@ const pageContent = {
   }
 };
 
+pageContent['/'].sections.push({ heading: 'Explore gaming knowledge', items: knowledgeRecords.filter((article) => ['gaming-guides-index', 'game-directory', 'esports-history-index', 'minecraft-version-library', 'valorant-update-hub'].includes(article.slug)).map((article) => ({ label: article.title, href: article.route, detail: article.description })) });
+pageContent['/journal/'].sections[0].items.unshift({ label: 'Featured creator story — UltraOP', href: '/journal/ultraop-creator-story/', detail: 'A longer feature on Sk Ahsan Ahmad’s journey from competitive gaming to Minecraft content and creator technology.' });
 pageContent['/site-map/'].sections.splice(1, 0,
   { heading: 'Topic directories', items: knowledgeRecords.filter((article) => article.kind === 'hub').map((article) => ({ label: article.title, href: article.route, detail: article.description })) },
   { heading: 'Game guides and tournament histories', items: knowledgeRecords.filter((article) => article.kind !== 'hub').map((article) => ({ label: article.title, href: article.route, detail: article.description })) }
@@ -433,7 +435,7 @@ const llmsLines = [
   '',
   '## Primary pages',
   '- Official homepage: https://ultraop.in/',
-  ...pages.filter((page) => !page.noindex && !page.path.endsWith('.html') && !page.path.startsWith('/journal/') && page.path !== '/').map((page) => '- ' + page.title + ': https://ultraop.in' + page.path),
+  ...pages.filter((page) => !page.noindex && !page.knowledgeArticle && !page.path.endsWith('.html') && !page.path.startsWith('/journal/') && page.path !== '/').map((page) => '- ' + page.title + ': https://ultraop.in' + page.path),
   '',
   '## Gaming guides, version notes and esports histories',
   ...knowledgeRecords.map((article) => '- ' + article.title + ': https://ultraop.in' + article.route + ' — ' + article.description),
