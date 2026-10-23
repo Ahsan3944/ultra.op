@@ -351,17 +351,17 @@
     "updatedAt": "2026-10-23",
     "intro": "Minecraft version searches often mean different things: a player may want the newest Java Edition release, a creator may need the features of an earlier update, and a server owner may need compatibility information. This library separates release facts from practical advice and links each version to its official notes.",
     "takeaways": [
-      "As of 23 October 2026, Minecraft Java Edition 26.3 is the current stable version covered in this library.",
-      "26.3 is the Wilderness Bound game drop; 26.2 is Chaos Cubed; 26.1 is Tiny Takeover.",
-      "The 1.21 line includes Mounts of Mayhem (1.21.11) and earlier drops such as Spring to Life (1.21.5).",
-      "Before upgrading a server, check its Java runtime, server software, plugins, mods, world backups and client support."
+      "As of 23 October 2026, Minecraft Java Edition 26.3 is the current stable release covered in this library.",
+      "Minecraft Java Edition 26.4 is still in snapshot/pre-release testing; Snapshot 5 was published on 20 October 2026.",
+      "26.3 is Wilderness Bound; 26.2 is Chaos Cubed; 26.1 is Tiny Takeover.",
+      "Older releases such as 1.21.11, 1.21.5 and 1.20.1 remain relevant for existing servers and modpacks."
     ],
     "sections": [
       {
         "heading": "Current version overview",
         "paragraphs": [
           "Minecraft Java Edition 26.3, released on 15 September 2026, is the Wilderness Bound game drop. Its major additions include the Dappled Forest biome, poplar trees and a wood set, abandoned camps, explorer maps, cushions and straw beds. It also adds wool and concrete stairs/slabs and several supporting changes. Read the [26.3 feature guide](/games/minecraft/versions/26-3/).",
-          "The previous 26.x drops introduced other systems: 26.2 added Sulfur Caves and the sulfur cube; 26.1 focused on baby animal variants and the Golden Dandelion. These names make good search terms, but the precise version remains important because the content and technical requirements are not interchangeable."
+          "The 26.4 snapshot branch is also active, but a snapshot is not the final stable release. Snapshot 5, published on 20 October 2026, adds Packed Ice Bricks and variants. Read the [Minecraft 26.4 Snapshot 5 guide](/games/minecraft/versions/26-4/) for experimental features and safe testing advice before trying it."
         ]
       },
       {
@@ -391,6 +391,10 @@
       {
         "label": "Minecraft Java Edition 26.3 notes",
         "url": "https://feedback.minecraft.net/hc/en-us/articles/48913133328013-Minecraft-Java-Edition-26-3"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 5",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49759185020173-Minecraft-Java-Edition-26-4-Snapshot-5"
       }
     ],
     "related": [
@@ -400,7 +404,8 @@
       "minecraft-1-21-11",
       "minecraft-1-21-5",
       "minecraft-1-20-1",
-      "minecraft-server-version-guide"
+      "minecraft-server-version-guide",
+      "minecraft-26-4-preview"
     ],
     "route": "/games/minecraft/versions/"
   },
@@ -1963,5 +1968,105 @@
       "how-to-start-esports"
     ],
     "route": "/guides/game-genres-explained/"
+  },
+  {
+    "slug": "minecraft-26-4-preview",
+    "route": "/games/minecraft/versions/26-4/",
+    "kind": "guide",
+    "category": "Minecraft Preview",
+    "categorySlug": "minecraft",
+    "title": "Minecraft Java Edition 26.4 Snapshot 5: New Features and Preview Status",
+    "description": "Minecraft Java Edition 26.4 Snapshot 5 guide: Packed Ice Bricks, Brittle Ice, Jukebox Playlists, F3 redesign and Vulkan changes—and why 26.4 is not a stable release yet.",
+    "keywords": [
+      "Minecraft 26.4 snapshot 5",
+      "Minecraft 26.4 features",
+      "Packed Ice Bricks",
+      "Brittle Ice Minecraft",
+      "Jukebox Playlists Minecraft",
+      "Minecraft 26.4 update"
+    ],
+    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroAlt": "Original editorial Minecraft-inspired landscape illustration; snapshot coverage is an editorial guide, not a gameplay screenshot.",
+    "readingMinutes": 6,
+    "updatedAt": "2026-10-23",
+    "intro": "Minecraft Java Edition 26.4 is still in snapshot testing as of 23 October 2026. Snapshot 5 was published on 20 October and adds Packed Ice Bricks. Earlier snapshots in the same series introduced Brittle Ice and Jukebox Playlists, F3 screen changes and a Vulkan graphics setting change. These are experimental pre-release details, not a claim that 26.4 has shipped as a stable release.",
+    "takeaways": [
+      "26.3 remains the stable Java Edition release covered by this library as of 23 October 2026.",
+      "26.4 Snapshot 5 was published on 20 October 2026 and introduces Packed Ice Bricks.",
+      "Snapshot 4 introduced Brittle Ice and Jukebox Playlists; Snapshot 2 updated the F3 debug overlay and improved render-distance fog.",
+      "Snapshot 1 changed the Graphics API setting so Default behaves like Prefer Vulkan.",
+      "Do not use snapshots on the only copy of an important world or public production server."
+    ],
+    "sections": [
+      {
+        "heading": "First check the release status",
+        "paragraphs": [
+          "Minecraft Java Edition 26.4 is a work-in-progress snapshot series. The release-changelog index still lists 26.3 as the full stable Java Edition release, while 26.4 entries are listed under Snapshot Information and Changelogs. Feature details can change between snapshots and before the eventual release.",
+          "A snapshot may be useful for testing upcoming mechanics or creating preview content, but it should not be labelled simply as “Minecraft 26.4 stable”. Always include the snapshot number and date so players know which build a guide describes."
+        ]
+      },
+      {
+        "heading": "Snapshot 5: Packed Ice Bricks",
+        "paragraphs": [
+          "Snapshot 5, published on 20 October 2026, adds Packed Ice Bricks crafted from a 2-by-2 pattern of Packed Ice. The family includes Slabs, Stairs, Walls and Chiseled Packed Ice. Several of these variants can also be crafted using a Stonecutter, making the block family more flexible for icy builds and decorative paths.",
+          "The same snapshot adds the “What Goes Around Comes Around” Adventure advancement for killing a Frostbite with an Ice Ball. The changelog also adjusts projectile interactions with certain blocks in Adventure Mode worlds, subject to the mobGriefing game rule."
+        ]
+      },
+      {
+        "heading": "Snapshot 4: Brittle Ice and Jukebox Playlists",
+        "paragraphs": [
+          "Snapshot 4 introduced Brittle Ice, a block found naturally in Ice Caves as part of the crevasse feature. Players or mobs standing on it cause it to crack and eventually break, while the Frostbite mob can walk across it without breaking it. The official notes also describe obtaining it with Silk Touch and creating it when water flows onto Blue Ice.",
+          "Jukebox Playlists let players place a Chest, Trapped Chest or Copper Chest variant directly above a Jukebox. Music discs in the chest play in slot order, skip empty slots and non-disc items, and loop back to the start. Removing the current disc skips to the next available disc."
+        ]
+      },
+      {
+        "heading": "Earlier snapshots: F3 interface, fog and Vulkan",
+        "paragraphs": [
+          "Snapshot 2 changed render-distance fog blending when Improved Transparency is enabled, added a celestial occluder to the Overworld skybox and redesigned the F3 debug overlay to be easier to read. Because the debug screen is often used for coordinates, performance diagnostics and tutorial recordings, interface changes can affect creators and server administrators who rely on familiar layouts.",
+          "Snapshot 1 changed the Graphics API setting so Default behaves like Prefer Vulkan, and it altered the game’s behaviour after a startup crash. Graphics support is hardware- and driver-dependent; do not assume a setting that works on one PC will be ideal for every system. Follow the latest snapshot notes and test with your own GPU and drivers."
+        ]
+      },
+      {
+        "heading": "How to test a snapshot safely",
+        "bullets": [
+          "Create a separate launcher installation or game directory for snapshots.",
+          "Back up the world and copy it before opening it in a snapshot.",
+          "Do not load the only copy of a production or long-running server world in a test version.",
+          "Check snapshot-specific notes and server-software support before testing multiplayer.",
+          "Keep the exact snapshot number in video titles, bug reports and screenshots."
+        ],
+        "paragraphs": [
+          "Snapshot worlds and data can change between builds, and worlds opened in a newer experimental version may not be suitable for older stable versions afterward. For a stable new world, start with the [Minecraft Java 26.3 guide](/games/minecraft/versions/26-3/) and the [version library](/games/minecraft/versions/)."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 5",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49759185020173-Minecraft-Java-Edition-26-4-Snapshot-5"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 4",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49579562483853-Minecraft-Java-Edition-26-4-Snapshot-4"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 2",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49295421760909-Minecraft-Java-Edition-26-4-Snapshot-2"
+      },
+      {
+        "label": "Official Minecraft Java Edition 26.4 Snapshot 1",
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/49076034811533-Minecraft-Java-Edition-26-4-Snapshot-1"
+      },
+      {
+        "label": "Minecraft official snapshot changelog index",
+        "url": "https://feedback.minecraft.net/hc/en-us/sections/360002267532-Snapshot-Information-and-Changelogs"
+      }
+    ],
+    "related": [
+      "minecraft-version-library",
+      "minecraft-26-3",
+      "minecraft-26-2",
+      "minecraft-server-version-guide"
+    ]
   }
 ]
