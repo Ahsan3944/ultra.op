@@ -37,21 +37,23 @@ assert.ok(studio.includes('Subscribe to '), 'Subscribe links must have accessibl
 assert.ok(studio.includes('View channel'), 'Each channel card must retain a separate channel-page link.');
 assert.ok(html.includes('Content-Security-Policy'), 'A documented baseline Content Security Policy is required in the main document.');
 
-assert.ok(html.includes('<title>UltraOP — Sk Ahsan Ahmad | Gaming Creator &amp; Streamer</title>'), 'Homepage title must present UltraOP as a gaming creator and streamer.');
-assert.ok(html.includes('Official home of UltraOP (Sk Ahsan Ahmad), an Indian gaming creator and streamer. Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Homepage search description must use the current platform-focused creator positioning.');
+assert.ok(html.includes('<title>UltraOP — Sk Ahsan Ahmad | Gaming Creator</title>'), 'Homepage title must present the current creator identity without outdated game-history text.');
+assert.ok(html.includes('UltraOP (Sk Ahsan Ahmad) is an Indian gaming creator. Explore gaming videos, Minecraft stories, live streams and official links to YouTube, Twitch, Rooter and Instagram.'), 'Homepage description must reflect the current general gaming creator identity and active platforms.');
 assert.ok(!html.includes('Explore Minecraft, the creator journey, official channels and brand collaborations.') && !html.includes('PUBG esports roots, Rooter streaming and moderation, Free Fire'), 'Homepage metadata must not lead with outdated individual-game/history snippets.');
-assert.ok(staticGenerator.includes("title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator & Streamer'") && staticGenerator.includes('Watch gaming videos and live streams on YouTube, Twitch and Rooter.'), 'Generated homepage metadata must match the HTML template.');
+assert.ok(staticGenerator.includes("title: 'UltraOP — Sk Ahsan Ahmad | Gaming Creator'") && staticGenerator.includes('Minecraft stories, live streams and official links to YouTube, Twitch, Rooter and Instagram.'), 'Generated homepage metadata must match the current HTML template.');
 const headerStart = studio.indexOf('function SiteHeader({ route }: { route: string }) {');
 const headerEnd = studio.indexOf('\nfunction SectionHeading', headerStart);
 const headerSource = headerStart >= 0 && headerEnd > headerStart ? studio.slice(headerStart, headerEnd) : '';
-assert.ok(headerSource.includes("label: 'Explore'") && headerSource.includes("href: home ? '#knowledge' : '/guides/'"), 'Header must consolidate Guides and Esports under one Explore link.');
-assert.equal((headerSource.match(/label: 'Explore'/g) ?? []).length, 1, 'Only one Explore entry should appear in the header navigation.');
+assert.ok(headerSource.includes('uos-nav-dropdown-menu') && headerSource.includes('Explore <ChevronDown') && headerSource.includes("href: '/games/'") && headerSource.includes("href: '/guides/'") && headerSource.includes("href: '/esports/'"), 'Explore must expose distinct Games, Guides and Esports destinations in one dropdown.');
+assert.equal((headerSource.match(/Explore <ChevronDown/g) ?? []).length, 1, 'Only one Explore dropdown should appear in the header navigation.');
 assert.ok(headerSource.includes("label: 'Community'") && headerSource.includes("label: 'Journal'") && headerSource.includes("label: 'Brand work'"), 'Community, Journal and Brand work must remain distinct navigation items.');
 assert.ok(headerSource.includes("className={item.active ? 'is-active' : undefined}"), 'Navigation should indicate the current section accessibly.');
-assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects must be restrained and respect reduced-motion preferences.');
+assert.ok(studioCss.includes('.uos-desktop-nav a::after') && studioCss.includes('.uos-nav-dropdown-menu') && studioCss.includes('@keyframes uos-header-enter') && studioCss.includes('prefers-reduced-motion:reduce'), 'Header effects and dropdown must respect reduced-motion preferences.');
 
-assert.ok(html.includes('twitter:card') && html.includes('twitter:image'), 'Social cards must include Twitter/X card and image metadata.');
-assert.ok(html.includes('/brand/ultraop-original.webp'), 'Social preview metadata must point at a published image asset.');
+assert.ok(html.includes('twitter:card') && html.includes('summary_large_image') && html.includes('twitter:image'), 'Social cards must use a large Twitter/X card with an image.');
+assert.ok(html.includes('https://ultraop.in/brand/ultraop-social-share.jpg'), 'Social preview metadata must point at the dedicated published share-card image.');
+assert.ok(html.includes('og:image:width') && html.includes('1200') && html.includes('630') && html.includes('image/jpeg'), 'Open Graph image dimensions and MIME type must match the 1200×630 JPEG asset.');
+assert.ok(staticGenerator.includes('og:image:secure_url') && staticGenerator.includes('content="image/jpeg"') && staticGenerator.includes('summary_large_image'), 'Every generated route must keep social image metadata consistent.');
 assert.ok(html.includes('/brand/ultraop-original.webp'), 'Favicons/touch icons must use the original supplied UltraOP logo.');
 assert.ok(studio.includes('/brand/ultraop-original.webp'), 'Header, footer and hero artwork must use the original supplied logo.');
 assert.ok(readFileSync('public/site.webmanifest', 'utf8').includes('/brand/ultraop-original.webp'), 'Web app manifest must use the supplied original logo.');
