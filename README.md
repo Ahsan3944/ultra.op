@@ -43,12 +43,11 @@ For a production build, run npm run build. To inspect the generated output local
 The rebuild/premium-creator-studio branch is intended for review. The production deploy workflow runs only from main; merge only after reviewing the page routes, accessibility, build status and security checks. Keep the custom domain configuration (CNAME) intact.
 
 
-## Failure and availability fallback
+## Error handling
 
-- `public/404.html` is the branded missing-page response GitHub Pages can serve for missing URLs.
-- `public/503.html` is a branded temporary-unavailability screen for hosts that support custom HTTP 503 documents, and is also available as a direct static URL.
-- `public/runtime-fallback.js` detects a failed main bundle or a stalled app boot and replaces pre-rendered content with a recovery screen. A React error boundary handles rendering exceptions inside the app.
-- Limitation: a static GitHub Pages site cannot guarantee delivery of its own error page when GitHub Pages, DNS, TLS, or the origin network itself is unavailable. A full-host outage requires an independent status page / uptime monitor on a separate host and DNS name.
+- The branded `public/404.html` handles missing or retired URLs on GitHub Pages.
+- The site does not replace a page with a custom crash/503 recovery screen when JavaScript fails. Route-specific pre-rendered HTML remains in the page as the initial content.
+- GitHub Pages is static hosting; platform-level availability, DDoS protection and response security headers are controlled by GitHub and the domain/DNS configuration, not by browser JavaScript.
 
 ## Original creator branding
 
