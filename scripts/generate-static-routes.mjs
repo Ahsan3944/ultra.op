@@ -5,6 +5,7 @@ const dist = path.resolve('dist');
 const template = await readFile(path.join(dist, 'index.html'), 'utf8');
 const coreSource = await readFile(path.resolve('src/data/core.ts'), 'utf8');
 const journalSource = await readFile(path.resolve('src/data/journal.ts'), 'utf8');
+const knowledgeRecords = JSON.parse(await readFile(path.resolve('src/data/knowledge.json'), 'utf8'));
 
 function capture(source, pattern) {
   return source.match(pattern)?.[1] ?? '';
@@ -91,6 +92,13 @@ for (const entry of journalRecords) {
     journalEntry: entry
   });
 }
+
+pages.push(...knowledgeRecords.map((article) => ({
+  path: article.route,
+  title: article.title,
+  description: article.description,
+  knowledgeArticle: article
+})));
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -200,7 +208,7 @@ const pageContent = {
     heading: 'The whole UltraOP website, in one place.',
     paragraphs: ['Use this human-readable directory to explore every published page, journal entry, official channel and crawler resource. Search engines should use sitemap.xml; AI tools can use llms.txt for a concise overview.'],
     sections: [
-      { heading: 'Main pages', items: pages.filter((item) => !item.path.endsWith('.html') && !item.path.startsWith('/journal/') && !item.noindex && item.path !== '/site-map/').map((item) => ({ label: item.title, href: item.path, detail: item.description })) },
+      { heading: 'Main pages', items: pages.filter((item) => !item.path.endsWith('.html') && !item.path.startsWith('/journal/') && !item.noindex && !item.knowledgeArticle && item.path !== '/site-map/').map((item) => ({ label: item.title, href: item.path, detail: item.description })) },
       { heading: 'Creator journal', items: journalRecords.map((item) => ({ label: item.title, href: '/journal/' + item.slug + '/', detail: item.summary })) },
       { heading: 'Policies and machine-readable resources', items: [
         { label: 'Privacy Policy', href: '/privacy.html', detail: 'Website privacy and public data.' },
@@ -240,7 +248,60 @@ const pageContent = {
   }
 };
 
+pageContent['/'].sections.push({ heading: 'Explore gaming knowledge', items: knowledgeRecords.filter((article) => ['gaming-guides-index', 'game-directory', 'esports-history-index', 'minecraft-version-library', 'valorant-update-hub'].includes(article.slug)).map((article) => ({ label: article.title, href: article.route, detail: article.description })) });
+pageContent['/journal/'].sections[0].items.unshift({ label: 'Featured creator story — UltraOP', href: '/journal/ultraop-creator-story/', detail: 'A longer feature on Sk Ahsan Ahmad’s journey from competitive gaming to Minecraft content and creator technology.' });
+pageContent['/site-map/'].sections.splice(1, 0,
+  { heading: 'Topic directories', items: knowledgeRecords.filter((article) => article.kind === 'hub').map((article) => ({ label: article.title, href: article.route, detail: article.description })) },
+  { heading: 'Game guides and tournament histories', items: knowledgeRecords.filter((article) => article.kind !== 'hub').map((article) => ({ label: article.title, href: article.route, detail: article.description })) }
+);
+pageContent['/journal/'].sections[0].items.unshift({ label: 'Featured creator story — UltraOP', href: '/journal/ultraop-creator-story/', detail: 'A longer feature on Sk Ahsan Ahmad’s journey from competitive gaming to Minecraft content and creator technology.' });
+
+function renderRichHtml(value) {
+  const escaped = escapeHtml(value);
+  return escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)\s]*)\)/g, (match, label, href) => {
+    const external = /^https?:\/\//i.test(href);
+    const safeHref = escapeAttr(href);
+    return '<a href="' + safeHref + '"' + (external ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + label + '</a>';
+  });
+}
+
+function renderKnowledgeFallback(article) {
+  const absoluteImage = 'https://ultraop.in' + article.heroImage;
+  const sections = (article.sections ?? []).map((section) => {
+    const paragraphs = (section.paragraphs ?? []).map((paragraph) => '<p>' + renderRichHtml(paragraph) + '</p>').join('');
+    const bullets = (section.bullets ?? []).length ? '<ul>' + section.bullets.map((item) => '<li>' + renderRichHtml(item) + '</li>').join('') + '</ul>' : '';
+    const tables = (section.tables ?? []).map((table) =>
+      '<h3>' + escapeHtml(table.heading) + '</h3><div class="uos-knowledge-table-wrap"><table><thead><tr>' +
+      table.headers.map((head) => '<th scope="col">' + escapeHtml(head) + '</th>').join('') +
+      '</tr></thead><tbody>' + table.rows.map((row) => '<tr>' + row.map((cell) => '<td>' + escapeHtml(cell) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>'
+    ).join('');
+    return '<section><h2>' + escapeHtml(section.heading) + '</h2>' + paragraphs + bullets + tables + '</section>';
+  }).join('');
+  const takeaways = (article.takeaways ?? []).map((item) => '<li>' + renderRichHtml(item) + '</li>').join('');
+  const topTables = (article.tables ?? []).map((table) =>
+    '<section><h2>' + escapeHtml(table.heading) + '</h2><div class="uos-knowledge-table-wrap"><table><thead><tr>' +
+    table.headers.map((head) => '<th scope="col">' + escapeHtml(head) + '</th>').join('') +
+    '</tr></thead><tbody>' + table.rows.map((row) => '<tr>' + row.map((cell) => '<td>' + escapeHtml(cell) + '</td>').join('') + '</tr>').join('') + '</tbody></table></div></section>'
+  ).join('');
+  const sources = (article.sources ?? []).map((item) => '<li><a href="' + escapeAttr(item.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.label) + '</a></li>').join('');
+  const related = knowledgeRecords.filter((item) => (article.related ?? []).includes(item.slug)).map((item) =>
+    '<li><a href="' + escapeAttr(item.route) + '">' + escapeHtml(item.title) + '</a><p>' + escapeHtml(item.description) + '</p></li>'
+  ).join('');
+  return '<main class="uos-prerender uos-prerender-knowledge"><article>' +
+    '<p class="uos-prerender-label">' + escapeHtml(article.category) + ' / UPDATED ' + escapeHtml(article.updatedAt) + '</p>' +
+    '<h1>' + escapeHtml(article.title) + '</h1><p class="uos-prerender-summary">' + escapeHtml(article.intro) + '</p>' +
+    '<img class="uos-knowledge-cover" src="' + escapeAttr(article.heroImage) + '" alt="' + escapeAttr(article.heroAlt) + '" width="600" height="338" fetchpriority="high">' +
+    '<p class="uos-prerender-image-note">Original editorial illustration for this article; not an official in-game screenshot.</p>' +
+    '<p class="uos-prerender-reading">' + escapeHtml(String(article.readingMinutes)) + ' minute read · Last reviewed ' + escapeHtml(article.updatedAt) + '</p>' +
+    '<section><h2>Key takeaways</h2><ul>' + takeaways + '</ul></section>' + topTables + sections +
+    '<section><h2>Sources and further reading</h2><p>Game-specific details should be checked against the publisher or tournament organiser’s original notes. This article is an editorial summary.</p><ul>' + sources + '</ul></section>' +
+    '<section><h2>Related guides</h2><ul>' + related + '</ul></section>' +
+    '<p class="uos-prerender-foot">Official website of UltraOP / Sk Ahsan Ahmad · <a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/games/">Games</a> · <a href="/esports/">Esports</a></p>' +
+    '</article></main>';
+}
+
 function fallbackFor(page) {
+  if (page.knowledgeArticle) return null;
   if (page.journalEntry) {
     return {
       eyebrow: page.journalEntry.eyebrow || 'UltraOP journal',
@@ -262,6 +323,7 @@ function fallbackFor(page) {
 }
 
 function renderFallback(page) {
+  if (page.knowledgeArticle) return renderKnowledgeFallback(page.knowledgeArticle);
   const content = fallbackFor(page);
   const sections = (content.sections ?? []).map((section) =>
     '<section><h2>' + escapeHtml(section.heading) + '</h2>' + renderLinks(section.items ?? []) + '</section>'
@@ -285,14 +347,20 @@ function createPageHtml(page) {
   html = upsertMeta(html, 'property', 'og:title', '<meta property="og:title" content="' + escapeAttr(page.title) + '" />');
   html = upsertMeta(html, 'property', 'og:description', '<meta property="og:description" content="' + escapeAttr(page.description) + '" />');
   html = upsertMeta(html, 'property', 'og:url', '<meta property="og:url" content="' + escapeAttr(canonical) + '" />');
-  html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="https://ultraop.in/brand/ultraop-original.webp" />');
+  html = upsertMeta(html, 'property', 'og:type', '<meta property="og:type" content="' + (page.knowledgeArticle && page.knowledgeArticle.kind !== 'hub' ? 'article' : 'website') + '" />');
+  // Social crawlers do not consistently support SVG Open Graph images. Use the published raster mascot until the wide social-share banner is added.
+  const shareImage = 'https://ultraop.in/brand/ultraop-original.webp';
+  const shareImageAlt = 'UltraOP original mascot logo — gaming, Minecraft and creator storytelling.';
+  const shareImageWidth = '142';
+  const shareImageHeight = '161';
+  html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
   html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
-  html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="142" />');
-  html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="161" />');
-  html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="UltraOP original mascot logo — gaming, Minecraft and creator storytelling." />');
-  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary_large_image" />');
-  html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="https://ultraop.in/brand/ultraop-original.webp" />');
-  html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="UltraOP — Play the game. Build the story." />');
+  html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');
+  html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="' + shareImageHeight + '" />');
+  html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
+  html = upsertMeta(html, 'name', 'twitter:card', '<meta name="twitter:card" content="summary" />');
+  html = upsertMeta(html, 'name', 'twitter:image', '<meta name="twitter:image" content="' + escapeAttr(shareImage) + '" />');
+  html = upsertMeta(html, 'name', 'twitter:image:alt', '<meta name="twitter:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
   html = upsertMeta(html, 'name', 'twitter:url', '<meta name="twitter:url" content="' + escapeAttr(canonical) + '" />');
   html = upsertMeta(html, 'name', 'twitter:title', '<meta name="twitter:title" content="' + escapeAttr(page.title) + '" />');
   html = upsertMeta(html, 'name', 'twitter:description', '<meta name="twitter:description" content="' + escapeAttr(page.description) + '" />');
@@ -302,11 +370,18 @@ function createPageHtml(page) {
   if (page.noindex) html = upsertMeta(html, 'name', 'robots', '<meta name="robots" content="noindex, follow" />');
   const schema = {
     '@context': 'https://schema.org',
-    '@type': page.path === '/' ? 'ProfilePage' : 'WebPage',
+    '@type': page.knowledgeArticle ? (page.knowledgeArticle.kind === 'hub' ? 'CollectionPage' : 'Article') : (page.path === '/' ? 'ProfilePage' : 'WebPage'),
     '@id': canonical + '#page',
     url: canonical,
     name: page.title,
+    headline: page.knowledgeArticle ? page.title : undefined,
     description: page.description,
+    image: page.knowledgeArticle ? ['https://ultraop.in' + page.knowledgeArticle.heroImage] : undefined,
+    datePublished: page.knowledgeArticle ? page.knowledgeArticle.updatedAt : undefined,
+    dateModified: page.knowledgeArticle ? page.knowledgeArticle.updatedAt : undefined,
+    author: page.knowledgeArticle ? { '@type': 'Person', name: 'Sk Ahsan Ahmad', alternateName: 'UltraOP', url: 'https://ultraop.in/about/' } : undefined,
+    articleSection: page.knowledgeArticle ? page.knowledgeArticle.category : undefined,
+    keywords: page.knowledgeArticle ? page.knowledgeArticle.keywords : undefined,
     isPartOf: { '@id': 'https://ultraop.in/#website' }
   };
   const fallbackCss = '<style>' +
@@ -316,6 +391,7 @@ function createPageHtml(page) {
     '.uos-prerender h2{margin:42px 0 12px;font-size:24px;letter-spacing:-.04em}.uos-prerender p,.uos-prerender li{color:#b0b0aa}' +
     '.uos-prerender ul{padding-left:22px}.uos-prerender li{padding:7px 0}.uos-prerender a{color:#f1eee7}.uos-prerender a:hover{color:#ff6847}' +
     '.uos-prerender li p{margin:3px 0;font-size:12px}.uos-prerender-foot{margin-top:50px;padding-top:15px;border-top:1px solid rgba(255,255,255,.15);font-size:11px}' +
+    '.uos-prerender-knowledge{padding-top:clamp(25px,4vw,50px)}.uos-prerender-knowledge article{max-width:1120px}.uos-prerender-knowledge h1{font-size:clamp(42px,6.2vw,76px)}.uos-prerender-summary{max-width:900px;font-size:clamp(17px,2vw,21px);color:#d5d4cd!important}.uos-knowledge-cover{display:block;width:100%;max-height:500px;object-fit:cover;margin:28px 0 0;border:1px solid rgba(255,255,255,.16);border-radius:4px}.uos-prerender-image-note,.uos-prerender-reading{font-size:11px!important;color:#858782!important}.uos-prerender-knowledge h3{margin:24px 0 12px}.uos-knowledge-table-wrap{overflow-x:auto;margin:14px 0 28px}.uos-knowledge-table-wrap table{width:100%;border-collapse:collapse;text-align:left}.uos-knowledge-table-wrap th,.uos-knowledge-table-wrap td{padding:12px;border-bottom:1px solid rgba(255,255,255,.16);vertical-align:top;min-width:120px}.uos-knowledge-table-wrap th{color:#ff6847;font-size:12px}.uos-knowledge-table-wrap td{color:#bebfb8;font-size:12px}' +
     '</style>';
   html = html.replace('</head>', fallbackCss + '\n  <script type="application/ld+json">' + JSON.stringify(schema) + '</script>\n</head>');
   html = html.replace('<div id="root"></div>', '<div id="root">' + renderFallback(page) + '</div>');
@@ -365,7 +441,10 @@ const llmsLines = [
   '',
   '## Primary pages',
   '- Official homepage: https://ultraop.in/',
-  ...pages.filter((page) => !page.noindex && !page.path.endsWith('.html') && !page.path.startsWith('/journal/') && page.path !== '/').map((page) => '- ' + page.title + ': https://ultraop.in' + page.path),
+  ...pages.filter((page) => !page.noindex && !page.knowledgeArticle && !page.path.endsWith('.html') && !page.path.startsWith('/journal/') && page.path !== '/').map((page) => '- ' + page.title + ': https://ultraop.in' + page.path),
+  '',
+  '## Gaming guides, version notes and esports histories',
+  ...knowledgeRecords.map((article) => '- ' + article.title + ': https://ultraop.in' + article.route + ' — ' + article.description),
   '',
   '## Creator journal',
   ...journalRecords.map((entry) => '- ' + entry.title + ': https://ultraop.in/journal/' + entry.slug + '/ — ' + entry.summary),
