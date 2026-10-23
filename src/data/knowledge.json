@@ -2442,7 +2442,7 @@
       "PUBG tournament difference",
       "BGMI esports vs PMGC"
     ],
-    "heroImage": "/knowledge/battle-royale.svg",
+    "heroImage": "/knowledge/pubg-editions-comparison.svg",
     "heroAlt": "Original editorial battle-royale map artwork illustrating distinct game ecosystems, not official gameplay imagery.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -2532,7 +2532,7 @@
       "Minecraft Bedrock crossplay",
       "Minecraft server version difference"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-java-bedrock.svg",
     "heroAlt": "Original block-world illustration used for the Java-versus-Bedrock guide; not an official gameplay screenshot.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -2623,7 +2623,7 @@
       "Minecraft basic crafting",
       "Minecraft early game tips"
     ],
-    "heroImage": "/knowledge/minecraft-worlds.svg",
+    "heroImage": "/knowledge/minecraft-survival-first-day.svg",
     "heroAlt": "Original Minecraft-inspired forest trail and starter shelter artwork, not an official gameplay screenshot.",
     "readingMinutes": 6,
     "updatedAt": "2026-10-23",
@@ -2712,7 +2712,7 @@
       "VALORANT agent roles",
       "VALORANT new player tips"
     ],
-    "heroImage": "/knowledge/valorant-patch.svg",
+    "heroImage": "/knowledge/valorant-beginner.svg",
     "heroAlt": "Original tactical FPS editorial illustration with target reticle and patch panel; not official VALORANT gameplay.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -2801,7 +2801,7 @@
       "battle royale scoring format",
       "esports group stage"
     ],
-    "heroImage": "/knowledge/esports-championship.svg",
+    "heroImage": "/knowledge/esports-formats.svg",
     "heroAlt": "Original esports arena illustration for an explainer on tournament formats; not a real tournament screenshot.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
@@ -2894,7 +2894,7 @@
       "frame pacing explained",
       "OBS game capture troubleshooting"
     ],
-    "heroImage": "/knowledge/valorant-patch.svg",
+    "heroImage": "/knowledge/pc-performance-recording.svg",
     "heroAlt": "Original editorial performance-monitor and target illustration for a PC gaming troubleshooting guide; not a real benchmark screenshot.",
     "readingMinutes": 7,
     "updatedAt": "2026-10-23",
