@@ -353,7 +353,8 @@ function createPageHtml(page) {
   const shareImageWidth = '1200';
   const shareImageHeight = '630';
   html = upsertMeta(html, 'property', 'og:image', '<meta property="og:image" content="' + escapeAttr(shareImage) + '" />');
-  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/webp" />');
+  html = upsertMeta(html, 'property', 'og:image:secure_url', '<meta property="og:image:secure_url" content="' + escapeAttr(shareImage) + '" />');
+  html = upsertMeta(html, 'property', 'og:image:type', '<meta property="og:image:type" content="image/jpeg" />');
   html = upsertMeta(html, 'property', 'og:image:width', '<meta property="og:image:width" content="' + shareImageWidth + '" />');
   html = upsertMeta(html, 'property', 'og:image:height', '<meta property="og:image:height" content="' + shareImageHeight + '" />');
   html = upsertMeta(html, 'property', 'og:image:alt', '<meta property="og:image:alt" content="' + escapeAttr(shareImageAlt) + '" />');
