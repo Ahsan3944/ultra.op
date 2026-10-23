@@ -84,7 +84,7 @@ jobs:
           node --input-type=module <<'NODE'
           import { readFileSync, writeFileSync } from 'node:fs';
           const xml = readFileSync('/tmp/indexnow-sitemap.xml', 'utf8');
-          const urls = [...xml.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/g)]
+          const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)]
             .map((match) => match[1].trim().replace(/&amp;/g, '&'))
             .filter(Boolean);
           const uniqueUrls = [...new Set(urls)];
