@@ -690,12 +690,14 @@ function SitemapPage() {
     { label: 'Fan Art', href: '/fan-art/', description: 'Community creations and permissions.' },
     { label: 'Support UltraOP', href: '/support/', description: 'Official ways to follow and support the creator.' }
   ];
-  const resourcePages = [
+  const topicPages = [
     { label: 'Gaming Guides', href: '/guides/', description: 'Structured gaming knowledge library.' },
     { label: 'Games Directory', href: '/games/', description: 'Game-specific reference articles and update notes.' },
     { label: 'Esports Histories', href: '/esports/', description: 'Tournament winners by game, event and year.' },
     { label: 'Minecraft Versions', href: '/games/minecraft/versions/', description: 'Java Edition release guides and server-version advice.' },
-    { label: 'VALORANT Updates', href: '/games/valorant/updates/', description: 'Patch notes organised by feature category.' },
+    { label: 'VALORANT Updates', href: '/games/valorant/updates/', description: 'Patch notes organised by feature category.' }
+  ];
+  const resourcePages = [
     { label: 'Privacy Policy', href: '/privacy.html', description: 'Public-data and website privacy information.' },
     { label: 'Cookie Policy', href: '/cookie-policy.html', description: 'Browser and third-party request information.' },
     { label: 'Terms & Conditions', href: '/terms.html', description: 'Terms for using this website.' },
@@ -717,11 +719,15 @@ function SitemapPage() {
             <div className="uos-sitemap-links">{JOURNAL_ENTRIES.map((item) => <a href={'/journal/' + item.slug + '/'} key={item.slug}><strong>{item.title}</strong><span>{item.summary}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
           <div className="uos-sitemap-group" data-reveal>
-            <p className="uos-eyebrow">03 / KNOWLEDGE</p><h2>Games, versions & esports</h2>
+            <p className="uos-eyebrow">03 / TOPIC DIRECTORY</p><h2>Topic directories</h2>
+            <div className="uos-sitemap-links">{topicPages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
+          </div>
+          <div className="uos-sitemap-group" data-reveal>
+            <p className="uos-eyebrow">04 / KNOWLEDGE</p><h2>Games, versions & esports</h2>
             <div className="uos-sitemap-links">{KNOWLEDGE_ARTICLES.filter((item) => item.kind !== 'hub').map((item) => <a href={item.route} key={item.slug}><strong>{item.title}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
           <div className="uos-sitemap-group" data-reveal>
-            <p className="uos-eyebrow">04 / REFERENCE</p><h2>Policies & crawler files</h2>
+            <p className="uos-eyebrow">05 / REFERENCE</p><h2>Policies & crawler files</h2>
             <div className="uos-sitemap-links">{resourcePages.map((item) => <a href={item.href} key={item.href}><strong>{item.label}</strong><span>{item.description}</span><ArrowUpRight size={15} aria-hidden="true" /></a>)}</div>
           </div>
         </div>
