@@ -103,7 +103,7 @@ export function KnowledgeDirectoryPage({ route }: { route: string }) {
   } else if (route === '/games') {
     groups = [
       { title: 'Minecraft versions and server compatibility', articles: ARTICLES.filter((article) => article.categorySlug === 'minecraft' && article.kind !== 'hub') },
-      { title: 'Battle royale games and tournament histories', articles: ARTICLES.filter((article) => ['pubg', 'bgmi', 'free-fire'].includes(article.categorySlug) || article.slug === 'battle-royale-games-explained') },
+      { title: 'Battle royale games and tournament histories', articles: ARTICLES.filter((article) => ['pubg', 'pubg-mobile', 'bgmi', 'free-fire'].includes(article.categorySlug) || article.slug === 'battle-royale-games-explained') },
       { title: 'VALORANT updates and patch coverage', articles: ARTICLES.filter((article) => article.categorySlug === 'valorant' && article.kind === 'guide') },
       { title: 'General game guides', articles: ARTICLES.filter((article) => article.categorySlug === 'guides') }
     ];
