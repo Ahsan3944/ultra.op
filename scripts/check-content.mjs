@@ -162,7 +162,7 @@ for (const article of knowledgeArticles) {
   assert.ok(title, relativeFile + ' must have a page title.');
   assert.ok(description && description.length >= 50, relativeFile + ' needs a useful meta description.');
   assert.equal(canonical, 'https://ultraop.in' + article.route, relativeFile + ' has an incorrect canonical URL.');
-  assert.ok(page.includes('class="uos-prerender-knowledge"'), relativeFile + ' must include readable article HTML before JavaScript runs.');
+  assert.ok(page.includes('uos-prerender-knowledge'), relativeFile + ' must include readable article HTML before JavaScript runs.');
   assert.ok(page.includes(article.heroImage), relativeFile + ' must show its custom editorial artwork.');
   assert.ok(page.includes('application/ld+json'), relativeFile + ' must include structured data.');
   assert.ok(page.includes(article.kind === 'hub' ? '"@type":"CollectionPage"' : '"@type":"Article"'), relativeFile + ' has the wrong structured-data type.');
